@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-29T01:36:18.649Z</updated>
+  <updated>2017-06-30T06:58:47.100Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>暑期计划-1</title>
+    <link href="http://yoursite.com/2017/06/30/summer-plan-1/"/>
+    <id>http://yoursite.com/2017/06/30/summer-plan-1/</id>
+    <published>2017-06-30T06:48:00.000Z</published>
+    <updated>2017-06-30T06:58:47.100Z</updated>
+    
+    <content type="html"><![CDATA[<p>六月三十日短学期结束，😄就是今天啦。然后九月十五日来学校报到 </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;六月三十日短学期结束，😄就是今天啦。然后九月十五日来学校报到 &lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="日常" scheme="http://yoursite.com/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="计划" scheme="http://yoursite.com/tags/%E8%AE%A1%E5%88%92/"/>
+    
+      <category term="编程" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="暑期" scheme="http://yoursite.com/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>这是我的小岛，欢迎上岛</title>
