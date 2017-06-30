@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-30T06:58:47.100Z</updated>
+  <updated>2017-06-30T07:30:58.005Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,15 +20,23 @@
     <link href="http://yoursite.com/2017/06/30/summer-plan-1/"/>
     <id>http://yoursite.com/2017/06/30/summer-plan-1/</id>
     <published>2017-06-30T06:48:00.000Z</published>
-    <updated>2017-06-30T06:58:47.100Z</updated>
+    <updated>2017-06-30T07:30:58.005Z</updated>
     
-    <content type="html"><![CDATA[<p>六月三十日短学期结束，😄就是今天啦。然后九月十五日来学校报到 </p>
+    <content type="html"><![CDATA[<p>六月三十日短学期结束，😄就是今天啦。然后九月十五日来学校报到。我打算七月二号回家，这样算起来我在家有两个多月时间。下学期是大三，课还蛮多的，所以我打算趁这最后一个暑假再多学点东西。室友都留校了，我选择回家是因为家里更安静一点，不知道能不能控制的住自己，有好有坏吧。</p>
+<h2 id="暑期计划–7月"><a href="#暑期计划–7月" class="headerlink" title="暑期计划–7月"></a>暑期计划–7月</h2><p>因为有两个月，所以我也不知道时间长了会发生什么变化，所以先订前一个月的计划吧。</p>
+<h3 id="1-学-Phalcon-框架"><a href="#1-学-Phalcon-框架" class="headerlink" title="1. 学 Phalcon 框架"></a>1. 学 Phalcon 框架</h3><p>据说是跑得最快的 php 框架(好像还有 yaf )，学下这个也有助于我深入的了解一下 php 其他框架的原理，万一以后公司不用 Laravel 呢。</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170630151515290.png" alt=""></p>
+<h3 id="2-学-Weex-开发-App"><a href="#2-学-Weex-开发-App" class="headerlink" title="2. 学 Weex 开发 App"></a>2. 学 Weex 开发 App</h3><p>作为一个后端工程师(自己加的)，我不能光只开发后端，虽然这学期也看了不少 Vue.js 的知识，也用它开发了不少网页，但也只限于 web 端了。而且我也想学下怎么给移动端开api，还有一些权限控制应该也比较麻烦，所以实践一波，但重新学安卓又感觉略麻烦，正好阿里有Weex这个像ReactNative一样的开发方案，而且里面用到的刚好是 Vue ，这样我就不用重新去学习一门语言了。几天前刚好用weex的构建工具打包出了一个简单的 app ，还蛮方便的，所以暑假打算学下。</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170630152333430.png" alt=""></p>
+<h3 id="3-重构俱乐部官网"><a href="#3-重构俱乐部官网" class="headerlink" title="3. 重构俱乐部官网"></a>3. 重构俱乐部官网</h3><p>因为Laravel5.5 还没出，所以我打算等5.5出了再开始重构俱乐部，打算加点有趣的东西进去，不知道直播教学这个能不能加，不能的话教程播放也得加个。还有实时聊天，兴趣小组等等，到时候想到了再加吧。</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170630152742608.png" alt=""></p>
+<h3 id="4-开发ACM判题网站"><a href="#4-开发ACM判题网站" class="headerlink" title="4. 开发ACM判题网站"></a>4. 开发ACM判题网站</h3><p>这个工作量有点大，估计得到八月份才能启动项目，先记录一波。</p>
+<h3 id="5-有空多写写博客"><a href="#5-有空多写写博客" class="headerlink" title="5. 有空多写写博客"></a>5. 有空多写写博客</h3><p>我尽量把平时遇到的问题和解决办法写成博客，把他们沉淀起来，碰到一些好玩的技术或者工具也会记录一下。也希望有志同道合的朋友对我的方法提出一些建议或者意见。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;六月三十日短学期结束，😄就是今天啦。然后九月十五日来学校报到 &lt;/p&gt;
-
+      &lt;p&gt;六月三十日短学期结束，😄就是今天啦。然后九月十五日来学校报到。我打算七月二号回家，这样算起来我在家有两个多月时间。下学期是大三，课还蛮多的，所以我打算趁这最后一个暑假再多学点东西。室友都留校了，我选择回家是因为家里更安静一点，不知道能不能控制的住自己，有好有坏吧。&lt;/p&gt;
     
     </summary>
     
