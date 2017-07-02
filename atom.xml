@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-30T07:30:58.005Z</updated>
+  <updated>2017-07-02T10:39:01.467Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>两本书</title>
+    <link href="http://yoursite.com/2017/07/02/two-books/"/>
+    <id>http://yoursite.com/2017/07/02/two-books/</id>
+    <published>2017-07-02T10:18:00.000Z</published>
+    <updated>2017-07-02T10:39:01.467Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="回到家了"><a href="#回到家了" class="headerlink" title="回到家了"></a>回到家了</h3><p>目前是回到加了，明天就要开始正式暑假了。昨天在缓冲暑假和随便逛逛论坛的时候发现两本非常不错的书，我大致看了下目录和他们的评论，似乎是将php讲的很透彻。不过有一个缺点，这两本书是英文的（😅），还好我的pdf阅读器有带翻译，虽然其中有一本是有中文版的，但是糊了点，还不能标注。所以最后选择英文版，感觉词汇应该不会很多，而且专业词汇我也确实应该掌握一点。</p>
+<h2 id="暑假计划增加"><a href="#暑假计划增加" class="headerlink" title="暑假计划增加"></a>暑假计划增加</h2><p>所以暑假又多了两个计划，第一本《Modern PHP》应该是明天开始看，看的时候记录一下体会。另一本《Laravel - Up and Running》打算是八月份开始看，这样分开的话我中间还能实践一下。而且七月份还有其他计划要完成。</p>
+<h2 id="两本书"><a href="#两本书" class="headerlink" title="两本书"></a>两本书</h2><h3 id="1-Modern-PHP"><a href="#1-Modern-PHP" class="headerlink" title="1. Modern PHP"></a>1. Modern PHP</h3><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183542335.png" alt=""></p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183655527.png" alt=""></p>
+<h3 id="2-Laravel-Up-and-Running"><a href="#2-Laravel-Up-and-Running" class="headerlink" title="2. Laravel - Up and Running"></a>2. Laravel - Up and Running</h3><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183743214.png" alt=""></p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>明天( 2017-07-03 )计划正式开始！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;回到家了&quot;&gt;&lt;a href=&quot;#回到家了&quot; class=&quot;headerlink&quot; title=&quot;回到家了&quot;&gt;&lt;/a&gt;回到家了&lt;/h3&gt;&lt;p&gt;目前是回到加了，明天就要开始正式暑假了。昨天在缓冲暑假和随便逛逛论坛的时候发现两本非常不错的书，我大致看了下目录和他们的评论
+    
+    </summary>
+    
+      <category term="日常" scheme="http://yoursite.com/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="计划" scheme="http://yoursite.com/tags/%E8%AE%A1%E5%88%92/"/>
+    
+      <category term="编程" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="暑期" scheme="http://yoursite.com/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="书" scheme="http://yoursite.com/tags/%E4%B9%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>暑期计划-1</title>
