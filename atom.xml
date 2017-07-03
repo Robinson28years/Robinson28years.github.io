@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-02T10:41:30.814Z</updated>
+  <updated>2017-07-03T11:54:17.953Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Namespaces &amp; Interface &amp; Traits</title>
+    <link href="http://yoursite.com/2017/07/03/Namespaces-Traits/"/>
+    <id>http://yoursite.com/2017/07/03/Namespaces-Traits/</id>
+    <published>2017-07-03T10:43:00.000Z</published>
+    <updated>2017-07-03T11:54:17.953Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="计划第一天"><a href="#计划第一天" class="headerlink" title="计划第一天"></a>计划第一天</h2><p>今天是计划的第一天，主要在看《Moder PHP》，看了三块内容，一个是 Namespace，一个是 Interface，另一个是 Trait。都是 php 的面向对象特性里面比较突出的一些。Namespace 以前在 Laracast 上看过教程所以还算熟悉。Trait 今天是好好了解了一下，以前开发的时候都不常用这东西。今天在实现代码的时候又发现了一个好用的 php 插件在 atom 上，能给我自动补全 Namespace 还能跳转定义的地方。</p>
+<h2 id="Namespace"><a href="#Namespace" class="headerlink" title="Namespace"></a>Namespace</h2><h3 id="为什么要用-Namespace"><a href="#为什么要用-Namespace" class="headerlink" title="为什么要用 Namespace"></a>为什么要用 Namespace</h3><p>就跟Java里的那些包名类似，是为了防止各个不同的类之间发生冲突，一个人的时候还好，自己知道写过哪些类，当团队开发的时候或者引入了其他人的一个扩展包的话，如果没有命名空间就极易发生冲突。所以使用 Namespace 还是很必须的，可以说是php面向对象的基础。</p>
+<h3 id="使用-composer"><a href="#使用-composer" class="headerlink" title="使用 composer"></a>使用 composer</h3><p>如果像平常那样写一些小的测试就不用 composer 了，但这次是要学习现代化的 php 用法，如果不用 composer 就要 <code>require</code> 这样把一个个包联系起来，用了 composer 自动加载之后，只要定义命名空间然后 <code>use</code> 就行。</p>
+<p>下面我们从头开始用composer 自动加载来实现我们的测试。</p>
+<p><strong>1. 首先我们要安装 composer</strong></p>
+<p>Composer 在 windoes 下安装很简单，直接用安装包安装就行，安装完之后将镜像地址换到国内，这样下载扩展包是能够快点。</p>
+<p><a href="http://www.phpcomposer.com/" target="_blank" rel="external">Composer官网</a></p>
+<p><a href="https://laravel-china.org/composer" target="_blank" rel="external">Composer国内镜像</a></p>
+<p><strong>2. 然后在自己的工程目录下新建 composer.json</strong><br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"autoload"</span>:&#123;</div><div class="line">    <span class="attr">"psr-4"</span>:&#123;</div><div class="line">      <span class="attr">"Lsu\\"</span>:<span class="string">"src/"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这里第4行的Lsu是我以后要使用的命名空间顶级名称，src是我实际使用的顶级目录。</p>
+<p>新建好 composer.json 之后就在命令行使用 <code>composer install</code> 这个时候文件目录就会生成，让自己再手动新建 src 目录，在里面写要测试的代码就行。</p>
+<p><strong>3. 使用命名空间空间</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">namespace</span> <span class="title">Lsu</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Documentable</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getId</span><span class="params">()</span></span>;</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getContent</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">&#125;</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">namespace</span> <span class="title">Lsu</span>;  <span class="comment">//定义命名空间</span></div><div class="line"><span class="keyword">use</span> <span class="title">Lsu</span>\<span class="title">Documentable</span>; <span class="comment">//因为下面我依赖注入的时候使用了这个类，所以我要引入这类</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DocumentStore</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">protected</span> $data = [];</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">addDocument</span><span class="params">(Documentable $document)</span></span></div><div class="line">    &#123;</div><div class="line">        $key = $document-&gt;getId();</div><div class="line">        $value = $document-&gt;getContent();</div><div class="line">        <span class="keyword">$this</span>-&gt;data[$key] = $value;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getDocuments</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;data;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>这样命名空间就定义好了，然后类和类之间引用使用 <code>use</code> 就可以了。</p>
+<h2 id="Interface"><a href="#Interface" class="headerlink" title="Interface"></a>Interface</h2><p>接口这个，是面向抽象语言必不可少的特性，可以用来降低耦合。<br>具体用法和其他语言相同。先定义一个接口，然后在其他需要它的类中 <code>implements</code> 这个接口。<br>上面使用 composer 的那个例子同样也是一个接口实现的例子。</p>
+<h2 id="Trait"><a href="#Trait" class="headerlink" title="Trait"></a>Trait</h2><p>这个特性是一般语言不具有的 像 Ruby 和 PHP 才有，感觉是一种语法糖。书里先给我讲了个场景，大意是现在有个地图， 地图上有商店，有正在行驶的车，让要给这两个东西都实现获取经纬度的方法。如果使用继承，那么他们两个没有太大关系的类如果继承同一个类就显得不合理。如果使用接口的话，两个类明明需要实现的都是同一个方法，用接口就要实现两遍，所以没有很好的复用(用抽象类，就回到了第一个继承同一个类的问题了)。</p>
+<p>所以，这时候 PHP 的 trait 作用就体现出来了，它可以先想 class 那样写好一个 trait 让在需要使用它的地方 <code>use</code> 就可以了。像场景里那个例子，先实现好获取经纬的的 trait。让在商店和车这两个类中 <code>use</code> 。</p>
+<p>我拿举个简单的例子</p>
+<p><strong>先定义了一个 trait</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">namespace</span> <span class="title">Lsu</span>;</div><div class="line"></div><div class="line"><span class="keyword">trait</span> TraitSayHello</div><div class="line">&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">sayHello</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        print_r(<span class="string">"hello"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p><strong>然后在需要这个 trait 的类里面使用它</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">namespace</span> <span class="title">Lsu</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DocumentTest</span> <span class="keyword">implements</span> <span class="title">Documentable</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">use</span> <span class="title">TraitSayHello</span>;</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getId</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"id test ok"</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getContent</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"content test ok"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>这样 DocumentTest 类 new 出来的对象就能直接使用 sayHello 方法了</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$documentTest = <span class="keyword">new</span> DocumentTest();</div><div class="line">$documentTest-&gt;sayHello();</div></pre></td></tr></table></figure>
+<h2 id="明天继续"><a href="#明天继续" class="headerlink" title="明天继续"></a>明天继续</h2><p>今天书上这三块内容还是将得不错的，比我以前看的详细了不少，明天继续往下看下去，希望能更多的了解一些 PHP 的特性。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;计划第一天&quot;&gt;&lt;a href=&quot;#计划第一天&quot; class=&quot;headerlink&quot; title=&quot;计划第一天&quot;&gt;&lt;/a&gt;计划第一天&lt;/h2&gt;&lt;p&gt;今天是计划的第一天，主要在看《Moder PHP》，看了三块内容，一个是 Namespace，一个是 Interfa
+    
+    </summary>
+    
+      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="编程" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="暑期" scheme="http://yoursite.com/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://yoursite.com/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://yoursite.com/tags/Modern-PHP/"/>
+    
+  </entry>
   
   <entry>
     <title>两本书</title>
