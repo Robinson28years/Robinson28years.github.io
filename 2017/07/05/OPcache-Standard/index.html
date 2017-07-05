@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="计划,编程,暑期,书," />
+  <meta name="keywords" content="编程,暑期,php,Modern PHP," />
 
 
 
@@ -95,21 +95,17 @@
 
 
 
-<meta name="description" content="回到家了目前是回到家了，明天就要开始正式暑假了。昨天在缓冲暑假和随便逛逛论坛的时候发现两本非常不错的书，我大致看了下目录和他们的评论，似乎是将php讲的很透彻。不过有一个缺点，这两本书是英文的（😅），还好我的pdf阅读器有带翻译，虽然其中有一本是有中文版的，但是糊了点，还不能标注。所以最后选择英文版，感觉词汇应该不会很多，而且专业词汇我也确实需要去掌握一点。 暑假计划增加所以暑假又多了两个计划，">
-<meta name="keywords" content="计划,编程,暑期,书">
+<meta name="description" content="今天将 PHP 特性剩余的一些小节看完了(Zend OPcache 和 Built-in Server)，然后把第三章 PHP 标准(PSR-1，2，3，4)也看了下。这书比我以前看到的基础详细，现在终于知道一些东西的作用了。 Zend OPcachephp 是一种解释型语言，我现在才知道当我们访问 php 后端时，我们的代码会通过 Zend Opcodes 转化成机器语言(二进制代码)，然后执行">
+<meta name="keywords" content="编程,暑期,php,Modern PHP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="两本书">
-<meta property="og:url" content="http://yoursite.com/2017/07/02/two-books/index.html">
+<meta property="og:title" content="Zend OPcache 和 PHP 标准">
+<meta property="og:url" content="http://yoursite.com/2017/07/05/OPcache-Standard/index.html">
 <meta property="og:site_name" content="漂游记">
-<meta property="og:description" content="回到家了目前是回到家了，明天就要开始正式暑假了。昨天在缓冲暑假和随便逛逛论坛的时候发现两本非常不错的书，我大致看了下目录和他们的评论，似乎是将php讲的很透彻。不过有一个缺点，这两本书是英文的（😅），还好我的pdf阅读器有带翻译，虽然其中有一本是有中文版的，但是糊了点，还不能标注。所以最后选择英文版，感觉词汇应该不会很多，而且专业词汇我也确实需要去掌握一点。 暑假计划增加所以暑假又多了两个计划，">
-<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183542335.png">
-<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183655527.png">
-<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183743214.png">
-<meta property="og:updated_time" content="2017-07-02T10:41:30.814Z">
+<meta property="og:description" content="今天将 PHP 特性剩余的一些小节看完了(Zend OPcache 和 Built-in Server)，然后把第三章 PHP 标准(PSR-1，2，3，4)也看了下。这书比我以前看到的基础详细，现在终于知道一些东西的作用了。 Zend OPcachephp 是一种解释型语言，我现在才知道当我们访问 php 后端时，我们的代码会通过 Zend Opcodes 转化成机器语言(二进制代码)，然后执行">
+<meta property="og:updated_time" content="2017-07-05T11:19:39.338Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="两本书">
-<meta name="twitter:description" content="回到家了目前是回到家了，明天就要开始正式暑假了。昨天在缓冲暑假和随便逛逛论坛的时候发现两本非常不错的书，我大致看了下目录和他们的评论，似乎是将php讲的很透彻。不过有一个缺点，这两本书是英文的（😅），还好我的pdf阅读器有带翻译，虽然其中有一本是有中文版的，但是糊了点，还不能标注。所以最后选择英文版，感觉词汇应该不会很多，而且专业词汇我也确实需要去掌握一点。 暑假计划增加所以暑假又多了两个计划，">
-<meta name="twitter:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183542335.png">
+<meta name="twitter:title" content="Zend OPcache 和 PHP 标准">
+<meta name="twitter:description" content="今天将 PHP 特性剩余的一些小节看完了(Zend OPcache 和 Built-in Server)，然后把第三章 PHP 标准(PSR-1，2，3，4)也看了下。这书比我以前看到的基础详细，现在终于知道一些东西的作用了。 Zend OPcachephp 是一种解释型语言，我现在才知道当我们访问 php 后端时，我们的代码会通过 Zend Opcodes 转化成机器语言(二进制代码)，然后执行">
 
 
 
@@ -137,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/02/two-books/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/05/OPcache-Standard/"/>
 
 
 
 
 
-  <title>两本书 | 漂游记</title>
+  <title>Zend OPcache 和 PHP 标准 | 漂游记</title>
   
 
 
@@ -301,7 +297,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/02/two-books/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/OPcache-Standard/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="bb chen">
@@ -318,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">两本书</h1>
+          <h1 class="post-title" itemprop="name headline">Zend OPcache 和 PHP 标准</h1>
         
 
         <div class="post-meta">
@@ -330,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-02T18:18:00+08:00">
-                2017-07-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T18:18:00+08:00">
+                2017-07-05
               </time>
             
 
@@ -353,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/日常/" itemprop="url" rel="index">
-                    <span itemprop="name">日常</span>
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
                   </a>
                 </span>
 
@@ -387,12 +383,26 @@
       
 
       
-        <h2 id="回到家了"><a href="#回到家了" class="headerlink" title="回到家了"></a>回到家了</h2><p>目前是回到家了，明天就要开始正式暑假了。昨天在缓冲暑假和随便逛逛论坛的时候发现两本非常不错的书，我大致看了下目录和他们的评论，似乎是将php讲的很透彻。不过有一个缺点，这两本书是英文的（😅），还好我的pdf阅读器有带翻译，虽然其中有一本是有中文版的，但是糊了点，还不能标注。所以最后选择英文版，感觉词汇应该不会很多，而且专业词汇我也确实需要去掌握一点。</p>
-<h2 id="暑假计划增加"><a href="#暑假计划增加" class="headerlink" title="暑假计划增加"></a>暑假计划增加</h2><p>所以暑假又多了两个计划，第一本《Modern PHP》应该是明天开始看，看的时候记录一下体会。另一本《Laravel - Up and Running》打算是八月份开始看，这样分开的话我中间还能实践一下。而且七月份还有其他计划要完成。</p>
-<h2 id="两本书"><a href="#两本书" class="headerlink" title="两本书"></a>两本书</h2><h3 id="1-Modern-PHP"><a href="#1-Modern-PHP" class="headerlink" title="1. Modern PHP"></a>1. Modern PHP</h3><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183542335.png" alt=""></p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183655527.png" alt=""></p>
-<h3 id="2-Laravel-Up-and-Running"><a href="#2-Laravel-Up-and-Running" class="headerlink" title="2. Laravel - Up and Running"></a>2. Laravel - Up and Running</h3><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183743214.png" alt=""></p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>明天( 2017-07-03 )计划正式开始！</p>
+        <p>今天将 PHP 特性剩余的一些小节看完了(Zend OPcache 和 Built-in Server)，然后把第三章 PHP 标准(PSR-1，2，3，4)也看了下。这书比我以前看到的基础详细，现在终于知道一些东西的作用了。</p>
+<h2 id="Zend-OPcache"><a href="#Zend-OPcache" class="headerlink" title="Zend OPcache"></a>Zend OPcache</h2><p>php 是一种解释型语言，我现在才知道当我们访问 php 后端时，我们的代码会通过 Zend Opcodes 转化成机器语言(二进制代码)，然后执行。Java 就是已经编译好了放上去，而 PHP 因为编译非常快，所以不用放二进制包放上去，用 Zend 引擎实时编译即可。但是在一些要高性能需求的环境下就要使用预先编译好的二进制包了。所以，在 PHP 5.5 之后就内置了自动缓存的 OPcache，使用了这个后在开发者模式下，你每次更新 php 代码，他都会自动编译成二进制代码并缓存起来，这时候我们去访问的时候就是直接访问编译好的包了。</p>
+<p>具体的配置的话，实在 php.ini 下<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">opcache.validate_timestamps = 1 // "0" 生产环境下</div><div class="line">opcache.revalidate_freq = 0</div><div class="line">opcache.memory_consumption = 64</div><div class="line">opcache.interned_strings_buffer = 16</div><div class="line">opcache.max_accelerated_files = 4000</div><div class="line">opcache.fast_shutdown = 1</div></pre></td></tr></table></figure></p>
+<h2 id="Built-in-HTTP-server"><a href="#Built-in-HTTP-server" class="headerlink" title="Built-in HTTP server"></a>Built-in HTTP server</h2><p>这个还是比较好理解的，php 为我们提供了一个内置的 web 服务器，这样我们不用安装nginx或者apache也能开启web应用。<br><code>php -S localhost:4000</code><br>只要在工程目录下使用这个命令就能在本地的4000端口开启 web 服务了。<br>但是这个只能在开发的时候用，因为这个 web 服务是单线程的同时只能接收一个请求，而且是会一个个处理任务的，所以线上用这个用户体验会很差，但开发的时候用这个真的很方便。</p>
+<h2 id="Standard"><a href="#Standard" class="headerlink" title="Standard"></a>Standard</h2><p>这章介绍了 因为一开始大家都用着自己的代码风格导致很难合作和互相借鉴，所以在一次开会的时候大家就决定成立 PHP-FIG 这个组织不是要强制我们的代码风格，而是建议我们的代码应该写成怎样。<br>书上写了 PSR-1,PSR-2,PSR-3,PSR-4 的具体建议。PSR-0 和 PSR-4都是自动加载标准，PSR-0目前已经废弃掉了用 4 取代了。</p>
+<h3 id="PSR-1：基础编码规范"><a href="#PSR-1：基础编码规范" class="headerlink" title="PSR-1：基础编码规范"></a>PSR-1：基础编码规范</h3><ul>
+<li>PHP tags：一定只能用 &lt;?php ?&gt; 或 &lt;?= ?&gt;</li>
+<li>Encoding：一定只能用 UTF-8 without BOM</li>
+<li>Objective：只定义类、函数、常量等声明，或其他会产生副作用的操作</li>
+<li>Autoloading：namespace 和 class 一定要支持 PSR-4</li>
+<li>Class names：类命名需要使用 CamelCase</li>
+<li>Constant names：常量命名使用全大写加上下划线分割，如 DATE_APPROVED</li>
+<li>Method names：方法名使用 camelCase 规则，第一个字母小写。<h3 id="PSR-2：编码风格规范-较严格"><a href="#PSR-2：编码风格规范-较严格" class="headerlink" title="PSR-2：编码风格规范(较严格)"></a>PSR-2：编码风格规范(较严格)</h3></li>
+<li>首先是要满足 PSR-1 的</li>
+<li>Indentation：使用 4 个空格来缩进</li>
+<li>Files and lines：<br>使用 Unix linefeed (LF)<br>文件最后一行留空<br>而且最后不要有 ?&gt; (防止在结束后产生非预期的错误输出)<br>每一行最好不要超过80个字符，实在不行也不能超过120个字符<br>行尾不能有多余的空格<br>Keywords：所有 PHP 关键字要小写，如 true、false<br>Namespaces：namespace 的后面留一行空<br>Classes：Class 定义之后的 { 要另起一行，但 extend implement 这些要在同一行。<br>Methods：Method 定义之后的 { 也是要另起一行的，而且包围方法里的参数的那个(后不能有空格，)前不能有空格<br>Visibility：类的属性和方法 必须 添加访问修饰符（private、protected 以及 public），abstract 以及 final 必须 声明在访问修饰符之前，而 static 必须 声明在访问修饰符之后<br>Control Structures：控制结构的开始花括号 { 必须写在声明的同一行，而结束花括号 } 必须写在主体后自成一行。<h2 id="PSR-3：日志接口规范"><a href="#PSR-3：日志接口规范" class="headerlink" title="PSR-3：日志接口规范"></a>PSR-3：日志接口规范</h2>这个就是我们的日志接口该怎么写，但是作者说，推荐我们直接用第三方包了monolog/monolog。<h2 id="PSR-4：自动加载规范"><a href="#PSR-4：自动加载规范" class="headerlink" title="PSR-4：自动加载规范"></a>PSR-4：自动加载规范</h2>我也感受到了写include和require的痛苦，在没有标准化之前大家都是写自己的__autoload()，而PSR-4的自动加载策略是根据 PHP Namespace 来的，作者说会在Composer那章详细讲解这个。</li>
+</ul>
+<p><a href="https://psr.phphub.org/" target="_blank" rel="external">官方的 PSR 文档</a></p>
+<p>现在除了1 2 3 4 好像还出来其他的标准，大家可以去看下。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>感觉我看书的进度太慢了点😂，后面还有好多章的，但又要仔细的看下，要不然以后还是得重新回头来看这些基础。专注一点应该能加快点。</p>
 
       
     </div>
@@ -422,13 +432,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/计划/" rel="tag"># 计划</a>
-          
             <a href="/tags/编程/" rel="tag"># 编程</a>
           
             <a href="/tags/暑期/" rel="tag"># 暑期</a>
           
-            <a href="/tags/书/" rel="tag"># 书</a>
+            <a href="/tags/php/" rel="tag"># php</a>
+          
+            <a href="/tags/Modern-PHP/" rel="tag"># Modern PHP</a>
           
         </div>
       
@@ -441,8 +451,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/30/summer-plan-1/" rel="next" title="暑期计划-1">
-                <i class="fa fa-chevron-left"></i> 暑期计划-1
+              <a href="/2017/07/04/Generator-Closure/" rel="next" title="Generator和Closure">
+                <i class="fa fa-chevron-left"></i> Generator和Closure
               </a>
             
           </div>
@@ -450,10 +460,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/03/Namespaces-Traits/" rel="prev" title="Namespaces & Interface & Traits">
-                Namespaces & Interface & Traits <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -611,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#回到家了"><span class="nav-number">1.</span> <span class="nav-text">回到家了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#暑假计划增加"><span class="nav-number">2.</span> <span class="nav-text">暑假计划增加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#两本书"><span class="nav-number">3.</span> <span class="nav-text">两本书</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Modern-PHP"><span class="nav-number">3.1.</span> <span class="nav-text">1. Modern PHP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Laravel-Up-and-Running"><span class="nav-number">3.2.</span> <span class="nav-text">2. Laravel - Up and Running</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">4.</span> <span class="nav-text">最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Zend-OPcache"><span class="nav-number">1.</span> <span class="nav-text">Zend OPcache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Built-in-HTTP-server"><span class="nav-number">2.</span> <span class="nav-text">Built-in HTTP server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Standard"><span class="nav-number">3.</span> <span class="nav-text">Standard</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PSR-1：基础编码规范"><span class="nav-number">3.1.</span> <span class="nav-text">PSR-1：基础编码规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PSR-2：编码风格规范-较严格"><span class="nav-number">3.2.</span> <span class="nav-text">PSR-2：编码风格规范(较严格)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PSR-3：日志接口规范"><span class="nav-number">4.</span> <span class="nav-text">PSR-3：日志接口规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PSR-4：自动加载规范"><span class="nav-number">5.</span> <span class="nav-text">PSR-4：自动加载规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">6.</span> <span class="nav-text">最后</span></a></li></ol></div>
             
 
           </div>
