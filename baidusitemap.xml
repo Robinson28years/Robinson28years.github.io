@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/03/Namespaces-Traits/</loc>
+    <lastmod>2017-07-05T14:27:24.670Z</lastmod>
+    <data>
+        <display>
+        <title>Namespaces-Interface-Traits</title>
+        <pubTime>2017-07-03T10:43:00.000Z</pubTime>
+        
+        <tag>编程</tag>
+         
+        <tag>暑期</tag>
+         
+        <tag>php</tag>
+         
+        <tag>Modern PHP</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/05/OPcache-Standard/</loc>
+    <lastmod>2017-07-05T11:27:00.206Z</lastmod>
+    <data>
+        <display>
+        <title>Zend OPcache 和 PHP 标准</title>
+        <pubTime>2017-07-05T10:18:00.000Z</pubTime>
+        
+        <tag>编程</tag>
+         
+        <tag>暑期</tag>
+         
+        <tag>php</tag>
+         
+        <tag>Modern PHP</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/04/Generator-Closure/</loc>
+    <lastmod>2017-07-04T11:41:20.779Z</lastmod>
+    <data>
+        <display>
+        <title>Generator和Closure</title>
+        <pubTime>2017-07-04T10:56:00.000Z</pubTime>
+        
+        <tag>编程</tag>
+         
+        <tag>暑期</tag>
+         
+        <tag>php</tag>
+         
+        <tag>Modern PHP</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/02/two-books/</loc>
+    <lastmod>2017-07-02T10:41:30.814Z</lastmod>
+    <data>
+        <display>
+        <title>两本书</title>
+        <pubTime>2017-07-02T10:18:00.000Z</pubTime>
+        
+        <tag>计划</tag>
+         
+        <tag>编程</tag>
+         
+        <tag>暑期</tag>
+         
+        <tag>书</tag>
+         
+         
+           
+             
+              <breadCrumb title="日常" url="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2017/06/30/summer-plan-1/</loc>
+    <lastmod>2017-06-30T07:30:58.005Z</lastmod>
+    <data>
+        <display>
+        <title>暑期计划-1</title>
+        <pubTime>2017-06-30T06:48:00.000Z</pubTime>
+        
+        <tag>计划</tag>
+         
+        <tag>编程</tag>
+         
+        <tag>暑期</tag>
+         
+         
+           
+             
+              <breadCrumb title="日常" url="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2017/06/28/my-blog/</loc>
+    <lastmod>2017-06-29T01:36:18.649Z</lastmod>
+    <data>
+        <display>
+        <title>这是我的小岛，欢迎上岛</title>
+        <pubTime>2017-06-28T14:18:44.000Z</pubTime>
+        
+        <tag>心情</tag>
+         
+        <tag>第一篇</tag>
+         
+         
+           
+             
+              <breadCrumb title="日常" url="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+</urlset>

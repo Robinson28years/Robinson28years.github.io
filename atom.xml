@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://blog.bbchen.top/"/>
   <updated>2017-07-05T11:27:00.206Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://blog.bbchen.top/</id>
   
   <author>
     <name>bb chen</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Zend OPcache 和 PHP 标准</title>
-    <link href="http://yoursite.com/2017/07/05/OPcache-Standard/"/>
-    <id>http://yoursite.com/2017/07/05/OPcache-Standard/</id>
+    <link href="http://blog.bbchen.top/2017/07/05/OPcache-Standard/"/>
+    <id>http://blog.bbchen.top/2017/07/05/OPcache-Standard/</id>
     <published>2017-07-05T10:18:00.000Z</published>
     <updated>2017-07-05T11:27:00.206Z</updated>
     
@@ -70,23 +70,23 @@
     
     </summary>
     
-      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://yoursite.com/tags/php/"/>
+      <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
-      <category term="Modern PHP" scheme="http://yoursite.com/tags/Modern-PHP/"/>
+      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
     
-      <category term="编程" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
     
-      <category term="暑期" scheme="http://yoursite.com/tags/%E6%9A%91%E6%9C%9F/"/>
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
   </entry>
   
   <entry>
     <title>Generator和Closure</title>
-    <link href="http://yoursite.com/2017/07/04/Generator-Closure/"/>
-    <id>http://yoursite.com/2017/07/04/Generator-Closure/</id>
+    <link href="http://blog.bbchen.top/2017/07/04/Generator-Closure/"/>
+    <id>http://blog.bbchen.top/2017/07/04/Generator-Closure/</id>
     <published>2017-07-04T10:56:00.000Z</published>
     <updated>2017-07-04T11:41:20.779Z</updated>
     
@@ -118,25 +118,25 @@
     
     </summary>
     
-      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://yoursite.com/tags/php/"/>
+      <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
-      <category term="Modern PHP" scheme="http://yoursite.com/tags/Modern-PHP/"/>
+      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
     
-      <category term="编程" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
     
-      <category term="暑期" scheme="http://yoursite.com/tags/%E6%9A%91%E6%9C%9F/"/>
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
   </entry>
   
   <entry>
-    <title>Namespaces &amp; Interface &amp; Traits</title>
-    <link href="http://yoursite.com/2017/07/03/Namespaces-Traits/"/>
-    <id>http://yoursite.com/2017/07/03/Namespaces-Traits/</id>
+    <title>Namespaces-Interface-Traits</title>
+    <link href="http://blog.bbchen.top/2017/07/03/Namespaces-Traits/"/>
+    <id>http://blog.bbchen.top/2017/07/03/Namespaces-Traits/</id>
     <published>2017-07-03T10:43:00.000Z</published>
-    <updated>2017-07-03T11:54:17.953Z</updated>
+    <updated>2017-07-05T14:27:24.670Z</updated>
     
     <content type="html"><![CDATA[<h2 id="计划第一天"><a href="#计划第一天" class="headerlink" title="计划第一天"></a>计划第一天</h2><p>今天是计划的第一天，主要在看《Moder PHP》，看了三块内容，一个是 Namespace，一个是 Interface，另一个是 Trait。都是 php 的面向对象特性里面比较突出的一些。Namespace 以前在 Laracast 上看过教程所以还算熟悉。Trait 今天是好好了解了一下，以前开发的时候都不常用这东西。今天在实现代码的时候又发现了一个好用的 php 插件在 atom 上，能给我自动补全 Namespace 还能跳转定义的地方。</p>
 <h2 id="Namespace"><a href="#Namespace" class="headerlink" title="Namespace"></a>Namespace</h2><h3 id="为什么要用-Namespace"><a href="#为什么要用-Namespace" class="headerlink" title="为什么要用 Namespace"></a>为什么要用 Namespace</h3><p>就跟Java里的那些包名类似，是为了防止各个不同的类之间发生冲突，一个人的时候还好，自己知道写过哪些类，当团队开发的时候或者引入了其他人的一个扩展包的话，如果没有命名空间就极易发生冲突。所以使用 Namespace 还是很必须的，可以说是php面向对象的基础。</p>
@@ -171,23 +171,23 @@
     
     </summary>
     
-      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://yoursite.com/tags/php/"/>
+      <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
-      <category term="Modern PHP" scheme="http://yoursite.com/tags/Modern-PHP/"/>
+      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
     
-      <category term="编程" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
     
-      <category term="暑期" scheme="http://yoursite.com/tags/%E6%9A%91%E6%9C%9F/"/>
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
   </entry>
   
   <entry>
     <title>两本书</title>
-    <link href="http://yoursite.com/2017/07/02/two-books/"/>
-    <id>http://yoursite.com/2017/07/02/two-books/</id>
+    <link href="http://blog.bbchen.top/2017/07/02/two-books/"/>
+    <id>http://blog.bbchen.top/2017/07/02/two-books/</id>
     <published>2017-07-02T10:18:00.000Z</published>
     <updated>2017-07-02T10:41:30.814Z</updated>
     
@@ -205,23 +205,23 @@
     
     </summary>
     
-      <category term="日常" scheme="http://yoursite.com/categories/%E6%97%A5%E5%B8%B8/"/>
+      <category term="日常" scheme="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-      <category term="编程" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="计划" scheme="http://blog.bbchen.top/tags/%E8%AE%A1%E5%88%92/"/>
     
-      <category term="暑期" scheme="http://yoursite.com/tags/%E6%9A%91%E6%9C%9F/"/>
+      <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
-      <category term="计划" scheme="http://yoursite.com/tags/%E8%AE%A1%E5%88%92/"/>
+      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
     
-      <category term="书" scheme="http://yoursite.com/tags/%E4%B9%A6/"/>
+      <category term="书" scheme="http://blog.bbchen.top/tags/%E4%B9%A6/"/>
     
   </entry>
   
   <entry>
     <title>暑期计划-1</title>
-    <link href="http://yoursite.com/2017/06/30/summer-plan-1/"/>
-    <id>http://yoursite.com/2017/06/30/summer-plan-1/</id>
+    <link href="http://blog.bbchen.top/2017/06/30/summer-plan-1/"/>
+    <id>http://blog.bbchen.top/2017/06/30/summer-plan-1/</id>
     <published>2017-06-30T06:48:00.000Z</published>
     <updated>2017-06-30T07:30:58.005Z</updated>
     
@@ -243,21 +243,21 @@
     
     </summary>
     
-      <category term="日常" scheme="http://yoursite.com/categories/%E6%97%A5%E5%B8%B8/"/>
+      <category term="日常" scheme="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-      <category term="编程" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="计划" scheme="http://blog.bbchen.top/tags/%E8%AE%A1%E5%88%92/"/>
     
-      <category term="暑期" scheme="http://yoursite.com/tags/%E6%9A%91%E6%9C%9F/"/>
+      <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
-      <category term="计划" scheme="http://yoursite.com/tags/%E8%AE%A1%E5%88%92/"/>
+      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
     
   </entry>
   
   <entry>
     <title>这是我的小岛，欢迎上岛</title>
-    <link href="http://yoursite.com/2017/06/28/my-blog/"/>
-    <id>http://yoursite.com/2017/06/28/my-blog/</id>
+    <link href="http://blog.bbchen.top/2017/06/28/my-blog/"/>
+    <id>http://blog.bbchen.top/2017/06/28/my-blog/</id>
     <published>2017-06-28T14:18:44.000Z</published>
     <updated>2017-06-29T01:36:18.649Z</updated>
     
@@ -272,12 +272,12 @@
     
     </summary>
     
-      <category term="日常" scheme="http://yoursite.com/categories/%E6%97%A5%E5%B8%B8/"/>
+      <category term="日常" scheme="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-      <category term="心情" scheme="http://yoursite.com/tags/%E5%BF%83%E6%83%85/"/>
+      <category term="心情" scheme="http://blog.bbchen.top/tags/%E5%BF%83%E6%83%85/"/>
     
-      <category term="第一篇" scheme="http://yoursite.com/tags/%E7%AC%AC%E4%B8%80%E7%AF%87/"/>
+      <category term="第一篇" scheme="http://blog.bbchen.top/tags/%E7%AC%AC%E4%B8%80%E7%AF%87/"/>
     
   </entry>
   
