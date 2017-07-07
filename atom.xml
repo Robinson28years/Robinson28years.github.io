@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2017-07-06T11:32:19.310Z</updated>
+  <updated>2017-07-07T13:44:31.966Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -14,6 +14,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PHP 字符过滤和日期类</title>
+    <link href="http://blog.bbchen.top/2017/07/07/string-date/"/>
+    <id>http://blog.bbchen.top/2017/07/07/string-date/</id>
+    <published>2017-07-07T12:27:00.000Z</published>
+    <updated>2017-07-07T13:44:31.966Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天看了三块内容，字符的过滤，密码的 hash，还有就是 PHP 内的日期类。本来今天还打算把数据库这块看掉，但这块实在太重要了，以后面试的时候也肯定会问到，所以明天重点看一下数据库。(😂主要今天下午还去了图书馆，就没有完整的一块时间了)。</p>
+<h2 id="字符的过滤"><a href="#字符的过滤" class="headerlink" title="字符的过滤"></a>字符的过滤</h2><p>字符过滤有三个基本要求：</p>
+<ol>
+<li>过滤 (Sanitize)</li>
+<li>验证 (Validate)</li>
+<li>跳脱 (Escape) (是这样翻译吗？？)</li>
+</ol>
+<h3 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h3><p>首先是过滤，这个还蛮重要的，要不然一不小心别人就把sql执行语句或者 html 插入进来了。<br>php 自带有一个 html 过滤函数和 sql 语句过滤函数。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$input = <span class="string">'&lt;p&gt;123234&lt;/p&gt;'</span>;</div><div class="line"><span class="comment">// echo $input;</span></div><div class="line"><span class="keyword">echo</span> htmlentities($input, ENT_QUOTES, <span class="string">'UTF-8'</span>);</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p>使用 htmlentities 这个 php 内置函数之后输出就没有了<code>&lt;p&gt;</code>这些 html 代码了。<br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170707211100848.png" alt=""></p>
+<p>过滤 sql 语句的话，使用 PDO 的前置检查就行(PDO 的话还是很安全的，<code>mysql_query()</code>这种不要用了，php7都废弃了，而且很不安全)</p>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>主要是验证拿到的数据是否符合自己的要求，这个前端限制一个，后端也限制一下比较好。<br>比方说限制邮箱格式<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$email = <span class="string">'john@example.com'</span>;</div><div class="line">$emailSafe = filter_var($email, FILTER_SANITIZE_EMAIL);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p><code>filter_var</code> 函数，在配上 php 内置的<code>FILTER_SANITIZE_EMAIL</code>常量可以做到邮箱的验证。搭配其他的常量，比方说搭配<code>FILTER_SANITIZE_STRING</code>就可以实现其他类型的验证。</p>
+<p>还有一些就是要自己去数据库里查找对应数据来进行验证。</p>
+<h3 id="跳脱"><a href="#跳脱" class="headerlink" title="跳脱"></a>跳脱</h3><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170707212558229.png" alt=""><br>这篇看的不是很懂，大意应该是，最终展现在前端的时候还要再过滤一下语句。</p>
+<h2 id="密码"><a href="#密码" class="headerlink" title="密码"></a>密码</h2><p>储存密码的几个原则：</p>
+<ol>
+<li>从不要知道用户的密码</li>
+<li>从不要限制用户的密码</li>
+<li>从不要明文发送密码给用户</li>
+<li>使用hash而不是加密</li>
+</ol>
+<p>因为 php 有内置密码函数，所以非常方便，哈希用 <code>password_hash()</code>, 验证用<code>password_verify()</code>，就可以了，已经非常安全了，php 会自己加盐的。以前我也知道php 会自动加盐，但我一直好奇他加的盐储存在哪里，后来我知道了，在h<code>ash</code>过后的那串字符中就有储存盐值，所以直接用 <code>password_verify()</code> 他就会自己去校验，都封装好了。</p>
+<h2 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h2><p>日期这个比较麻烦(主要是格式转来转去，还有计算一些差值)，但有时候一定要用它，所以还是有必要看下的。<br><code>date_default_timezone_set(&#39;Asia/Shanghai&#39;);</code><br>这句可以设置时区，国内一般设置为上海，东八区。</p>
+<h3 id="DateTime"><a href="#DateTime" class="headerlink" title="DateTime"></a>DateTime</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">date_default_timezone_set(<span class="string">'Asia/Shanghai'</span>);</div><div class="line">$datetime = <span class="keyword">new</span> DateTime();</div><div class="line"></div><div class="line">$datetime2 = <span class="keyword">new</span> DateTime(<span class="string">'2014-04-27 5:03 AM'</span>);</div><div class="line">var_dump($datetime2);</div></pre></td></tr></table></figure>
+<p>然后就是一些普通的用法，不过下面我还是要展示一下 <code>DateInterval</code> 这个类，以前还真没用过，这个主要是设定时间区间的。</p>
+<h3 id="DateInterval"><a href="#DateInterval" class="headerlink" title="DateInterval"></a>DateInterval</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?</span></div><div class="line">$interval = <span class="keyword">new</span> DateInterval(<span class="string">'P2W'</span>);</div><div class="line"></div><div class="line">$datetime-&gt;add($interval);</div><div class="line"><span class="keyword">echo</span> $datetime-&gt;format(<span class="string">'Y-m-d H:i:s'</span>);</div></pre></td></tr></table></figure>
+<p>比方说我设置了区间两周(P2W就是两周的意思)，然后将它加到 <code>datetime</code> 上，这样<code>datetime</code>的日期就会增加两周。</p>
+<h3 id="DatePeriod"><a href="#DatePeriod" class="headerlink" title="DatePeriod"></a>DatePeriod</h3><p>这个 <code>DatePeriod</code> 类我也是第一次见，这个搭配上上面两个，可以指定初始时间，然后间隔，再加上一个次数，可以很好的实现一些循环任务。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$period = <span class="keyword">new</span> DatePeriod($datetime, $interval, <span class="number">3</span>);</div><div class="line"></div><div class="line"><span class="keyword">foreach</span> ($period  <span class="keyword">as</span> $nextDateTime) &#123;</div><div class="line">    <span class="keyword">echo</span> $nextDateTime-&gt;format(<span class="string">'Y-m-d'</span>), PHP_EOL;</div><div class="line">&#125;</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>明天要好好看下数据库了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天看了三块内容，字符的过滤，密码的 hash，还有就是 PHP 内的日期类。本来今天还打算把数据库这块看掉，但这块实在太重要了，以后面试的时候也肯定会问到，所以明天重点看一下数据库。(😂主要今天下午还去了图书馆，就没有完整的一块时间了)。&lt;/p&gt;
+&lt;h2 id=&quot;字符的
+    
+    </summary>
+    
+      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
+    
+      <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="过滤" scheme="http://blog.bbchen.top/tags/%E8%BF%87%E6%BB%A4/"/>
+    
+      <category term="日期" scheme="http://blog.bbchen.top/tags/%E6%97%A5%E6%9C%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>哈哈哈，我的小岛终于被Google收录了</title>
