@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2017-07-07T13:44:31.966Z</updated>
+  <updated>2017-07-07T13:46:50.186Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://blog.bbchen.top/2017/07/07/string-date/"/>
     <id>http://blog.bbchen.top/2017/07/07/string-date/</id>
     <published>2017-07-07T12:27:00.000Z</published>
-    <updated>2017-07-07T13:44:31.966Z</updated>
+    <updated>2017-07-07T13:46:50.186Z</updated>
     
     <content type="html"><![CDATA[<p>今天看了三块内容，字符的过滤，密码的 hash，还有就是 PHP 内的日期类。本来今天还打算把数据库这块看掉，但这块实在太重要了，以后面试的时候也肯定会问到，所以明天重点看一下数据库。(😂主要今天下午还去了图书馆，就没有完整的一块时间了)。</p>
 <h2 id="字符的过滤"><a href="#字符的过滤" class="headerlink" title="字符的过滤"></a>字符的过滤</h2><p>字符过滤有三个基本要求：</p>
@@ -45,9 +45,9 @@
 </ol>
 <p>因为 php 有内置密码函数，所以非常方便，哈希用 <code>password_hash()</code>, 验证用<code>password_verify()</code>，就可以了，已经非常安全了，php 会自己加盐的。以前我也知道php 会自动加盐，但我一直好奇他加的盐储存在哪里，后来我知道了，在h<code>ash</code>过后的那串字符中就有储存盐值，所以直接用 <code>password_verify()</code> 他就会自己去校验，都封装好了。</p>
 <h2 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h2><p>日期这个比较麻烦(主要是格式转来转去，还有计算一些差值)，但有时候一定要用它，所以还是有必要看下的。<br><code>date_default_timezone_set(&#39;Asia/Shanghai&#39;);</code><br>这句可以设置时区，国内一般设置为上海，东八区。</p>
-<h3 id="DateTime"><a href="#DateTime" class="headerlink" title="DateTime"></a>DateTime</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">date_default_timezone_set(<span class="string">'Asia/Shanghai'</span>);</div><div class="line">$datetime = <span class="keyword">new</span> DateTime();</div><div class="line"></div><div class="line">$datetime2 = <span class="keyword">new</span> DateTime(<span class="string">'2014-04-27 5:03 AM'</span>);</div><div class="line">var_dump($datetime2);</div></pre></td></tr></table></figure>
+<h3 id="DateTime"><a href="#DateTime" class="headerlink" title="DateTime"></a>DateTime</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">date_default_timezone_set(<span class="string">'Asia/Shanghai'</span>);</div><div class="line">$datetime = <span class="keyword">new</span> DateTime();</div><div class="line"></div><div class="line">$datetime2 = <span class="keyword">new</span> DateTime(<span class="string">'2014-04-27 5:03 AM'</span>);</div><div class="line">var_dump($datetime2);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 <p>然后就是一些普通的用法，不过下面我还是要展示一下 <code>DateInterval</code> 这个类，以前还真没用过，这个主要是设定时间区间的。</p>
-<h3 id="DateInterval"><a href="#DateInterval" class="headerlink" title="DateInterval"></a>DateInterval</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?</span></div><div class="line">$interval = <span class="keyword">new</span> DateInterval(<span class="string">'P2W'</span>);</div><div class="line"></div><div class="line">$datetime-&gt;add($interval);</div><div class="line"><span class="keyword">echo</span> $datetime-&gt;format(<span class="string">'Y-m-d H:i:s'</span>);</div></pre></td></tr></table></figure>
+<h3 id="DateInterval"><a href="#DateInterval" class="headerlink" title="DateInterval"></a>DateInterval</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$interval = <span class="keyword">new</span> DateInterval(<span class="string">'P2W'</span>);</div><div class="line"></div><div class="line">$datetime-&gt;add($interval);</div><div class="line"><span class="keyword">echo</span> $datetime-&gt;format(<span class="string">'Y-m-d H:i:s'</span>);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 <p>比方说我设置了区间两周(P2W就是两周的意思)，然后将它加到 <code>datetime</code> 上，这样<code>datetime</code>的日期就会增加两周。</p>
 <h3 id="DatePeriod"><a href="#DatePeriod" class="headerlink" title="DatePeriod"></a>DatePeriod</h3><p>这个 <code>DatePeriod</code> 类我也是第一次见，这个搭配上上面两个，可以指定初始时间，然后间隔，再加上一个次数，可以很好的实现一些循环任务。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$period = <span class="keyword">new</span> DatePeriod($datetime, $interval, <span class="number">3</span>);</div><div class="line"></div><div class="line"><span class="keyword">foreach</span> ($period  <span class="keyword">as</span> $nextDateTime) &#123;</div><div class="line">    <span class="keyword">echo</span> $nextDateTime-&gt;format(<span class="string">'Y-m-d'</span>), PHP_EOL;</div><div class="line">&#125;</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
 <h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>明天要好好看下数据库了。</p>
