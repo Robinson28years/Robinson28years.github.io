@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="编程,暑期,计划,书," />
+  <meta name="keywords" content="php,Modern PHP,编程,暑期,数据库,异常处理," />
 
 
 
@@ -95,21 +95,20 @@
 
 
 
-<meta name="description" content="回到家了目前是回到家了，明天就要开始正式暑假了。昨天在缓冲暑假和随便逛逛论坛的时候发现两本非常不错的书，我大致看了下目录和他们的评论，似乎是将php讲的很透彻。不过有一个缺点，这两本书是英文的（😅），还好我的pdf阅读器有带翻译，虽然其中有一本是有中文版的，但是糊了点，还不能标注。所以最后选择英文版，感觉词汇应该不会很多，而且专业词汇我也确实需要去掌握一点。 暑假计划增加所以暑假又多了两个计划，">
-<meta name="keywords" content="编程,暑期,计划,书">
+<meta name="description" content="说实话，今天的数据库这章不是很满意，感觉讲的还不是很具体，有时间我还要单独看下数据库。还有两块字符流和异常的处理写的还行，不过异常处理以前有看过一点。 数据库 这里建议直接使用 PDO 了，而且不要过多的写某些其他数据库特有的特性，这样如果以后从这个数据库变更到其他数据库时可能要改很多代码。 还有就是数据库的配置文件单独放一块，不要和核心代码放在一起，要不然上传仓库或者被别人攻击的时候很容易将密码">
+<meta name="keywords" content="php,Modern PHP,编程,暑期,数据库,异常处理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="两本书">
-<meta property="og:url" content="http://blog.bbchen.top/2017/07/02/two-books/index.html">
+<meta property="og:title" content="数据库，字符流和异常处理">
+<meta property="og:url" content="http://blog.bbchen.top/2017/07/08/database-stream-exception/index.html">
 <meta property="og:site_name" content="漂游记">
-<meta property="og:description" content="回到家了目前是回到家了，明天就要开始正式暑假了。昨天在缓冲暑假和随便逛逛论坛的时候发现两本非常不错的书，我大致看了下目录和他们的评论，似乎是将php讲的很透彻。不过有一个缺点，这两本书是英文的（😅），还好我的pdf阅读器有带翻译，虽然其中有一本是有中文版的，但是糊了点，还不能标注。所以最后选择英文版，感觉词汇应该不会很多，而且专业词汇我也确实需要去掌握一点。 暑假计划增加所以暑假又多了两个计划，">
-<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183542335.png">
-<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183655527.png">
-<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183743214.png">
-<meta property="og:updated_time" content="2017-07-02T10:41:30.814Z">
+<meta property="og:description" content="说实话，今天的数据库这章不是很满意，感觉讲的还不是很具体，有时间我还要单独看下数据库。还有两块字符流和异常的处理写的还行，不过异常处理以前有看过一点。 数据库 这里建议直接使用 PDO 了，而且不要过多的写某些其他数据库特有的特性，这样如果以后从这个数据库变更到其他数据库时可能要改很多代码。 还有就是数据库的配置文件单独放一块，不要和核心代码放在一起，要不然上传仓库或者被别人攻击的时候很容易将密码">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170708194241730.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170708194522553.png">
+<meta property="og:updated_time" content="2017-07-08T11:48:34.147Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="两本书">
-<meta name="twitter:description" content="回到家了目前是回到家了，明天就要开始正式暑假了。昨天在缓冲暑假和随便逛逛论坛的时候发现两本非常不错的书，我大致看了下目录和他们的评论，似乎是将php讲的很透彻。不过有一个缺点，这两本书是英文的（😅），还好我的pdf阅读器有带翻译，虽然其中有一本是有中文版的，但是糊了点，还不能标注。所以最后选择英文版，感觉词汇应该不会很多，而且专业词汇我也确实需要去掌握一点。 暑假计划增加所以暑假又多了两个计划，">
-<meta name="twitter:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183542335.png">
+<meta name="twitter:title" content="数据库，字符流和异常处理">
+<meta name="twitter:description" content="说实话，今天的数据库这章不是很满意，感觉讲的还不是很具体，有时间我还要单独看下数据库。还有两块字符流和异常的处理写的还行，不过异常处理以前有看过一点。 数据库 这里建议直接使用 PDO 了，而且不要过多的写某些其他数据库特有的特性，这样如果以后从这个数据库变更到其他数据库时可能要改很多代码。 还有就是数据库的配置文件单独放一块，不要和核心代码放在一起，要不然上传仓库或者被别人攻击的时候很容易将密码">
+<meta name="twitter:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170708194241730.png">
 
 
 
@@ -137,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.bbchen.top/2017/07/02/two-books/"/>
+  <link rel="canonical" href="http://blog.bbchen.top/2017/07/08/database-stream-exception/"/>
 
 
 
 
 
-  <title>两本书 | 漂游记</title>
+  <title>数据库，字符流和异常处理 | 漂游记</title>
   
 
 
@@ -302,7 +301,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://blog.bbchen.top/2017/07/02/two-books/">
+    <link itemprop="mainEntityOfPage" href="http://blog.bbchen.top/2017/07/08/database-stream-exception/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="bb chen">
@@ -319,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">两本书</h1>
+          <h1 class="post-title" itemprop="name headline">数据库，字符流和异常处理</h1>
         
 
         <div class="post-meta">
@@ -331,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-02T18:18:00+08:00">
-                2017-07-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T19:22:00+08:00">
+                2017-07-08
               </time>
             
 
@@ -354,8 +353,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/日常/" itemprop="url" rel="index">
-                    <span itemprop="name">日常</span>
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
                   </a>
                 </span>
 
@@ -388,12 +387,24 @@
       
 
       
-        <h2 id="回到家了"><a href="#回到家了" class="headerlink" title="回到家了"></a>回到家了</h2><p>目前是回到家了，明天就要开始正式暑假了。昨天在缓冲暑假和随便逛逛论坛的时候发现两本非常不错的书，我大致看了下目录和他们的评论，似乎是将php讲的很透彻。不过有一个缺点，这两本书是英文的（😅），还好我的pdf阅读器有带翻译，虽然其中有一本是有中文版的，但是糊了点，还不能标注。所以最后选择英文版，感觉词汇应该不会很多，而且专业词汇我也确实需要去掌握一点。</p>
-<h2 id="暑假计划增加"><a href="#暑假计划增加" class="headerlink" title="暑假计划增加"></a>暑假计划增加</h2><p>所以暑假又多了两个计划，第一本《Modern PHP》应该是明天开始看，看的时候记录一下体会。另一本《Laravel - Up and Running》打算是八月份开始看，这样分开的话我中间还能实践一下。而且七月份还有其他计划要完成。</p>
-<h2 id="两本书"><a href="#两本书" class="headerlink" title="两本书"></a>两本书</h2><h3 id="1-Modern-PHP"><a href="#1-Modern-PHP" class="headerlink" title="1. Modern PHP"></a>1. Modern PHP</h3><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183542335.png" alt=""></p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183655527.png" alt=""></p>
-<h3 id="2-Laravel-Up-and-Running"><a href="#2-Laravel-Up-and-Running" class="headerlink" title="2. Laravel - Up and Running"></a>2. Laravel - Up and Running</h3><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183743214.png" alt=""></p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>明天( 2017-07-03 )计划正式开始！</p>
+        <p>说实话，今天的数据库这章不是很满意，感觉讲的还不是很具体，有时间我还要单独看下数据库。还有两块字符流和异常的处理写的还行，不过异常处理以前有看过一点。</p>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
+<li>这里建议直接使用 PDO 了，而且不要过多的写某些其他数据库特有的特性，这样如果以后从这个数据库变更到其他数据库时可能要改很多代码。</li>
+<li>还有就是数据库的配置文件单独放一块，不要和核心代码放在一起，要不然上传仓库或者被别人攻击的时候很容易将密码泄漏出去。</li>
+<li>千万！千万！不要忘了将字符集设置为 UTF-8 ，要不然会出现乱码和很多不兼容问题。</li>
+<li>要进行 SQL 语句的预处理，防止 SQL 注入。这里用预处理防 SQL 注入的原理是 PDO 会先将预处理语句解析成 SQL 模板，然后再接受你的值，这时候如果你的值里有 SQL 语句了也没用了，因为语句已经解析出来了，你已经改不了了，只能填值。</li>
+</ul>
+<h3 id="简单配置"><a href="#简单配置" class="headerlink" title="简单配置"></a>简单配置</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">require</span>(dirname(<span class="keyword">__FILE__</span>).<span class="string">'/../settings.php'</span>);</div><div class="line"><span class="comment">// var_dump('../settings.php');</span></div><div class="line">$pdo = <span class="keyword">new</span> PDO(</div><div class="line">    sprintf(</div><div class="line">        <span class="string">'mysql:host=%s;dbname=%s;port=%s;charset=%s'</span>,</div><div class="line">        $settings[<span class="string">'host'</span>],</div><div class="line">        $settings[<span class="string">'name'</span>],</div><div class="line">        $settings[<span class="string">'port'</span>],</div><div class="line">        $settings[<span class="string">'charset'</span>]</div><div class="line">    ),</div><div class="line">    $settings[<span class="string">'username'</span>],</div><div class="line">    $settings[<span class="string">'password'</span>]</div><div class="line">);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="下面是预处理语句"><a href="#下面是预处理语句" class="headerlink" title="下面是预处理语句"></a>下面是预处理语句</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$sql = <span class="string">'SELECT email FROM users WHERE id = :id'</span>;</div><div class="line">$statement = $pdo-&gt;prepare($sql);<span class="comment">//预处理，解析成 sql 模板</span></div><div class="line"></div><div class="line"><span class="comment">// $userId = filter_input('1', 'id');</span></div><div class="line">$userId = <span class="number">1</span>;</div><div class="line">$statement-&gt;bindValue(<span class="string">':id'</span>, $userId ,PDO::PARAM_INT);<span class="comment">//绑定模板里的值</span></div><div class="line">$statement-&gt;execute();<span class="comment">//执行语句</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="循环输出值"><a href="#循环输出值" class="headerlink" title="循环输出值"></a>循环输出值</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">while</span> (($result = $statement-&gt;fetch(PDO::FETCH_ASSOC)) !== <span class="keyword">false</span>) &#123;</div><div class="line">    <span class="keyword">echo</span> $result[<span class="string">'email'</span>];</div><div class="line">&#125;</div><div class="line">    var_dump($pdo);</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="字符流处理"><a href="#字符流处理" class="headerlink" title="字符流处理"></a>字符流处理</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$handle = fopen(dirname(<span class="keyword">__FILE__</span>).<span class="string">'\text.txt'</span>, <span class="string">'rb'</span>);</div><div class="line"><span class="comment">// var_dump($handle);</span></div><div class="line"><span class="keyword">while</span> (feof($handle) !== <span class="keyword">true</span>) &#123;</div><div class="line">    <span class="keyword">echo</span> fgets($handle);</div><div class="line">&#125;</div><div class="line">fclose($handle);</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>简单的写了个例子，大致是 <code>file_get_contents()</code>,<code>fopen()</code>,<code>fgets()</code>,<code>fwrite()</code>这些函数的使用。</p>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>可以自己 new 一些异常，<code>debug</code> 的时候可以定位的更精确一点，也容易解决一些问题<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$exception = <span class="keyword">new</span> <span class="keyword">Exception</span>(<span class="string">'Danger, Robinson!'</span>, <span class="number">100</span>);</div><div class="line"><span class="keyword">echo</span> $exception-&gt;getCode();</div><div class="line"><span class="keyword">echo</span> $exception-&gt;getMessage();</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170708194241730.png" alt=""></p>
+<p>多使用 <code>try-catch</code> 语句块捕获异常，以及出现异常后的处理方法<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">    $pdo = <span class="keyword">new</span> PDO(<span class="string">'mysql://host=wronghost;dbname=wrong_name'</span>);</div><div class="line">&#125; <span class="keyword">catch</span> (<span class="keyword">Exception</span> $e) &#123;</div><div class="line">    <span class="keyword">echo</span> $e-&gt;getCode();</div><div class="line">    <span class="keyword">echo</span> PHP_EOL;</div><div class="line">    <span class="keyword">echo</span> $e-&gt;getMessage();</div><div class="line">&#125;<span class="keyword">finally</span> &#123;</div><div class="line">    <span class="keyword">echo</span> PHP_EOL.<span class="string">"alwayys"</span>;</div><div class="line">&#125;</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170708194522553.png" alt=""></p>
+<p>那个 <code>filp/whoops</code> 组件真不错，<code>laravel5.5</code> 好像也要用这个了。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>明天开始看最后一大块内容，大概需要四天左右，是关于部署，开发和测试的内容。</p>
 
       
     </div>
@@ -423,13 +434,17 @@
       
         <div class="post-tags">
           
+            <a href="/tags/php/" rel="tag"># php</a>
+          
+            <a href="/tags/Modern-PHP/" rel="tag"># Modern PHP</a>
+          
             <a href="/tags/编程/" rel="tag"># 编程</a>
           
             <a href="/tags/暑期/" rel="tag"># 暑期</a>
           
-            <a href="/tags/计划/" rel="tag"># 计划</a>
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
           
-            <a href="/tags/书/" rel="tag"># 书</a>
+            <a href="/tags/异常处理/" rel="tag"># 异常处理</a>
           
         </div>
       
@@ -442,8 +457,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/30/summer-plan-1/" rel="next" title="暑期计划-1">
-                <i class="fa fa-chevron-left"></i> 暑期计划-1
+              <a href="/2017/07/07/string-date/" rel="next" title="PHP 字符过滤和日期类">
+                <i class="fa fa-chevron-left"></i> PHP 字符过滤和日期类
               </a>
             
           </div>
@@ -451,10 +466,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/03/Namespaces-Traits/" rel="prev" title="Namespaces-Interface-Traits">
-                Namespaces-Interface-Traits <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -634,7 +645,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#回到家了"><span class="nav-number">1.</span> <span class="nav-text">回到家了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#暑假计划增加"><span class="nav-number">2.</span> <span class="nav-text">暑假计划增加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#两本书"><span class="nav-number">3.</span> <span class="nav-text">两本书</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Modern-PHP"><span class="nav-number">3.1.</span> <span class="nav-text">1. Modern PHP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Laravel-Up-and-Running"><span class="nav-number">3.2.</span> <span class="nav-text">2. Laravel - Up and Running</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">4.</span> <span class="nav-text">最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库"><span class="nav-number">1.</span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单配置"><span class="nav-number">1.1.</span> <span class="nav-text">简单配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下面是预处理语句"><span class="nav-number">1.2.</span> <span class="nav-text">下面是预处理语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环输出值"><span class="nav-number">1.3.</span> <span class="nav-text">循环输出值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符流处理"><span class="nav-number">2.</span> <span class="nav-text">字符流处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常处理"><span class="nav-number">3.</span> <span class="nav-text">异常处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">4.</span> <span class="nav-text">最后</span></a></li></ol></div>
             
 
           </div>

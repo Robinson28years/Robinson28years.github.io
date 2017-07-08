@@ -4,6 +4,36 @@
 
     
   <url>
+    <loc>http://blog.bbchen.top/2017/07/08/database-stream-exception/</loc>
+    <lastmod>2017-07-08T11:48:34.147Z</lastmod>
+    <data>
+        <display>
+        <title>数据库，字符流和异常处理</title>
+        <pubTime>2017-07-08T11:22:00.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+        <tag>Modern PHP</tag>
+         
+        <tag>编程</tag>
+         
+        <tag>暑期</tag>
+         
+        <tag>数据库</tag>
+         
+        <tag>异常处理</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.bbchen.top/2017/07/07/string-date/</loc>
     <lastmod>2017-07-07T13:46:50.186Z</lastmod>
     <data>
