@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2017-07-09T11:59:58.151Z</updated>
+  <updated>2017-07-10T11:16:42.258Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -14,6 +14,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HHVM和Hack</title>
+    <link href="http://blog.bbchen.top/2017/07/10/HHVM-Hack/"/>
+    <id>http://blog.bbchen.top/2017/07/10/HHVM-Hack/</id>
+    <published>2017-07-10T10:52:00.000Z</published>
+    <updated>2017-07-10T11:16:42.258Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天看了四章内容(Testing, Profiling, HHVM-Hack, Community),其他都不提了，今天就提一下 HHVM 和 Hack。</p>
+<h2 id="HHVM"><a href="#HHVM" class="headerlink" title="HHVM"></a>HHVM</h2><p>php 是一种解释型语言这我们都知道，在将 php 语言转换成机器码时需要解释引擎，在以前，只有一个引擎，Zend Engine，后来呢，Facebook的扎克伯格在大学的时候开发了个网站，因为 php 开发快，所以他一开始就选了这个语言，后来大家也知道，这网站越来越大，公司在已有大量服务器的基础上，决定不再继续采购服务器了，而是改进这门语言的解释器，所以有了我们看见的 HHVM ( <em>Hip Hop Virtual Machine</em> ),据说是快了好几倍。</p>
+<p>官方介绍👇</p>
+<blockquote>
+<p>HHVM is an open-source virtual machine designed for executing programs written in Hack and PHP. HHVM uses a just-in-time (JIT) compilation approach to achieve superior performance while maintaining the development flexibility that PHP provides.</p>
+<p>HHVM supports Hack, PHP 5 and the major features of PHP 7. We are aware of minor incompatibilities, so please open issues when you find them. HHVM also supports many extensions as well.</p>
+</blockquote>
+<p>怎么说呢，当我在有高性能的需求的时候可能会去使用他，毕竟现在我使用的 php7.1 也是蛮快的。</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170710190756718.png" alt=""></p>
+<h2 id="Hack"><a href="#Hack" class="headerlink" title="Hack"></a>Hack</h2><p>Facebook 自己为了需求开发的语言(大公司就是不一样啊，都喜欢自己发明语言。)。Hack 语言可以说是和 PHP 是极为相似的，算是一种方言，最大的区别在于 Hack 是有静态类型的，PHP 都是动态的判定你是整型或者字符，而 Hack 是可以规定类型也可以不规定，可以说是更加灵活了。所以总的来说，Hack 语言是比 PHP 强的，但是呢，PHP 是一直在发展的，有社区在推动，生态也很完整，所以不是有特殊需求一般是不会切换到 Hack 的。不过 Hack 也为  PHP 带来的很多灵感，这也是开源项目带来的优势啊，大家相互借鉴，相互提高，希望以后 PHP 也能吸取其他语言的优点，更好的发展。</p>
+<p>官方介绍👇</p>
+<blockquote>
+<p>Hack is a programming language for HHVM. Hack reconciles the fast development cycle of a dynamically typed language with the discipline provided by static typing, while adding many features commonly found in other modern programming languages.</p>
+<p>Hack provides instantaneous type checking by incrementally checking your files as you edit them. It typically runs in less than 200 milliseconds, making it easy to integrate into your development workflow without introducing a noticeable delay.</p>
+</blockquote>
+<p>Hack 语法👇<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;?hh</div><div class="line">class MyClass &#123;</div><div class="line">  public function alpha(): int &#123;</div><div class="line">    return 1;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  public function beta(): string &#123;</div><div class="line">    return &apos;hi test&apos;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function f(MyClass $my_inst): string &#123;</div><div class="line">  // Fix me!</div><div class="line">  return $my_inst-&gt;alpha();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170710191514368.png" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天看了四章内容(Testing, Profiling, HHVM-Hack, Community),其他都不提了，今天就提一下 HHVM 和 Hack。&lt;/p&gt;
+&lt;h2 id=&quot;HHVM&quot;&gt;&lt;a href=&quot;#HHVM&quot; class=&quot;headerlink&quot; title=
+    
+    </summary>
+    
+      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
+    
+      <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="HHVM" scheme="http://blog.bbchen.top/tags/HHVM/"/>
+    
+      <category term="Hack" scheme="http://blog.bbchen.top/tags/Hack/"/>
+    
+  </entry>
   
   <entry>
     <title>服务器部署和配置</title>

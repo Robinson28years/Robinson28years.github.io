@@ -4,6 +4,36 @@
 
     
   <url>
+    <loc>http://blog.bbchen.top/2017/07/10/HHVM-Hack/</loc>
+    <lastmod>2017-07-10T11:16:42.258Z</lastmod>
+    <data>
+        <display>
+        <title>HHVM和Hack</title>
+        <pubTime>2017-07-10T10:52:00.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+        <tag>Modern PHP</tag>
+         
+        <tag>编程</tag>
+         
+        <tag>暑期</tag>
+         
+        <tag>HHVM</tag>
+         
+        <tag>Hack</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.bbchen.top/2017/07/09/deployment-provisioning/</loc>
     <lastmod>2017-07-09T11:59:58.151Z</lastmod>
     <data>
