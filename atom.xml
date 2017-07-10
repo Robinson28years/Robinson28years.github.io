@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2017-07-10T11:40:23.295Z</updated>
+  <updated>2017-07-10T11:43:33.040Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://blog.bbchen.top/2017/07/10/Modern-PHP-END/"/>
     <id>http://blog.bbchen.top/2017/07/10/Modern-PHP-END/</id>
     <published>2017-07-10T11:17:00.000Z</published>
-    <updated>2017-07-10T11:40:23.295Z</updated>
+    <updated>2017-07-10T11:43:33.040Z</updated>
     
     <content type="html"><![CDATA[<h2 id="完结"><a href="#完结" class="headerlink" title="完结"></a>完结</h2><p>嗯，第一本全英文的技术类书籍看完了，这个要纪念一下，虽然看的过程中有很多单词不懂，但代码呢，总是用一种神奇的力量，好的代码，本身就是一种语言，所以也没想象中那么吃力，也大概能懂作者要表达什么。这样的话，我看下一本英文技术书的时候不会很害怕。关于为什么看英文版的，一是中文版有点糊，二是有些新出的连中文版都没。</p>
 <p>所以啊，英语还是很重要的(悔不当初啊)。<br>讲一下这本书吧，我看过这本书的作者写过的另一篇教程，PHP之道( <em>PHP-The-Right-way</em> )，写的还蛮好的，但我看的时候总感觉不是很详细。直到看到了这本书。我觉得这本书是 PHP之道的加强版。讲了更多的内容，而且更加详细了，PHP 之道里更多的是将一些拓展链接给了出来。</p>
@@ -37,7 +37,7 @@
     
     </summary>
     
-      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+      <category term="日常" scheme="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
       <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
