@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2017-07-10T11:16:42.258Z</updated>
+  <updated>2017-07-10T11:40:23.295Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《Modern-PHP》结束</title>
+    <link href="http://blog.bbchen.top/2017/07/10/Modern-PHP-END/"/>
+    <id>http://blog.bbchen.top/2017/07/10/Modern-PHP-END/</id>
+    <published>2017-07-10T11:17:00.000Z</published>
+    <updated>2017-07-10T11:40:23.295Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="完结"><a href="#完结" class="headerlink" title="完结"></a>完结</h2><p>嗯，第一本全英文的技术类书籍看完了，这个要纪念一下，虽然看的过程中有很多单词不懂，但代码呢，总是用一种神奇的力量，好的代码，本身就是一种语言，所以也没想象中那么吃力，也大概能懂作者要表达什么。这样的话，我看下一本英文技术书的时候不会很害怕。关于为什么看英文版的，一是中文版有点糊，二是有些新出的连中文版都没。</p>
+<p>所以啊，英语还是很重要的(悔不当初啊)。<br>讲一下这本书吧，我看过这本书的作者写过的另一篇教程，PHP之道( <em>PHP-The-Right-way</em> )，写的还蛮好的，但我看的时候总感觉不是很详细。直到看到了这本书。我觉得这本书是 PHP之道的加强版。讲了更多的内容，而且更加详细了，PHP 之道里更多的是将一些拓展链接给了出来。</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170710193133816.png" alt=""></p>
+<p>这本书的前面几章，我觉得讲的非常好，因为我以前都没涉猎过那些内容，或者说了解的非常少，看过之后至少以后查内容能更精确一点了。</p>
+<h2 id="后面几章"><a href="#后面几章" class="headerlink" title="后面几章"></a>后面几章</h2><p>后面几章的话，可能我实际部署的时候也经常遇到，新鲜感就会少很多，讲测试那章，我也在短学期的时候在 Laracast 上看了一周的教程(讲怎样测试驱动开发的)。所以感觉没前几章强烈了，但也不失为一篇好的文章，特别适合去入门。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>总之呢，如果你是学 PHP 的，非常推荐你去看一下这本书，确实是非常不错，比网上的教程新而且讲的非常全。</p>
+<h2 id="下一步"><a href="#下一步" class="headerlink" title="下一步"></a>下一步</h2><p>明天呢，要开始学一个新的框架了，暑假打算多学几个，一来是因为以后找工作不知道公司会用哪个框架，再者呢，多看几个框架能让我更好的了解 PHP 的原理，这样以后有再多的框架都能更好的理解和应用了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;完结&quot;&gt;&lt;a href=&quot;#完结&quot; class=&quot;headerlink&quot; title=&quot;完结&quot;&gt;&lt;/a&gt;完结&lt;/h2&gt;&lt;p&gt;嗯，第一本全英文的技术类书籍看完了，这个要纪念一下，虽然看的过程中有很多单词不懂，但代码呢，总是用一种神奇的力量，好的代码，本身就是一种语言
+    
+    </summary>
+    
+      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
+    
+      <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>HHVM和Hack</title>

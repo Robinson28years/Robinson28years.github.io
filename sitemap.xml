@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.bbchen.top/2017/07/10/Modern-PHP-END/</loc>
+    
+    <lastmod>2017-07-10T11:40:23.295Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.bbchen.top/2017/07/10/HHVM-Hack/</loc>
     
     <lastmod>2017-07-10T11:16:42.258Z</lastmod>
