@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2017-07-10T11:43:33.040Z</updated>
+  <updated>2017-07-11T11:33:13.268Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -14,6 +14,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>开始学CodeIgniter框架</title>
+    <link href="http://blog.bbchen.top/2017/07/11/Leaning-Ci/"/>
+    <id>http://blog.bbchen.top/2017/07/11/Leaning-Ci/</id>
+    <published>2017-07-11T11:16:00.000Z</published>
+    <updated>2017-07-11T11:33:13.268Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="为什么不学-Phalcon-了"><a href="#为什么不学-Phalcon-了" class="headerlink" title="为什么不学 Phalcon 了"></a>为什么不学 Phalcon 了</h2><p>😂因为国内社区支持太少了，连稳定维护的中文版都不是最新的(可能是最近刚出新的文档来不及更新)，而且连一个中文社区都没有，这样学起来可能会有些吃力。可能以后其他框架学完会来继续学这个(那个时候资源应该丰富一点了)。</p>
+<h2 id="开始学-Codeigniter"><a href="#开始学-Codeigniter" class="headerlink" title="开始学 Codeigniter"></a>开始学 Codeigniter</h2><p>这个框架据说是很轻量级的，而且文档也很全，各种教程也有，社区也蛮活跃的，我去看拉勾网和 BOSS 直聘 也都是有说最好会 Ci 的。所以就先开始学 Ci 了。<br>可以看出 Laravel, ThinkPHP, Ci 这三个框架还是蛮多公司需要的👇</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170711192406333.png" alt=""></p>
+<h2 id="简单安装和使用"><a href="#简单安装和使用" class="headerlink" title="简单安装和使用"></a>简单安装和使用</h2><p>Ci 安装还真是简单😂，连composer都不用，不过我觉得还是支持一下比较好(他们是说这样就不用下载Composer什么的，快速)。</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170711192956490.png" alt=""></p>
+<blockquote>
+<p>CodeIgniter 是为谁准备的？</p>
+<p>CodeIgniter 就是你所需要的，如果…</p>
+<ul>
+<li>你想要一个小巧的框架；</li>
+<li>你需要出色的性能；</li>
+<li>你需要广泛兼容标准主机上的各种 PHP 版本和配置；</li>
+<li>你想要一个几乎零配置的框架；</li>
+<li>你想要一个不需使用命令行的框架；</li>
+<li>你想要一个不想被编码规则的条条框框限制住的框架；</li>
+<li>你对 PEAR 这种庞然大物不感兴趣；</li>
+<li>你不想被迫学习一种新的模板语言（当然如果你喜欢，你可以选择一个模板解析器）；</li>
+<li>你不喜欢复杂，追求简单；</li>
+<li>你需要清晰、完整的文档。</li>
+</ul>
+</blockquote>
+<p>所以我下载安装了一下</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170711192805680.png" alt=""><br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170711192826124.png" alt=""></p>
+<p>目录结构大致是这样的。</p>
+<p>然后我运行 <code>php -S localhost:8888</code></p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170711193025367.png" alt=""></p>
+<p>这样在浏览器上就将首页运行了起来</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170711193109708.png" alt=""></p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>在网上也找到了一些视频教程，然后文档明天开始看，教程的话边看文档边学吧。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;为什么不学-Phalcon-了&quot;&gt;&lt;a href=&quot;#为什么不学-Phalcon-了&quot; class=&quot;headerlink&quot; title=&quot;为什么不学 Phalcon 了&quot;&gt;&lt;/a&gt;为什么不学 Phalcon 了&lt;/h2&gt;&lt;p&gt;😂因为国内社区支持太少了，连稳定维
+    
+    </summary>
+    
+      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="Ci" scheme="http://blog.bbchen.top/tags/Ci/"/>
+    
+  </entry>
   
   <entry>
     <title>《Modern-PHP》结束</title>
