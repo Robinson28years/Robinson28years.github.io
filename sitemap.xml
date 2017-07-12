@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.bbchen.top/2017/07/11/Leaning-Ci/</loc>
+    <loc>http://blog.bbchen.top/2017/07/12/Codeigniter-MVC/</loc>
     
-    <lastmod>2017-07-11T11:33:13.268Z</lastmod>
+    <lastmod>2017-07-12T13:17:39.184Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/11/Leaning-Codeigniter/</loc>
+    
+    <lastmod>2017-07-12T12:53:33.306Z</lastmod>
     
   </url>
   

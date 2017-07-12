@@ -4,8 +4,34 @@
 
     
   <url>
-    <loc>http://blog.bbchen.top/2017/07/11/Leaning-Ci/</loc>
-    <lastmod>2017-07-11T11:33:13.268Z</lastmod>
+    <loc>http://blog.bbchen.top/2017/07/12/Codeigniter-MVC/</loc>
+    <lastmod>2017-07-12T13:17:39.184Z</lastmod>
+    <data>
+        <display>
+        <title>MVC模式运用</title>
+        <pubTime>2017-07-12T12:52:00.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+        <tag>编程</tag>
+         
+        <tag>暑期</tag>
+         
+        <tag>Codeigniter</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/11/Leaning-Codeigniter/</loc>
+    <lastmod>2017-07-12T12:53:33.306Z</lastmod>
     <data>
         <display>
         <title>开始学CodeIgniter框架</title>
@@ -17,7 +43,7 @@
          
         <tag>暑期</tag>
          
-        <tag>Ci</tag>
+        <tag>Codeigniter</tag>
          
          
            
