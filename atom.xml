@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2017-07-13T13:39:55.766Z</updated>
+  <updated>2017-07-13T13:44:41.520Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://blog.bbchen.top/2017/07/13/Codeigniter-Regular-subject/"/>
     <id>http://blog.bbchen.top/2017/07/13/Codeigniter-Regular-subject/</id>
     <published>2017-07-13T13:29:00.000Z</published>
-    <updated>2017-07-13T13:39:55.766Z</updated>
+    <updated>2017-07-13T13:44:41.520Z</updated>
     
     <content type="html"><![CDATA[<p>今天把 Codeigniter 手册里常规主题这一章看了。</p>
 <p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170713213250131.png" alt=""></p>
@@ -30,6 +30,7 @@
 <p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170713213902912.png" alt=""></p>
 <p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170713213935503.png" alt=""></p>
 <p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170713213919678.png" alt=""></p>
+<p>😂明天争取能写出一个带增删改查的论坛来</p>
 ]]></content>
     
     <summary type="html">
