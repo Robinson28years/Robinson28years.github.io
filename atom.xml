@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2017-07-12T13:26:50.782Z</updated>
+  <updated>2017-07-13T13:39:55.766Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ci的常规主题</title>
+    <link href="http://blog.bbchen.top/2017/07/13/Codeigniter-Regular-subject/"/>
+    <id>http://blog.bbchen.top/2017/07/13/Codeigniter-Regular-subject/</id>
+    <published>2017-07-13T13:29:00.000Z</published>
+    <updated>2017-07-13T13:39:55.766Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天把 Codeigniter 手册里常规主题这一章看了。</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170713213250131.png" alt=""></p>
+<p>其中一些实践了一下，像那个路由，它是分三段的，第一段表示控制器名称，第二段表示控制器里的方法，第三段表示参数。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Blog</span> <span class="keyword">extends</span> <span class="title">CI_Controller</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">echo</span> <span class="string">'Hello World!'</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">comments</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">echo</span> <span class="string">'Look at this!'</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>像这个控制器，访问里面的 <code>comments</code> 方法就要用这样的路由去访问 <code>example.com/index.php/blog/comments/</code><br>这个总觉得耦合的紧了点，太粗暴了一点。</p>
+<p>明天看类库，数据库和辅助函数</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170713213902912.png" alt=""></p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170713213935503.png" alt=""></p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170713213919678.png" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天把 Codeigniter 手册里常规主题这一章看了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170713213250131.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="Codeigniter" scheme="http://blog.bbchen.top/tags/Codeigniter/"/>
+    
+  </entry>
   
   <entry>
     <title>MVC模式运用</title>
