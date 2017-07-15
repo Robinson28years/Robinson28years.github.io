@@ -5,11 +5,37 @@
     
   <url>
     <loc>http://blog.bbchen.top/2017/07/14/Codeigniter-forum-one/</loc>
-    <lastmod>2017-07-15T03:41:41.103Z</lastmod>
+    <lastmod>2017-07-15T10:44:50.198Z</lastmod>
     <data>
         <display>
-        <title>使用 Codeigniter 搭建简易论坛系统(一)</title>
+        <title>使用 Codeigniter 搭建简易论坛系统 (一)</title>
         <pubTime>2017-07-14T14:57:00.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+        <tag>编程</tag>
+         
+        <tag>暑期</tag>
+         
+        <tag>Codeigniter</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/15/Codeigniter-forum-two/</loc>
+    <lastmod>2017-07-15T10:44:38.536Z</lastmod>
+    <data>
+        <display>
+        <title>使用 Codeigniter 搭建简易论坛系统 (二)</title>
+        <pubTime>2017-07-15T10:09:00.000Z</pubTime>
         
         <tag>php</tag>
          
