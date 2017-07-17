@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -102,7 +102,7 @@
 <meta property="og:url" content="http://blog.bbchen.top/2017/07/04/Generator-Closure/index.html">
 <meta property="og:site_name" content="漂游记">
 <meta property="og:description" content="今天看了两块内容，一个是 Generator 还有一个是 Closures。这里面的话第一个比较简单，应该算是迭代器的变种，第二个闭包就比较麻烦了，以前就不是很懂，所以今天就仔细查了一些资料，争取对闭包能有更深入的了解。 Generator首先讲下今天看的 Generator，以前学基础的时候确实没听过这个(看来确实学的太水了😂)，了解了一下，听作者将，这个的优点就是耗资源少。123456789">
-<meta property="og:updated_time" content="2017-07-04T11:41:20.779Z">
+<meta property="og:updated_time" content="2017-07-17T02:43:49.254Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Generator和Closure">
 <meta name="twitter:description" content="今天看了两块内容，一个是 Generator 还有一个是 Closures。这里面的话第一个比较简单，应该算是迭代器的变种，第二个闭包就比较麻烦了，以前就不是很懂，所以今天就仔细查了一些资料，争取对闭包能有更深入的了解。 Generator首先讲下今天看的 Generator，以前学基础的时候确实没听过这个(看来确实学的太水了😂)，了解了一下，听作者将，这个的优点就是耗资源少。123456789">
@@ -113,7 +113,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -386,7 +386,7 @@
       
         <p>今天看了两块内容，一个是 Generator 还有一个是 Closures。这里面的话第一个比较简单，应该算是迭代器的变种，第二个闭包就比较麻烦了，以前就不是很懂，所以今天就仔细查了一些资料，争取对闭包能有更深入的了解。</p>
 <h2 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h2><p>首先讲下今天看的 Generator，以前学基础的时候确实没听过这个(看来确实学的太水了😂)，了解了一下，听作者将，这个的优点就是耗资源少。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myGenerator</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">yield</span> <span class="string">'asdfas'</span>;</div><div class="line">    <span class="keyword">yield</span> <span class="string">'1111'</span>;</div><div class="line">    <span class="keyword">yield</span> <span class="string">'cccc'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">foreach</span> (myGenerator()  <span class="keyword">as</span> $yieldedValue) &#123;</div><div class="line">    <span class="keyword">echo</span> $yieldedValue, PHP_EOL;</div><div class="line">&#125;</div><div class="line"><span class="comment">//Result:</span></div><div class="line"><span class="comment">//asdfas</span></div><div class="line"><span class="comment">//1111</span></div><div class="line"><span class="comment">//cccc</span></div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
-<p>上面就是这个 Generator 的用法，它的特性是，一开始不会将 yield 后面的值储存进内存中，只有当调用这个函数的时候，才会像 return 那样一个个取出来。这里就会有一个好处，所以作者提出这样一个问题。</p>
+<p>上面就是这个 Generator 的用法，它的特性是，一开始不会将 yield 后面的值储存进内存中，只有当调用这个函数的时候，才会像 return 那样一个个取出来。这里就会有一个好处，所以作者提出这样一个问题。<br><a id="more"></a></p>
 <blockquote>
 <p>Imagine you need to iterate a 4 GB comma-separated value (CSV) file and your virtual private server (VPS) has only 1 GB ofmemory available to PHP. There’s no way you can pull the entire file into memory.</p>
 </blockquote>
@@ -681,7 +681,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
@@ -773,6 +773,13 @@ Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pag
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>

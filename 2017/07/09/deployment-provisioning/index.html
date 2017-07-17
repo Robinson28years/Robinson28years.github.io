@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -102,7 +102,7 @@
 <meta property="og:url" content="http://blog.bbchen.top/2017/07/09/deployment-provisioning/index.html">
 <meta property="og:site_name" content="漂游记">
 <meta property="og:description" content="虽说今天有看四章内容(Hosting,Provisioning,Tuning,Deployment),😂但好像都是以前看到过的，要说有帮助的，大概就是那个自动部署了，但现在还没尝试过，等我尝试了自动部署，就再写一篇。 服务器服务器，我一般买 Vultr 和 阿里云 的。阿里云有学生套餐，Vultr 的话可以绑定域名(阿里绑域名要备案比较麻烦),买好服务器，拿到的就是一个纯净的系统。 配置把服务器">
-<meta property="og:updated_time" content="2017-07-09T11:59:58.151Z">
+<meta property="og:updated_time" content="2017-07-17T02:42:48.609Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器部署和配置">
 <meta name="twitter:description" content="虽说今天有看四章内容(Hosting,Provisioning,Tuning,Deployment),😂但好像都是以前看到过的，要说有帮助的，大概就是那个自动部署了，但现在还没尝试过，等我尝试了自动部署，就再写一篇。 服务器服务器，我一般买 Vultr 和 阿里云 的。阿里云有学生套餐，Vultr 的话可以绑定域名(阿里绑域名要备案比较麻烦),买好服务器，拿到的就是一个纯净的系统。 配置把服务器">
@@ -113,7 +113,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -386,7 +386,7 @@
       
         <p>虽说今天有看四章内容(Hosting,Provisioning,Tuning,Deployment),😂但好像都是以前看到过的，要说有帮助的，大概就是那个自动部署了，但现在还没尝试过，等我尝试了自动部署，就再写一篇。</p>
 <h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><p>服务器，我一般买 Vultr 和 阿里云 的。阿里云有学生套餐，Vultr 的话可以绑定域名(阿里绑域名要备案比较麻烦),买好服务器，拿到的就是一个纯净的系统。</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>把服务器配置成生产环境。<br>(一般买的都是 ubuntu 14.04 64位)<br>我就把我的祖传脚本贡献出来了<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install -y language-pack-en-base</div><div class="line">locale-gen en_US.UTF-8</div><div class="line"></div><div class="line">sudo apt-get install software-properties-common</div><div class="line">sudo LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php</div><div class="line">sudo apt-get update</div><div class="line"><span class="meta"></span></div><div class="line">$ sudo apt-get --purge remove apache2</div><div class="line"><span class="meta">$</span> sudo apt-get --purge remove apache2.2-common</div><div class="line"><span class="meta">$</span> sudo apt-get autoremove</div><div class="line"></div><div class="line">sudo apt-get -y install php7.1</div><div class="line">sudo apt-get -y install php7.1-mysql</div><div class="line">sudo apt-get -y install php7.1-fpm</div><div class="line"></div><div class="line">apt-get install -y php7.1-curl php7.1-xml php7.1-mcrypt php7.1-json php7.1-gd php7.1-mbstring</div><div class="line"></div><div class="line">apt-get install -y vim htop git zip</div><div class="line"></div><div class="line">sudo apt-get -y install nginx</div><div class="line">sudo apt-get -y install mysql-server-5.6</div></pre></td></tr></table></figure></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>把服务器配置成生产环境。<br>(一般买的都是 ubuntu 14.04 64位)<br>我就把我的祖传脚本贡献出来了<br><a id="more"></a><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install -y language-pack-en-base</div><div class="line">locale-gen en_US.UTF-8</div><div class="line"></div><div class="line">sudo apt-get install software-properties-common</div><div class="line">sudo LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php</div><div class="line">sudo apt-get update</div><div class="line"><span class="meta"></span></div><div class="line">$ sudo apt-get --purge remove apache2</div><div class="line"><span class="meta">$</span> sudo apt-get --purge remove apache2.2-common</div><div class="line"><span class="meta">$</span> sudo apt-get autoremove</div><div class="line"></div><div class="line">sudo apt-get -y install php7.1</div><div class="line">sudo apt-get -y install php7.1-mysql</div><div class="line">sudo apt-get -y install php7.1-fpm</div><div class="line"></div><div class="line">apt-get install -y php7.1-curl php7.1-xml php7.1-mcrypt php7.1-json php7.1-gd php7.1-mbstring</div><div class="line"></div><div class="line">apt-get install -y vim htop git zip</div><div class="line"></div><div class="line">sudo apt-get -y install nginx</div><div class="line">sudo apt-get -y install mysql-server-5.6</div></pre></td></tr></table></figure></p>
 <p>到这为止，该安装的都安装好了，然后就要将一些配置改一下了。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/php/7.1/fpm/php.ini  // 将cgi.fix_pathinfo=1这一行去掉注释，将1改为0</div><div class="line">sudo vim /etc/php/7.1/fpm/pool.d/www.conf // 配置这个 listen = /var/run/php7.1-fpm.sock</div><div class="line">sudo service php7.1-fpm restart</div><div class="line"></div><div class="line">sudo vim /etc/nginx/sites-available/default</div><div class="line">/** nignx配置</div><div class="line">listen 80 default_server;</div><div class="line">listen [::]:80 default_server ipv6only=on;</div><div class="line"></div><div class="line">root /var/www/laravel-ubuntu/public;</div><div class="line">index index.php index.html index.htm;</div><div class="line"><span class="meta"></span></div><div class="line"># Make site accessible from http://localhost/</div><div class="line">server_name localhost;</div><div class="line"></div><div class="line">location / &#123;</div><div class="line"><span class="meta">		#</span> First attempt to serve request as file, then</div><div class="line"><span class="meta">		#</span> as directory, then fall back to displaying a 404.</div><div class="line">		try_files $uri $uri/ /index.php?$query_string;</div><div class="line"><span class="meta">		#</span> Uncomment to enable naxsi on this location</div><div class="line"><span class="meta">		#</span> include /etc/nginx/naxsi.rules</div><div class="line">&#125;</div><div class="line">location ~ \.php$ &#123;</div><div class="line">		try_files $uri /index.php =404;</div><div class="line">		fastcgi_split_path_info ^(.+\.php)(/.+)$;</div><div class="line">		fastcgi_pass unix:/var/run/php7.1-fpm.sock;</div><div class="line">		fastcgi_index index.php;</div><div class="line">		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;</div><div class="line">		include fastcgi_params;</div><div class="line">&#125;</div><div class="line">**/</div></pre></td></tr></table></figure></p>
 <p>这里呢主要是改 fpm 的配置和 nginx 的配置</p>
 <h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//  mkdir /var/www</div><div class="line">sudo chown -R www-data:www-data /var/www</div><div class="line">vim .env</div><div class="line"></div><div class="line">curl -sS https://getcomposer.org/installer | php</div><div class="line">sudo mv composer.phar /usr/local/bin/composer</div><div class="line">composer -V</div><div class="line">composer install</div><div class="line"></div><div class="line">sudo chmod -R 775 storage/</div><div class="line">sudo service nginx reload</div><div class="line">sudo service php7.1-fpm restart</div><div class="line">sudo chown -R www-data:www-data /var/www/hood/</div></pre></td></tr></table></figure>
@@ -673,7 +673,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
@@ -765,6 +765,13 @@ Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pag
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>

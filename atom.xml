@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2017-07-16T15:17:06.508Z</updated>
+  <updated>2017-07-17T02:39:56.657Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://blog.bbchen.top/2017/07/16/Golden-Age-Xiaobo/"/>
     <id>http://blog.bbchen.top/2017/07/16/Golden-Age-Xiaobo/</id>
     <published>2017-07-16T07:22:00.000Z</published>
-    <updated>2017-07-16T15:17:06.508Z</updated>
+    <updated>2017-07-17T02:39:56.657Z</updated>
     
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><p> 每个人活着，都该有自己的故事。</p>
 <p><strong>王小波</strong> </p>
@@ -30,8 +30,7 @@
 <p>我们的生活不因该是我写的这样子，但实际上，它正是我写的这个样子。</p>
 </blockquote>
 <p>我是在 kindle 上看完的这本书，刚开始看的时候，一个想法就是，作者真 open 这都写，看的我都。。。算了这个还是不说了。我看到后来越发觉得这是一种发泄，革命时期的发泄。一些荒唐的事，一些荒唐的人，一个个构成了那个荒唐的时代。在这个荒唐的时代里，王二有属于自己的黄金时代，他有许多自己的故事。</p>
-<hr>
-<blockquote>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><blockquote>
 <p>陈清扬说，那一刻她感到浑身无力，就瘫软下来，挂在我肩上。那一刻她觉得如春藤绕树，小鸟依人。她再也不想理会别的事，而且在那一瞬间把一切都遗忘。在那一瞬间她爱上了我，而且这件事永远不能改变。</p>
 </blockquote>
 <p>当看到陈清扬真的爱上王二的时候，我的内心是羡慕和温暖的。我也会渴望爱情，但我也知道有些东西强求不得，缘，妙不可言。有着这真挚的爱情，再看后面王二与陈清扬遇到的种种，才知道两人心在一起的时候，遇到的那些磨难也都称不上磨难了，这世上一切的坚冰啊，都会被爱化开。</p>
@@ -78,7 +77,11 @@
 &lt;p&gt;&lt;strong&gt;王小波&lt;/strong&gt; &lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;正如小波文末所说，出版这本书比写这本书要困难的多。&lt;/p&gt;
-&lt;b
+&lt;blockquote&gt;
+&lt;p&gt;我们的生活不因该是我写的这样子，但实际上，它正是我写的这个样子。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我是在 kindle 上看完的这本书，刚开始看的时候，一个想法就是，作者真 open 这都写，看的我都。。。算了这个还是不说了。我看到后来越发觉得这是一种发泄，革命时期的发泄。一些荒唐的事，一些荒唐的人，一个个构成了那个荒唐的时代。在这个荒唐的时代里，王二有属于自己的黄金时代，他有许多自己的故事。&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
     
     </summary>
     
@@ -100,13 +103,13 @@
     <link href="http://blog.bbchen.top/2017/07/15/Codeigniter-forum-two/"/>
     <id>http://blog.bbchen.top/2017/07/15/Codeigniter-forum-two/</id>
     <published>2017-07-15T10:09:00.000Z</published>
-    <updated>2017-07-15T10:46:52.493Z</updated>
+    <updated>2017-07-17T02:40:40.648Z</updated>
     
     <content type="html"><![CDATA[<p>今天完成了简易论坛的用户注册登录和权限验证功能，还是收获蛮多的，至少好好用了 session。下面我就简单的写一下怎么构建论坛的注册登录和简单的权限验证(大致用法会了之后，多角色权限也可以试着做一下)。</p>
 <p>项目地址：<br><a href="https://github.com/Robinson28years/CodeIgniter-learning" target="_blank" rel="external">https://github.com/Robinson28years/CodeIgniter-learning</a></p>
 <h2 id="验证用户-登录"><a href="#验证用户-登录" class="headerlink" title="验证用户(登录)"></a>验证用户(登录)</h2><p>首先要创建新的 model controller 还有 view。</p>
 <p>然后写 User_model 里的数据获取逻辑<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">verirf_user</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    $password = <span class="keyword">$this</span>-&gt;input-&gt;post(<span class="string">'password'</span>);</div><div class="line">    $hash = <span class="keyword">$this</span>-&gt;db-&gt;select(<span class="string">'password'</span>)</div><div class="line">                        -&gt;from(<span class="string">'users'</span>)</div><div class="line">                        -&gt;where(<span class="string">'email'</span>, <span class="keyword">$this</span>-&gt;input-&gt;post(<span class="string">'email'</span>))</div><div class="line">                        -&gt;get()</div><div class="line">                        -&gt;row_array();</div><div class="line">     $result = password_verify($password, $hash[<span class="string">'password'</span>]);</div><div class="line">     <span class="keyword">return</span> $result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>然后到 User 的 Controller 里写视图层到模型层的逻辑<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">$this</span>-&gt;form_validation-&gt;set_rules(<span class="string">'email'</span>, <span class="string">'Email'</span>, <span class="string">'required'</span>);</div><div class="line"><span class="keyword">$this</span>-&gt;form_validation-&gt;set_rules(<span class="string">'password'</span>, <span class="string">'Password'</span>, <span class="string">'required'</span>);</div><div class="line"></div><div class="line">$data[<span class="string">'title'</span>] = <span class="string">'登录'</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;form_validation-&gt;run() === <span class="keyword">FALSE</span>) &#123;</div><div class="line">    <span class="keyword">$this</span>-&gt;load-&gt;view(<span class="string">'templates/header'</span>,$data);</div><div class="line">    <span class="keyword">$this</span>-&gt;load-&gt;view(<span class="string">'user/login'</span>,$data);</div><div class="line">    <span class="keyword">$this</span>-&gt;load-&gt;view(<span class="string">'templates/footer'</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;user_model-&gt;verirf_user() === <span class="keyword">FALSE</span>) &#123;</div><div class="line">        <span class="comment">// var_dump($this-&gt;user_model-&gt;verirf_user());</span></div><div class="line">        redirect(<span class="string">'/user/login'</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        $email = <span class="keyword">$this</span>-&gt;input-&gt;post(<span class="string">'email'</span>);</div><div class="line">        $user = <span class="keyword">$this</span>-&gt;user_model-&gt;get_user($email);</div><div class="line">        <span class="comment">// var_dump($user);</span></div><div class="line">        <span class="keyword">$this</span>-&gt;session-&gt;set_userdata($user);</div><div class="line"></div><div class="line">        redirect(<span class="string">'/forum'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后到 User 的 Controller 里写视图层到模型层的逻辑<br><a id="more"></a><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">$this</span>-&gt;form_validation-&gt;set_rules(<span class="string">'email'</span>, <span class="string">'Email'</span>, <span class="string">'required'</span>);</div><div class="line"><span class="keyword">$this</span>-&gt;form_validation-&gt;set_rules(<span class="string">'password'</span>, <span class="string">'Password'</span>, <span class="string">'required'</span>);</div><div class="line"></div><div class="line">$data[<span class="string">'title'</span>] = <span class="string">'登录'</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;form_validation-&gt;run() === <span class="keyword">FALSE</span>) &#123;</div><div class="line">    <span class="keyword">$this</span>-&gt;load-&gt;view(<span class="string">'templates/header'</span>,$data);</div><div class="line">    <span class="keyword">$this</span>-&gt;load-&gt;view(<span class="string">'user/login'</span>,$data);</div><div class="line">    <span class="keyword">$this</span>-&gt;load-&gt;view(<span class="string">'templates/footer'</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;user_model-&gt;verirf_user() === <span class="keyword">FALSE</span>) &#123;</div><div class="line">        <span class="comment">// var_dump($this-&gt;user_model-&gt;verirf_user());</span></div><div class="line">        redirect(<span class="string">'/user/login'</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        $email = <span class="keyword">$this</span>-&gt;input-&gt;post(<span class="string">'email'</span>);</div><div class="line">        $user = <span class="keyword">$this</span>-&gt;user_model-&gt;get_user($email);</div><div class="line">        <span class="comment">// var_dump($user);</span></div><div class="line">        <span class="keyword">$this</span>-&gt;session-&gt;set_userdata($user);</div><div class="line"></div><div class="line">        redirect(<span class="string">'/forum'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>再结合视图层，一个简单的登录就完成了，需要注意的是，登录成功后需要用session储存用户状态，使用户在访问其他页面时也能保持登录状态。</p>
 <p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-2017071518291095.png" alt=""></p>
 <h2 id="注销"><a href="#注销" class="headerlink" title="注销"></a>注销</h2><p>这个蛮好实现的，把 session 销毁掉就行了<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">logout</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">$this</span>-&gt;session-&gt;sess_destroy();</div><div class="line">    redirect(<span class="string">'forum'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -133,7 +136,10 @@
     <summary type="html">
     
       &lt;p&gt;今天完成了简易论坛的用户注册登录和权限验证功能，还是收获蛮多的，至少好好用了 session。下面我就简单的写一下怎么构建论坛的注册登录和简单的权限验证(大致用法会了之后，多角色权限也可以试着做一下)。&lt;/p&gt;
-&lt;p&gt;项目地址：&lt;br&gt;&lt;a href=&quot;https://gi
+&lt;p&gt;项目地址：&lt;br&gt;&lt;a href=&quot;https://github.com/Robinson28years/CodeIgniter-learning&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/Robinson28years/CodeIgniter-learning&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;验证用户-登录&quot;&gt;&lt;a href=&quot;#验证用户-登录&quot; class=&quot;headerlink&quot; title=&quot;验证用户(登录)&quot;&gt;&lt;/a&gt;验证用户(登录)&lt;/h2&gt;&lt;p&gt;首先要创建新的 model controller 还有 view。&lt;/p&gt;
+&lt;p&gt;然后写 User_model 里的数据获取逻辑&lt;br&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;verirf_user&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $password = &lt;span class=&quot;keyword&quot;&gt;$this&lt;/span&gt;-&amp;gt;input-&amp;gt;post(&lt;span class=&quot;string&quot;&gt;&#39;password&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $hash = &lt;span class=&quot;keyword&quot;&gt;$this&lt;/span&gt;-&amp;gt;db-&amp;gt;select(&lt;span class=&quot;string&quot;&gt;&#39;password&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                        -&amp;gt;from(&lt;span class=&quot;string&quot;&gt;&#39;users&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                        -&amp;gt;where(&lt;span class=&quot;string&quot;&gt;&#39;email&#39;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;$this&lt;/span&gt;-&amp;gt;input-&amp;gt;post(&lt;span class=&quot;string&quot;&gt;&#39;email&#39;&lt;/span&gt;))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                        -&amp;gt;get()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                        -&amp;gt;row_array();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     $result = password_verify($password, $hash[&lt;span class=&quot;string&quot;&gt;&#39;password&#39;&lt;/span&gt;]);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; $result;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;然后到 User 的 Controller 里写视图层到模型层的逻辑&lt;br&gt;
     
     </summary>
     
@@ -155,11 +161,12 @@
     <link href="http://blog.bbchen.top/2017/07/14/Codeigniter-forum-one/"/>
     <id>http://blog.bbchen.top/2017/07/14/Codeigniter-forum-one/</id>
     <published>2017-07-14T14:57:00.000Z</published>
-    <updated>2017-07-15T10:45:35.814Z</updated>
+    <updated>2017-07-17T02:40:53.519Z</updated>
     
     <content type="html"><![CDATA[<p>今天继续深入学习 Codeigniter 这个框架，尝试着用它搭一个简易的论坛系统，熟悉一下操作。<br>大致讲一下每个页面的 MVC 构成。</p>
 <p>项目地址：<br><a href="https://github.com/Robinson28years/CodeIgniter-learning" target="_blank" rel="external">https://github.com/Robinson28years/CodeIgniter-learning</a></p>
 <h2 id="查看所有帖子"><a href="#查看所有帖子" class="headerlink" title="查看所有帖子"></a>查看所有帖子</h2><h3 id="模型层"><a href="#模型层" class="headerlink" title="模型层"></a>模型层</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">get_threads</span><span class="params">($id = FALSE)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> ($id === <span class="keyword">FALSE</span>) &#123;</div><div class="line">        $query = <span class="keyword">$this</span>-&gt;db-&gt;get(<span class="string">'threads'</span>);</div><div class="line">        <span class="keyword">return</span> $query-&gt;result_array();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="控制器层"><a href="#控制器层" class="headerlink" title="控制器层"></a>控制器层</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    $data[<span class="string">'threads'</span>] = <span class="keyword">$this</span>-&gt;forum_model-&gt;get_threads();</div><div class="line">    $data[<span class="string">'title'</span>] = <span class="string">'论坛首页'</span>;</div><div class="line"></div><div class="line">    <span class="keyword">$this</span>-&gt;load-&gt;view(<span class="string">'templates/header'</span>, $data);</div><div class="line">    <span class="keyword">$this</span>-&gt;load-&gt;view(<span class="string">'forum/index'</span>,$data);</div><div class="line">    <span class="keyword">$this</span>-&gt;load-&gt;view(<span class="string">'templates/footer'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="视图层"><a href="#视图层" class="headerlink" title="视图层"></a>视图层</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;?php echo site_url('forum/create') ?&gt;"</span> <span class="attr">class</span>=<span class="string">"btn btn-success"</span> <span class="attr">type</span>=<span class="string">"button"</span> &gt;</span>创建帖子<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-8 col-md-offset-2"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel panel-default"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel-heading"</span>&gt;</span><span class="php"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> $title <span class="meta">?&gt;</span></span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel-body"</span>&gt;</span></div><div class="line">                    <span class="php"><span class="meta">&lt;?php</span> <span class="keyword">foreach</span> ($threads <span class="keyword">as</span> $thread): <span class="meta">?&gt;</span></span></div><div class="line">                      <span class="tag">&lt;<span class="name">article</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;?php echo site_url('forum/view/'.$thread['id']);?&gt;"</span>&gt;</span></div><div class="line">                          <span class="tag">&lt;<span class="name">h4</span>&gt;</span><span class="php"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> $thread[<span class="string">'title'</span>]; <span class="meta">?&gt;</span></span><span class="tag">&lt;/<span class="name">h4</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">                          <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"body"</span>&gt;</span><span class="php"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> $thread[<span class="string">'body'</span>]; <span class="meta">?&gt;</span></span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                      <span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line">                      <span class="tag">&lt;<span class="name">hr</span>&gt;</span></div><div class="line">                    <span class="php"><span class="meta">&lt;?php</span> <span class="keyword">endforeach</span>; <span class="meta">?&gt;</span></span></div><div class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170714233829824.png" alt=""></p>
@@ -182,7 +189,8 @@
     <summary type="html">
     
       &lt;p&gt;今天继续深入学习 Codeigniter 这个框架，尝试着用它搭一个简易的论坛系统，熟悉一下操作。&lt;br&gt;大致讲一下每个页面的 MVC 构成。&lt;/p&gt;
-&lt;p&gt;项目地址：&lt;br&gt;&lt;a href=&quot;https://github.com/Robinson28years/CodeI
+&lt;p&gt;项目地址：&lt;br&gt;&lt;a href=&quot;https://github.com/Robinson28years/CodeIgniter-learning&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/Robinson28years/CodeIgniter-learning&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;查看所有帖子&quot;&gt;&lt;a href=&quot;#查看所有帖子&quot; class=&quot;headerlink&quot; title=&quot;查看所有帖子&quot;&gt;&lt;/a&gt;查看所有帖子&lt;/h2&gt;&lt;h3 id=&quot;模型层&quot;&gt;&lt;a href=&quot;#模型层&quot; class=&quot;headerlink&quot; title=&quot;模型层&quot;&gt;&lt;/a&gt;模型层&lt;/h3&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;get_threads&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;($id = FALSE)&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; ($id === &lt;span class=&quot;keyword&quot;&gt;FALSE&lt;/span&gt;) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        $query = &lt;span class=&quot;keyword&quot;&gt;$this&lt;/span&gt;-&amp;gt;db-&amp;gt;get(&lt;span class=&quot;string&quot;&gt;&#39;threads&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; $query-&amp;gt;result_array();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -200,15 +208,15 @@
   </entry>
   
   <entry>
-    <title>Ci的常规主题</title>
+    <title>Codeigniter 的常规主题</title>
     <link href="http://blog.bbchen.top/2017/07/13/Codeigniter-Regular-subject/"/>
     <id>http://blog.bbchen.top/2017/07/13/Codeigniter-Regular-subject/</id>
     <published>2017-07-13T13:29:00.000Z</published>
-    <updated>2017-07-13T13:44:41.520Z</updated>
+    <updated>2017-07-17T02:46:00.513Z</updated>
     
-    <content type="html"><![CDATA[<p>今天把 Codeigniter 手册里常规主题这一章看了。</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170713213250131.png" alt=""></p>
-<p>其中一些实践了一下，像那个路由，它是分三段的，第一段表示控制器名称，第二段表示控制器里的方法，第三段表示参数。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Blog</span> <span class="keyword">extends</span> <span class="title">CI_Controller</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">echo</span> <span class="string">'Hello World!'</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">comments</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">echo</span> <span class="string">'Look at this!'</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+    <content type="html"><![CDATA[<p>今天把 Codeigniter 手册里常规主题这一章看了。<br><a id="more"></a><br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170713213250131.png" alt=""></p>
+<p>其中一些实践了一下，像那个路由，它是分三段的，第一段表示控制器名称，第二段表示控制器里的方法，第三段表示参数。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Blog</span> <span class="keyword">extends</span> <span class="title">CI_Controller</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">echo</span> <span class="string">'Hello World!'</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">comments</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">echo</span> <span class="string">'Look at this!'</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>像这个控制器，访问里面的 <code>comments</code> 方法就要用这样的路由去访问 <code>example.com/index.php/blog/comments/</code><br>这个总觉得耦合的紧了点，太粗暴了一点。</p>
 <p>明天看类库，数据库和辅助函数</p>
 <p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170713213902912.png" alt=""></p>
@@ -219,9 +227,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;今天把 Codeigniter 手册里常规主题这一章看了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170713213250131.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;
+      &lt;p&gt;今天把 Codeigniter 手册里常规主题这一章看了。&lt;br&gt;
     
     </summary>
     
@@ -243,11 +249,10 @@
     <link href="http://blog.bbchen.top/2017/07/12/Codeigniter-MVC/"/>
     <id>http://blog.bbchen.top/2017/07/12/Codeigniter-MVC/</id>
     <published>2017-07-12T12:52:00.000Z</published>
-    <updated>2017-07-12T13:26:50.782Z</updated>
+    <updated>2017-07-17T02:46:35.395Z</updated>
     
     <content type="html"><![CDATA[<p>今天开始尝试写 Codeigniter 的代码了，学着写了一个基础的 MVC 的代码，说实话，写过 Laravel 之后看到其他的框架都觉得不够优雅，看到一些冗余的操作我就会觉得这个应该不是最佳实践吧，可这分明就是官方的教程。可能我领悟的还不够深吧，暂时还没发现优点。( 我偷偷下了一个 Codeigniter 4 尝了下鲜，首页就比 3 美观很多，而且配了贴心的 debug 工具，可人家是 开发板呀，线上还不稳，如果以后真的学下去了可以等一下这个稳定版，应该还不错)。</p>
-<p>Codeigniter 4 👇<br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-2017071221014532.png" alt=""></p>
-<p>4 自带 debug 工具 👇</p>
+<p>Codeigniter 4 👇<br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-2017071221014532.png" alt=""><br><a id="more"></a><br>4 自带 debug 工具 👇</p>
 <p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170712210207579.png" alt=""></p>
 <h2 id="V-层-视图层"><a href="#V-层-视图层" class="headerlink" title="V 层( 视图层 )"></a>V 层( 视图层 )</h2><p>V 层代码<br>这个是查看全部新闻的页面<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;h2&gt;&lt;?php echo $title; ?&gt;&lt;/h2&gt;</div><div class="line"></div><div class="line">&lt;?php foreach ($news as $news_item): ?&gt;</div><div class="line"></div><div class="line">    &lt;h3&gt;&lt;?php echo $news_item['title']; ?&gt;&lt;/h3&gt;</div><div class="line">    &lt;div class="main"&gt;</div><div class="line">        &lt;?php echo $news_item['text']; ?&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;p&gt;&lt;a href="&lt;?php echo site_url('news/'.$news_item['slug']); ?&gt;"&gt;View article&lt;/a&gt;&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;?php endforeach; ?&gt;</div></pre></td></tr></table></figure></p>
 <p>这个是创建一个新闻的页面<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;h2&gt;<span class="meta">&lt;?php</span> <span class="keyword">echo</span> $title; <span class="meta">?&gt;</span>&lt;/h2&gt;</div><div class="line"></div><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> validation_errors(); <span class="meta">?&gt;</span></div><div class="line"></div><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> form_open(<span class="string">'http://localhost:8888/news/create'</span>); <span class="meta">?&gt;</span></div><div class="line"></div><div class="line">&lt;label <span class="keyword">for</span>=<span class="string">"title"</span>&gt;Title&lt;/label&gt;</div><div class="line">&lt;input type=<span class="string">"input"</span> name=<span class="string">"title"</span> /&gt;&lt;br /&gt;</div><div class="line"></div><div class="line">&lt;label <span class="keyword">for</span>=<span class="string">"text"</span>&gt;Text&lt;/label&gt;</div><div class="line">&lt;textarea name=<span class="string">"text"</span>&gt;&lt;/textarea&gt;&lt;br /&gt;</div><div class="line"></div><div class="line">&lt;input type=<span class="string">"submit"</span> name=<span class="string">"submit"</span> value=<span class="string">"Create news item"</span> /&gt;</div><div class="line"></div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure></p>
@@ -262,7 +267,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;今天开始尝试写 Codeigniter 的代码了，学着写了一个基础的 MVC 的代码，说实话，写过 Laravel 之后看到其他的框架都觉得不够优雅，看到一些冗余的操作我就会觉得这个应该不是最佳实践吧，可这分明就是官方的教程。可能我领悟的还不够深吧，暂时还没发现优点。( 我
+      &lt;p&gt;今天开始尝试写 Codeigniter 的代码了，学着写了一个基础的 MVC 的代码，说实话，写过 Laravel 之后看到其他的框架都觉得不够优雅，看到一些冗余的操作我就会觉得这个应该不是最佳实践吧，可这分明就是官方的教程。可能我领悟的还不够深吧，暂时还没发现优点。( 我偷偷下了一个 Codeigniter 4 尝了下鲜，首页就比 3 美观很多，而且配了贴心的 debug 工具，可人家是 开发板呀，线上还不稳，如果以后真的学下去了可以等一下这个稳定版，应该还不错)。&lt;/p&gt;
+&lt;p&gt;Codeigniter 4 👇&lt;br&gt;&lt;img src=&quot;http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-2017071221014532.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;
     
     </summary>
     
@@ -284,11 +290,10 @@
     <link href="http://blog.bbchen.top/2017/07/11/Leaning-Codeigniter/"/>
     <id>http://blog.bbchen.top/2017/07/11/Leaning-Codeigniter/</id>
     <published>2017-07-11T11:16:00.000Z</published>
-    <updated>2017-07-12T12:53:33.306Z</updated>
+    <updated>2017-07-17T02:42:12.478Z</updated>
     
     <content type="html"><![CDATA[<h2 id="为什么不学-Phalcon-了"><a href="#为什么不学-Phalcon-了" class="headerlink" title="为什么不学 Phalcon 了"></a>为什么不学 Phalcon 了</h2><p>😂因为国内社区支持太少了，连稳定维护的中文版都不是最新的(可能是最近刚出新的文档来不及更新)，而且连一个中文社区都没有，这样学起来可能会有些吃力。可能以后其他框架学完会来继续学这个(那个时候资源应该丰富一点了)。</p>
-<h2 id="开始学-Codeigniter"><a href="#开始学-Codeigniter" class="headerlink" title="开始学 Codeigniter"></a>开始学 Codeigniter</h2><p>这个框架据说是很轻量级的，而且文档也很全，各种教程也有，社区也蛮活跃的，我去看拉勾网和 BOSS 直聘 也都是有说最好会 Ci 的。所以就先开始学 Ci 了。<br>可以看出 Laravel, ThinkPHP, Ci 这三个框架还是蛮多公司需要的👇</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170711192406333.png" alt=""></p>
+<h2 id="开始学-Codeigniter"><a href="#开始学-Codeigniter" class="headerlink" title="开始学 Codeigniter"></a>开始学 Codeigniter</h2><p>这个框架据说是很轻量级的，而且文档也很全，各种教程也有，社区也蛮活跃的，我去看拉勾网和 BOSS 直聘 也都是有说最好会 Ci 的。所以就先开始学 Ci 了。<br>可以看出 Laravel, ThinkPHP, Ci 这三个框架还是蛮多公司需要的👇<br><a id="more"></a><br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170711192406333.png" alt=""></p>
 <h2 id="简单安装和使用"><a href="#简单安装和使用" class="headerlink" title="简单安装和使用"></a>简单安装和使用</h2><p>Ci 安装还真是简单😂，连composer都不用，不过我觉得还是支持一下比较好(他们是说这样就不用下载Composer什么的，快速)。</p>
 <p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170711192956490.png" alt=""></p>
 <blockquote>
@@ -319,7 +324,8 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;为什么不学-Phalcon-了&quot;&gt;&lt;a href=&quot;#为什么不学-Phalcon-了&quot; class=&quot;headerlink&quot; title=&quot;为什么不学 Phalcon 了&quot;&gt;&lt;/a&gt;为什么不学 Phalcon 了&lt;/h2&gt;&lt;p&gt;😂因为国内社区支持太少了，连稳定维
+      &lt;h2 id=&quot;为什么不学-Phalcon-了&quot;&gt;&lt;a href=&quot;#为什么不学-Phalcon-了&quot; class=&quot;headerlink&quot; title=&quot;为什么不学 Phalcon 了&quot;&gt;&lt;/a&gt;为什么不学 Phalcon 了&lt;/h2&gt;&lt;p&gt;😂因为国内社区支持太少了，连稳定维护的中文版都不是最新的(可能是最近刚出新的文档来不及更新)，而且连一个中文社区都没有，这样学起来可能会有些吃力。可能以后其他框架学完会来继续学这个(那个时候资源应该丰富一点了)。&lt;/p&gt;
+&lt;h2 id=&quot;开始学-Codeigniter&quot;&gt;&lt;a href=&quot;#开始学-Codeigniter&quot; class=&quot;headerlink&quot; title=&quot;开始学 Codeigniter&quot;&gt;&lt;/a&gt;开始学 Codeigniter&lt;/h2&gt;&lt;p&gt;这个框架据说是很轻量级的，而且文档也很全，各种教程也有，社区也蛮活跃的，我去看拉勾网和 BOSS 直聘 也都是有说最好会 Ci 的。所以就先开始学 Ci 了。&lt;br&gt;可以看出 Laravel, ThinkPHP, Ci 这三个框架还是蛮多公司需要的👇&lt;br&gt;
     
     </summary>
     
@@ -341,12 +347,12 @@
     <link href="http://blog.bbchen.top/2017/07/10/Modern-PHP-END/"/>
     <id>http://blog.bbchen.top/2017/07/10/Modern-PHP-END/</id>
     <published>2017-07-10T11:17:00.000Z</published>
-    <updated>2017-07-10T11:43:33.040Z</updated>
+    <updated>2017-07-17T02:42:34.532Z</updated>
     
     <content type="html"><![CDATA[<h2 id="完结"><a href="#完结" class="headerlink" title="完结"></a>完结</h2><p>嗯，第一本全英文的技术类书籍看完了，这个要纪念一下，虽然看的过程中有很多单词不懂，但代码呢，总是用一种神奇的力量，好的代码，本身就是一种语言，所以也没想象中那么吃力，也大概能懂作者要表达什么。这样的话，我看下一本英文技术书的时候不会很害怕。关于为什么看英文版的，一是中文版有点糊，二是有些新出的连中文版都没。</p>
 <p>所以啊，英语还是很重要的(悔不当初啊)。<br>讲一下这本书吧，我看过这本书的作者写过的另一篇教程，PHP之道( <em>PHP-The-Right-way</em> )，写的还蛮好的，但我看的时候总感觉不是很详细。直到看到了这本书。我觉得这本书是 PHP之道的加强版。讲了更多的内容，而且更加详细了，PHP 之道里更多的是将一些拓展链接给了出来。</p>
 <p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170710193133816.png" alt=""></p>
-<p>这本书的前面几章，我觉得讲的非常好，因为我以前都没涉猎过那些内容，或者说了解的非常少，看过之后至少以后查内容能更精确一点了。</p>
+<p>这本书的前面几章，我觉得讲的非常好，因为我以前都没涉猎过那些内容，或者说了解的非常少，看过之后至少以后查内容能更精确一点了。<br><a id="more"></a></p>
 <h2 id="后面几章"><a href="#后面几章" class="headerlink" title="后面几章"></a>后面几章</h2><p>后面几章的话，可能我实际部署的时候也经常遇到，新鲜感就会少很多，讲测试那章，我也在短学期的时候在 Laracast 上看了一周的教程(讲怎样测试驱动开发的)。所以感觉没前几章强烈了，但也不失为一篇好的文章，特别适合去入门。</p>
 <h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>总之呢，如果你是学 PHP 的，非常推荐你去看一下这本书，确实是非常不错，比网上的教程新而且讲的非常全。</p>
 <h2 id="下一步"><a href="#下一步" class="headerlink" title="下一步"></a>下一步</h2><p>明天呢，要开始学一个新的框架了，暑假打算多学几个，一来是因为以后找工作不知道公司会用哪个框架，再者呢，多看几个框架能让我更好的了解 PHP 的原理，这样以后有再多的框架都能更好的理解和应用了。</p>
@@ -354,7 +360,10 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;完结&quot;&gt;&lt;a href=&quot;#完结&quot; class=&quot;headerlink&quot; title=&quot;完结&quot;&gt;&lt;/a&gt;完结&lt;/h2&gt;&lt;p&gt;嗯，第一本全英文的技术类书籍看完了，这个要纪念一下，虽然看的过程中有很多单词不懂，但代码呢，总是用一种神奇的力量，好的代码，本身就是一种语言
+      &lt;h2 id=&quot;完结&quot;&gt;&lt;a href=&quot;#完结&quot; class=&quot;headerlink&quot; title=&quot;完结&quot;&gt;&lt;/a&gt;完结&lt;/h2&gt;&lt;p&gt;嗯，第一本全英文的技术类书籍看完了，这个要纪念一下，虽然看的过程中有很多单词不懂，但代码呢，总是用一种神奇的力量，好的代码，本身就是一种语言，所以也没想象中那么吃力，也大概能懂作者要表达什么。这样的话，我看下一本英文技术书的时候不会很害怕。关于为什么看英文版的，一是中文版有点糊，二是有些新出的连中文版都没。&lt;/p&gt;
+&lt;p&gt;所以啊，英语还是很重要的(悔不当初啊)。&lt;br&gt;讲一下这本书吧，我看过这本书的作者写过的另一篇教程，PHP之道( &lt;em&gt;PHP-The-Right-way&lt;/em&gt; )，写的还蛮好的，但我看的时候总感觉不是很详细。直到看到了这本书。我觉得这本书是 PHP之道的加强版。讲了更多的内容，而且更加详细了，PHP 之道里更多的是将一些拓展链接给了出来。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170710193133816.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;这本书的前面几章，我觉得讲的非常好，因为我以前都没涉猎过那些内容，或者说了解的非常少，看过之后至少以后查内容能更精确一点了。&lt;br&gt;
     
     </summary>
     
@@ -376,7 +385,7 @@
     <link href="http://blog.bbchen.top/2017/07/10/HHVM-Hack/"/>
     <id>http://blog.bbchen.top/2017/07/10/HHVM-Hack/</id>
     <published>2017-07-10T10:52:00.000Z</published>
-    <updated>2017-07-10T11:16:42.258Z</updated>
+    <updated>2017-07-17T02:46:58.902Z</updated>
     
     <content type="html"><![CDATA[<p>今天看了四章内容(Testing, Profiling, HHVM-Hack, Community),其他都不提了，今天就提一下 HHVM 和 Hack。</p>
 <h2 id="HHVM"><a href="#HHVM" class="headerlink" title="HHVM"></a>HHVM</h2><p>php 是一种解释型语言这我们都知道，在将 php 语言转换成机器码时需要解释引擎，在以前，只有一个引擎，Zend Engine，后来呢，Facebook的扎克伯格在大学的时候开发了个网站，因为 php 开发快，所以他一开始就选了这个语言，后来大家也知道，这网站越来越大，公司在已有大量服务器的基础上，决定不再继续采购服务器了，而是改进这门语言的解释器，所以有了我们看见的 HHVM ( <em>Hip Hop Virtual Machine</em> ),据说是快了好几倍。</p>
@@ -385,6 +394,7 @@
 <p>HHVM is an open-source virtual machine designed for executing programs written in Hack and PHP. HHVM uses a just-in-time (JIT) compilation approach to achieve superior performance while maintaining the development flexibility that PHP provides.</p>
 <p>HHVM supports Hack, PHP 5 and the major features of PHP 7. We are aware of minor incompatibilities, so please open issues when you find them. HHVM also supports many extensions as well.</p>
 </blockquote>
+<a id="more"></a>
 <p>怎么说呢，当我在有高性能的需求的时候可能会去使用他，毕竟现在我使用的 php7.1 也是蛮快的。</p>
 <p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170710190756718.png" alt=""></p>
 <h2 id="Hack"><a href="#Hack" class="headerlink" title="Hack"></a>Hack</h2><p>Facebook 自己为了需求开发的语言(大公司就是不一样啊，都喜欢自己发明语言。)。Hack 语言可以说是和 PHP 是极为相似的，算是一种方言，最大的区别在于 Hack 是有静态类型的，PHP 都是动态的判定你是整型或者字符，而 Hack 是可以规定类型也可以不规定，可以说是更加灵活了。所以总的来说，Hack 语言是比 PHP 强的，但是呢，PHP 是一直在发展的，有社区在推动，生态也很完整，所以不是有特殊需求一般是不会切换到 Hack 的。不过 Hack 也为  PHP 带来的很多灵感，这也是开源项目带来的优势啊，大家相互借鉴，相互提高，希望以后 PHP 也能吸取其他语言的优点，更好的发展。</p>
@@ -400,7 +410,12 @@
     <summary type="html">
     
       &lt;p&gt;今天看了四章内容(Testing, Profiling, HHVM-Hack, Community),其他都不提了，今天就提一下 HHVM 和 Hack。&lt;/p&gt;
-&lt;h2 id=&quot;HHVM&quot;&gt;&lt;a href=&quot;#HHVM&quot; class=&quot;headerlink&quot; title=
+&lt;h2 id=&quot;HHVM&quot;&gt;&lt;a href=&quot;#HHVM&quot; class=&quot;headerlink&quot; title=&quot;HHVM&quot;&gt;&lt;/a&gt;HHVM&lt;/h2&gt;&lt;p&gt;php 是一种解释型语言这我们都知道，在将 php 语言转换成机器码时需要解释引擎，在以前，只有一个引擎，Zend Engine，后来呢，Facebook的扎克伯格在大学的时候开发了个网站，因为 php 开发快，所以他一开始就选了这个语言，后来大家也知道，这网站越来越大，公司在已有大量服务器的基础上，决定不再继续采购服务器了，而是改进这门语言的解释器，所以有了我们看见的 HHVM ( &lt;em&gt;Hip Hop Virtual Machine&lt;/em&gt; ),据说是快了好几倍。&lt;/p&gt;
+&lt;p&gt;官方介绍👇&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;HHVM is an open-source virtual machine designed for executing programs written in Hack and PHP. HHVM uses a just-in-time (JIT) compilation approach to achieve superior performance while maintaining the development flexibility that PHP provides.&lt;/p&gt;
+&lt;p&gt;HHVM supports Hack, PHP 5 and the major features of PHP 7. We are aware of minor incompatibilities, so please open issues when you find them. HHVM also supports many extensions as well.&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -426,11 +441,11 @@
     <link href="http://blog.bbchen.top/2017/07/09/deployment-provisioning/"/>
     <id>http://blog.bbchen.top/2017/07/09/deployment-provisioning/</id>
     <published>2017-07-09T11:10:00.000Z</published>
-    <updated>2017-07-09T11:59:58.151Z</updated>
+    <updated>2017-07-17T02:42:48.609Z</updated>
     
     <content type="html"><![CDATA[<p>虽说今天有看四章内容(Hosting,Provisioning,Tuning,Deployment),😂但好像都是以前看到过的，要说有帮助的，大概就是那个自动部署了，但现在还没尝试过，等我尝试了自动部署，就再写一篇。</p>
 <h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><p>服务器，我一般买 Vultr 和 阿里云 的。阿里云有学生套餐，Vultr 的话可以绑定域名(阿里绑域名要备案比较麻烦),买好服务器，拿到的就是一个纯净的系统。</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>把服务器配置成生产环境。<br>(一般买的都是 ubuntu 14.04 64位)<br>我就把我的祖传脚本贡献出来了<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install -y language-pack-en-base</div><div class="line">locale-gen en_US.UTF-8</div><div class="line"></div><div class="line">sudo apt-get install software-properties-common</div><div class="line">sudo LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php</div><div class="line">sudo apt-get update</div><div class="line"><span class="meta"></span></div><div class="line">$ sudo apt-get --purge remove apache2</div><div class="line"><span class="meta">$</span> sudo apt-get --purge remove apache2.2-common</div><div class="line"><span class="meta">$</span> sudo apt-get autoremove</div><div class="line"></div><div class="line">sudo apt-get -y install php7.1</div><div class="line">sudo apt-get -y install php7.1-mysql</div><div class="line">sudo apt-get -y install php7.1-fpm</div><div class="line"></div><div class="line">apt-get install -y php7.1-curl php7.1-xml php7.1-mcrypt php7.1-json php7.1-gd php7.1-mbstring</div><div class="line"></div><div class="line">apt-get install -y vim htop git zip</div><div class="line"></div><div class="line">sudo apt-get -y install nginx</div><div class="line">sudo apt-get -y install mysql-server-5.6</div></pre></td></tr></table></figure></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>把服务器配置成生产环境。<br>(一般买的都是 ubuntu 14.04 64位)<br>我就把我的祖传脚本贡献出来了<br><a id="more"></a><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install -y language-pack-en-base</div><div class="line">locale-gen en_US.UTF-8</div><div class="line"></div><div class="line">sudo apt-get install software-properties-common</div><div class="line">sudo LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php</div><div class="line">sudo apt-get update</div><div class="line"><span class="meta"></span></div><div class="line">$ sudo apt-get --purge remove apache2</div><div class="line"><span class="meta">$</span> sudo apt-get --purge remove apache2.2-common</div><div class="line"><span class="meta">$</span> sudo apt-get autoremove</div><div class="line"></div><div class="line">sudo apt-get -y install php7.1</div><div class="line">sudo apt-get -y install php7.1-mysql</div><div class="line">sudo apt-get -y install php7.1-fpm</div><div class="line"></div><div class="line">apt-get install -y php7.1-curl php7.1-xml php7.1-mcrypt php7.1-json php7.1-gd php7.1-mbstring</div><div class="line"></div><div class="line">apt-get install -y vim htop git zip</div><div class="line"></div><div class="line">sudo apt-get -y install nginx</div><div class="line">sudo apt-get -y install mysql-server-5.6</div></pre></td></tr></table></figure></p>
 <p>到这为止，该安装的都安装好了，然后就要将一些配置改一下了。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/php/7.1/fpm/php.ini  // 将cgi.fix_pathinfo=1这一行去掉注释，将1改为0</div><div class="line">sudo vim /etc/php/7.1/fpm/pool.d/www.conf // 配置这个 listen = /var/run/php7.1-fpm.sock</div><div class="line">sudo service php7.1-fpm restart</div><div class="line"></div><div class="line">sudo vim /etc/nginx/sites-available/default</div><div class="line">/** nignx配置</div><div class="line">listen 80 default_server;</div><div class="line">listen [::]:80 default_server ipv6only=on;</div><div class="line"></div><div class="line">root /var/www/laravel-ubuntu/public;</div><div class="line">index index.php index.html index.htm;</div><div class="line"><span class="meta"></span></div><div class="line"># Make site accessible from http://localhost/</div><div class="line">server_name localhost;</div><div class="line"></div><div class="line">location / &#123;</div><div class="line"><span class="meta">		#</span> First attempt to serve request as file, then</div><div class="line"><span class="meta">		#</span> as directory, then fall back to displaying a 404.</div><div class="line">		try_files $uri $uri/ /index.php?$query_string;</div><div class="line"><span class="meta">		#</span> Uncomment to enable naxsi on this location</div><div class="line"><span class="meta">		#</span> include /etc/nginx/naxsi.rules</div><div class="line">&#125;</div><div class="line">location ~ \.php$ &#123;</div><div class="line">		try_files $uri /index.php =404;</div><div class="line">		fastcgi_split_path_info ^(.+\.php)(/.+)$;</div><div class="line">		fastcgi_pass unix:/var/run/php7.1-fpm.sock;</div><div class="line">		fastcgi_index index.php;</div><div class="line">		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;</div><div class="line">		include fastcgi_params;</div><div class="line">&#125;</div><div class="line">**/</div></pre></td></tr></table></figure></p>
 <p>这里呢主要是改 fpm 的配置和 nginx 的配置</p>
 <h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//  mkdir /var/www</div><div class="line">sudo chown -R www-data:www-data /var/www</div><div class="line">vim .env</div><div class="line"></div><div class="line">curl -sS https://getcomposer.org/installer | php</div><div class="line">sudo mv composer.phar /usr/local/bin/composer</div><div class="line">composer -V</div><div class="line">composer install</div><div class="line"></div><div class="line">sudo chmod -R 775 storage/</div><div class="line">sudo service nginx reload</div><div class="line">sudo service php7.1-fpm restart</div><div class="line">sudo chown -R www-data:www-data /var/www/hood/</div></pre></td></tr></table></figure>
@@ -442,7 +457,8 @@
     <summary type="html">
     
       &lt;p&gt;虽说今天有看四章内容(Hosting,Provisioning,Tuning,Deployment),😂但好像都是以前看到过的，要说有帮助的，大概就是那个自动部署了，但现在还没尝试过，等我尝试了自动部署，就再写一篇。&lt;/p&gt;
-&lt;h2 id=&quot;服务器&quot;&gt;&lt;a href=&quot;#
+&lt;h2 id=&quot;服务器&quot;&gt;&lt;a href=&quot;#服务器&quot; class=&quot;headerlink&quot; title=&quot;服务器&quot;&gt;&lt;/a&gt;服务器&lt;/h2&gt;&lt;p&gt;服务器，我一般买 Vultr 和 阿里云 的。阿里云有学生套餐，Vultr 的话可以绑定域名(阿里绑域名要备案比较麻烦),买好服务器，拿到的就是一个纯净的系统。&lt;/p&gt;
+&lt;h2 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h2&gt;&lt;p&gt;把服务器配置成生产环境。&lt;br&gt;(一般买的都是 ubuntu 14.04 64位)&lt;br&gt;我就把我的祖传脚本贡献出来了&lt;br&gt;
     
     </summary>
     
@@ -466,7 +482,7 @@
     <link href="http://blog.bbchen.top/2017/07/08/database-stream-exception/"/>
     <id>http://blog.bbchen.top/2017/07/08/database-stream-exception/</id>
     <published>2017-07-08T11:22:00.000Z</published>
-    <updated>2017-07-08T11:48:34.147Z</updated>
+    <updated>2017-07-17T02:42:59.033Z</updated>
     
     <content type="html"><![CDATA[<p>说实话，今天的数据库这章不是很满意，感觉讲的还不是很具体，有时间我还要单独看下数据库。还有两块字符流和异常的处理写的还行，不过异常处理以前有看过一点。</p>
 <h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
@@ -476,6 +492,7 @@
 <li>要进行 SQL 语句的预处理，防止 SQL 注入。这里用预处理防 SQL 注入的原理是 PDO 会先将预处理语句解析成 SQL 模板，然后再接受你的值，这时候如果你的值里有 SQL 语句了也没用了，因为语句已经解析出来了，你已经改不了了，只能填值。</li>
 </ul>
 <h3 id="简单配置"><a href="#简单配置" class="headerlink" title="简单配置"></a>简单配置</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">require</span>(dirname(<span class="keyword">__FILE__</span>).<span class="string">'/../settings.php'</span>);</div><div class="line"><span class="comment">// var_dump('../settings.php');</span></div><div class="line">$pdo = <span class="keyword">new</span> PDO(</div><div class="line">    sprintf(</div><div class="line">        <span class="string">'mysql:host=%s;dbname=%s;port=%s;charset=%s'</span>,</div><div class="line">        $settings[<span class="string">'host'</span>],</div><div class="line">        $settings[<span class="string">'name'</span>],</div><div class="line">        $settings[<span class="string">'port'</span>],</div><div class="line">        $settings[<span class="string">'charset'</span>]</div><div class="line">    ),</div><div class="line">    $settings[<span class="string">'username'</span>],</div><div class="line">    $settings[<span class="string">'password'</span>]</div><div class="line">);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="下面是预处理语句"><a href="#下面是预处理语句" class="headerlink" title="下面是预处理语句"></a>下面是预处理语句</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$sql = <span class="string">'SELECT email FROM users WHERE id = :id'</span>;</div><div class="line">$statement = $pdo-&gt;prepare($sql);<span class="comment">//预处理，解析成 sql 模板</span></div><div class="line"></div><div class="line"><span class="comment">// $userId = filter_input('1', 'id');</span></div><div class="line">$userId = <span class="number">1</span>;</div><div class="line">$statement-&gt;bindValue(<span class="string">':id'</span>, $userId ,PDO::PARAM_INT);<span class="comment">//绑定模板里的值</span></div><div class="line">$statement-&gt;execute();<span class="comment">//执行语句</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="循环输出值"><a href="#循环输出值" class="headerlink" title="循环输出值"></a>循环输出值</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">while</span> (($result = $statement-&gt;fetch(PDO::FETCH_ASSOC)) !== <span class="keyword">false</span>) &#123;</div><div class="line">    <span class="keyword">echo</span> $result[<span class="string">'email'</span>];</div><div class="line">&#125;</div><div class="line">    var_dump($pdo);</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="字符流处理"><a href="#字符流处理" class="headerlink" title="字符流处理"></a>字符流处理</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$handle = fopen(dirname(<span class="keyword">__FILE__</span>).<span class="string">'\text.txt'</span>, <span class="string">'rb'</span>);</div><div class="line"><span class="comment">// var_dump($handle);</span></div><div class="line"><span class="keyword">while</span> (feof($handle) !== <span class="keyword">true</span>) &#123;</div><div class="line">    <span class="keyword">echo</span> fgets($handle);</div><div class="line">&#125;</div><div class="line">fclose($handle);</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
@@ -491,7 +508,13 @@
     <summary type="html">
     
       &lt;p&gt;说实话，今天的数据库这章不是很满意，感觉讲的还不是很具体，有时间我还要单独看下数据库。还有两块字符流和异常的处理写的还行，不过异常处理以前有看过一点。&lt;/p&gt;
-&lt;h2 id=&quot;数据库&quot;&gt;&lt;a href=&quot;#数据库&quot; class=&quot;headerlink&quot; title=&quot;数据库
+&lt;h2 id=&quot;数据库&quot;&gt;&lt;a href=&quot;#数据库&quot; class=&quot;headerlink&quot; title=&quot;数据库&quot;&gt;&lt;/a&gt;数据库&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;这里建议直接使用 PDO 了，而且不要过多的写某些其他数据库特有的特性，这样如果以后从这个数据库变更到其他数据库时可能要改很多代码。&lt;/li&gt;
+&lt;li&gt;还有就是数据库的配置文件单独放一块，不要和核心代码放在一起，要不然上传仓库或者被别人攻击的时候很容易将密码泄漏出去。&lt;/li&gt;
+&lt;li&gt;千万！千万！不要忘了将字符集设置为 UTF-8 ，要不然会出现乱码和很多不兼容问题。&lt;/li&gt;
+&lt;li&gt;要进行 SQL 语句的预处理，防止 SQL 注入。这里用预处理防 SQL 注入的原理是 PDO 会先将预处理语句解析成 SQL 模板，然后再接受你的值，这时候如果你的值里有 SQL 语句了也没用了，因为语句已经解析出来了，你已经改不了了，只能填值。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;简单配置&quot;&gt;&lt;a href=&quot;#简单配置&quot; class=&quot;headerlink&quot; title=&quot;简单配置&quot;&gt;&lt;/a&gt;简单配置&lt;/h3&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;require&lt;/span&gt;(dirname(&lt;span class=&quot;keyword&quot;&gt;__FILE__&lt;/span&gt;).&lt;span class=&quot;string&quot;&gt;&#39;/../settings.php&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// var_dump(&#39;../settings.php&#39;);&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$pdo = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; PDO(&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    sprintf(&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;mysql:host=%s;dbname=%s;port=%s;charset=%s&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        $settings[&lt;span class=&quot;string&quot;&gt;&#39;host&#39;&lt;/span&gt;],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        $settings[&lt;span class=&quot;string&quot;&gt;&#39;name&#39;&lt;/span&gt;],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        $settings[&lt;span class=&quot;string&quot;&gt;&#39;port&#39;&lt;/span&gt;],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        $settings[&lt;span class=&quot;string&quot;&gt;&#39;charset&#39;&lt;/span&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $settings[&lt;span class=&quot;string&quot;&gt;&#39;username&#39;&lt;/span&gt;],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $settings[&lt;span class=&quot;string&quot;&gt;&#39;password&#39;&lt;/span&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -517,7 +540,7 @@
     <link href="http://blog.bbchen.top/2017/07/07/string-date/"/>
     <id>http://blog.bbchen.top/2017/07/07/string-date/</id>
     <published>2017-07-07T12:27:00.000Z</published>
-    <updated>2017-07-07T13:46:50.186Z</updated>
+    <updated>2017-07-17T02:43:14.051Z</updated>
     
     <content type="html"><![CDATA[<p>今天看了三块内容，字符的过滤，密码的 hash，还有就是 PHP 内的日期类。本来今天还打算把数据库这块看掉，但这块实在太重要了，以后面试的时候也肯定会问到，所以明天重点看一下数据库。(😂主要今天下午还去了图书馆，就没有完整的一块时间了)。</p>
 <h2 id="字符的过滤"><a href="#字符的过滤" class="headerlink" title="字符的过滤"></a>字符的过滤</h2><p>字符过滤有三个基本要求：</p>
@@ -528,7 +551,7 @@
 </ol>
 <h3 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h3><p>首先是过滤，这个还蛮重要的，要不然一不小心别人就把sql执行语句或者 html 插入进来了。<br>php 自带有一个 html 过滤函数和 sql 语句过滤函数。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$input = <span class="string">'&lt;p&gt;123234&lt;/p&gt;'</span>;</div><div class="line"><span class="comment">// echo $input;</span></div><div class="line"><span class="keyword">echo</span> htmlentities($input, ENT_QUOTES, <span class="string">'UTF-8'</span>);</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
 <p>使用 htmlentities 这个 php 内置函数之后输出就没有了<code>&lt;p&gt;</code>这些 html 代码了。<br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170707211100848.png" alt=""></p>
-<p>过滤 sql 语句的话，使用 PDO 的前置检查就行(PDO 的话还是很安全的，<code>mysql_query()</code>这种不要用了，php7都废弃了，而且很不安全)</p>
+<p>过滤 sql 语句的话，使用 PDO 的前置检查就行(PDO 的话还是很安全的，<code>mysql_query()</code>这种不要用了，php7都废弃了，而且很不安全)<br><a id="more"></a></p>
 <h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>主要是验证拿到的数据是否符合自己的要求，这个前端限制一个，后端也限制一下比较好。<br>比方说限制邮箱格式<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$email = <span class="string">'john@example.com'</span>;</div><div class="line">$emailSafe = filter_var($email, FILTER_SANITIZE_EMAIL);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
 <p><code>filter_var</code> 函数，在配上 php 内置的<code>FILTER_SANITIZE_EMAIL</code>常量可以做到邮箱的验证。搭配其他的常量，比方说搭配<code>FILTER_SANITIZE_STRING</code>就可以实现其他类型的验证。</p>
 <p>还有一些就是要自己去数据库里查找对应数据来进行验证。</p>
@@ -553,7 +576,15 @@
     <summary type="html">
     
       &lt;p&gt;今天看了三块内容，字符的过滤，密码的 hash，还有就是 PHP 内的日期类。本来今天还打算把数据库这块看掉，但这块实在太重要了，以后面试的时候也肯定会问到，所以明天重点看一下数据库。(😂主要今天下午还去了图书馆，就没有完整的一块时间了)。&lt;/p&gt;
-&lt;h2 id=&quot;字符的
+&lt;h2 id=&quot;字符的过滤&quot;&gt;&lt;a href=&quot;#字符的过滤&quot; class=&quot;headerlink&quot; title=&quot;字符的过滤&quot;&gt;&lt;/a&gt;字符的过滤&lt;/h2&gt;&lt;p&gt;字符过滤有三个基本要求：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;过滤 (Sanitize)&lt;/li&gt;
+&lt;li&gt;验证 (Validate)&lt;/li&gt;
+&lt;li&gt;跳脱 (Escape) (是这样翻译吗？？)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;过滤&quot;&gt;&lt;a href=&quot;#过滤&quot; class=&quot;headerlink&quot; title=&quot;过滤&quot;&gt;&lt;/a&gt;过滤&lt;/h3&gt;&lt;p&gt;首先是过滤，这个还蛮重要的，要不然一不小心别人就把sql执行语句或者 html 插入进来了。&lt;br&gt;php 自带有一个 html 过滤函数和 sql 语句过滤函数。&lt;br&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$input = &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;p&amp;gt;123234&amp;lt;/p&amp;gt;&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// echo $input;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; htmlentities($input, ENT_QUOTES, &lt;span class=&quot;string&quot;&gt;&#39;UTF-8&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;使用 htmlentities 这个 php 内置函数之后输出就没有了&lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;这些 html 代码了。&lt;br&gt;&lt;img src=&quot;http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170707211100848.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;过滤 sql 语句的话，使用 PDO 的前置检查就行(PDO 的话还是很安全的，&lt;code&gt;mysql_query()&lt;/code&gt;这种不要用了，php7都废弃了，而且很不安全)&lt;br&gt;
     
     </summary>
     
@@ -579,11 +610,11 @@
     <link href="http://blog.bbchen.top/2017/07/06/seo/"/>
     <id>http://blog.bbchen.top/2017/07/06/seo/</id>
     <published>2017-07-06T11:16:00.000Z</published>
-    <updated>2017-07-06T11:32:19.310Z</updated>
+    <updated>2017-07-17T02:43:32.716Z</updated>
     
     <content type="html"><![CDATA[<p>昨天费了好大劲投了百度的站长平台，又是 npm 装百度特有的baidusitemap.xml，又是自动推送sitemap，我还手动把sitemap送来送去，就是想他的小蜘蛛早点爬到我的站点来。结果他的小蜘蛛就是没来我这，哼。</p>
 <p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170706192520406.png" alt=""></p>
-<p>放完百度的，我想 Google 的也放一下把，百度是用 CNAME 到他的站点来验证我的所有权，Google 是在我的网站上放个他提供的网页就行。然后我把 sitemap 甩上去就没去管了。</p>
+<p>放完百度的，我想 Google 的也放一下把，百度是用 CNAME 到他的站点来验证我的所有权，Google 是在我的网站上放个他提供的网页就行。然后我把 sitemap 甩上去就没去管了。<br><a id="more"></a></p>
 <p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170706192817253.png" alt=""></p>
 <p>昨天是百度和 Google 都没立刻收录，想想小蜘蛛也不会这么快爬到我这种小站来。今天早上起床又试了一下，哇哇哇，Google 已经把我的站点收录了，又查了一下百度的，，，他还没把我收录，枉我费了这么多时间在你身上😒，希望你明天听话点，来把我的站点爬进去。</p>
 <p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170706193114843.png" alt=""></p>
@@ -593,7 +624,8 @@
     <summary type="html">
     
       &lt;p&gt;昨天费了好大劲投了百度的站长平台，又是 npm 装百度特有的baidusitemap.xml，又是自动推送sitemap，我还手动把sitemap送来送去，就是想他的小蜘蛛早点爬到我的站点来。结果他的小蜘蛛就是没来我这，哼。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://
+&lt;p&gt;&lt;img src=&quot;http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170706192520406.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;放完百度的，我想 Google 的也放一下把，百度是用 CNAME 到他的站点来验证我的所有权，Google 是在我的网站上放个他提供的网页就行。然后我把 sitemap 甩上去就没去管了。&lt;br&gt;
     
     </summary>
     
@@ -615,11 +647,11 @@
     <link href="http://blog.bbchen.top/2017/07/06/components-use-create/"/>
     <id>http://blog.bbchen.top/2017/07/06/components-use-create/</id>
     <published>2017-07-06T10:50:00.000Z</published>
-    <updated>2017-07-06T11:12:01.070Z</updated>
+    <updated>2017-07-17T02:43:25.391Z</updated>
     
     <content type="html"><![CDATA[<p>今天看的是 PHP Components ，算是 PHP 较为核心和关键的一块内容。主要讲述了为什么使用，如何使用，和怎样去发布一个组件。</p>
 <h2 id="如何使用组件"><a href="#如何使用组件" class="headerlink" title="如何使用组件"></a>如何使用组件</h2><p>首先呢，是去 Packagist 这个网站去找合适的包，包一般命名是 vendor/packagist ，记住这个名称，然后就要使用强大的 composer (我一直觉得是composer拯救了php的生态，有一个好的包管理器真的很重要。)<br>安装时，在根目录 使用命令 composer require vendor/packagist 然后composer就会自动去寻找包，安装，此时会在根目录生成composer.json，composer.lock(锁定你使用的版本，防止团队开发是成员使用了更高的或其他版本导致bug)。<br>还会生成vendor目录。因为使用了psr-4 加载标准，所以能够很简单的就使用别人的包。</p>
-<h2 id="如何发布自己的组件"><a href="#如何发布自己的组件" class="headerlink" title="如何发布自己的组件"></a>如何发布自己的组件</h2><p>这个是今天新学到的，以前有想过自己开发几个组件发布一下，今天终于有机会了(虽然发的是测试包)，是一个<a href="https://github.com/Robinson28years/SayHello/tree/v1.0.0" target="_blank" rel="external">简单的SayHello</a><br>感觉发测试包的时候，重要的是comopser.json怎么写(以后当然是你的核心代码啦)<br>下面是我的composer.json<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"name"</span>: <span class="string">"bbchen/sayhello"</span>,</div><div class="line">    <span class="attr">"description"</span>: <span class="string">"this is a test"</span>,</div><div class="line">    <span class="attr">"keywords"</span>: [<span class="string">"hello"</span>, <span class="string">"test"</span>],</div><div class="line">    <span class="attr">"homepage"</span>: <span class="string">"http://example.com"</span>,</div><div class="line">    <span class="attr">"license"</span>: <span class="string">"MIT"</span>,</div><div class="line">    <span class="attr">"authors"</span>: [</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"name"</span>: <span class="string">"Binbin Chen"</span>,</div><div class="line">            <span class="attr">"homepage"</span>: <span class="string">"https://github.com/Robinson28years"</span>,</div><div class="line">            <span class="attr">"role"</span>: <span class="string">"Developer"</span></div><div class="line">        &#125;</div><div class="line">    ],</div><div class="line">    <span class="attr">"support"</span>: &#123;</div><div class="line">        <span class="attr">"email"</span>: <span class="string">"bb.chen@outlook.com"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"require"</span>: &#123;</div><div class="line">        <span class="attr">"php"</span> : <span class="string">"&gt;=5.6.0"</span>,</div><div class="line">        <span class="attr">"guzzlehttp/guzzle"</span>: <span class="string">"^6.1"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"require-dev"</span>: &#123;</div><div class="line">        <span class="attr">"phpunit/phpunit"</span>: <span class="string">"^5.0"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"suggest"</span>: &#123;</div><div class="line">        <span class="attr">"league/csv"</span>: <span class="string">"^8.0"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"autoload"</span>: &#123;</div><div class="line">        <span class="attr">"psr-4"</span>: &#123;</div><div class="line">            <span class="attr">"BbChen\\"</span>: <span class="string">"src/"</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="如何发布自己的组件"><a href="#如何发布自己的组件" class="headerlink" title="如何发布自己的组件"></a>如何发布自己的组件</h2><p>这个是今天新学到的，以前有想过自己开发几个组件发布一下，今天终于有机会了(虽然发的是测试包)，是一个<a href="https://github.com/Robinson28years/SayHello/tree/v1.0.0" target="_blank" rel="external">简单的SayHello</a><br>感觉发测试包的时候，重要的是comopser.json怎么写(以后当然是你的核心代码啦)<br>下面是我的composer.json<br><a id="more"></a><br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"name"</span>: <span class="string">"bbchen/sayhello"</span>,</div><div class="line">    <span class="attr">"description"</span>: <span class="string">"this is a test"</span>,</div><div class="line">    <span class="attr">"keywords"</span>: [<span class="string">"hello"</span>, <span class="string">"test"</span>],</div><div class="line">    <span class="attr">"homepage"</span>: <span class="string">"http://example.com"</span>,</div><div class="line">    <span class="attr">"license"</span>: <span class="string">"MIT"</span>,</div><div class="line">    <span class="attr">"authors"</span>: [</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"name"</span>: <span class="string">"Binbin Chen"</span>,</div><div class="line">            <span class="attr">"homepage"</span>: <span class="string">"https://github.com/Robinson28years"</span>,</div><div class="line">            <span class="attr">"role"</span>: <span class="string">"Developer"</span></div><div class="line">        &#125;</div><div class="line">    ],</div><div class="line">    <span class="attr">"support"</span>: &#123;</div><div class="line">        <span class="attr">"email"</span>: <span class="string">"bb.chen@outlook.com"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"require"</span>: &#123;</div><div class="line">        <span class="attr">"php"</span> : <span class="string">"&gt;=5.6.0"</span>,</div><div class="line">        <span class="attr">"guzzlehttp/guzzle"</span>: <span class="string">"^6.1"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"require-dev"</span>: &#123;</div><div class="line">        <span class="attr">"phpunit/phpunit"</span>: <span class="string">"^5.0"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"suggest"</span>: &#123;</div><div class="line">        <span class="attr">"league/csv"</span>: <span class="string">"^8.0"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"autoload"</span>: &#123;</div><div class="line">        <span class="attr">"psr-4"</span>: &#123;</div><div class="line">            <span class="attr">"BbChen\\"</span>: <span class="string">"src/"</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>然后将我的源码上传到Github，在将仓库地址复制一下，到Packagist官网，点那个submit，再将自己的仓库地址复制进去就发布完成了，是不是很简单，因为国内同步过来要段时间，所以我明天早上再去看有没有更新到国内镜像来。</p>
 <p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170706190728539.png" alt=""></p>
 <p>要注意的几点是，上面的name不能跟其他人重复，还有就是要遵守自动加载的标准，像上面代码就表示命名空间BbChen这个实际指向的是src。大家有不懂的可以底下留言，我可能讲的不是很清楚</p>
@@ -629,7 +661,8 @@
     <summary type="html">
     
       &lt;p&gt;今天看的是 PHP Components ，算是 PHP 较为核心和关键的一块内容。主要讲述了为什么使用，如何使用，和怎样去发布一个组件。&lt;/p&gt;
-&lt;h2 id=&quot;如何使用组件&quot;&gt;&lt;a href=&quot;#如何使用组件&quot; class=&quot;headerlink&quot; title=&quot;如何使
+&lt;h2 id=&quot;如何使用组件&quot;&gt;&lt;a href=&quot;#如何使用组件&quot; class=&quot;headerlink&quot; title=&quot;如何使用组件&quot;&gt;&lt;/a&gt;如何使用组件&lt;/h2&gt;&lt;p&gt;首先呢，是去 Packagist 这个网站去找合适的包，包一般命名是 vendor/packagist ，记住这个名称，然后就要使用强大的 composer (我一直觉得是composer拯救了php的生态，有一个好的包管理器真的很重要。)&lt;br&gt;安装时，在根目录 使用命令 composer require vendor/packagist 然后composer就会自动去寻找包，安装，此时会在根目录生成composer.json，composer.lock(锁定你使用的版本，防止团队开发是成员使用了更高的或其他版本导致bug)。&lt;br&gt;还会生成vendor目录。因为使用了psr-4 加载标准，所以能够很简单的就使用别人的包。&lt;/p&gt;
+&lt;h2 id=&quot;如何发布自己的组件&quot;&gt;&lt;a href=&quot;#如何发布自己的组件&quot; class=&quot;headerlink&quot; title=&quot;如何发布自己的组件&quot;&gt;&lt;/a&gt;如何发布自己的组件&lt;/h2&gt;&lt;p&gt;这个是今天新学到的，以前有想过自己开发几个组件发布一下，今天终于有机会了(虽然发的是测试包)，是一个&lt;a href=&quot;https://github.com/Robinson28years/SayHello/tree/v1.0.0&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;简单的SayHello&lt;/a&gt;&lt;br&gt;感觉发测试包的时候，重要的是comopser.json怎么写(以后当然是你的核心代码啦)&lt;br&gt;下面是我的composer.json&lt;br&gt;
     
     </summary>
     
@@ -653,11 +686,12 @@
     <link href="http://blog.bbchen.top/2017/07/05/OPcache-Standard/"/>
     <id>http://blog.bbchen.top/2017/07/05/OPcache-Standard/</id>
     <published>2017-07-05T10:18:00.000Z</published>
-    <updated>2017-07-05T11:27:00.206Z</updated>
+    <updated>2017-07-17T02:43:40.067Z</updated>
     
     <content type="html"><![CDATA[<p>今天将 PHP 特性剩余的一些小节看完了(Zend OPcache 和 Built-in Server)，然后把第三章 PHP 标准(PSR-1，2，3，4)也看了下。这书比我以前看到的基础详细，现在终于知道一些东西的作用了。</p>
 <h2 id="Zend-OPcache"><a href="#Zend-OPcache" class="headerlink" title="Zend OPcache"></a>Zend OPcache</h2><p>php 是一种解释型语言，我现在才知道当我们访问 php 后端时，我们的代码会通过 Zend Opcodes 转化成机器语言(二进制代码)，然后执行。Java 就是已经编译好了放上去，而 PHP 因为编译非常快，所以不用放二进制包放上去，用 Zend 引擎实时编译即可。但是在一些要高性能需求的环境下就要使用预先编译好的二进制包了。所以，在 PHP 5.5 之后就内置了自动缓存的 OPcache，使用了这个后在开发者模式下，你每次更新 php 代码，他都会自动编译成二进制代码并缓存起来，这时候我们去访问的时候就是直接访问编译好的包了。</p>
 <p>具体的配置的话，实在 php.ini 下<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">opcache.validate_timestamps = 1 // "0" 生产环境下</div><div class="line">opcache.revalidate_freq = 0</div><div class="line">opcache.memory_consumption = 64</div><div class="line">opcache.interned_strings_buffer = 16</div><div class="line">opcache.max_accelerated_files = 4000</div><div class="line">opcache.fast_shutdown = 1</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h2 id="Built-in-HTTP-server"><a href="#Built-in-HTTP-server" class="headerlink" title="Built-in HTTP server"></a>Built-in HTTP server</h2><p>这个还是比较好理解的，php 为我们提供了一个内置的 web 服务器，这样我们不用安装nginx或者apache也能开启web应用。<br><code>php -S localhost:4000</code><br>只要在工程目录下使用这个命令就能在本地的4000端口开启 web 服务了。<br>但是这个只能在开发的时候用，因为这个 web 服务是单线程的同时只能接收一个请求，而且是会一个个处理任务的，所以线上用这个用户体验会很差，但开发的时候用这个真的很方便。</p>
 <h2 id="Standard"><a href="#Standard" class="headerlink" title="Standard"></a>Standard</h2><p>这章介绍了 因为一开始大家都用着自己的代码风格导致很难合作和互相借鉴，所以在一次开会的时候大家就决定成立 PHP-FIG 这个组织不是要强制我们的代码风格，而是建议我们的代码应该写成怎样。<br>书上写了 PSR-1,PSR-2,PSR-3,PSR-4 的具体建议。PSR-0 和 PSR-4都是自动加载标准，PSR-0目前已经废弃掉了用 4 取代了。</p>
 <h3 id="PSR-1：基础编码规范"><a href="#PSR-1：基础编码规范" class="headerlink" title="PSR-1：基础编码规范"></a>PSR-1：基础编码规范</h3><ul>
@@ -699,7 +733,8 @@
     <summary type="html">
     
       &lt;p&gt;今天将 PHP 特性剩余的一些小节看完了(Zend OPcache 和 Built-in Server)，然后把第三章 PHP 标准(PSR-1，2，3，4)也看了下。这书比我以前看到的基础详细，现在终于知道一些东西的作用了。&lt;/p&gt;
-&lt;h2 id=&quot;Zend-OPcach
+&lt;h2 id=&quot;Zend-OPcache&quot;&gt;&lt;a href=&quot;#Zend-OPcache&quot; class=&quot;headerlink&quot; title=&quot;Zend OPcache&quot;&gt;&lt;/a&gt;Zend OPcache&lt;/h2&gt;&lt;p&gt;php 是一种解释型语言，我现在才知道当我们访问 php 后端时，我们的代码会通过 Zend Opcodes 转化成机器语言(二进制代码)，然后执行。Java 就是已经编译好了放上去，而 PHP 因为编译非常快，所以不用放二进制包放上去，用 Zend 引擎实时编译即可。但是在一些要高性能需求的环境下就要使用预先编译好的二进制包了。所以，在 PHP 5.5 之后就内置了自动缓存的 OPcache，使用了这个后在开发者模式下，你每次更新 php 代码，他都会自动编译成二进制代码并缓存起来，这时候我们去访问的时候就是直接访问编译好的包了。&lt;/p&gt;
+&lt;p&gt;具体的配置的话，实在 php.ini 下&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;opcache.validate_timestamps = 1 // &quot;0&quot; 生产环境下&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;opcache.revalidate_freq = 0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;opcache.memory_consumption = 64&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;opcache.interned_strings_buffer = 16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;opcache.max_accelerated_files = 4000&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;opcache.fast_shutdown = 1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
@@ -721,11 +756,11 @@
     <link href="http://blog.bbchen.top/2017/07/04/Generator-Closure/"/>
     <id>http://blog.bbchen.top/2017/07/04/Generator-Closure/</id>
     <published>2017-07-04T10:56:00.000Z</published>
-    <updated>2017-07-04T11:41:20.779Z</updated>
+    <updated>2017-07-17T02:43:49.254Z</updated>
     
     <content type="html"><![CDATA[<p>今天看了两块内容，一个是 Generator 还有一个是 Closures。这里面的话第一个比较简单，应该算是迭代器的变种，第二个闭包就比较麻烦了，以前就不是很懂，所以今天就仔细查了一些资料，争取对闭包能有更深入的了解。</p>
 <h2 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h2><p>首先讲下今天看的 Generator，以前学基础的时候确实没听过这个(看来确实学的太水了😂)，了解了一下，听作者将，这个的优点就是耗资源少。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myGenerator</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">yield</span> <span class="string">'asdfas'</span>;</div><div class="line">    <span class="keyword">yield</span> <span class="string">'1111'</span>;</div><div class="line">    <span class="keyword">yield</span> <span class="string">'cccc'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">foreach</span> (myGenerator()  <span class="keyword">as</span> $yieldedValue) &#123;</div><div class="line">    <span class="keyword">echo</span> $yieldedValue, PHP_EOL;</div><div class="line">&#125;</div><div class="line"><span class="comment">//Result:</span></div><div class="line"><span class="comment">//asdfas</span></div><div class="line"><span class="comment">//1111</span></div><div class="line"><span class="comment">//cccc</span></div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
-<p>上面就是这个 Generator 的用法，它的特性是，一开始不会将 yield 后面的值储存进内存中，只有当调用这个函数的时候，才会像 return 那样一个个取出来。这里就会有一个好处，所以作者提出这样一个问题。</p>
+<p>上面就是这个 Generator 的用法，它的特性是，一开始不会将 yield 后面的值储存进内存中，只有当调用这个函数的时候，才会像 return 那样一个个取出来。这里就会有一个好处，所以作者提出这样一个问题。<br><a id="more"></a></p>
 <blockquote>
 <p>Imagine you need to iterate a 4 GB comma-separated value (CSV) file and your virtual private server (VPS) has only 1 GB ofmemory available to PHP. There’s no way you can pull the entire file into memory.</p>
 </blockquote>
@@ -747,7 +782,8 @@
     <summary type="html">
     
       &lt;p&gt;今天看了两块内容，一个是 Generator 还有一个是 Closures。这里面的话第一个比较简单，应该算是迭代器的变种，第二个闭包就比较麻烦了，以前就不是很懂，所以今天就仔细查了一些资料，争取对闭包能有更深入的了解。&lt;/p&gt;
-&lt;h2 id=&quot;Generator&quot;&gt;&lt;a 
+&lt;h2 id=&quot;Generator&quot;&gt;&lt;a href=&quot;#Generator&quot; class=&quot;headerlink&quot; title=&quot;Generator&quot;&gt;&lt;/a&gt;Generator&lt;/h2&gt;&lt;p&gt;首先讲下今天看的 Generator，以前学基础的时候确实没听过这个(看来确实学的太水了😂)，了解了一下，听作者将，这个的优点就是耗资源少。&lt;br&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;myGenerator&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;asdfas&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;1111&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;cccc&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;foreach&lt;/span&gt; (myGenerator()  &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; $yieldedValue) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; $yieldedValue, PHP_EOL;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//Result:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//asdfas&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//1111&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//cccc&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;上面就是这个 Generator 的用法，它的特性是，一开始不会将 yield 后面的值储存进内存中，只有当调用这个函数的时候，才会像 return 那样一个个取出来。这里就会有一个好处，所以作者提出这样一个问题。&lt;br&gt;
     
     </summary>
     
@@ -769,10 +805,10 @@
     <link href="http://blog.bbchen.top/2017/07/03/Namespaces-Traits/"/>
     <id>http://blog.bbchen.top/2017/07/03/Namespaces-Traits/</id>
     <published>2017-07-03T10:43:00.000Z</published>
-    <updated>2017-07-05T14:27:24.670Z</updated>
+    <updated>2017-07-17T02:43:55.998Z</updated>
     
     <content type="html"><![CDATA[<h2 id="计划第一天"><a href="#计划第一天" class="headerlink" title="计划第一天"></a>计划第一天</h2><p>今天是计划的第一天，主要在看《Moder PHP》，看了三块内容，一个是 Namespace，一个是 Interface，另一个是 Trait。都是 php 的面向对象特性里面比较突出的一些。Namespace 以前在 Laracast 上看过教程所以还算熟悉。Trait 今天是好好了解了一下，以前开发的时候都不常用这东西。今天在实现代码的时候又发现了一个好用的 php 插件在 atom 上，能给我自动补全 Namespace 还能跳转定义的地方。</p>
-<h2 id="Namespace"><a href="#Namespace" class="headerlink" title="Namespace"></a>Namespace</h2><h3 id="为什么要用-Namespace"><a href="#为什么要用-Namespace" class="headerlink" title="为什么要用 Namespace"></a>为什么要用 Namespace</h3><p>就跟Java里的那些包名类似，是为了防止各个不同的类之间发生冲突，一个人的时候还好，自己知道写过哪些类，当团队开发的时候或者引入了其他人的一个扩展包的话，如果没有命名空间就极易发生冲突。所以使用 Namespace 还是很必须的，可以说是php面向对象的基础。</p>
+<h2 id="Namespace"><a href="#Namespace" class="headerlink" title="Namespace"></a>Namespace</h2><h3 id="为什么要用-Namespace"><a href="#为什么要用-Namespace" class="headerlink" title="为什么要用 Namespace"></a>为什么要用 Namespace</h3><p>就跟Java里的那些包名类似，是为了防止各个不同的类之间发生冲突，一个人的时候还好，自己知道写过哪些类，当团队开发的时候或者引入了其他人的一个扩展包的话，如果没有命名空间就极易发生冲突。所以使用 Namespace 还是很必须的，可以说是php面向对象的基础。<br><a id="more"></a></p>
 <h3 id="使用-composer"><a href="#使用-composer" class="headerlink" title="使用 composer"></a>使用 composer</h3><p>如果像平常那样写一些小的测试就不用 composer 了，但这次是要学习现代化的 php 用法，如果不用 composer 就要 <code>require</code> 这样把一个个包联系起来，用了 composer 自动加载之后，只要定义命名空间然后 <code>use</code> 就行。</p>
 <p>下面我们从头开始用composer 自动加载来实现我们的测试。</p>
 <p><strong>1. 首先我们要安装 composer</strong></p>
@@ -800,7 +836,8 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;计划第一天&quot;&gt;&lt;a href=&quot;#计划第一天&quot; class=&quot;headerlink&quot; title=&quot;计划第一天&quot;&gt;&lt;/a&gt;计划第一天&lt;/h2&gt;&lt;p&gt;今天是计划的第一天，主要在看《Moder PHP》，看了三块内容，一个是 Namespace，一个是 Interfa
+      &lt;h2 id=&quot;计划第一天&quot;&gt;&lt;a href=&quot;#计划第一天&quot; class=&quot;headerlink&quot; title=&quot;计划第一天&quot;&gt;&lt;/a&gt;计划第一天&lt;/h2&gt;&lt;p&gt;今天是计划的第一天，主要在看《Moder PHP》，看了三块内容，一个是 Namespace，一个是 Interface，另一个是 Trait。都是 php 的面向对象特性里面比较突出的一些。Namespace 以前在 Laracast 上看过教程所以还算熟悉。Trait 今天是好好了解了一下，以前开发的时候都不常用这东西。今天在实现代码的时候又发现了一个好用的 php 插件在 atom 上，能给我自动补全 Namespace 还能跳转定义的地方。&lt;/p&gt;
+&lt;h2 id=&quot;Namespace&quot;&gt;&lt;a href=&quot;#Namespace&quot; class=&quot;headerlink&quot; title=&quot;Namespace&quot;&gt;&lt;/a&gt;Namespace&lt;/h2&gt;&lt;h3 id=&quot;为什么要用-Namespace&quot;&gt;&lt;a href=&quot;#为什么要用-Namespace&quot; class=&quot;headerlink&quot; title=&quot;为什么要用 Namespace&quot;&gt;&lt;/a&gt;为什么要用 Namespace&lt;/h3&gt;&lt;p&gt;就跟Java里的那些包名类似，是为了防止各个不同的类之间发生冲突，一个人的时候还好，自己知道写过哪些类，当团队开发的时候或者引入了其他人的一个扩展包的话，如果没有命名空间就极易发生冲突。所以使用 Namespace 还是很必须的，可以说是php面向对象的基础。&lt;br&gt;
     
     </summary>
     
@@ -822,19 +859,22 @@
     <link href="http://blog.bbchen.top/2017/07/02/two-books/"/>
     <id>http://blog.bbchen.top/2017/07/02/two-books/</id>
     <published>2017-07-02T10:18:00.000Z</published>
-    <updated>2017-07-02T10:41:30.814Z</updated>
+    <updated>2017-07-17T02:44:02.969Z</updated>
     
     <content type="html"><![CDATA[<h2 id="回到家了"><a href="#回到家了" class="headerlink" title="回到家了"></a>回到家了</h2><p>目前是回到家了，明天就要开始正式暑假了。昨天在缓冲暑假和随便逛逛论坛的时候发现两本非常不错的书，我大致看了下目录和他们的评论，似乎是将php讲的很透彻。不过有一个缺点，这两本书是英文的（😅），还好我的pdf阅读器有带翻译，虽然其中有一本是有中文版的，但是糊了点，还不能标注。所以最后选择英文版，感觉词汇应该不会很多，而且专业词汇我也确实需要去掌握一点。</p>
 <h2 id="暑假计划增加"><a href="#暑假计划增加" class="headerlink" title="暑假计划增加"></a>暑假计划增加</h2><p>所以暑假又多了两个计划，第一本《Modern PHP》应该是明天开始看，看的时候记录一下体会。另一本《Laravel - Up and Running》打算是八月份开始看，这样分开的话我中间还能实践一下。而且七月份还有其他计划要完成。</p>
 <h2 id="两本书"><a href="#两本书" class="headerlink" title="两本书"></a>两本书</h2><h3 id="1-Modern-PHP"><a href="#1-Modern-PHP" class="headerlink" title="1. Modern PHP"></a>1. Modern PHP</h3><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183542335.png" alt=""></p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183655527.png" alt=""></p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183655527.png" alt=""><br><a id="more"></a></p>
 <h3 id="2-Laravel-Up-and-Running"><a href="#2-Laravel-Up-and-Running" class="headerlink" title="2. Laravel - Up and Running"></a>2. Laravel - Up and Running</h3><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183743214.png" alt=""></p>
 <h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>明天( 2017-07-03 )计划正式开始！</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;回到家了&quot;&gt;&lt;a href=&quot;#回到家了&quot; class=&quot;headerlink&quot; title=&quot;回到家了&quot;&gt;&lt;/a&gt;回到家了&lt;/h2&gt;&lt;p&gt;目前是回到家了，明天就要开始正式暑假了。昨天在缓冲暑假和随便逛逛论坛的时候发现两本非常不错的书，我大致看了下目录和他们的评论
+      &lt;h2 id=&quot;回到家了&quot;&gt;&lt;a href=&quot;#回到家了&quot; class=&quot;headerlink&quot; title=&quot;回到家了&quot;&gt;&lt;/a&gt;回到家了&lt;/h2&gt;&lt;p&gt;目前是回到家了，明天就要开始正式暑假了。昨天在缓冲暑假和随便逛逛论坛的时候发现两本非常不错的书，我大致看了下目录和他们的评论，似乎是将php讲的很透彻。不过有一个缺点，这两本书是英文的（😅），还好我的pdf阅读器有带翻译，虽然其中有一本是有中文版的，但是糊了点，还不能标注。所以最后选择英文版，感觉词汇应该不会很多，而且专业词汇我也确实需要去掌握一点。&lt;/p&gt;
+&lt;h2 id=&quot;暑假计划增加&quot;&gt;&lt;a href=&quot;#暑假计划增加&quot; class=&quot;headerlink&quot; title=&quot;暑假计划增加&quot;&gt;&lt;/a&gt;暑假计划增加&lt;/h2&gt;&lt;p&gt;所以暑假又多了两个计划，第一本《Modern PHP》应该是明天开始看，看的时候记录一下体会。另一本《Laravel - Up and Running》打算是八月份开始看，这样分开的话我中间还能实践一下。而且七月份还有其他计划要完成。&lt;/p&gt;
+&lt;h2 id=&quot;两本书&quot;&gt;&lt;a href=&quot;#两本书&quot; class=&quot;headerlink&quot; title=&quot;两本书&quot;&gt;&lt;/a&gt;两本书&lt;/h2&gt;&lt;h3 id=&quot;1-Modern-PHP&quot;&gt;&lt;a href=&quot;#1-Modern-PHP&quot; class=&quot;headerlink&quot; title=&quot;1. Modern PHP&quot;&gt;&lt;/a&gt;1. Modern PHP&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183542335.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183655527.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;
     
     </summary>
     
@@ -856,12 +896,11 @@
     <link href="http://blog.bbchen.top/2017/06/30/summer-plan-1/"/>
     <id>http://blog.bbchen.top/2017/06/30/summer-plan-1/</id>
     <published>2017-06-30T06:48:00.000Z</published>
-    <updated>2017-06-30T07:30:58.005Z</updated>
+    <updated>2017-07-17T02:44:09.141Z</updated>
     
     <content type="html"><![CDATA[<p>六月三十日短学期结束，😄就是今天啦。然后九月十五日来学校报到。我打算七月二号回家，这样算起来我在家有两个多月时间。下学期是大三，课还蛮多的，所以我打算趁这最后一个暑假再多学点东西。室友都留校了，我选择回家是因为家里更安静一点，不知道能不能控制的住自己，有好有坏吧。</p>
 <h2 id="暑期计划–7月"><a href="#暑期计划–7月" class="headerlink" title="暑期计划–7月"></a>暑期计划–7月</h2><p>因为有两个月，所以我也不知道时间长了会发生什么变化，所以先订前一个月的计划吧。</p>
-<h3 id="1-学-Phalcon-框架"><a href="#1-学-Phalcon-框架" class="headerlink" title="1. 学 Phalcon 框架"></a>1. 学 Phalcon 框架</h3><p>据说是跑得最快的 php 框架(好像还有 yaf )，学下这个也有助于我深入的了解一下 php 其他框架的原理，万一以后公司不用 Laravel 呢。</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170630151515290.png" alt=""></p>
+<h3 id="1-学-Phalcon-框架"><a href="#1-学-Phalcon-框架" class="headerlink" title="1. 学 Phalcon 框架"></a>1. 学 Phalcon 框架</h3><p>据说是跑得最快的 php 框架(好像还有 yaf )，学下这个也有助于我深入的了解一下 php 其他框架的原理，万一以后公司不用 Laravel 呢。<br><a id="more"></a><br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170630151515290.png" alt=""></p>
 <h3 id="2-学-Weex-开发-App"><a href="#2-学-Weex-开发-App" class="headerlink" title="2. 学 Weex 开发 App"></a>2. 学 Weex 开发 App</h3><p>作为一个后端工程师(自己加的)，我不能光只开发后端，虽然这学期也看了不少 Vue.js 的知识，也用它开发了不少网页，但也只限于 web 端了。而且我也想学下怎么给移动端开api，还有一些权限控制应该也比较麻烦，所以实践一波，但重新学安卓又感觉略麻烦，正好阿里有Weex这个像ReactNative一样的开发方案，而且里面用到的刚好是 Vue ，这样我就不用重新去学习一门语言了。几天前刚好用weex的构建工具打包出了一个简单的 app ，还蛮方便的，所以暑假打算学下。</p>
 <p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170630152333430.png" alt=""></p>
 <h3 id="3-重构俱乐部官网"><a href="#3-重构俱乐部官网" class="headerlink" title="3. 重构俱乐部官网"></a>3. 重构俱乐部官网</h3><p>因为Laravel5.5 还没出，所以我打算等5.5出了再开始重构俱乐部，打算加点有趣的东西进去，不知道直播教学这个能不能加，不能的话教程播放也得加个。还有实时聊天，兴趣小组等等，到时候想到了再加吧。</p>
@@ -873,6 +912,8 @@
     <summary type="html">
     
       &lt;p&gt;六月三十日短学期结束，😄就是今天啦。然后九月十五日来学校报到。我打算七月二号回家，这样算起来我在家有两个多月时间。下学期是大三，课还蛮多的，所以我打算趁这最后一个暑假再多学点东西。室友都留校了，我选择回家是因为家里更安静一点，不知道能不能控制的住自己，有好有坏吧。&lt;/p&gt;
+&lt;h2 id=&quot;暑期计划–7月&quot;&gt;&lt;a href=&quot;#暑期计划–7月&quot; class=&quot;headerlink&quot; title=&quot;暑期计划–7月&quot;&gt;&lt;/a&gt;暑期计划–7月&lt;/h2&gt;&lt;p&gt;因为有两个月，所以我也不知道时间长了会发生什么变化，所以先订前一个月的计划吧。&lt;/p&gt;
+&lt;h3 id=&quot;1-学-Phalcon-框架&quot;&gt;&lt;a href=&quot;#1-学-Phalcon-框架&quot; class=&quot;headerlink&quot; title=&quot;1. 学 Phalcon 框架&quot;&gt;&lt;/a&gt;1. 学 Phalcon 框架&lt;/h3&gt;&lt;p&gt;据说是跑得最快的 php 框架(好像还有 yaf )，学下这个也有助于我深入的了解一下 php 其他框架的原理，万一以后公司不用 Laravel 呢。&lt;br&gt;
     
     </summary>
     
@@ -892,16 +933,16 @@
     <link href="http://blog.bbchen.top/2017/06/28/my-blog/"/>
     <id>http://blog.bbchen.top/2017/06/28/my-blog/</id>
     <published>2017-06-28T14:18:44.000Z</published>
-    <updated>2017-06-29T01:36:18.649Z</updated>
+    <updated>2017-07-17T02:44:20.179Z</updated>
     
     <content type="html"><![CDATA[<h2 id="第一篇博文"><a href="#第一篇博文" class="headerlink" title="第一篇博文"></a>第一篇博文</h2><p>这里主要记录一下我平时编程的时候遇到的问题和解决方法，因为当我自己遇到一些难题的时候看到一些真挚的博文就感到很开心。所以我也想在这浩瀚的大海中贡献我的一份力量。</p>
-<p>同时呢我也想把我平时看的一些书呀这些感想在这写一下，存一些留念，也希望能遇到一些有志同道合的朋友。</p>
-<p>大家如果有什么疑问或者建议都可以写在评论里。</p>
+<p>同时呢我也想把我平时看的一些书呀这些感想在这写一下，存一些留念，也希望能遇到一些有志同道合的朋友。<br><a id="more"></a><br>大家如果有什么疑问或者建议都可以写在评论里。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;第一篇博文&quot;&gt;&lt;a href=&quot;#第一篇博文&quot; class=&quot;headerlink&quot; title=&quot;第一篇博文&quot;&gt;&lt;/a&gt;第一篇博文&lt;/h2&gt;&lt;p&gt;这里主要记录一下我平时编程的时候遇到的问题和解决方法，因为当我自己遇到一些难题的时候看到一些真挚的博文就感到很开心。
+      &lt;h2 id=&quot;第一篇博文&quot;&gt;&lt;a href=&quot;#第一篇博文&quot; class=&quot;headerlink&quot; title=&quot;第一篇博文&quot;&gt;&lt;/a&gt;第一篇博文&lt;/h2&gt;&lt;p&gt;这里主要记录一下我平时编程的时候遇到的问题和解决方法，因为当我自己遇到一些难题的时候看到一些真挚的博文就感到很开心。所以我也想在这浩瀚的大海中贡献我的一份力量。&lt;/p&gt;
+&lt;p&gt;同时呢我也想把我平时看的一些书呀这些感想在这写一下，存一些留念，也希望能遇到一些有志同道合的朋友。&lt;br&gt;
     
     </summary>
     

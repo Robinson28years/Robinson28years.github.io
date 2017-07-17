@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -104,7 +104,7 @@
 <meta property="og:description" content="今天开始尝试写 Codeigniter 的代码了，学着写了一个基础的 MVC 的代码，说实话，写过 Laravel 之后看到其他的框架都觉得不够优雅，看到一些冗余的操作我就会觉得这个应该不是最佳实践吧，可这分明就是官方的教程。可能我领悟的还不够深吧，暂时还没发现优点。( 我偷偷下了一个 Codeigniter 4 尝了下鲜，首页就比 3 美观很多，而且配了贴心的 debug 工具，可人家是 开发板">
 <meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-2017071221014532.png">
 <meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170712210207579.png">
-<meta property="og:updated_time" content="2017-07-12T13:26:50.782Z">
+<meta property="og:updated_time" content="2017-07-17T02:46:35.395Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MVC模式运用">
 <meta name="twitter:description" content="今天开始尝试写 Codeigniter 的代码了，学着写了一个基础的 MVC 的代码，说实话，写过 Laravel 之后看到其他的框架都觉得不够优雅，看到一些冗余的操作我就会觉得这个应该不是最佳实践吧，可这分明就是官方的教程。可能我领悟的还不够深吧，暂时还没发现优点。( 我偷偷下了一个 Codeigniter 4 尝了下鲜，首页就比 3 美观很多，而且配了贴心的 debug 工具，可人家是 开发板">
@@ -116,7 +116,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -388,8 +388,7 @@
 
       
         <p>今天开始尝试写 Codeigniter 的代码了，学着写了一个基础的 MVC 的代码，说实话，写过 Laravel 之后看到其他的框架都觉得不够优雅，看到一些冗余的操作我就会觉得这个应该不是最佳实践吧，可这分明就是官方的教程。可能我领悟的还不够深吧，暂时还没发现优点。( 我偷偷下了一个 Codeigniter 4 尝了下鲜，首页就比 3 美观很多，而且配了贴心的 debug 工具，可人家是 开发板呀，线上还不稳，如果以后真的学下去了可以等一下这个稳定版，应该还不错)。</p>
-<p>Codeigniter 4 👇<br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-2017071221014532.png" alt=""></p>
-<p>4 自带 debug 工具 👇</p>
+<p>Codeigniter 4 👇<br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-2017071221014532.png" alt=""><br><a id="more"></a><br>4 自带 debug 工具 👇</p>
 <p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170712210207579.png" alt=""></p>
 <h2 id="V-层-视图层"><a href="#V-层-视图层" class="headerlink" title="V 层( 视图层 )"></a>V 层( 视图层 )</h2><p>V 层代码<br>这个是查看全部新闻的页面<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;h2&gt;&lt;?php echo $title; ?&gt;&lt;/h2&gt;</div><div class="line"></div><div class="line">&lt;?php foreach ($news as $news_item): ?&gt;</div><div class="line"></div><div class="line">    &lt;h3&gt;&lt;?php echo $news_item['title']; ?&gt;&lt;/h3&gt;</div><div class="line">    &lt;div class="main"&gt;</div><div class="line">        &lt;?php echo $news_item['text']; ?&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;p&gt;&lt;a href="&lt;?php echo site_url('news/'.$news_item['slug']); ?&gt;"&gt;View article&lt;/a&gt;&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;?php endforeach; ?&gt;</div></pre></td></tr></table></figure></p>
 <p>这个是创建一个新闻的页面<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;h2&gt;<span class="meta">&lt;?php</span> <span class="keyword">echo</span> $title; <span class="meta">?&gt;</span>&lt;/h2&gt;</div><div class="line"></div><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> validation_errors(); <span class="meta">?&gt;</span></div><div class="line"></div><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> form_open(<span class="string">'http://localhost:8888/news/create'</span>); <span class="meta">?&gt;</span></div><div class="line"></div><div class="line">&lt;label <span class="keyword">for</span>=<span class="string">"title"</span>&gt;Title&lt;/label&gt;</div><div class="line">&lt;input type=<span class="string">"input"</span> name=<span class="string">"title"</span> /&gt;&lt;br /&gt;</div><div class="line"></div><div class="line">&lt;label <span class="keyword">for</span>=<span class="string">"text"</span>&gt;Text&lt;/label&gt;</div><div class="line">&lt;textarea name=<span class="string">"text"</span>&gt;&lt;/textarea&gt;&lt;br /&gt;</div><div class="line"></div><div class="line">&lt;input type=<span class="string">"submit"</span> name=<span class="string">"submit"</span> value=<span class="string">"Create news item"</span> /&gt;</div><div class="line"></div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure></p>
@@ -458,8 +457,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/13/Codeigniter-Regular-subject/" rel="prev" title="Ci的常规主题">
-                Ci的常规主题 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/13/Codeigniter-Regular-subject/" rel="prev" title="Codeigniter 的常规主题">
+                Codeigniter 的常规主题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -678,7 +677,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
@@ -770,6 +769,13 @@ Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pag
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>

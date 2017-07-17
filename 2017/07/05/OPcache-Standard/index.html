@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -102,7 +102,7 @@
 <meta property="og:url" content="http://blog.bbchen.top/2017/07/05/OPcache-Standard/index.html">
 <meta property="og:site_name" content="漂游记">
 <meta property="og:description" content="今天将 PHP 特性剩余的一些小节看完了(Zend OPcache 和 Built-in Server)，然后把第三章 PHP 标准(PSR-1，2，3，4)也看了下。这书比我以前看到的基础详细，现在终于知道一些东西的作用了。 Zend OPcachephp 是一种解释型语言，我现在才知道当我们访问 php 后端时，我们的代码会通过 Zend Opcodes 转化成机器语言(二进制代码)，然后执行">
-<meta property="og:updated_time" content="2017-07-05T11:27:00.206Z">
+<meta property="og:updated_time" content="2017-07-17T02:43:40.067Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Zend OPcache 和 PHP 标准">
 <meta name="twitter:description" content="今天将 PHP 特性剩余的一些小节看完了(Zend OPcache 和 Built-in Server)，然后把第三章 PHP 标准(PSR-1，2，3，4)也看了下。这书比我以前看到的基础详细，现在终于知道一些东西的作用了。 Zend OPcachephp 是一种解释型语言，我现在才知道当我们访问 php 后端时，我们的代码会通过 Zend Opcodes 转化成机器语言(二进制代码)，然后执行">
@@ -113,7 +113,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -387,6 +387,7 @@
         <p>今天将 PHP 特性剩余的一些小节看完了(Zend OPcache 和 Built-in Server)，然后把第三章 PHP 标准(PSR-1，2，3，4)也看了下。这书比我以前看到的基础详细，现在终于知道一些东西的作用了。</p>
 <h2 id="Zend-OPcache"><a href="#Zend-OPcache" class="headerlink" title="Zend OPcache"></a>Zend OPcache</h2><p>php 是一种解释型语言，我现在才知道当我们访问 php 后端时，我们的代码会通过 Zend Opcodes 转化成机器语言(二进制代码)，然后执行。Java 就是已经编译好了放上去，而 PHP 因为编译非常快，所以不用放二进制包放上去，用 Zend 引擎实时编译即可。但是在一些要高性能需求的环境下就要使用预先编译好的二进制包了。所以，在 PHP 5.5 之后就内置了自动缓存的 OPcache，使用了这个后在开发者模式下，你每次更新 php 代码，他都会自动编译成二进制代码并缓存起来，这时候我们去访问的时候就是直接访问编译好的包了。</p>
 <p>具体的配置的话，实在 php.ini 下<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">opcache.validate_timestamps = 1 // "0" 生产环境下</div><div class="line">opcache.revalidate_freq = 0</div><div class="line">opcache.memory_consumption = 64</div><div class="line">opcache.interned_strings_buffer = 16</div><div class="line">opcache.max_accelerated_files = 4000</div><div class="line">opcache.fast_shutdown = 1</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h2 id="Built-in-HTTP-server"><a href="#Built-in-HTTP-server" class="headerlink" title="Built-in HTTP server"></a>Built-in HTTP server</h2><p>这个还是比较好理解的，php 为我们提供了一个内置的 web 服务器，这样我们不用安装nginx或者apache也能开启web应用。<br><code>php -S localhost:4000</code><br>只要在工程目录下使用这个命令就能在本地的4000端口开启 web 服务了。<br>但是这个只能在开发的时候用，因为这个 web 服务是单线程的同时只能接收一个请求，而且是会一个个处理任务的，所以线上用这个用户体验会很差，但开发的时候用这个真的很方便。</p>
 <h2 id="Standard"><a href="#Standard" class="headerlink" title="Standard"></a>Standard</h2><p>这章介绍了 因为一开始大家都用着自己的代码风格导致很难合作和互相借鉴，所以在一次开会的时候大家就决定成立 PHP-FIG 这个组织不是要强制我们的代码风格，而是建议我们的代码应该写成怎样。<br>书上写了 PSR-1,PSR-2,PSR-3,PSR-4 的具体建议。PSR-0 和 PSR-4都是自动加载标准，PSR-0目前已经废弃掉了用 4 取代了。</p>
 <h3 id="PSR-1：基础编码规范"><a href="#PSR-1：基础编码规范" class="headerlink" title="PSR-1：基础编码规范"></a>PSR-1：基础编码规范</h3><ul>
@@ -701,7 +702,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
@@ -793,6 +794,13 @@ Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pag
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>

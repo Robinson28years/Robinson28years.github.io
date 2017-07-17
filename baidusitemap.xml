@@ -3,191 +3,10 @@
 
 
     
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/16/Golden-Age-Xiaobo/</loc>
-    <lastmod>2017-07-16T15:17:06.508Z</lastmod>
-    <data>
-        <display>
-        <title>《黄金时代》--王小波</title>
-        <pubTime>2017-07-16T07:22:00.000Z</pubTime>
-        
-        <tag>暑期</tag>
-         
-        <tag>读书</tag>
-         
-        <tag>王小波</tag>
-         
-        <tag>黄金时代</tag>
-         
-         
-           
-             
-              <breadCrumb title="阅读" url="http://blog.bbchen.top/categories/%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/15/Codeigniter-forum-two/</loc>
-    <lastmod>2017-07-15T10:46:52.493Z</lastmod>
-    <data>
-        <display>
-        <title>使用 Codeigniter 搭建简易论坛系统 (二)</title>
-        <pubTime>2017-07-15T10:09:00.000Z</pubTime>
-        
-        <tag>编程</tag>
-         
-        <tag>暑期</tag>
-         
-        <tag>php</tag>
-         
-        <tag>Codeigniter</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/14/Codeigniter-forum-one/</loc>
-    <lastmod>2017-07-15T10:45:35.814Z</lastmod>
-    <data>
-        <display>
-        <title>使用 Codeigniter 搭建简易论坛系统 (一)</title>
-        <pubTime>2017-07-14T14:57:00.000Z</pubTime>
-        
-        <tag>编程</tag>
-         
-        <tag>暑期</tag>
-         
-        <tag>php</tag>
-         
-        <tag>Codeigniter</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/13/Codeigniter-Regular-subject/</loc>
-    <lastmod>2017-07-13T13:44:41.520Z</lastmod>
-    <data>
-        <display>
-        <title>Ci的常规主题</title>
-        <pubTime>2017-07-13T13:29:00.000Z</pubTime>
-        
-        <tag>编程</tag>
-         
-        <tag>暑期</tag>
-         
-        <tag>php</tag>
-         
-        <tag>Codeigniter</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/12/Codeigniter-MVC/</loc>
-    <lastmod>2017-07-12T13:26:50.782Z</lastmod>
-    <data>
-        <display>
-        <title>MVC模式运用</title>
-        <pubTime>2017-07-12T12:52:00.000Z</pubTime>
-        
-        <tag>编程</tag>
-         
-        <tag>暑期</tag>
-         
-        <tag>php</tag>
-         
-        <tag>Codeigniter</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/11/Leaning-Codeigniter/</loc>
-    <lastmod>2017-07-12T12:53:33.306Z</lastmod>
-    <data>
-        <display>
-        <title>开始学CodeIgniter框架</title>
-        <pubTime>2017-07-11T11:16:00.000Z</pubTime>
-        
-        <tag>编程</tag>
-         
-        <tag>暑期</tag>
-         
-        <tag>php</tag>
-         
-        <tag>Codeigniter</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/10/Modern-PHP-END/</loc>
-    <lastmod>2017-07-10T11:43:33.040Z</lastmod>
-    <data>
-        <display>
-        <title>《Modern-PHP》结束</title>
-        <pubTime>2017-07-10T11:17:00.000Z</pubTime>
-        
-        <tag>编程</tag>
-         
-        <tag>暑期</tag>
-         
-        <tag>php</tag>
-         
-        <tag>Modern PHP</tag>
-         
-         
-           
-             
-              <breadCrumb title="日常" url="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://blog.bbchen.top/2017/07/10/HHVM-Hack/</loc>
-    <lastmod>2017-07-10T11:16:42.258Z</lastmod>
+    <lastmod>2017-07-17T02:46:58.902Z</lastmod>
     <data>
         <display>
         <title>HHVM和Hack</title>
@@ -216,12 +35,12 @@
 
     
   <url>
-    <loc>http://blog.bbchen.top/2017/07/09/deployment-provisioning/</loc>
-    <lastmod>2017-07-09T11:59:58.151Z</lastmod>
+    <loc>http://blog.bbchen.top/2017/07/12/Codeigniter-MVC/</loc>
+    <lastmod>2017-07-17T02:46:35.395Z</lastmod>
     <data>
         <display>
-        <title>服务器部署和配置</title>
-        <pubTime>2017-07-09T11:10:00.000Z</pubTime>
+        <title>MVC模式运用</title>
+        <pubTime>2017-07-12T12:52:00.000Z</pubTime>
         
         <tag>编程</tag>
          
@@ -229,9 +48,7 @@
          
         <tag>php</tag>
          
-        <tag>Modern PHP</tag>
-         
-        <tag>部署</tag>
+        <tag>Codeigniter</tag>
          
          
            
@@ -244,12 +61,110 @@
 
     
   <url>
-    <loc>http://blog.bbchen.top/2017/07/08/database-stream-exception/</loc>
-    <lastmod>2017-07-08T11:48:34.147Z</lastmod>
+    <loc>http://blog.bbchen.top/2017/07/13/Codeigniter-Regular-subject/</loc>
+    <lastmod>2017-07-17T02:46:00.513Z</lastmod>
     <data>
         <display>
-        <title>数据库，字符流和异常处理</title>
-        <pubTime>2017-07-08T11:22:00.000Z</pubTime>
+        <title>Codeigniter 的常规主题</title>
+        <pubTime>2017-07-13T13:29:00.000Z</pubTime>
+        
+        <tag>编程</tag>
+         
+        <tag>暑期</tag>
+         
+        <tag>php</tag>
+         
+        <tag>Codeigniter</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2017/06/28/my-blog/</loc>
+    <lastmod>2017-07-17T02:44:20.179Z</lastmod>
+    <data>
+        <display>
+        <title>这是我的小岛，欢迎上岛</title>
+        <pubTime>2017-06-28T14:18:44.000Z</pubTime>
+        
+        <tag>心情</tag>
+         
+        <tag>第一篇</tag>
+         
+         
+           
+             
+              <breadCrumb title="日常" url="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2017/06/30/summer-plan-1/</loc>
+    <lastmod>2017-07-17T02:44:09.141Z</lastmod>
+    <data>
+        <display>
+        <title>暑期计划-1</title>
+        <pubTime>2017-06-30T06:48:00.000Z</pubTime>
+        
+        <tag>计划</tag>
+         
+        <tag>编程</tag>
+         
+        <tag>暑期</tag>
+         
+         
+           
+             
+              <breadCrumb title="日常" url="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/02/two-books/</loc>
+    <lastmod>2017-07-17T02:44:02.969Z</lastmod>
+    <data>
+        <display>
+        <title>两本书</title>
+        <pubTime>2017-07-02T10:18:00.000Z</pubTime>
+        
+        <tag>计划</tag>
+         
+        <tag>编程</tag>
+         
+        <tag>暑期</tag>
+         
+        <tag>书</tag>
+         
+         
+           
+             
+              <breadCrumb title="日常" url="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/03/Namespaces-Traits/</loc>
+    <lastmod>2017-07-17T02:43:55.998Z</lastmod>
+    <data>
+        <display>
+        <title>Namespaces-Interface-Traits</title>
+        <pubTime>2017-07-03T10:43:00.000Z</pubTime>
         
         <tag>编程</tag>
          
@@ -259,9 +174,111 @@
          
         <tag>Modern PHP</tag>
          
-        <tag>数据库</tag>
          
-        <tag>异常处理</tag>
+           
+             
+              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/04/Generator-Closure/</loc>
+    <lastmod>2017-07-17T02:43:49.254Z</lastmod>
+    <data>
+        <display>
+        <title>Generator和Closure</title>
+        <pubTime>2017-07-04T10:56:00.000Z</pubTime>
+        
+        <tag>编程</tag>
+         
+        <tag>暑期</tag>
+         
+        <tag>php</tag>
+         
+        <tag>Modern PHP</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/05/OPcache-Standard/</loc>
+    <lastmod>2017-07-17T02:43:40.067Z</lastmod>
+    <data>
+        <display>
+        <title>Zend OPcache 和 PHP 标准</title>
+        <pubTime>2017-07-05T10:18:00.000Z</pubTime>
+        
+        <tag>编程</tag>
+         
+        <tag>暑期</tag>
+         
+        <tag>php</tag>
+         
+        <tag>Modern PHP</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/06/seo/</loc>
+    <lastmod>2017-07-17T02:43:32.716Z</lastmod>
+    <data>
+        <display>
+        <title>哈哈哈，我的小岛终于被Google收录了</title>
+        <pubTime>2017-07-06T11:16:00.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>SEO</tag>
+         
+        <tag>站点</tag>
+         
+        <tag>收录</tag>
+         
+         
+           
+             
+              <breadCrumb title="日常" url="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/06/components-use-create/</loc>
+    <lastmod>2017-07-17T02:43:25.391Z</lastmod>
+    <data>
+        <display>
+        <title>PHP 组件的使用和发布</title>
+        <pubTime>2017-07-06T10:50:00.000Z</pubTime>
+        
+        <tag>编程</tag>
+         
+        <tag>暑期</tag>
+         
+        <tag>php</tag>
+         
+        <tag>Modern PHP</tag>
+         
+        <tag>组件</tag>
          
          
            
@@ -275,7 +292,7 @@
     
   <url>
     <loc>http://blog.bbchen.top/2017/07/07/string-date/</loc>
-    <lastmod>2017-07-07T13:46:50.186Z</lastmod>
+    <lastmod>2017-07-17T02:43:14.051Z</lastmod>
     <data>
         <display>
         <title>PHP 字符过滤和日期类</title>
@@ -304,38 +321,12 @@
 
     
   <url>
-    <loc>http://blog.bbchen.top/2017/07/06/seo/</loc>
-    <lastmod>2017-07-06T11:32:19.310Z</lastmod>
+    <loc>http://blog.bbchen.top/2017/07/08/database-stream-exception/</loc>
+    <lastmod>2017-07-17T02:42:59.033Z</lastmod>
     <data>
         <display>
-        <title>哈哈哈，我的小岛终于被Google收录了</title>
-        <pubTime>2017-07-06T11:16:00.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>SEO</tag>
-         
-        <tag>站点</tag>
-         
-        <tag>收录</tag>
-         
-         
-           
-             
-              <breadCrumb title="日常" url="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/06/components-use-create/</loc>
-    <lastmod>2017-07-06T11:12:01.070Z</lastmod>
-    <data>
-        <display>
-        <title>PHP 组件的使用和发布</title>
-        <pubTime>2017-07-06T10:50:00.000Z</pubTime>
+        <title>数据库，字符流和异常处理</title>
+        <pubTime>2017-07-08T11:22:00.000Z</pubTime>
         
         <tag>编程</tag>
          
@@ -345,34 +336,9 @@
          
         <tag>Modern PHP</tag>
          
-        <tag>组件</tag>
+        <tag>数据库</tag>
          
-         
-           
-             
-              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/03/Namespaces-Traits/</loc>
-    <lastmod>2017-07-05T14:27:24.670Z</lastmod>
-    <data>
-        <display>
-        <title>Namespaces-Interface-Traits</title>
-        <pubTime>2017-07-03T10:43:00.000Z</pubTime>
-        
-        <tag>编程</tag>
-         
-        <tag>暑期</tag>
-         
-        <tag>php</tag>
-         
-        <tag>Modern PHP</tag>
+        <tag>异常处理</tag>
          
          
            
@@ -385,12 +351,12 @@
 
     
   <url>
-    <loc>http://blog.bbchen.top/2017/07/05/OPcache-Standard/</loc>
-    <lastmod>2017-07-05T11:27:00.206Z</lastmod>
+    <loc>http://blog.bbchen.top/2017/07/09/deployment-provisioning/</loc>
+    <lastmod>2017-07-17T02:42:48.609Z</lastmod>
     <data>
         <display>
-        <title>Zend OPcache 和 PHP 标准</title>
-        <pubTime>2017-07-05T10:18:00.000Z</pubTime>
+        <title>服务器部署和配置</title>
+        <pubTime>2017-07-09T11:10:00.000Z</pubTime>
         
         <tag>编程</tag>
          
@@ -399,6 +365,8 @@
         <tag>php</tag>
          
         <tag>Modern PHP</tag>
+         
+        <tag>部署</tag>
          
          
            
@@ -411,12 +379,12 @@
 
     
   <url>
-    <loc>http://blog.bbchen.top/2017/07/04/Generator-Closure/</loc>
-    <lastmod>2017-07-04T11:41:20.779Z</lastmod>
+    <loc>http://blog.bbchen.top/2017/07/10/Modern-PHP-END/</loc>
+    <lastmod>2017-07-17T02:42:34.532Z</lastmod>
     <data>
         <display>
-        <title>Generator和Closure</title>
-        <pubTime>2017-07-04T10:56:00.000Z</pubTime>
+        <title>《Modern-PHP》结束</title>
+        <pubTime>2017-07-10T11:17:00.000Z</pubTime>
         
         <tag>编程</tag>
          
@@ -429,6 +397,32 @@
          
            
              
+              <breadCrumb title="日常" url="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/11/Leaning-Codeigniter/</loc>
+    <lastmod>2017-07-17T02:42:12.478Z</lastmod>
+    <data>
+        <display>
+        <title>开始学CodeIgniter框架</title>
+        <pubTime>2017-07-11T11:16:00.000Z</pubTime>
+        
+        <tag>编程</tag>
+         
+        <tag>暑期</tag>
+         
+        <tag>php</tag>
+         
+        <tag>Codeigniter</tag>
+         
+         
+           
+             
               <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
           
         </display>
@@ -437,25 +431,25 @@
 
     
   <url>
-    <loc>http://blog.bbchen.top/2017/07/02/two-books/</loc>
-    <lastmod>2017-07-02T10:41:30.814Z</lastmod>
+    <loc>http://blog.bbchen.top/2017/07/14/Codeigniter-forum-one/</loc>
+    <lastmod>2017-07-17T02:40:53.519Z</lastmod>
     <data>
         <display>
-        <title>两本书</title>
-        <pubTime>2017-07-02T10:18:00.000Z</pubTime>
+        <title>使用 Codeigniter 搭建简易论坛系统 (一)</title>
+        <pubTime>2017-07-14T14:57:00.000Z</pubTime>
         
-        <tag>计划</tag>
-         
         <tag>编程</tag>
          
         <tag>暑期</tag>
          
-        <tag>书</tag>
+        <tag>php</tag>
+         
+        <tag>Codeigniter</tag>
          
          
            
              
-              <breadCrumb title="日常" url="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
+              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -463,23 +457,25 @@
 
     
   <url>
-    <loc>http://blog.bbchen.top/2017/06/30/summer-plan-1/</loc>
-    <lastmod>2017-06-30T07:30:58.005Z</lastmod>
+    <loc>http://blog.bbchen.top/2017/07/15/Codeigniter-forum-two/</loc>
+    <lastmod>2017-07-17T02:40:40.648Z</lastmod>
     <data>
         <display>
-        <title>暑期计划-1</title>
-        <pubTime>2017-06-30T06:48:00.000Z</pubTime>
+        <title>使用 Codeigniter 搭建简易论坛系统 (二)</title>
+        <pubTime>2017-07-15T10:09:00.000Z</pubTime>
         
-        <tag>计划</tag>
-         
         <tag>编程</tag>
          
         <tag>暑期</tag>
          
+        <tag>php</tag>
+         
+        <tag>Codeigniter</tag>
+         
          
            
              
-              <breadCrumb title="日常" url="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
+              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
           
         </display>
     </data>
@@ -487,21 +483,25 @@
 
     
   <url>
-    <loc>http://blog.bbchen.top/2017/06/28/my-blog/</loc>
-    <lastmod>2017-06-29T01:36:18.649Z</lastmod>
+    <loc>http://blog.bbchen.top/2017/07/16/Golden-Age-Xiaobo/</loc>
+    <lastmod>2017-07-17T02:39:56.657Z</lastmod>
     <data>
         <display>
-        <title>这是我的小岛，欢迎上岛</title>
-        <pubTime>2017-06-28T14:18:44.000Z</pubTime>
+        <title>《黄金时代》--王小波</title>
+        <pubTime>2017-07-16T07:22:00.000Z</pubTime>
         
-        <tag>心情</tag>
+        <tag>暑期</tag>
          
-        <tag>第一篇</tag>
+        <tag>读书</tag>
+         
+        <tag>王小波</tag>
+         
+        <tag>黄金时代</tag>
          
          
            
              
-              <breadCrumb title="日常" url="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
+              <breadCrumb title="阅读" url="http://blog.bbchen.top/categories/%E9%98%85%E8%AF%BB/"/>
           
         </display>
     </data>

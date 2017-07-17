@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -104,7 +104,7 @@
 <meta property="og:description" content="今天看了三块内容，字符的过滤，密码的 hash，还有就是 PHP 内的日期类。本来今天还打算把数据库这块看掉，但这块实在太重要了，以后面试的时候也肯定会问到，所以明天重点看一下数据库。(😂主要今天下午还去了图书馆，就没有完整的一块时间了)。 字符的过滤字符过滤有三个基本要求：  过滤 (Sanitize) 验证 (Validate) 跳脱 (Escape) (是这样翻译吗？？)  过滤首先是过滤">
 <meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170707211100848.png">
 <meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170707212558229.png">
-<meta property="og:updated_time" content="2017-07-07T13:46:50.186Z">
+<meta property="og:updated_time" content="2017-07-17T02:43:14.051Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP 字符过滤和日期类">
 <meta name="twitter:description" content="今天看了三块内容，字符的过滤，密码的 hash，还有就是 PHP 内的日期类。本来今天还打算把数据库这块看掉，但这块实在太重要了，以后面试的时候也肯定会问到，所以明天重点看一下数据库。(😂主要今天下午还去了图书馆，就没有完整的一块时间了)。 字符的过滤字符过滤有三个基本要求：  过滤 (Sanitize) 验证 (Validate) 跳脱 (Escape) (是这样翻译吗？？)  过滤首先是过滤">
@@ -116,7 +116,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -396,7 +396,7 @@
 </ol>
 <h3 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h3><p>首先是过滤，这个还蛮重要的，要不然一不小心别人就把sql执行语句或者 html 插入进来了。<br>php 自带有一个 html 过滤函数和 sql 语句过滤函数。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$input = <span class="string">'&lt;p&gt;123234&lt;/p&gt;'</span>;</div><div class="line"><span class="comment">// echo $input;</span></div><div class="line"><span class="keyword">echo</span> htmlentities($input, ENT_QUOTES, <span class="string">'UTF-8'</span>);</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
 <p>使用 htmlentities 这个 php 内置函数之后输出就没有了<code>&lt;p&gt;</code>这些 html 代码了。<br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170707211100848.png" alt=""></p>
-<p>过滤 sql 语句的话，使用 PDO 的前置检查就行(PDO 的话还是很安全的，<code>mysql_query()</code>这种不要用了，php7都废弃了，而且很不安全)</p>
+<p>过滤 sql 语句的话，使用 PDO 的前置检查就行(PDO 的话还是很安全的，<code>mysql_query()</code>这种不要用了，php7都废弃了，而且很不安全)<br><a id="more"></a></p>
 <h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>主要是验证拿到的数据是否符合自己的要求，这个前端限制一个，后端也限制一下比较好。<br>比方说限制邮箱格式<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$email = <span class="string">'john@example.com'</span>;</div><div class="line">$emailSafe = filter_var($email, FILTER_SANITIZE_EMAIL);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
 <p><code>filter_var</code> 函数，在配上 php 内置的<code>FILTER_SANITIZE_EMAIL</code>常量可以做到邮箱的验证。搭配其他的常量，比方说搭配<code>FILTER_SANITIZE_STRING</code>就可以实现其他类型的验证。</p>
 <p>还有一些就是要自己去数据库里查找对应数据来进行验证。</p>
@@ -698,7 +698,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
@@ -790,6 +790,13 @@ Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pag
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>

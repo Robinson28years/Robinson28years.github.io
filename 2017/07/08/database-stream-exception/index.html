@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -104,7 +104,7 @@
 <meta property="og:description" content="说实话，今天的数据库这章不是很满意，感觉讲的还不是很具体，有时间我还要单独看下数据库。还有两块字符流和异常的处理写的还行，不过异常处理以前有看过一点。 数据库 这里建议直接使用 PDO 了，而且不要过多的写某些其他数据库特有的特性，这样如果以后从这个数据库变更到其他数据库时可能要改很多代码。 还有就是数据库的配置文件单独放一块，不要和核心代码放在一起，要不然上传仓库或者被别人攻击的时候很容易将密码">
 <meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170708194241730.png">
 <meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170708194522553.png">
-<meta property="og:updated_time" content="2017-07-08T11:48:34.147Z">
+<meta property="og:updated_time" content="2017-07-17T02:42:59.033Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库，字符流和异常处理">
 <meta name="twitter:description" content="说实话，今天的数据库这章不是很满意，感觉讲的还不是很具体，有时间我还要单独看下数据库。还有两块字符流和异常的处理写的还行，不过异常处理以前有看过一点。 数据库 这里建议直接使用 PDO 了，而且不要过多的写某些其他数据库特有的特性，这样如果以后从这个数据库变更到其他数据库时可能要改很多代码。 还有就是数据库的配置文件单独放一块，不要和核心代码放在一起，要不然上传仓库或者被别人攻击的时候很容易将密码">
@@ -116,7 +116,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -395,6 +395,7 @@
 <li>要进行 SQL 语句的预处理，防止 SQL 注入。这里用预处理防 SQL 注入的原理是 PDO 会先将预处理语句解析成 SQL 模板，然后再接受你的值，这时候如果你的值里有 SQL 语句了也没用了，因为语句已经解析出来了，你已经改不了了，只能填值。</li>
 </ul>
 <h3 id="简单配置"><a href="#简单配置" class="headerlink" title="简单配置"></a>简单配置</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">require</span>(dirname(<span class="keyword">__FILE__</span>).<span class="string">'/../settings.php'</span>);</div><div class="line"><span class="comment">// var_dump('../settings.php');</span></div><div class="line">$pdo = <span class="keyword">new</span> PDO(</div><div class="line">    sprintf(</div><div class="line">        <span class="string">'mysql:host=%s;dbname=%s;port=%s;charset=%s'</span>,</div><div class="line">        $settings[<span class="string">'host'</span>],</div><div class="line">        $settings[<span class="string">'name'</span>],</div><div class="line">        $settings[<span class="string">'port'</span>],</div><div class="line">        $settings[<span class="string">'charset'</span>]</div><div class="line">    ),</div><div class="line">    $settings[<span class="string">'username'</span>],</div><div class="line">    $settings[<span class="string">'password'</span>]</div><div class="line">);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="下面是预处理语句"><a href="#下面是预处理语句" class="headerlink" title="下面是预处理语句"></a>下面是预处理语句</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$sql = <span class="string">'SELECT email FROM users WHERE id = :id'</span>;</div><div class="line">$statement = $pdo-&gt;prepare($sql);<span class="comment">//预处理，解析成 sql 模板</span></div><div class="line"></div><div class="line"><span class="comment">// $userId = filter_input('1', 'id');</span></div><div class="line">$userId = <span class="number">1</span>;</div><div class="line">$statement-&gt;bindValue(<span class="string">':id'</span>, $userId ,PDO::PARAM_INT);<span class="comment">//绑定模板里的值</span></div><div class="line">$statement-&gt;execute();<span class="comment">//执行语句</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="循环输出值"><a href="#循环输出值" class="headerlink" title="循环输出值"></a>循环输出值</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">while</span> (($result = $statement-&gt;fetch(PDO::FETCH_ASSOC)) !== <span class="keyword">false</span>) &#123;</div><div class="line">    <span class="keyword">echo</span> $result[<span class="string">'email'</span>];</div><div class="line">&#125;</div><div class="line">    var_dump($pdo);</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="字符流处理"><a href="#字符流处理" class="headerlink" title="字符流处理"></a>字符流处理</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$handle = fopen(dirname(<span class="keyword">__FILE__</span>).<span class="string">'\text.txt'</span>, <span class="string">'rb'</span>);</div><div class="line"><span class="comment">// var_dump($handle);</span></div><div class="line"><span class="keyword">while</span> (feof($handle) !== <span class="keyword">true</span>) &#123;</div><div class="line">    <span class="keyword">echo</span> fgets($handle);</div><div class="line">&#125;</div><div class="line">fclose($handle);</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
@@ -687,7 +688,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
@@ -779,6 +780,13 @@ Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pag
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
