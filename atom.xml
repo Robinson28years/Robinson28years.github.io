@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2017-07-17T02:39:56.657Z</updated>
+  <updated>2017-07-23T13:45:37.993Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -14,6 +14,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Typescript 学习小记</title>
+    <link href="http://blog.bbchen.top/2017/07/23/Typescript-learning/"/>
+    <id>http://blog.bbchen.top/2017/07/23/Typescript-learning/</id>
+    <published>2017-07-23T12:57:00.000Z</published>
+    <updated>2017-07-23T13:45:37.993Z</updated>
+    
+    <content type="html"><![CDATA[<p>因为想学做 app 所以找到了 ionic，然后发现 ionic 用的是 Angular ，然后又去学了 Angular，学着学着发现还得先学下 Typescript，因为 Angular 使用的是 Typescript 😂。然后我就去学了 Typescript。</p>
+<h2 id="什么是-Typescript"><a href="#什么是-Typescript" class="headerlink" title="什么是 Typescript"></a>什么是 Typescript</h2><blockquote>
+<p>TypeScript 是 JavaScript 的一个超集，主要提供了类型系统和对 ES6 的支持，它由 Microsoft 开发，代码开源于 GitHub 上。</p>
+</blockquote>
+<p>我的感觉呢，就是 Typescript 多了一些类型支持，可以定义是整型还是字符串还是某些类。优点就是，这样在编译时就能发现很多错误，不用等到在运行时排错。而且有了类型支持，对 IDE 的支持就会更好，很多补全，接口提示，重构等等都将智能很多。</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>😂 具体我就不讲了，毕竟我讲的还没书上详细，这里就分享两个网站</p>
+<p><a href="https://zhongsp.gitbooks.io/typescript-handbook/content/" target="_blank" rel="external">TypeScript Handbook（中文版）</a></p>
+<p><a href="https://ts.xcatliu.com/" target="_blank" rel="external">TypeScript 入门教程</a></p>
+<p>我是看第二个网站入门的，讲的比较浅一点，毕竟我是想快速上手 Angular 然后上手 ionic。</p>
+<p>这门语言有个显著特点就是类型的声明。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params">person: string</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">'Hello, '</span> + person;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> user = <span class="string">'Robinson'</span>;</div><div class="line"><span class="built_in">console</span>.log(sayHello(user));</div></pre></td></tr></table></figure>
+<p>比方说上面这个例子，原生 javascript li person 直接就写上去就行，不用定义什么类型，而在 Typescript 中就要这样写 <code>person: string</code> 声明它是 string 类型的。由此我们也能知道，Typescript 的类型声明是 变量: 参数类型 这种形式来声明。其他的话跟其他强类型语言都差不多。</p>
+<p>再举个栗子👇<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">x: number, y: number</span>): <span class="title">number</span> </span>&#123;</div><div class="line">  <span class="keyword">return</span> x + y;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>向这样一个函数，每个变量要定义一下类型， 然后在 <code>sum(x: number, y: number)</code> 后面会要求写上返回值，像这个例子就是 <code>: number</code> ,如果没有返回值就写 <code>: void</code>。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>还有一些类，接口我就不讲了，OOP 语言有的它都有，在强类型方面可以说有点像 Java这种。学起来还是不难的。😂他们都说 Typescript 很好，但 Angular 就是算了吧。我也没办法，想用 Vue 的，可 Vue 的那个 Weex 太难用了。相对来说 Angular 的 ionic 就优美一点。等以后 Weex 强大了或者有其他移动套件了再用吧。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;因为想学做 app 所以找到了 ionic，然后发现 ionic 用的是 Angular ，然后又去学了 Angular，学着学着发现还得先学下 Typescript，因为 Angular 使用的是 Typescript 😂。然后我就去学了 Typescript。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="前端" scheme="http://blog.bbchen.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Typescript" scheme="http://blog.bbchen.top/tags/Typescript/"/>
+    
+      <category term="Angular" scheme="http://blog.bbchen.top/tags/Angular/"/>
+    
+      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
+    
+  </entry>
   
   <entry>
     <title>《黄金时代》--王小波</title>
