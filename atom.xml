@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2017-07-23T13:45:37.993Z</updated>
+  <updated>2017-07-23T13:52:59.984Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="http://blog.bbchen.top/2017/07/23/Typescript-learning/"/>
     <id>http://blog.bbchen.top/2017/07/23/Typescript-learning/</id>
     <published>2017-07-23T12:57:00.000Z</published>
-    <updated>2017-07-23T13:45:37.993Z</updated>
+    <updated>2017-07-23T13:52:59.984Z</updated>
     
     <content type="html"><![CDATA[<p>因为想学做 app 所以找到了 ionic，然后发现 ionic 用的是 Angular ，然后又去学了 Angular，学着学着发现还得先学下 Typescript，因为 Angular 使用的是 Typescript 😂。然后我就去学了 Typescript。</p>
 <h2 id="什么是-Typescript"><a href="#什么是-Typescript" class="headerlink" title="什么是 Typescript"></a>什么是 Typescript</h2><blockquote>
 <p>TypeScript 是 JavaScript 的一个超集，主要提供了类型系统和对 ES6 的支持，它由 Microsoft 开发，代码开源于 GitHub 上。</p>
 </blockquote>
-<p>我的感觉呢，就是 Typescript 多了一些类型支持，可以定义是整型还是字符串还是某些类。优点就是，这样在编译时就能发现很多错误，不用等到在运行时排错。而且有了类型支持，对 IDE 的支持就会更好，很多补全，接口提示，重构等等都将智能很多。</p>
+<p>我的感觉呢，就是 Typescript 多了一些类型支持，可以定义是整型还是字符串还是某些类。优点就是，这样在编译时就能发现很多错误，不用等到在运行时排错。而且有了类型支持，对 IDE 的支持就会更好，很多补全，接口提示，重构等等都将智能很多。<br><a id="more"></a></p>
 <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>😂 具体我就不讲了，毕竟我讲的还没书上详细，这里就分享两个网站</p>
 <p><a href="https://zhongsp.gitbooks.io/typescript-handbook/content/" target="_blank" rel="external">TypeScript Handbook（中文版）</a></p>
 <p><a href="https://ts.xcatliu.com/" target="_blank" rel="external">TypeScript 入门教程</a></p>
@@ -42,6 +42,10 @@
     <summary type="html">
     
       &lt;p&gt;因为想学做 app 所以找到了 ionic，然后发现 ionic 用的是 Angular ，然后又去学了 Angular，学着学着发现还得先学下 Typescript，因为 Angular 使用的是 Typescript 😂。然后我就去学了 Typescript。&lt;/p&gt;
+&lt;h2 id=&quot;什么是-Typescript&quot;&gt;&lt;a href=&quot;#什么是-Typescript&quot; class=&quot;headerlink&quot; title=&quot;什么是 Typescript&quot;&gt;&lt;/a&gt;什么是 Typescript&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;TypeScript 是 JavaScript 的一个超集，主要提供了类型系统和对 ES6 的支持，它由 Microsoft 开发，代码开源于 GitHub 上。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我的感觉呢，就是 Typescript 多了一些类型支持，可以定义是整型还是字符串还是某些类。优点就是，这样在编译时就能发现很多错误，不用等到在运行时排错。而且有了类型支持，对 IDE 的支持就会更好，很多补全，接口提示，重构等等都将智能很多。&lt;br&gt;
     
     </summary>
     
