@@ -4,6 +4,56 @@
 
     
   <url>
+    <loc>http://blog.bbchen.top/2017/07/26/six-chapters-of-a-floating-life/</loc>
+    <lastmod>2017-07-26T15:16:34.555Z</lastmod>
+    <data>
+        <display>
+        <title>《浮生六记》-- 沈复</title>
+        <pubTime>2017-07-26T14:19:00.000Z</pubTime>
+        
+        <tag>暑期</tag>
+         
+        <tag>读书</tag>
+         
+        <tag>浮生六记</tag>
+         
+         
+           
+             
+              <breadCrumb title="阅读" url="http://blog.bbchen.top/categories/%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/16/Golden-Age-Xiaobo/</loc>
+    <lastmod>2017-07-26T14:19:09.993Z</lastmod>
+    <data>
+        <display>
+        <title>《黄金时代》-- 王小波</title>
+        <pubTime>2017-07-16T07:22:00.000Z</pubTime>
+        
+        <tag>暑期</tag>
+         
+        <tag>读书</tag>
+         
+        <tag>王小波</tag>
+         
+        <tag>黄金时代</tag>
+         
+         
+           
+             
+              <breadCrumb title="阅读" url="http://blog.bbchen.top/categories/%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.bbchen.top/2017/07/26/Ionic-CNode/</loc>
     <lastmod>2017-07-26T14:07:00.396Z</lastmod>
     <data>
@@ -15,11 +65,11 @@
          
         <tag>前端</tag>
          
+        <tag>ionic</tag>
+         
         <tag>ios</tag>
          
         <tag>Android</tag>
-         
-        <tag>ionic</tag>
          
          
            
@@ -43,11 +93,11 @@
          
         <tag>前端</tag>
          
-        <tag>ionic</tag>
-         
         <tag>Typescript</tag>
          
         <tag>Angular</tag>
+         
+        <tag>ionic</tag>
          
          
            
@@ -532,32 +582,6 @@
            
              
               <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/16/Golden-Age-Xiaobo/</loc>
-    <lastmod>2017-07-17T02:39:56.657Z</lastmod>
-    <data>
-        <display>
-        <title>《黄金时代》--王小波</title>
-        <pubTime>2017-07-16T07:22:00.000Z</pubTime>
-        
-        <tag>暑期</tag>
-         
-        <tag>读书</tag>
-         
-        <tag>王小波</tag>
-         
-        <tag>黄金时代</tag>
-         
-         
-           
-             
-              <breadCrumb title="阅读" url="http://blog.bbchen.top/categories/%E9%98%85%E8%AF%BB/"/>
           
         </display>
     </data>
