@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2017-07-26T13:53:00.655Z</updated>
+  <updated>2017-07-26T13:55:04.950Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="http://blog.bbchen.top/2017/07/26/Ionic-CNode/"/>
     <id>http://blog.bbchen.top/2017/07/26/Ionic-CNode/</id>
     <published>2017-07-26T13:05:00.000Z</published>
-    <updated>2017-07-26T13:53:00.655Z</updated>
+    <updated>2017-07-26T13:55:04.950Z</updated>
     
     <content type="html"><![CDATA[<p>终于把一系列的资料看完了，然后今天开始第一次尝试制作一个社区 App (😂因为 CNode 提供了比较丰富的接口 API) 。<br>这次因为使用了 ionic ，所以我可以同时制作出 ios 版和 Android 版。</p>
 <p>那我简单介绍一下制作过程。</p>
 <h2 id="环境的搭建"><a href="#环境的搭建" class="headerlink" title="环境的搭建"></a>环境的搭建</h2><p>就是 Node ， Android Studio ，Codava ，然后在 npm 安装 ionic 时会自动装上 Angular 等等。具体可以参考官网的 <a href="https://ionicframework.com/getting-started/" target="_blank" rel="external">环境搭建</a><br>很详细，也做的很漂亮。</p>
-<h2 id="技能前提"><a href="#技能前提" class="headerlink" title="技能前提"></a>技能前提</h2><p>在写代码前要把所需要的语言前提讲一下。按照学习顺序是 js -&gt; Typescript -&gt; Angular -&gt; Ionic. 学完这些解可以开始使用 Ionic 制作 App 了。</p>
+<h2 id="技能前提"><a href="#技能前提" class="headerlink" title="技能前提"></a>技能前提</h2><p>在写代码前要把所需要的语言前提讲一下。按照学习顺序是 js -&gt; Typescript -&gt; Angular -&gt; Ionic. 学完这些解可以开始使用 Ionic 制作 App 了。<br><a id="more"></a></p>
 <h2 id="代码编写"><a href="#代码编写" class="headerlink" title="代码编写"></a>代码编写</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170726211831108.png" alt="结构"><br>可以说 Angular 也算的上一个优雅的语言了，分的很清楚，适合做企业级项目，每个页面放在一个文件夹内。分别是 html(负责页面展示)，sass(负责页面样式)，ts(Typescript，负责页面逻辑处理)。而且在命令行敲一行代码就能把这三个文件都知道生成了(e.g. <code>ionic g page cnode</code> 生成 cnode 下的三个文件)。</p>
 <p>我这里简单讲下各个文件的功能。</p>
 <h3 id="数据获取"><a href="#数据获取" class="headerlink" title="数据获取"></a>数据获取</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">@Injectable()</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">CnodeService</span></span>&#123;</div><div class="line">  http: any;</div><div class="line">  baseUrl: string;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(http: Http) &#123;</div><div class="line">    <span class="keyword">this</span>.http = http;</div><div class="line">    <span class="keyword">this</span>.baseUrl = <span class="string">'https://cnodejs.org/api/v1'</span>;</div><div class="line">  &#125;</div><div class="line">  getPosts(tab: string, <span class="attr">limit</span>: number) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.http.get(<span class="keyword">this</span>.baseUrl + <span class="string">'/topics?mdrender=false&amp;tab='</span> + tab + <span class="string">'&amp;limit='</span> + limit)</div><div class="line">      .map(<span class="function"><span class="params">res</span> =&gt;</span> res.json());</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -51,7 +51,8 @@
     
       &lt;p&gt;终于把一系列的资料看完了，然后今天开始第一次尝试制作一个社区 App (😂因为 CNode 提供了比较丰富的接口 API) 。&lt;br&gt;这次因为使用了 ionic ，所以我可以同时制作出 ios 版和 Android 版。&lt;/p&gt;
 &lt;p&gt;那我简单介绍一下制作过程。&lt;/p&gt;
-
+&lt;h2 id=&quot;环境的搭建&quot;&gt;&lt;a href=&quot;#环境的搭建&quot; class=&quot;headerlink&quot; title=&quot;环境的搭建&quot;&gt;&lt;/a&gt;环境的搭建&lt;/h2&gt;&lt;p&gt;就是 Node ， Android Studio ，Codava ，然后在 npm 安装 ionic 时会自动装上 Angular 等等。具体可以参考官网的 &lt;a href=&quot;https://ionicframework.com/getting-started/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;环境搭建&lt;/a&gt;&lt;br&gt;很详细，也做的很漂亮。&lt;/p&gt;
+&lt;h2 id=&quot;技能前提&quot;&gt;&lt;a href=&quot;#技能前提&quot; class=&quot;headerlink&quot; title=&quot;技能前提&quot;&gt;&lt;/a&gt;技能前提&lt;/h2&gt;&lt;p&gt;在写代码前要把所需要的语言前提讲一下。按照学习顺序是 js -&amp;gt; Typescript -&amp;gt; Angular -&amp;gt; Ionic. 学完这些解可以开始使用 Ionic 制作 App 了。&lt;br&gt;
     
     </summary>
     
@@ -62,11 +63,11 @@
     
       <category term="前端" scheme="http://blog.bbchen.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
+      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
+    
       <category term="ios" scheme="http://blog.bbchen.top/tags/ios/"/>
     
       <category term="Android" scheme="http://blog.bbchen.top/tags/Android/"/>
-    
-      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
     
   </entry>
   
@@ -111,11 +112,11 @@
     
       <category term="前端" scheme="http://blog.bbchen.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
-    
       <category term="Typescript" scheme="http://blog.bbchen.top/tags/Typescript/"/>
     
       <category term="Angular" scheme="http://blog.bbchen.top/tags/Angular/"/>
+    
+      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
     
   </entry>
   
@@ -250,11 +251,11 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
     
       <category term="Codeigniter" scheme="http://blog.bbchen.top/tags/Codeigniter/"/>
     
@@ -301,11 +302,11 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
     
       <category term="Codeigniter" scheme="http://blog.bbchen.top/tags/Codeigniter/"/>
     
@@ -338,11 +339,11 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
     
       <category term="Codeigniter" scheme="http://blog.bbchen.top/tags/Codeigniter/"/>
     
@@ -379,11 +380,11 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
     
       <category term="Codeigniter" scheme="http://blog.bbchen.top/tags/Codeigniter/"/>
     
@@ -436,11 +437,11 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
     
       <category term="Codeigniter" scheme="http://blog.bbchen.top/tags/Codeigniter/"/>
     
@@ -474,13 +475,13 @@
       <category term="日常" scheme="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
   </entry>
   
@@ -526,13 +527,13 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
       <category term="HHVM" scheme="http://blog.bbchen.top/tags/HHVM/"/>
     
@@ -569,13 +570,13 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
       <category term="部署" scheme="http://blog.bbchen.top/tags/%E9%83%A8%E7%BD%B2/"/>
     
@@ -625,13 +626,13 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
       <category term="数据库" scheme="http://blog.bbchen.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
@@ -695,13 +696,13 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
       <category term="过滤" scheme="http://blog.bbchen.top/tags/%E8%BF%87%E6%BB%A4/"/>
     
@@ -773,13 +774,13 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
       <category term="组件" scheme="http://blog.bbchen.top/tags/%E7%BB%84%E4%BB%B6/"/>
     
@@ -845,13 +846,13 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
   </entry>
   
@@ -894,13 +895,13 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
   </entry>
   
@@ -948,13 +949,13 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
   </entry>
   
@@ -985,11 +986,11 @@
       <category term="日常" scheme="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
+      <category term="计划" scheme="http://blog.bbchen.top/tags/%E8%AE%A1%E5%88%92/"/>
+    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
-    
-      <category term="计划" scheme="http://blog.bbchen.top/tags/%E8%AE%A1%E5%88%92/"/>
     
       <category term="书" scheme="http://blog.bbchen.top/tags/%E4%B9%A6/"/>
     
@@ -1024,11 +1025,11 @@
       <category term="日常" scheme="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
+      <category term="计划" scheme="http://blog.bbchen.top/tags/%E8%AE%A1%E5%88%92/"/>
+    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
-    
-      <category term="计划" scheme="http://blog.bbchen.top/tags/%E8%AE%A1%E5%88%92/"/>
     
   </entry>
   
