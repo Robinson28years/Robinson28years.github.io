@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2017-07-23T13:52:59.984Z</updated>
+  <updated>2017-07-26T13:53:00.655Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -14,6 +14,61 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一个基于 Ionic 的 CNode 社区客户端</title>
+    <link href="http://blog.bbchen.top/2017/07/26/Ionic-CNode/"/>
+    <id>http://blog.bbchen.top/2017/07/26/Ionic-CNode/</id>
+    <published>2017-07-26T13:05:00.000Z</published>
+    <updated>2017-07-26T13:53:00.655Z</updated>
+    
+    <content type="html"><![CDATA[<p>终于把一系列的资料看完了，然后今天开始第一次尝试制作一个社区 App (😂因为 CNode 提供了比较丰富的接口 API) 。<br>这次因为使用了 ionic ，所以我可以同时制作出 ios 版和 Android 版。</p>
+<p>那我简单介绍一下制作过程。</p>
+<h2 id="环境的搭建"><a href="#环境的搭建" class="headerlink" title="环境的搭建"></a>环境的搭建</h2><p>就是 Node ， Android Studio ，Codava ，然后在 npm 安装 ionic 时会自动装上 Angular 等等。具体可以参考官网的 <a href="https://ionicframework.com/getting-started/" target="_blank" rel="external">环境搭建</a><br>很详细，也做的很漂亮。</p>
+<h2 id="技能前提"><a href="#技能前提" class="headerlink" title="技能前提"></a>技能前提</h2><p>在写代码前要把所需要的语言前提讲一下。按照学习顺序是 js -&gt; Typescript -&gt; Angular -&gt; Ionic. 学完这些解可以开始使用 Ionic 制作 App 了。</p>
+<h2 id="代码编写"><a href="#代码编写" class="headerlink" title="代码编写"></a>代码编写</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170726211831108.png" alt="结构"><br>可以说 Angular 也算的上一个优雅的语言了，分的很清楚，适合做企业级项目，每个页面放在一个文件夹内。分别是 html(负责页面展示)，sass(负责页面样式)，ts(Typescript，负责页面逻辑处理)。而且在命令行敲一行代码就能把这三个文件都知道生成了(e.g. <code>ionic g page cnode</code> 生成 cnode 下的三个文件)。</p>
+<p>我这里简单讲下各个文件的功能。</p>
+<h3 id="数据获取"><a href="#数据获取" class="headerlink" title="数据获取"></a>数据获取</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">@Injectable()</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">CnodeService</span></span>&#123;</div><div class="line">  http: any;</div><div class="line">  baseUrl: string;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(http: Http) &#123;</div><div class="line">    <span class="keyword">this</span>.http = http;</div><div class="line">    <span class="keyword">this</span>.baseUrl = <span class="string">'https://cnodejs.org/api/v1'</span>;</div><div class="line">  &#125;</div><div class="line">  getPosts(tab: string, <span class="attr">limit</span>: number) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.http.get(<span class="keyword">this</span>.baseUrl + <span class="string">'/topics?mdrender=false&amp;tab='</span> + tab + <span class="string">'&amp;limit='</span> + limit)</div><div class="line">      .map(<span class="function"><span class="params">res</span> =&gt;</span> res.json());</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>因为使用了 Angular ，所以可以使用类呀，依赖注入，构造器这些。这个方法是定义了怎样获取帖子数据。</p>
+<h3 id="首页构成"><a href="#首页构成" class="headerlink" title="首页构成"></a>首页构成</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;ion-list&gt;</div><div class="line">  &lt;ion-item *ngFor="let item of items"&gt;</div><div class="line">    &lt;ion-avatar item-start&gt;</div><div class="line">      &lt;img src="&#123;&#123;item.author.avatar_url&#125;&#125;"&gt;</div><div class="line">    &lt;/ion-avatar&gt;</div><div class="line">    &lt;h2&gt;&#123;&#123;item.author.loginname&#125;&#125;&lt;/h2&gt;</div><div class="line">    &lt;h3&gt;&#123;&#123;item.title&#125;&#125;&lt;/h3&gt;</div><div class="line">    &lt;p&gt;&#123;&#123;item.content&#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;button ion-button clear item-right (click)="viewItem(item)"&gt;查看全文&lt;/button&gt;</div><div class="line">  &lt;/ion-item&gt;</div><div class="line">&lt;/ion-list&gt;</div></pre></td></tr></table></figure>
+<p>跟其他 js 框架很像 都是这样展示数据，不过这里因为使用了 ionic ，所以在 ios 和 Android 上展现出不同的 UI。<br><img src="http://osabfc0f3.bkt.clouddn.com/%E5%AE%89%E5%8D%93.gif" alt="Android 端"></p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/ios.gif" alt="ios 端"></p>
+<p>然后是一些初始化展示，还有一些方法之类的，和 vue 都有共通之处。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">ngOnInit()&#123;</div><div class="line">  <span class="keyword">this</span>.getDefaults();</div><div class="line">  <span class="keyword">this</span>.cnodeservice.getPosts(<span class="keyword">this</span>.tab, <span class="keyword">this</span>.limit).subscribe(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">this</span>.items = response.data;</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line">getDefaults() &#123;</div><div class="line">  <span class="keyword">if</span> (localStorage.getItem(<span class="string">'tab'</span>) != <span class="literal">null</span>) &#123;</div><div class="line">    <span class="keyword">this</span>.tab = localStorage.getItem(<span class="string">'tab'</span>);</div><div class="line">  &#125;<span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">this</span>.tab = <span class="string">""</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (localStorage.getItem(<span class="string">'limit'</span>) != <span class="literal">null</span>) &#123;</div><div class="line">    <span class="keyword">this</span>.limit = localStorage.getItem(<span class="string">'limit'</span>);</div><div class="line">  &#125;<span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">this</span>.limit = <span class="literal">null</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">viewItem(item) &#123;</div><div class="line">  <span class="keyword">this</span>.navCtrl.push(DetailsPage, &#123;</div><div class="line">    <span class="attr">item</span>: item</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line">changeTab() &#123;</div><div class="line">  <span class="keyword">this</span>.cnodeservice.getPosts(<span class="keyword">this</span>.tab, <span class="literal">null</span>).subscribe(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">this</span>.items = response.data;</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><ol>
+<li>先使用自带的工具构建 <code>ionic cordova build android --prod --release</code></li>
+<li>然后使用 Android Studio 的工具进行压缩 <code>zipalign -v -p 4 my-app-unsigned.apk my-app-unsigned-aligned.apk</code></li>
+<li>再用 Studio 的 apksigner 进行 App 签名， <code>apksigner sign --ks my-release-key.jks --out my-app-release.apk my-app-unsigned-aligned.apk</code> (前提是已经创建了 .jks文件, 这个用 AS 就能创建)</li>
+<li>然后就能安装在自己手机上了，ios 的稍微麻烦点，要开发者帐号，但也是能 build 的。</li>
+</ol>
+<h2 id="展示"><a href="#展示" class="headerlink" title="展示"></a>展示</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/%E5%AE%89%E5%8D%93%E6%9F%A5%E7%9C%8B.gif" alt="Android 查看"></p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/ios%E6%9F%A5%E7%9C%8B.gif" alt="ios 查看"></p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/%E5%AE%89%E5%8D%93%E8%AE%BE%E7%BD%AE.gif" alt="Android 设置"></p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/ios%E8%AE%BE%E7%BD%AE.gif" alt="ios 设置"></p>
+<h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h2><p><a href="https://github.com/Robinson28years/CNode" target="_blank" rel="external">https://github.com/Robinson28years/CNode</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;终于把一系列的资料看完了，然后今天开始第一次尝试制作一个社区 App (😂因为 CNode 提供了比较丰富的接口 API) 。&lt;br&gt;这次因为使用了 ionic ，所以我可以同时制作出 ios 版和 Android 版。&lt;/p&gt;
+&lt;p&gt;那我简单介绍一下制作过程。&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="前端" scheme="http://blog.bbchen.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="ios" scheme="http://blog.bbchen.top/tags/ios/"/>
+    
+      <category term="Android" scheme="http://blog.bbchen.top/tags/Android/"/>
+    
+      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
+    
+  </entry>
   
   <entry>
     <title>Typescript 学习小记</title>
@@ -56,11 +111,11 @@
     
       <category term="前端" scheme="http://blog.bbchen.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
+      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
+    
       <category term="Typescript" scheme="http://blog.bbchen.top/tags/Typescript/"/>
     
       <category term="Angular" scheme="http://blog.bbchen.top/tags/Angular/"/>
-    
-      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
     
   </entry>
   
@@ -974,33 +1029,6 @@
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
     
       <category term="计划" scheme="http://blog.bbchen.top/tags/%E8%AE%A1%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>这是我的小岛，欢迎上岛</title>
-    <link href="http://blog.bbchen.top/2017/06/28/my-blog/"/>
-    <id>http://blog.bbchen.top/2017/06/28/my-blog/</id>
-    <published>2017-06-28T14:18:44.000Z</published>
-    <updated>2017-07-17T02:44:20.179Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="第一篇博文"><a href="#第一篇博文" class="headerlink" title="第一篇博文"></a>第一篇博文</h2><p>这里主要记录一下我平时编程的时候遇到的问题和解决方法，因为当我自己遇到一些难题的时候看到一些真挚的博文就感到很开心。所以我也想在这浩瀚的大海中贡献我的一份力量。</p>
-<p>同时呢我也想把我平时看的一些书呀这些感想在这写一下，存一些留念，也希望能遇到一些有志同道合的朋友。<br><a id="more"></a><br>大家如果有什么疑问或者建议都可以写在评论里。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;第一篇博文&quot;&gt;&lt;a href=&quot;#第一篇博文&quot; class=&quot;headerlink&quot; title=&quot;第一篇博文&quot;&gt;&lt;/a&gt;第一篇博文&lt;/h2&gt;&lt;p&gt;这里主要记录一下我平时编程的时候遇到的问题和解决方法，因为当我自己遇到一些难题的时候看到一些真挚的博文就感到很开心。所以我也想在这浩瀚的大海中贡献我的一份力量。&lt;/p&gt;
-&lt;p&gt;同时呢我也想把我平时看的一些书呀这些感想在这写一下，存一些留念，也希望能遇到一些有志同道合的朋友。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="日常" scheme="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="心情" scheme="http://blog.bbchen.top/tags/%E5%BF%83%E6%83%85/"/>
-    
-      <category term="第一篇" scheme="http://blog.bbchen.top/tags/%E7%AC%AC%E4%B8%80%E7%AF%87/"/>
     
   </entry>
   

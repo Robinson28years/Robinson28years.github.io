@@ -4,6 +4,34 @@
 
     
   <url>
+    <loc>http://blog.bbchen.top/2017/07/26/Ionic-CNode/</loc>
+    <lastmod>2017-07-26T13:53:00.655Z</lastmod>
+    <data>
+        <display>
+        <title>一个基于 Ionic 的 CNode 社区客户端</title>
+        <pubTime>2017-07-26T13:05:00.000Z</pubTime>
+        
+        <tag>暑期</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>ios</tag>
+         
+        <tag>Android</tag>
+         
+        <tag>ionic</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.bbchen.top/2017/07/23/Typescript-learning/</loc>
     <lastmod>2017-07-23T13:52:59.984Z</lastmod>
     <data>
@@ -15,11 +43,11 @@
          
         <tag>前端</tag>
          
+        <tag>ionic</tag>
+         
         <tag>Typescript</tag>
          
         <tag>Angular</tag>
-         
-        <tag>ionic</tag>
          
          
            
