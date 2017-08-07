@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2017-07-26T15:16:34.555Z</updated>
+  <updated>2017-08-07T14:12:39.672Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从 Windows 到 Linux -- 一次开发环境的迁移</title>
+    <link href="http://blog.bbchen.top/2017/08/07/From-Windows-to-Linux/"/>
+    <id>http://blog.bbchen.top/2017/08/07/From-Windows-to-Linux/</id>
+    <published>2017-08-07T13:31:00.000Z</published>
+    <updated>2017-08-07T14:12:39.672Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170807213709196.png" alt="桌面环境"><br><a id="more"></a><br>近来想起一个月前有装一个 Linux 系统，于是就进去玩了一下。以前也有想过在 Linux 开发程序，也装过 Ubuntu，装过 Debian，但是我不太喜欢那个界面，而且有些应用没有，大大降低了我的开发效率。所以很长一段时间我用的都是 Windows。这次进到 Deepin 系统里面，再次眼前一亮，等我装上 Phpstorm,Atom,我感觉到，我已经不用回去了。当我看到雷神终端模式，我发现已经爱上了这个系统。</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E5%BD%95%E5%B1%8F_%E9%80%89%E6%8B%A9%E5%8C%BA%E5%9F%9F_20170807214832.gif" alt=""></p>
+<p>这个终端是不是很炫酷！</p>
+<p>肥肠的喜欢！</p>
+<p>当然了，用 Linux 不只是因为有一个好用的终端，主要有这几个方面。</p>
+<ol>
+<li>开发环境直接对标生产环境，因为部署的服务器一般是 Linux 的，这样一些 bug 能更好的重现和修复。</li>
+<li>熟悉 Linux 命令操作，这样以后线上出现一些问题的时候能更好的应对。</li>
+<li>没有全家桶，病毒少，因为 Linux 用户没 Windows 那么庞大，所以相应的病毒也少，转软件也不会遇上全家桶，有需要的软件也可以自己用源码编译。</li>
+<li>稳定性，Linux 系统不容易崩，而且后台不会有乱七八糟的资源占用，一般电脑能开着好几天不卡。</li>
+<li>太美了，这个 Deepin 系统实在太美了，我看到了很多精致的特效，而且国人开发的这款 Linux 版本的商店里也有很多实用的已打包软件，很多功能真的能解决我很多通电，比方说 terminal 可以自定义命令，我按个 alt+x 就可以启动所有 php 服务。</li>
+<li>永远保持好奇，喜欢着美好的东西，Linux 算一个。</li>
+</ol>
+<p>那我将我的开发环境迁移到 Linux 麻烦吗？<br>一点都不！麻！烦！<br>为什么？<br>因为我把我所有的 atom 配置都备份了，而 atom 又是跨平台应用，所有我同步一下就把所有插件都安装过来了。然后再将我的 c/c++ 环境配置了一下，这样又能愉悦的刷 acm 题了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170807213709196.png&quot; alt=&quot;桌面环境&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="日常" scheme="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="系统" scheme="http://blog.bbchen.top/tags/%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="开发" scheme="http://blog.bbchen.top/tags/%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>《浮生六记》-- 沈复</title>
@@ -129,11 +169,11 @@
     
       <category term="前端" scheme="http://blog.bbchen.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
+      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
+    
       <category term="ios" scheme="http://blog.bbchen.top/tags/ios/"/>
     
       <category term="Android" scheme="http://blog.bbchen.top/tags/Android/"/>
-    
-      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
     
   </entry>
   
@@ -178,11 +218,11 @@
     
       <category term="前端" scheme="http://blog.bbchen.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
-    
       <category term="Typescript" scheme="http://blog.bbchen.top/tags/Typescript/"/>
     
       <category term="Angular" scheme="http://blog.bbchen.top/tags/Angular/"/>
+    
+      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
     
   </entry>
   
@@ -317,11 +357,11 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
     
       <category term="Codeigniter" scheme="http://blog.bbchen.top/tags/Codeigniter/"/>
     
@@ -368,11 +408,11 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
     
       <category term="Codeigniter" scheme="http://blog.bbchen.top/tags/Codeigniter/"/>
     
@@ -405,11 +445,11 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
     
       <category term="Codeigniter" scheme="http://blog.bbchen.top/tags/Codeigniter/"/>
     
@@ -446,11 +486,11 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
     
       <category term="Codeigniter" scheme="http://blog.bbchen.top/tags/Codeigniter/"/>
     
@@ -503,11 +543,11 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
     
       <category term="Codeigniter" scheme="http://blog.bbchen.top/tags/Codeigniter/"/>
     
@@ -541,13 +581,13 @@
       <category term="日常" scheme="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
   </entry>
   
@@ -593,13 +633,13 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
       <category term="HHVM" scheme="http://blog.bbchen.top/tags/HHVM/"/>
     
@@ -636,13 +676,13 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
       <category term="部署" scheme="http://blog.bbchen.top/tags/%E9%83%A8%E7%BD%B2/"/>
     
@@ -692,13 +732,13 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
       <category term="数据库" scheme="http://blog.bbchen.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
@@ -762,13 +802,13 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
       <category term="过滤" scheme="http://blog.bbchen.top/tags/%E8%BF%87%E6%BB%A4/"/>
     
@@ -840,13 +880,13 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
       <category term="组件" scheme="http://blog.bbchen.top/tags/%E7%BB%84%E4%BB%B6/"/>
     
@@ -912,13 +952,13 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
   </entry>
   
@@ -961,13 +1001,13 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
       <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
   </entry>
   
@@ -1015,50 +1055,13 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
+      <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
       <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
     
       <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
-      <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>两本书</title>
-    <link href="http://blog.bbchen.top/2017/07/02/two-books/"/>
-    <id>http://blog.bbchen.top/2017/07/02/two-books/</id>
-    <published>2017-07-02T10:18:00.000Z</published>
-    <updated>2017-07-17T02:44:02.969Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="回到家了"><a href="#回到家了" class="headerlink" title="回到家了"></a>回到家了</h2><p>目前是回到家了，明天就要开始正式暑假了。昨天在缓冲暑假和随便逛逛论坛的时候发现两本非常不错的书，我大致看了下目录和他们的评论，似乎是将php讲的很透彻。不过有一个缺点，这两本书是英文的（😅），还好我的pdf阅读器有带翻译，虽然其中有一本是有中文版的，但是糊了点，还不能标注。所以最后选择英文版，感觉词汇应该不会很多，而且专业词汇我也确实需要去掌握一点。</p>
-<h2 id="暑假计划增加"><a href="#暑假计划增加" class="headerlink" title="暑假计划增加"></a>暑假计划增加</h2><p>所以暑假又多了两个计划，第一本《Modern PHP》应该是明天开始看，看的时候记录一下体会。另一本《Laravel - Up and Running》打算是八月份开始看，这样分开的话我中间还能实践一下。而且七月份还有其他计划要完成。</p>
-<h2 id="两本书"><a href="#两本书" class="headerlink" title="两本书"></a>两本书</h2><h3 id="1-Modern-PHP"><a href="#1-Modern-PHP" class="headerlink" title="1. Modern PHP"></a>1. Modern PHP</h3><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183542335.png" alt=""></p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183655527.png" alt=""><br><a id="more"></a></p>
-<h3 id="2-Laravel-Up-and-Running"><a href="#2-Laravel-Up-and-Running" class="headerlink" title="2. Laravel - Up and Running"></a>2. Laravel - Up and Running</h3><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183743214.png" alt=""></p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>明天( 2017-07-03 )计划正式开始！</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;回到家了&quot;&gt;&lt;a href=&quot;#回到家了&quot; class=&quot;headerlink&quot; title=&quot;回到家了&quot;&gt;&lt;/a&gt;回到家了&lt;/h2&gt;&lt;p&gt;目前是回到家了，明天就要开始正式暑假了。昨天在缓冲暑假和随便逛逛论坛的时候发现两本非常不错的书，我大致看了下目录和他们的评论，似乎是将php讲的很透彻。不过有一个缺点，这两本书是英文的（😅），还好我的pdf阅读器有带翻译，虽然其中有一本是有中文版的，但是糊了点，还不能标注。所以最后选择英文版，感觉词汇应该不会很多，而且专业词汇我也确实需要去掌握一点。&lt;/p&gt;
-&lt;h2 id=&quot;暑假计划增加&quot;&gt;&lt;a href=&quot;#暑假计划增加&quot; class=&quot;headerlink&quot; title=&quot;暑假计划增加&quot;&gt;&lt;/a&gt;暑假计划增加&lt;/h2&gt;&lt;p&gt;所以暑假又多了两个计划，第一本《Modern PHP》应该是明天开始看，看的时候记录一下体会。另一本《Laravel - Up and Running》打算是八月份开始看，这样分开的话我中间还能实践一下。而且七月份还有其他计划要完成。&lt;/p&gt;
-&lt;h2 id=&quot;两本书&quot;&gt;&lt;a href=&quot;#两本书&quot; class=&quot;headerlink&quot; title=&quot;两本书&quot;&gt;&lt;/a&gt;两本书&lt;/h2&gt;&lt;h3 id=&quot;1-Modern-PHP&quot;&gt;&lt;a href=&quot;#1-Modern-PHP&quot; class=&quot;headerlink&quot; title=&quot;1. Modern PHP&quot;&gt;&lt;/a&gt;1. Modern PHP&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183542335.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170702183655527.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="日常" scheme="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
-    
-      <category term="计划" scheme="http://blog.bbchen.top/tags/%E8%AE%A1%E5%88%92/"/>
-    
-      <category term="书" scheme="http://blog.bbchen.top/tags/%E4%B9%A6/"/>
     
   </entry>
   

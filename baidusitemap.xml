@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://blog.bbchen.top/2017/08/07/From-Windows-to-Linux/</loc>
+    <lastmod>2017-08-07T14:12:39.672Z</lastmod>
+    <data>
+        <display>
+        <title>从 Windows 到 Linux -- 一次开发环境的迁移</title>
+        <pubTime>2017-08-07T13:31:00.000Z</pubTime>
+        
+        <tag>暑期</tag>
+         
+        <tag>系统</tag>
+         
+        <tag>开发</tag>
+         
+         
+           
+             
+              <breadCrumb title="日常" url="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.bbchen.top/2017/07/26/six-chapters-of-a-floating-life/</loc>
     <lastmod>2017-07-26T15:16:34.555Z</lastmod>
     <data>
@@ -65,11 +89,11 @@
          
         <tag>前端</tag>
          
+        <tag>ionic</tag>
+         
         <tag>ios</tag>
          
         <tag>Android</tag>
-         
-        <tag>ionic</tag>
          
          
            
@@ -93,11 +117,11 @@
          
         <tag>前端</tag>
          
-        <tag>ionic</tag>
-         
         <tag>Typescript</tag>
          
         <tag>Angular</tag>
+         
+        <tag>ionic</tag>
          
          
            
@@ -118,13 +142,13 @@
         <title>HHVM和Hack</title>
         <pubTime>2017-07-10T10:52:00.000Z</pubTime>
         
-        <tag>php</tag>
-         
-        <tag>Modern PHP</tag>
-         
         <tag>编程</tag>
          
         <tag>暑期</tag>
+         
+        <tag>php</tag>
+         
+        <tag>Modern PHP</tag>
          
         <tag>HHVM</tag>
          
@@ -148,11 +172,11 @@
         <title>MVC模式运用</title>
         <pubTime>2017-07-12T12:52:00.000Z</pubTime>
         
-        <tag>php</tag>
-         
         <tag>编程</tag>
          
         <tag>暑期</tag>
+         
+        <tag>php</tag>
          
         <tag>Codeigniter</tag>
          
@@ -174,11 +198,11 @@
         <title>Codeigniter 的常规主题</title>
         <pubTime>2017-07-13T13:29:00.000Z</pubTime>
         
-        <tag>php</tag>
-         
         <tag>编程</tag>
          
         <tag>暑期</tag>
+         
+        <tag>php</tag>
          
         <tag>Codeigniter</tag>
          
@@ -222,11 +246,11 @@
         <title>暑期计划-1</title>
         <pubTime>2017-06-30T06:48:00.000Z</pubTime>
         
+        <tag>计划</tag>
+         
         <tag>编程</tag>
          
         <tag>暑期</tag>
-         
-        <tag>计划</tag>
          
          
            
@@ -246,11 +270,11 @@
         <title>两本书</title>
         <pubTime>2017-07-02T10:18:00.000Z</pubTime>
         
+        <tag>计划</tag>
+         
         <tag>编程</tag>
          
         <tag>暑期</tag>
-         
-        <tag>计划</tag>
          
         <tag>书</tag>
          
@@ -272,13 +296,13 @@
         <title>Namespaces-Interface-Traits</title>
         <pubTime>2017-07-03T10:43:00.000Z</pubTime>
         
-        <tag>php</tag>
-         
-        <tag>Modern PHP</tag>
-         
         <tag>编程</tag>
          
         <tag>暑期</tag>
+         
+        <tag>php</tag>
+         
+        <tag>Modern PHP</tag>
          
          
            
@@ -298,13 +322,13 @@
         <title>Generator和Closure</title>
         <pubTime>2017-07-04T10:56:00.000Z</pubTime>
         
-        <tag>php</tag>
-         
-        <tag>Modern PHP</tag>
-         
         <tag>编程</tag>
          
         <tag>暑期</tag>
+         
+        <tag>php</tag>
+         
+        <tag>Modern PHP</tag>
          
          
            
@@ -324,13 +348,13 @@
         <title>Zend OPcache 和 PHP 标准</title>
         <pubTime>2017-07-05T10:18:00.000Z</pubTime>
         
-        <tag>php</tag>
-         
-        <tag>Modern PHP</tag>
-         
         <tag>编程</tag>
          
         <tag>暑期</tag>
+         
+        <tag>php</tag>
+         
+        <tag>Modern PHP</tag>
          
          
            
@@ -376,13 +400,13 @@
         <title>PHP 组件的使用和发布</title>
         <pubTime>2017-07-06T10:50:00.000Z</pubTime>
         
-        <tag>php</tag>
-         
-        <tag>Modern PHP</tag>
-         
         <tag>编程</tag>
          
         <tag>暑期</tag>
+         
+        <tag>php</tag>
+         
+        <tag>Modern PHP</tag>
          
         <tag>组件</tag>
          
@@ -404,13 +428,13 @@
         <title>PHP 字符过滤和日期类</title>
         <pubTime>2017-07-07T12:27:00.000Z</pubTime>
         
-        <tag>php</tag>
-         
-        <tag>Modern PHP</tag>
-         
         <tag>编程</tag>
          
         <tag>暑期</tag>
+         
+        <tag>php</tag>
+         
+        <tag>Modern PHP</tag>
          
         <tag>过滤</tag>
          
@@ -434,13 +458,13 @@
         <title>数据库，字符流和异常处理</title>
         <pubTime>2017-07-08T11:22:00.000Z</pubTime>
         
-        <tag>php</tag>
-         
-        <tag>Modern PHP</tag>
-         
         <tag>编程</tag>
          
         <tag>暑期</tag>
+         
+        <tag>php</tag>
+         
+        <tag>Modern PHP</tag>
          
         <tag>数据库</tag>
          
@@ -464,13 +488,13 @@
         <title>服务器部署和配置</title>
         <pubTime>2017-07-09T11:10:00.000Z</pubTime>
         
-        <tag>php</tag>
-         
-        <tag>Modern PHP</tag>
-         
         <tag>编程</tag>
          
         <tag>暑期</tag>
+         
+        <tag>php</tag>
+         
+        <tag>Modern PHP</tag>
          
         <tag>部署</tag>
          
@@ -492,13 +516,13 @@
         <title>《Modern-PHP》结束</title>
         <pubTime>2017-07-10T11:17:00.000Z</pubTime>
         
-        <tag>php</tag>
-         
-        <tag>Modern PHP</tag>
-         
         <tag>编程</tag>
          
         <tag>暑期</tag>
+         
+        <tag>php</tag>
+         
+        <tag>Modern PHP</tag>
          
          
            
@@ -518,11 +542,11 @@
         <title>开始学CodeIgniter框架</title>
         <pubTime>2017-07-11T11:16:00.000Z</pubTime>
         
-        <tag>php</tag>
-         
         <tag>编程</tag>
          
         <tag>暑期</tag>
+         
+        <tag>php</tag>
          
         <tag>Codeigniter</tag>
          
@@ -544,11 +568,11 @@
         <title>使用 Codeigniter 搭建简易论坛系统 (一)</title>
         <pubTime>2017-07-14T14:57:00.000Z</pubTime>
         
-        <tag>php</tag>
-         
         <tag>编程</tag>
          
         <tag>暑期</tag>
+         
+        <tag>php</tag>
          
         <tag>Codeigniter</tag>
          
@@ -570,11 +594,11 @@
         <title>使用 Codeigniter 搭建简易论坛系统 (二)</title>
         <pubTime>2017-07-15T10:09:00.000Z</pubTime>
         
-        <tag>php</tag>
-         
         <tag>编程</tag>
          
         <tag>暑期</tag>
+         
+        <tag>php</tag>
          
         <tag>Codeigniter</tag>
          
