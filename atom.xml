@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2017-08-07T14:34:58.734Z</updated>
+  <updated>2017-09-03T02:43:31.989Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://blog.bbchen.top/2017/08/07/From-Windows-to-Linux/"/>
     <id>http://blog.bbchen.top/2017/08/07/From-Windows-to-Linux/</id>
     <published>2017-08-07T13:31:00.000Z</published>
-    <updated>2017-08-07T14:34:58.734Z</updated>
+    <updated>2017-09-03T02:43:31.989Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170807213709196.png" alt="桌面环境"><br><a id="more"></a><br>近来想起一个月前有装一个 Linux 系统，于是就进去玩了一下。以前也有想过在 Linux 开发程序，也装过 Ubuntu，装过 Debian，但是我不太喜欢那个界面，而且有些应用没有，大大降低了我的开发效率。所以很长一段时间我用的都是 Windows。这次进到 Deepin 系统里面，再次眼前一亮，等我装上 Phpstorm,Atom,我感觉到，我已经不用回去了。当我看到雷神终端模式，我发现已经爱上了这个系统。</p>
 <p><img src="http://osabfc0f3.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E5%BD%95%E5%B1%8F_%E9%80%89%E6%8B%A9%E5%8C%BA%E5%9F%9F_20170807214832.gif" alt=""></p>
@@ -35,9 +35,9 @@
 <li>太美了，这个 Deepin 系统实在太美了，我看到了很多精致的特效，而且国人开发的这款 Linux 版本的商店里也有很多实用的已打包软件，很多功能真的能解决我很多痛点，比方说 terminal 可以自定义命令，我按个 alt+x 就可以启动所有 php 服务。</li>
 </ol>
 <p>那我将我的开发环境迁移到 Linux 麻烦吗？<br>一点都不！麻！烦！<br>为什么？<br>因为我把我所有的 atom 配置都备份了，而 atom 又是跨平台应用，所有我同步一下就把所有插件都安装过来了。然后再将我的 c/c++ 环境配置了一下，这样又能愉悦的刷 acm 题了。<br><img src="http://osabfc0f3.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E5%BD%95%E5%B1%8F_%E9%80%89%E6%8B%A9%E5%8C%BA%E5%9F%9F_20170807221837.gif" alt="acm 刷题"></p>
-<p>然后是我的 Phpstorm ，因为是 IDE 嘛，所以其实很多东西我都不用去改，我只是把字体大小和行间距改了一下就拿来用了。</p>
-<p>还有一下像 php ， node ，composer 这些，装装都很快的。</p>
-<p>然后还要感谢一下 Chrome ，因为登了账号，所有的书签，保存的密码都同步了过来。我已经感觉不出还有哪些日常需要使用的东西无法满足了。</p>
+<p>然后是我的 Phpstorm ,因为是 IDE 嘛，所以其实很多东西我都不用去改，我只是把字体大小和行间距改了一下就拿来用了。</p>
+<p>还有一下像 php ,node ,composer 这些，装装都很快的。</p>
+<p>然后还要感谢一下 Chrome ,因为登了账号，所有的书签，保存的密码都同步了过来。我已经感觉不出还有哪些日常需要使用的东西无法满足了。</p>
 <p>接下来就能愉快的开发了。</p>
 <p>再说一句，这个 Deepin 上的字体还是蛮好看的。<br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170807222502187.png" alt="字体"></p>
 ]]></content>
@@ -173,11 +173,11 @@
     
       <category term="前端" scheme="http://blog.bbchen.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
+      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
+    
       <category term="ios" scheme="http://blog.bbchen.top/tags/ios/"/>
     
       <category term="Android" scheme="http://blog.bbchen.top/tags/Android/"/>
-    
-      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
     
   </entry>
   
@@ -222,11 +222,11 @@
     
       <category term="前端" scheme="http://blog.bbchen.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
-    
       <category term="Typescript" scheme="http://blog.bbchen.top/tags/Typescript/"/>
     
       <category term="Angular" scheme="http://blog.bbchen.top/tags/Angular/"/>
+    
+      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
     
   </entry>
   
