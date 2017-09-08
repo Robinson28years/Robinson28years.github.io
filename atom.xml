@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2017-09-03T02:43:31.989Z</updated>
+  <updated>2017-09-08T08:24:02.113Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LSU.Plus.Club 网站开发心路历程</title>
+    <link href="http://blog.bbchen.top/2017/09/08/LSU-Plus-Club-Development-experience/"/>
+    <id>http://blog.bbchen.top/2017/09/08/LSU-Plus-Club-Development-experience/</id>
+    <published>2017-09-08T06:55:00.000Z</published>
+    <updated>2017-09-08T08:24:02.113Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://i.loli.net/2017/09/08/59b23fcc55cb3.png" alt="TIM截图20170908145839.png"><br><a id="more"></a></p>
+<h1 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h1><p>官网: <a href="http://lsuplus.top/" target="_blank" rel="external">http://lsuplus.top/</a></p>
+<p>项目仓库: <a href="https://github.com/Robinson28years/lsuplusclub" target="_blank" rel="external">https://github.com/Robinson28years/lsuplusclub</a></p>
+<p>emmmm,因为我们俱乐部第一版的官网比较难看，然后当初各功能耦合的太紧了，后期不好改动，所以在去年寒假的时候我就开始尝试重构了，结果因为寒假前半段时间分给了 python 和 机器学习，所以后来俱乐部官网的 2.0 版就重构到一半没继续下去了，然后上学期比赛又太多，所以一直没时间去完善他，结果就是 俱乐部官网 2.0 只把首页和论坛完成了。今年暑假听说 laravel 5.5 LTS 版要出，所以我是打算用 laravel 5.5 重构官网的。奈何。。。。官方跳票，说好的七月下旬发布，结果八月中旬还没发，我预感如果再不开工，可能这一版又只能重构一半。所以最终决定开工！用 laravel 5.5 dev版本，到时候再升级。历时17天，终于在9月1号凌晨发布了3.0版。</p>
+<hr>
+<h1 id="项目架构"><a href="#项目架构" class="headerlink" title="项目架构"></a>项目架构</h1><h2 id="Laravel-5-5"><a href="#Laravel-5-5" class="headerlink" title="Laravel 5.5"></a>Laravel 5.5</h2><p>采用这个版本是因为他是最新的长久支持版，官方维护这个版本两年。而且还加了蛮多的新功能的(虽然我好像没怎么用到).</p>
+<h2 id="Vue-2-x"><a href="#Vue-2-x" class="headerlink" title="Vue 2.x"></a>Vue 2.x</h2><p>因为 Vue 是语义化版本号，所以就不用具体到后面的版本号了。用 Vue 是考虑到这个框架学起来比较简单，下届的同学也方便修改 ，而且自己也用这个框架开发了一些应用了，所以打算用它。</p>
+<h2 id="RESTful-API"><a href="#RESTful-API" class="headerlink" title="RESTful API"></a>RESTful API</h2><p>后端开的接口基本都是 RESTful API 标准的，这样的统一接口机制方便前端的同学和移动端的同学开发(虽然现在这版前端是我在开发,但以后应该还会让其他同学再开发一版)。然后我也把接口文档都写了出来，方便以后的同学进行开发。</p>
+<h2 id="前后端分离"><a href="#前后端分离" class="headerlink" title="前后端分离"></a>前后端分离</h2><p>这样的话主要是和后端开发解耦，各司其职，后端只负责开接口，前端拿接口，然后开发页面，效率可以高不少。然后下一届的俱乐部同学如果觉得我做的页面难看，可以只开发前端,然后把我的替换掉就行。</p>
+<hr>
+<h1 id="项目坑点"><a href="#项目坑点" class="headerlink" title="项目坑点"></a>项目坑点</h1><h2 id="JWT"><a href="#JWT" class="headerlink" title="JWT"></a>JWT</h2><p>首先就是这个 JWT ,这次又好好缕了一下源码，大致的了解了各方法的实现方法。然后因为 laravel 5.5 太新了，所以 jwt 1.0@dev版装不了，然后我还是用了熟悉的稳定版。<br>大致就是中间件拦截，然后检查header里有没有带token信息。放这个token的话是登录之后放置。我设定2小时过期，一周内可刷新。所以我只要每次进首页的时候给他们刷新一下token就行了。除非他们一周没进首页。要不然就不用重新登录了。<br>然后用 jwt 这个方案也是为了方便以后开发移动端的同学，因为现在大多是用这个解决方案。<br>本来想用 laravel 自带的 oauth 扩展的，结果发现还是有差别的。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">handle</span><span class="params">($request, Closure $next)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> (! $token = <span class="keyword">$this</span>-&gt;auth-&gt;setRequest($request)-&gt;getToken()) &#123;</div><div class="line"><span class="comment">//            return $this-&gt;respond('tymon.jwt.absent', 'token_not_provided', 400);</span></div><div class="line">        <span class="keyword">return</span> response()-&gt;json([<span class="string">'code'</span>=&gt;<span class="number">50013</span>,<span class="string">'error'</span> =&gt; <span class="string">'token没提供'</span>]);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        $user = <span class="keyword">$this</span>-&gt;auth-&gt;authenticate($token);</div><div class="line">    &#125; <span class="keyword">catch</span> (TokenExpiredException $e) &#123;</div><div class="line"><span class="comment">//            return $this-&gt;respond('tymon.jwt.expired', 'token_expired', $e-&gt;getStatusCode(), [$e]);</span></div><div class="line">        <span class="keyword">return</span> response()-&gt;json([<span class="string">'code'</span>=&gt;<span class="number">50011</span>,<span class="string">'error'</span> =&gt; <span class="string">'token过期.'</span>]);</div><div class="line">    &#125; <span class="keyword">catch</span> (JWTException $e) &#123;</div><div class="line"><span class="comment">//            return $this-&gt;respond('tymon.jwt.invalid', 'token_invalid', $e-&gt;getStatusCode(), [$e]);</span></div><div class="line">        <span class="keyword">return</span> response()-&gt;json([<span class="string">'code'</span>=&gt;<span class="number">50012</span>,<span class="string">'error'</span> =&gt; <span class="string">'token无效'</span>]);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (! $user) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;respond(<span class="string">'tymon.jwt.user_not_found'</span>, <span class="string">'user_not_found'</span>, <span class="number">404</span>);</div><div class="line">        <span class="keyword">return</span> response()-&gt;json([<span class="string">'code'</span>=&gt;<span class="number">50014</span>,<span class="string">'error'</span> =&gt; <span class="string">'用户没找到'</span>]);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">$this</span>-&gt;events-&gt;fire(<span class="string">'tymon.jwt.valid'</span>, $user);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> $next($request);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>引入了一个包，中间件的写法就是上面那样子。</p>
+<h2 id="其他坑点"><a href="#其他坑点" class="headerlink" title="其他坑点"></a>其他坑点</h2><p>大多是前端方面的，后端这里还是蛮好写的，😂后端开接口的时间和前端做页面的时间是 1 : 3。</p>
+<hr>
+<h1 id="页面展示"><a href="#页面展示" class="headerlink" title="页面展示"></a>页面展示</h1><h2 id="首页-除了题图"><a href="#首页-除了题图" class="headerlink" title="首页(除了题图)"></a>首页(除了题图)</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908160847790.png" alt=""><br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908160917502.png" alt=""></p>
+<h2 id="登录注册"><a href="#登录注册" class="headerlink" title="登录注册"></a>登录注册</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161138433.png" alt=""></p>
+<h2 id="论坛"><a href="#论坛" class="headerlink" title="论坛"></a>论坛</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161036407.png" alt=""><br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-2017090816105539.png" alt=""></p>
+<h2 id="图书馆"><a href="#图书馆" class="headerlink" title="图书馆"></a>图书馆</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161210931.png" alt=""><br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161223395.png" alt=""></p>
+<h2 id="活动"><a href="#活动" class="headerlink" title="活动"></a>活动</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161252344.png" alt=""></p>
+<h2 id="后台"><a href="#后台" class="headerlink" title="后台"></a>后台</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161417552.png" alt=""></p>
+<h1 id="项目历时"><a href="#项目历时" class="headerlink" title="项目历时"></a>项目历时</h1><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161626114.png" alt=""></p>
+<p>从2017年8月16日到2017年9月1日，17天时间，算是完整的重构了一遍，除了兴趣小组模块和一些错误返回码没补全，其他接口基本就成型了。</p>
+<p>天天敲代码的日子，怎么说呢，充实，但也蛮累的，9月1号结束的时候我的背还很酸。</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>暂时就写这么多了，到时候记起什么了再补点好了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2017/09/08/59b23fcc55cb3.png&quot; alt=&quot;TIM截图20170908145839.png&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="网站" scheme="http://blog.bbchen.top/tags/%E7%BD%91%E7%AB%99/"/>
+    
+      <category term="开发" scheme="http://blog.bbchen.top/tags/%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>从 Windows 到 Linux -- 一次开发环境的迁移</title>
@@ -53,9 +101,9 @@
     
       <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
     
-      <category term="系统" scheme="http://blog.bbchen.top/tags/%E7%B3%BB%E7%BB%9F/"/>
-    
       <category term="开发" scheme="http://blog.bbchen.top/tags/%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="系统" scheme="http://blog.bbchen.top/tags/%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
@@ -173,11 +221,11 @@
     
       <category term="前端" scheme="http://blog.bbchen.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
-    
       <category term="ios" scheme="http://blog.bbchen.top/tags/ios/"/>
     
       <category term="Android" scheme="http://blog.bbchen.top/tags/Android/"/>
+    
+      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
     
   </entry>
   
@@ -222,11 +270,11 @@
     
       <category term="前端" scheme="http://blog.bbchen.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
+      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
+    
       <category term="Typescript" scheme="http://blog.bbchen.top/tags/Typescript/"/>
     
       <category term="Angular" scheme="http://blog.bbchen.top/tags/Angular/"/>
-    
-      <category term="ionic" scheme="http://blog.bbchen.top/tags/ionic/"/>
     
   </entry>
   
@@ -999,60 +1047,6 @@
       &lt;p&gt;今天看了两块内容，一个是 Generator 还有一个是 Closures。这里面的话第一个比较简单，应该算是迭代器的变种，第二个闭包就比较麻烦了，以前就不是很懂，所以今天就仔细查了一些资料，争取对闭包能有更深入的了解。&lt;/p&gt;
 &lt;h2 id=&quot;Generator&quot;&gt;&lt;a href=&quot;#Generator&quot; class=&quot;headerlink&quot; title=&quot;Generator&quot;&gt;&lt;/a&gt;Generator&lt;/h2&gt;&lt;p&gt;首先讲下今天看的 Generator，以前学基础的时候确实没听过这个(看来确实学的太水了😂)，了解了一下，听作者将，这个的优点就是耗资源少。&lt;br&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;myGenerator&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;asdfas&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;1111&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;cccc&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;foreach&lt;/span&gt; (myGenerator()  &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; $yieldedValue) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; $yieldedValue, PHP_EOL;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//Result:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//asdfas&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//1111&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//cccc&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;上面就是这个 Generator 的用法，它的特性是，一开始不会将 yield 后面的值储存进内存中，只有当调用这个函数的时候，才会像 return 那样一个个取出来。这里就会有一个好处，所以作者提出这样一个问题。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
-    
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Namespaces-Interface-Traits</title>
-    <link href="http://blog.bbchen.top/2017/07/03/Namespaces-Traits/"/>
-    <id>http://blog.bbchen.top/2017/07/03/Namespaces-Traits/</id>
-    <published>2017-07-03T10:43:00.000Z</published>
-    <updated>2017-07-17T02:43:55.998Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="计划第一天"><a href="#计划第一天" class="headerlink" title="计划第一天"></a>计划第一天</h2><p>今天是计划的第一天，主要在看《Moder PHP》，看了三块内容，一个是 Namespace，一个是 Interface，另一个是 Trait。都是 php 的面向对象特性里面比较突出的一些。Namespace 以前在 Laracast 上看过教程所以还算熟悉。Trait 今天是好好了解了一下，以前开发的时候都不常用这东西。今天在实现代码的时候又发现了一个好用的 php 插件在 atom 上，能给我自动补全 Namespace 还能跳转定义的地方。</p>
-<h2 id="Namespace"><a href="#Namespace" class="headerlink" title="Namespace"></a>Namespace</h2><h3 id="为什么要用-Namespace"><a href="#为什么要用-Namespace" class="headerlink" title="为什么要用 Namespace"></a>为什么要用 Namespace</h3><p>就跟Java里的那些包名类似，是为了防止各个不同的类之间发生冲突，一个人的时候还好，自己知道写过哪些类，当团队开发的时候或者引入了其他人的一个扩展包的话，如果没有命名空间就极易发生冲突。所以使用 Namespace 还是很必须的，可以说是php面向对象的基础。<br><a id="more"></a></p>
-<h3 id="使用-composer"><a href="#使用-composer" class="headerlink" title="使用 composer"></a>使用 composer</h3><p>如果像平常那样写一些小的测试就不用 composer 了，但这次是要学习现代化的 php 用法，如果不用 composer 就要 <code>require</code> 这样把一个个包联系起来，用了 composer 自动加载之后，只要定义命名空间然后 <code>use</code> 就行。</p>
-<p>下面我们从头开始用composer 自动加载来实现我们的测试。</p>
-<p><strong>1. 首先我们要安装 composer</strong></p>
-<p>Composer 在 windoes 下安装很简单，直接用安装包安装就行，安装完之后将镜像地址换到国内，这样下载扩展包是能够快点。</p>
-<p><a href="http://www.phpcomposer.com/" target="_blank" rel="external">Composer官网</a></p>
-<p><a href="https://laravel-china.org/composer" target="_blank" rel="external">Composer国内镜像</a></p>
-<p><strong>2. 然后在自己的工程目录下新建 composer.json</strong><br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"autoload"</span>:&#123;</div><div class="line">    <span class="attr">"psr-4"</span>:&#123;</div><div class="line">      <span class="attr">"Lsu\\"</span>:<span class="string">"src/"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这里第4行的Lsu是我以后要使用的命名空间顶级名称，src是我实际使用的顶级目录。</p>
-<p>新建好 composer.json 之后就在命令行使用 <code>composer install</code> 这个时候文件目录就会生成，让自己再手动新建 src 目录，在里面写要测试的代码就行。</p>
-<p><strong>3. 使用命名空间空间</strong></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">namespace</span> <span class="title">Lsu</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Documentable</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getId</span><span class="params">()</span></span>;</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getContent</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">&#125;</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">namespace</span> <span class="title">Lsu</span>;  <span class="comment">//定义命名空间</span></div><div class="line"><span class="keyword">use</span> <span class="title">Lsu</span>\<span class="title">Documentable</span>; <span class="comment">//因为下面我依赖注入的时候使用了这个类，所以我要引入这类</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DocumentStore</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">protected</span> $data = [];</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">addDocument</span><span class="params">(Documentable $document)</span></span></div><div class="line">    &#123;</div><div class="line">        $key = $document-&gt;getId();</div><div class="line">        $value = $document-&gt;getContent();</div><div class="line">        <span class="keyword">$this</span>-&gt;data[$key] = $value;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getDocuments</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;data;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>这样命名空间就定义好了，然后类和类之间引用使用 <code>use</code> 就可以了。</p>
-<h2 id="Interface"><a href="#Interface" class="headerlink" title="Interface"></a>Interface</h2><p>接口这个，是面向抽象语言必不可少的特性，可以用来降低耦合。<br>具体用法和其他语言相同。先定义一个接口，然后在其他需要它的类中 <code>implements</code> 这个接口。<br>上面使用 composer 的那个例子同样也是一个接口实现的例子。</p>
-<h2 id="Trait"><a href="#Trait" class="headerlink" title="Trait"></a>Trait</h2><p>这个特性是一般语言不具有的 像 Ruby 和 PHP 才有，感觉是一种语法糖。书里先给我讲了个场景，大意是现在有个地图， 地图上有商店，有正在行驶的车，让要给这两个东西都实现获取经纬度的方法。如果使用继承，那么他们两个没有太大关系的类如果继承同一个类就显得不合理。如果使用接口的话，两个类明明需要实现的都是同一个方法，用接口就要实现两遍，所以没有很好的复用(用抽象类，就回到了第一个继承同一个类的问题了)。</p>
-<p>所以，这时候 PHP 的 trait 作用就体现出来了，它可以先想 class 那样写好一个 trait 让在需要使用它的地方 <code>use</code> 就可以了。像场景里那个例子，先实现好获取经纬的的 trait。让在商店和车这两个类中 <code>use</code> 。</p>
-<p>我拿举个简单的例子</p>
-<p><strong>先定义了一个 trait</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">namespace</span> <span class="title">Lsu</span>;</div><div class="line"></div><div class="line"><span class="keyword">trait</span> TraitSayHello</div><div class="line">&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">sayHello</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        print_r(<span class="string">"hello"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
-<p><strong>然后在需要这个 trait 的类里面使用它</strong></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">namespace</span> <span class="title">Lsu</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DocumentTest</span> <span class="keyword">implements</span> <span class="title">Documentable</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">use</span> <span class="title">TraitSayHello</span>;</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getId</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"id test ok"</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getContent</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"content test ok"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>这样 DocumentTest 类 new 出来的对象就能直接使用 sayHello 方法了</strong></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$documentTest = <span class="keyword">new</span> DocumentTest();</div><div class="line">$documentTest-&gt;sayHello();</div></pre></td></tr></table></figure>
-<h2 id="明天继续"><a href="#明天继续" class="headerlink" title="明天继续"></a>明天继续</h2><p>今天书上这三块内容还是将得不错的，比我以前看的详细了不少，明天继续往下看下去，希望能更多的了解一些 PHP 的特性。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;计划第一天&quot;&gt;&lt;a href=&quot;#计划第一天&quot; class=&quot;headerlink&quot; title=&quot;计划第一天&quot;&gt;&lt;/a&gt;计划第一天&lt;/h2&gt;&lt;p&gt;今天是计划的第一天，主要在看《Moder PHP》，看了三块内容，一个是 Namespace，一个是 Interface，另一个是 Trait。都是 php 的面向对象特性里面比较突出的一些。Namespace 以前在 Laracast 上看过教程所以还算熟悉。Trait 今天是好好了解了一下，以前开发的时候都不常用这东西。今天在实现代码的时候又发现了一个好用的 php 插件在 atom 上，能给我自动补全 Namespace 还能跳转定义的地方。&lt;/p&gt;
-&lt;h2 id=&quot;Namespace&quot;&gt;&lt;a href=&quot;#Namespace&quot; class=&quot;headerlink&quot; title=&quot;Namespace&quot;&gt;&lt;/a&gt;Namespace&lt;/h2&gt;&lt;h3 id=&quot;为什么要用-Namespace&quot;&gt;&lt;a href=&quot;#为什么要用-Namespace&quot; class=&quot;headerlink&quot; title=&quot;为什么要用 Namespace&quot;&gt;&lt;/a&gt;为什么要用 Namespace&lt;/h3&gt;&lt;p&gt;就跟Java里的那些包名类似，是为了防止各个不同的类之间发生冲突，一个人的时候还好，自己知道写过哪些类，当团队开发的时候或者引入了其他人的一个扩展包的话，如果没有命名空间就极易发生冲突。所以使用 Namespace 还是很必须的，可以说是php面向对象的基础。&lt;br&gt;
     
     </summary>
     

@@ -1,0 +1,879 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="网站,开发," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="漂游记" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="keywords" content="网站,开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LSU.Plus.Club 网站开发心路历程">
+<meta property="og:url" content="http://blog.bbchen.top/2017/09/08/LSU-Plus-Club-Development-experience/index.html">
+<meta property="og:site_name" content="漂游记">
+<meta property="og:image" content="https://i.loli.net/2017/09/08/59b23fcc55cb3.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908160847790.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908160917502.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161138433.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161036407.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-2017090816105539.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161210931.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161223395.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161252344.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161417552.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161626114.png">
+<meta property="og:updated_time" content="2017-09-08T08:24:02.113Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LSU.Plus.Club 网站开发心路历程">
+<meta name="twitter:image" content="https://i.loli.net/2017/09/08/59b23fcc55cb3.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.bbchen.top/2017/09/08/LSU-Plus-Club-Development-experience/"/>
+
+
+
+
+
+  <title>LSU.Plus.Club 网站开发心路历程 | 漂游记</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c1ea602de6eff2a888b306fb902506f5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">漂游记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.bbchen.top/2017/09/08/LSU-Plus-Club-Development-experience/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="bb chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="漂游记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">LSU.Plus.Club 网站开发心路历程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-08T14:55:00+08:00">
+                2017-09-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://i.loli.net/2017/09/08/59b23fcc55cb3.png" alt="TIM截图20170908145839.png"><br><a id="more"></a></p>
+<h1 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h1><p>官网: <a href="http://lsuplus.top/" target="_blank" rel="external">http://lsuplus.top/</a></p>
+<p>项目仓库: <a href="https://github.com/Robinson28years/lsuplusclub" target="_blank" rel="external">https://github.com/Robinson28years/lsuplusclub</a></p>
+<p>emmmm,因为我们俱乐部第一版的官网比较难看，然后当初各功能耦合的太紧了，后期不好改动，所以在去年寒假的时候我就开始尝试重构了，结果因为寒假前半段时间分给了 python 和 机器学习，所以后来俱乐部官网的 2.0 版就重构到一半没继续下去了，然后上学期比赛又太多，所以一直没时间去完善他，结果就是 俱乐部官网 2.0 只把首页和论坛完成了。今年暑假听说 laravel 5.5 LTS 版要出，所以我是打算用 laravel 5.5 重构官网的。奈何。。。。官方跳票，说好的七月下旬发布，结果八月中旬还没发，我预感如果再不开工，可能这一版又只能重构一半。所以最终决定开工！用 laravel 5.5 dev版本，到时候再升级。历时17天，终于在9月1号凌晨发布了3.0版。</p>
+<hr>
+<h1 id="项目架构"><a href="#项目架构" class="headerlink" title="项目架构"></a>项目架构</h1><h2 id="Laravel-5-5"><a href="#Laravel-5-5" class="headerlink" title="Laravel 5.5"></a>Laravel 5.5</h2><p>采用这个版本是因为他是最新的长久支持版，官方维护这个版本两年。而且还加了蛮多的新功能的(虽然我好像没怎么用到).</p>
+<h2 id="Vue-2-x"><a href="#Vue-2-x" class="headerlink" title="Vue 2.x"></a>Vue 2.x</h2><p>因为 Vue 是语义化版本号，所以就不用具体到后面的版本号了。用 Vue 是考虑到这个框架学起来比较简单，下届的同学也方便修改 ，而且自己也用这个框架开发了一些应用了，所以打算用它。</p>
+<h2 id="RESTful-API"><a href="#RESTful-API" class="headerlink" title="RESTful API"></a>RESTful API</h2><p>后端开的接口基本都是 RESTful API 标准的，这样的统一接口机制方便前端的同学和移动端的同学开发(虽然现在这版前端是我在开发,但以后应该还会让其他同学再开发一版)。然后我也把接口文档都写了出来，方便以后的同学进行开发。</p>
+<h2 id="前后端分离"><a href="#前后端分离" class="headerlink" title="前后端分离"></a>前后端分离</h2><p>这样的话主要是和后端开发解耦，各司其职，后端只负责开接口，前端拿接口，然后开发页面，效率可以高不少。然后下一届的俱乐部同学如果觉得我做的页面难看，可以只开发前端,然后把我的替换掉就行。</p>
+<hr>
+<h1 id="项目坑点"><a href="#项目坑点" class="headerlink" title="项目坑点"></a>项目坑点</h1><h2 id="JWT"><a href="#JWT" class="headerlink" title="JWT"></a>JWT</h2><p>首先就是这个 JWT ,这次又好好缕了一下源码，大致的了解了各方法的实现方法。然后因为 laravel 5.5 太新了，所以 jwt 1.0@dev版装不了，然后我还是用了熟悉的稳定版。<br>大致就是中间件拦截，然后检查header里有没有带token信息。放这个token的话是登录之后放置。我设定2小时过期，一周内可刷新。所以我只要每次进首页的时候给他们刷新一下token就行了。除非他们一周没进首页。要不然就不用重新登录了。<br>然后用 jwt 这个方案也是为了方便以后开发移动端的同学，因为现在大多是用这个解决方案。<br>本来想用 laravel 自带的 oauth 扩展的，结果发现还是有差别的。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">handle</span><span class="params">($request, Closure $next)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> (! $token = <span class="keyword">$this</span>-&gt;auth-&gt;setRequest($request)-&gt;getToken()) &#123;</div><div class="line"><span class="comment">//            return $this-&gt;respond('tymon.jwt.absent', 'token_not_provided', 400);</span></div><div class="line">        <span class="keyword">return</span> response()-&gt;json([<span class="string">'code'</span>=&gt;<span class="number">50013</span>,<span class="string">'error'</span> =&gt; <span class="string">'token没提供'</span>]);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        $user = <span class="keyword">$this</span>-&gt;auth-&gt;authenticate($token);</div><div class="line">    &#125; <span class="keyword">catch</span> (TokenExpiredException $e) &#123;</div><div class="line"><span class="comment">//            return $this-&gt;respond('tymon.jwt.expired', 'token_expired', $e-&gt;getStatusCode(), [$e]);</span></div><div class="line">        <span class="keyword">return</span> response()-&gt;json([<span class="string">'code'</span>=&gt;<span class="number">50011</span>,<span class="string">'error'</span> =&gt; <span class="string">'token过期.'</span>]);</div><div class="line">    &#125; <span class="keyword">catch</span> (JWTException $e) &#123;</div><div class="line"><span class="comment">//            return $this-&gt;respond('tymon.jwt.invalid', 'token_invalid', $e-&gt;getStatusCode(), [$e]);</span></div><div class="line">        <span class="keyword">return</span> response()-&gt;json([<span class="string">'code'</span>=&gt;<span class="number">50012</span>,<span class="string">'error'</span> =&gt; <span class="string">'token无效'</span>]);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (! $user) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;respond(<span class="string">'tymon.jwt.user_not_found'</span>, <span class="string">'user_not_found'</span>, <span class="number">404</span>);</div><div class="line">        <span class="keyword">return</span> response()-&gt;json([<span class="string">'code'</span>=&gt;<span class="number">50014</span>,<span class="string">'error'</span> =&gt; <span class="string">'用户没找到'</span>]);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">$this</span>-&gt;events-&gt;fire(<span class="string">'tymon.jwt.valid'</span>, $user);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> $next($request);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>引入了一个包，中间件的写法就是上面那样子。</p>
+<h2 id="其他坑点"><a href="#其他坑点" class="headerlink" title="其他坑点"></a>其他坑点</h2><p>大多是前端方面的，后端这里还是蛮好写的，😂后端开接口的时间和前端做页面的时间是 1 : 3。</p>
+<hr>
+<h1 id="页面展示"><a href="#页面展示" class="headerlink" title="页面展示"></a>页面展示</h1><h2 id="首页-除了题图"><a href="#首页-除了题图" class="headerlink" title="首页(除了题图)"></a>首页(除了题图)</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908160847790.png" alt=""><br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908160917502.png" alt=""></p>
+<h2 id="登录注册"><a href="#登录注册" class="headerlink" title="登录注册"></a>登录注册</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161138433.png" alt=""></p>
+<h2 id="论坛"><a href="#论坛" class="headerlink" title="论坛"></a>论坛</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161036407.png" alt=""><br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-2017090816105539.png" alt=""></p>
+<h2 id="图书馆"><a href="#图书馆" class="headerlink" title="图书馆"></a>图书馆</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161210931.png" alt=""><br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161223395.png" alt=""></p>
+<h2 id="活动"><a href="#活动" class="headerlink" title="活动"></a>活动</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161252344.png" alt=""></p>
+<h2 id="后台"><a href="#后台" class="headerlink" title="后台"></a>后台</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161417552.png" alt=""></p>
+<h1 id="项目历时"><a href="#项目历时" class="headerlink" title="项目历时"></a>项目历时</h1><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161626114.png" alt=""></p>
+<p>从2017年8月16日到2017年9月1日，17天时间，算是完整的重构了一遍，除了兴趣小组模块和一些错误返回码没补全，其他接口基本就成型了。</p>
+<p>天天敲代码的日子，怎么说呢，充实，但也蛮累的，9月1号结束的时候我的背还很酸。</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>暂时就写这么多了，到时候记起什么了再补点好了。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/网站/" rel="tag"># 网站</a>
+          
+            <a href="/tags/开发/" rel="tag"># 开发</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/07/From-Windows-to-Linux/" rel="next" title="从 Windows 到 Linux -- 一次开发环境的迁移">
+                <i class="fa fa-chevron-left"></i> 从 Windows 到 Linux -- 一次开发环境的迁移
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTI1NC81ODIy"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="bb chen" />
+          <p class="site-author-name" itemprop="name">bb chen</p>
+           
+              <p class="site-description motion-element" itemprop="description">这是一个人的孤岛</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Robinson28years" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/robchen" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友链
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.chenwe.top/" title="xiaoshidefeng" target="_blank">xiaoshidefeng</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.zhuzhenyuan.cn/" title="朱大哥" target="_blank">朱大哥</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://misakatang.cn/" title="MisakaTang" target="_blank">MisakaTang</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.zpliu.top/" title="LIVE不平凡" target="_blank">LIVE不平凡</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.adsionli.cn/" title="Adsionli" target="_blank">Adsionli</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#项目介绍"><span class="nav-number">1.</span> <span class="nav-text">项目介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目架构"><span class="nav-number">2.</span> <span class="nav-text">项目架构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Laravel-5-5"><span class="nav-number">2.1.</span> <span class="nav-text">Laravel 5.5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue-2-x"><span class="nav-number">2.2.</span> <span class="nav-text">Vue 2.x</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RESTful-API"><span class="nav-number">2.3.</span> <span class="nav-text">RESTful API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前后端分离"><span class="nav-number">2.4.</span> <span class="nav-text">前后端分离</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目坑点"><span class="nav-number">3.</span> <span class="nav-text">项目坑点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JWT"><span class="nav-number">3.1.</span> <span class="nav-text">JWT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他坑点"><span class="nav-number">3.2.</span> <span class="nav-text">其他坑点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#页面展示"><span class="nav-number">4.</span> <span class="nav-text">页面展示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#首页-除了题图"><span class="nav-number">4.1.</span> <span class="nav-text">首页(除了题图)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#登录注册"><span class="nav-number">4.2.</span> <span class="nav-text">登录注册</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#论坛"><span class="nav-number">4.3.</span> <span class="nav-text">论坛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图书馆"><span class="nav-number">4.4.</span> <span class="nav-text">图书馆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#活动"><span class="nav-number">4.5.</span> <span class="nav-text">活动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台"><span class="nav-number">4.6.</span> <span class="nav-text">后台</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目历时"><span class="nav-number">5.</span> <span class="nav-text">项目历时</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">6.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bb chen</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+<div class="powered-by">
+</div>
+
+<div class="theme-info">
+Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
