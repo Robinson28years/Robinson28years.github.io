@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://blog.bbchen.top/2017/09/10/No-Longer-Human/</loc>
+    <lastmod>2017-09-10T01:58:45.027Z</lastmod>
+    <data>
+        <display>
+        <title>《人间失格》-- 太宰治</title>
+        <pubTime>2017-09-10T00:28:00.000Z</pubTime>
+        
+        <tag>暑期</tag>
+         
+        <tag>读书</tag>
+         
+        <tag>人间失格</tag>
+         
+         
+           
+             
+              <breadCrumb title="阅读" url="http://blog.bbchen.top/categories/%E9%98%85%E8%AF%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.bbchen.top/2017/09/08/LSU-Plus-Club-Development-experience/</loc>
     <lastmod>2017-09-08T08:24:02.113Z</lastmod>
     <data>
@@ -11,9 +35,9 @@
         <title>LSU.Plus.Club 网站开发心路历程</title>
         <pubTime>2017-09-08T06:55:00.000Z</pubTime>
         
-        <tag>网站</tag>
-         
         <tag>开发</tag>
+         
+        <tag>网站</tag>
          
          
            
@@ -35,9 +59,9 @@
         
         <tag>暑期</tag>
          
-        <tag>开发</tag>
-         
         <tag>系统</tag>
+         
+        <tag>开发</tag>
          
          
            
@@ -111,11 +135,11 @@
          
         <tag>前端</tag>
          
+        <tag>ionic</tag>
+         
         <tag>ios</tag>
          
         <tag>Android</tag>
-         
-        <tag>ionic</tag>
          
          
            
@@ -139,11 +163,11 @@
          
         <tag>前端</tag>
          
-        <tag>ionic</tag>
-         
         <tag>Typescript</tag>
          
         <tag>Angular</tag>
+         
+        <tag>ionic</tag>
          
          
            
