@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2018-02-05T12:51:37.138Z</updated>
+  <updated>2018-02-05T13:48:09.620Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -20,9 +20,21 @@
     <link href="http://blog.bbchen.top/2018/02/05/A-pit-in-developing-API-with-Laravel/"/>
     <id>http://blog.bbchen.top/2018/02/05/A-pit-in-developing-API-with-Laravel/</id>
     <published>2018-02-05T12:48:06.000Z</published>
-    <updated>2018-02-05T12:51:37.138Z</updated>
+    <updated>2018-02-05T13:48:09.620Z</updated>
+    
+    <content type="html"><![CDATA[<p>开始都好好的，Laravel5.5 提供的 API 开发工具用的也挺方便的，转换层不用下载其他包了。但是当我开发完几个get、post方法，再开发patch和put方法发现再postman里面怎么都报错。</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-02-05-21-41-08-201825.png" alt="2018-02-05-21-41-08-201825"></p>
+<p>后来查了好多资料才发现<br><a id="more"></a><br>form-data 不支持put和patch，，，，原来如此。。。<br>使用postman的form-data传过去是不行的，用x-www-form-urlencoded就可以了。</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-02-05-21-43-23-201825.png" alt="2018-02-05-21-43-23-201825"></p>
+<p>所以ajax传数据的时候不能直接传form-data，要直接传键值对过来。<br>不过还有一种解决办法，Laravel提供了用post模拟put和patch的方法，就是你依然用post和form-data传数据，但是你要再form-data里再加一行数据。key是_method,value是PUT或者PATCH。这样Laravel的put和patch路由依然会正确解析。</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-02-05-21-47-15-201825.png" alt="2018-02-05-21-47-15-201825"></p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;开始都好好的，Laravel5.5 提供的 API 开发工具用的也挺方便的，转换层不用下载其他包了。但是当我开发完几个get、post方法，再开发patch和put方法发现再postman里面怎么都报错。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://osabfc0f3.bkt.clouddn.com/2018-02-05-21-41-08-201825.png&quot; alt=&quot;2018-02-05-21-41-08-201825&quot;&gt;&lt;/p&gt;
+&lt;p&gt;后来查了好多资料才发现&lt;br&gt;
     
     </summary>
     
