@@ -2,226 +2,233 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.bbchen.top/2017/10/29/Database-design-of-OJ/</loc>
+    <loc>http://blog.bbchen.top/2018/02/05/A-pit-in-developing-API-with-Laravel/</loc>
     
-    <lastmod>2017-10-30T02:07:26.471Z</lastmod>
+    <lastmod>2018-02-05T12:51:37.138Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.bbchen.top/googlecb852d88a759c8ec.html</loc>
+    <loc>http://blog.bbchen.top/2017/10/29/Database-design-of-OJ/</loc>
     
-    <lastmod>2017-10-29T08:01:16.019Z</lastmod>
+    <lastmod>2018-02-05T12:35:44.313Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.bbchen.top/2017/10/22/Docker-Mybatis-Spring-boot-Oracle12c/</loc>
     
-    <lastmod>2017-10-29T08:01:16.015Z</lastmod>
+    <lastmod>2018-02-05T12:35:44.301Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.bbchen.top/2017/10/22/Robinson-with-Spring-boot-Mybatis/</loc>
     
-    <lastmod>2017-10-29T08:01:16.013Z</lastmod>
+    <lastmod>2018-02-05T12:35:44.289Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.bbchen.top/2017/09/10/No-Longer-Human/</loc>
     
-    <lastmod>2017-10-29T08:01:16.011Z</lastmod>
+    <lastmod>2018-02-05T12:35:44.277Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.bbchen.top/2017/09/08/LSU-Plus-Club-Development-experience/</loc>
     
-    <lastmod>2017-09-08T08:24:02.113Z</lastmod>
+    <lastmod>2018-02-05T12:35:44.257Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.bbchen.top/2017/08/07/From-Windows-to-Linux/</loc>
     
-    <lastmod>2017-09-03T02:43:31.989Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/26/six-chapters-of-a-floating-life/</loc>
-    
-    <lastmod>2017-07-26T15:16:34.555Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/16/Golden-Age-Xiaobo/</loc>
-    
-    <lastmod>2017-07-26T14:19:09.993Z</lastmod>
+    <lastmod>2018-02-05T12:35:44.229Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.bbchen.top/2017/07/26/Ionic-CNode/</loc>
     
-    <lastmod>2017-07-26T14:07:00.396Z</lastmod>
+    <lastmod>2018-02-05T12:35:44.217Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/26/six-chapters-of-a-floating-life/</loc>
+    
+    <lastmod>2018-02-05T12:35:44.193Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.bbchen.top/2017/07/23/Typescript-learning/</loc>
     
-    <lastmod>2017-07-23T13:52:59.984Z</lastmod>
+    <lastmod>2018-02-05T12:35:44.177Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.bbchen.top/about/index.html</loc>
+    <loc>http://blog.bbchen.top/2017/07/16/Golden-Age-Xiaobo/</loc>
     
-    <lastmod>2017-07-17T03:43:49.642Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/10/HHVM-Hack/</loc>
-    
-    <lastmod>2017-07-17T02:46:58.902Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/12/Codeigniter-MVC/</loc>
-    
-    <lastmod>2017-07-17T02:46:35.395Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/13/Codeigniter-Regular-subject/</loc>
-    
-    <lastmod>2017-07-17T02:46:00.513Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/06/28/my-blog/</loc>
-    
-    <lastmod>2017-07-17T02:44:20.179Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/06/30/summer-plan-1/</loc>
-    
-    <lastmod>2017-07-17T02:44:09.141Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/02/two-books/</loc>
-    
-    <lastmod>2017-07-17T02:44:02.969Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/03/Namespaces-Traits/</loc>
-    
-    <lastmod>2017-07-17T02:43:55.998Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/04/Generator-Closure/</loc>
-    
-    <lastmod>2017-07-17T02:43:49.254Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/05/OPcache-Standard/</loc>
-    
-    <lastmod>2017-07-17T02:43:40.067Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/06/seo/</loc>
-    
-    <lastmod>2017-07-17T02:43:32.716Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/06/components-use-create/</loc>
-    
-    <lastmod>2017-07-17T02:43:25.391Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/07/string-date/</loc>
-    
-    <lastmod>2017-07-17T02:43:14.051Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/08/database-stream-exception/</loc>
-    
-    <lastmod>2017-07-17T02:42:59.033Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/09/deployment-provisioning/</loc>
-    
-    <lastmod>2017-07-17T02:42:48.609Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/10/Modern-PHP-END/</loc>
-    
-    <lastmod>2017-07-17T02:42:34.532Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/11/Leaning-Codeigniter/</loc>
-    
-    <lastmod>2017-07-17T02:42:12.478Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/14/Codeigniter-forum-one/</loc>
-    
-    <lastmod>2017-07-17T02:40:53.519Z</lastmod>
+    <lastmod>2018-02-05T12:35:44.157Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.bbchen.top/2017/07/15/Codeigniter-forum-two/</loc>
     
-    <lastmod>2017-07-17T02:40:40.648Z</lastmod>
+    <lastmod>2018-02-05T12:35:44.137Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/14/Codeigniter-forum-one/</loc>
+    
+    <lastmod>2018-02-05T12:35:44.113Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/13/Codeigniter-Regular-subject/</loc>
+    
+    <lastmod>2018-02-05T12:35:44.093Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/11/Leaning-Codeigniter/</loc>
+    
+    <lastmod>2018-02-05T12:35:44.077Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/10/Modern-PHP-END/</loc>
+    
+    <lastmod>2018-02-05T12:35:44.073Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/10/HHVM-Hack/</loc>
+    
+    <lastmod>2018-02-05T12:35:44.057Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/09/deployment-provisioning/</loc>
+    
+    <lastmod>2018-02-05T12:35:44.041Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/08/database-stream-exception/</loc>
+    
+    <lastmod>2018-02-05T12:35:44.021Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/07/string-date/</loc>
+    
+    <lastmod>2018-02-05T12:35:44.001Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/06/seo/</loc>
+    
+    <lastmod>2018-02-05T12:35:43.985Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/06/components-use-create/</loc>
+    
+    <lastmod>2018-02-05T12:35:43.977Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/05/OPcache-Standard/</loc>
+    
+    <lastmod>2018-02-05T12:35:43.961Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/04/Generator-Closure/</loc>
+    
+    <lastmod>2018-02-05T12:35:43.933Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/03/Namespaces-Traits/</loc>
+    
+    <lastmod>2018-02-05T12:35:43.921Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/02/two-books/</loc>
+    
+    <lastmod>2018-02-05T12:35:43.897Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/06/30/summer-plan-1/</loc>
+    
+    <lastmod>2018-02-05T12:35:43.881Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/06/28/my-blog/</loc>
+    
+    <lastmod>2018-02-05T12:35:43.877Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/07/12/Codeigniter-MVC/</loc>
+    
+    <lastmod>2018-02-05T12:35:43.873Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.bbchen.top/tags/index.html</loc>
     
-    <lastmod>2017-06-28T12:58:07.275Z</lastmod>
+    <lastmod>2018-02-05T12:35:43.853Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/googlecb852d88a759c8ec.html</loc>
+    
+    <lastmod>2018-02-05T12:35:43.849Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.bbchen.top/categories/index.html</loc>
     
-    <lastmod>2017-06-28T12:57:58.480Z</lastmod>
+    <lastmod>2018-02-05T12:35:43.829Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/about/index.html</loc>
+    
+    <lastmod>2018-02-05T12:35:43.825Z</lastmod>
     
   </url>
   

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2017-10-30T02:07:26.471Z</updated>
+  <updated>2018-02-05T12:51:37.138Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -16,11 +16,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>用Laravel开发API时遇到的一个坑</title>
+    <link href="http://blog.bbchen.top/2018/02/05/A-pit-in-developing-API-with-Laravel/"/>
+    <id>http://blog.bbchen.top/2018/02/05/A-pit-in-developing-API-with-Laravel/</id>
+    <published>2018-02-05T12:48:06.000Z</published>
+    <updated>2018-02-05T12:51:37.138Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="API开发" scheme="http://blog.bbchen.top/tags/API%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ACM在线评测系统数据库设计_基于Oracle</title>
     <link href="http://blog.bbchen.top/2017/10/29/Database-design-of-OJ/"/>
     <id>http://blog.bbchen.top/2017/10/29/Database-design-of-OJ/</id>
     <published>2017-10-29T08:06:00.000Z</published>
-    <updated>2017-10-30T02:07:26.471Z</updated>
+    <updated>2018-02-05T12:35:44.313Z</updated>
     
     <content type="html"><![CDATA[<p>数据库设计是指对于一个给定的应用环境，构造最优的数据库模式，建立数据库及其应用系统，使之能够有效地存储数据，满足各种用户的应用需求，我准备通过以下步骤来设计数据库：需求分析、概念设计、逻辑设计、物理设计、数据库实施、插入演示数据、建立特殊数据库对象，数据库的运行维护。</p>
 <h1 id="第一部分-需求分析"><a href="#第一部分-需求分析" class="headerlink" title="第一部分 需求分析"></a>第一部分 需求分析</h1><h2 id="需求定义"><a href="#需求定义" class="headerlink" title="需求定义"></a>需求定义</h2><p>为了满足我校学生可以在线做题，在线比赛的需求。现有的判题系统年代有点久远，部分功能无法满足日常训练的要求。所以现在要满足实验室在线做题和比赛的需求，需要做一个在线判题系统。</p>
@@ -125,7 +143,7 @@
     <link href="http://blog.bbchen.top/2017/10/22/Docker-Mybatis-Spring-boot-Oracle12c/"/>
     <id>http://blog.bbchen.top/2017/10/22/Docker-Mybatis-Spring-boot-Oracle12c/</id>
     <published>2017-10-22T05:22:00.000Z</published>
-    <updated>2017-10-29T08:01:16.015Z</updated>
+    <updated>2018-02-05T12:35:44.301Z</updated>
     
     <content type="html"><![CDATA[<p>上一篇已经使用 Mysql 数据库成功的连接了数据。但因为老师要求我们这次的项目是要是要 Oracle 做的。所以还需使用 Oracle 配置一遍。<br>但 Oracle 在 win 界面下的配置比较繁琐。使用最后决定采用在 Docker 下使用 Oracle12c。将 Docker 中的 1521 端口映射到本机的 1521 端口中。<br>开发环境是 Linux, 因为装 Docker 比较方便一点。当然你也可以使用 win 下面的 Docker-tool 进行相同的操作。</p>
 <h2 id="项目准备"><a href="#项目准备" class="headerlink" title="项目准备"></a>项目准备</h2><ol>
@@ -196,7 +214,7 @@
     <link href="http://blog.bbchen.top/2017/10/22/Robinson-with-Spring-boot-Mybatis/"/>
     <id>http://blog.bbchen.top/2017/10/22/Robinson-with-Spring-boot-Mybatis/</id>
     <published>2017-10-22T04:21:00.000Z</published>
-    <updated>2017-10-29T08:01:16.013Z</updated>
+    <updated>2018-02-05T12:35:44.289Z</updated>
     
     <content type="html"><![CDATA[<p>最近在上 Oracle 数据库的课，老师从一个项目该做什么开始讲起，已经见识了很多工具(虽然还没去用过)。突然，上节课，老师说要开始学数据库了，大家先用 Spring boot 连数据库，然后花了一节课时间把 Spring boot 讲了一遍(这么快的吗)。虽然我国庆看了遍 Spring boot，但我那时候没去连数据库。那这次，趁这机会，来了解一下其他优秀的框架是如何开发的。还有，，，这次老师让我们用 Oracle 数据库来连，这篇我先用 Mysql 连，因为 Oracle 坑太多，所以到时候再开一篇，讲讲怎么连 Oracle。<br><a id="more"></a></p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
@@ -238,7 +256,7 @@
     <link href="http://blog.bbchen.top/2017/09/10/No-Longer-Human/"/>
     <id>http://blog.bbchen.top/2017/09/10/No-Longer-Human/</id>
     <published>2017-09-10T00:28:00.000Z</published>
-    <updated>2017-10-29T08:01:16.011Z</updated>
+    <updated>2018-02-05T12:35:44.277Z</updated>
     
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>我这一生，尽是可耻之事。</p>
 </blockquote>
@@ -341,7 +359,7 @@
     <link href="http://blog.bbchen.top/2017/09/08/LSU-Plus-Club-Development-experience/"/>
     <id>http://blog.bbchen.top/2017/09/08/LSU-Plus-Club-Development-experience/</id>
     <published>2017-09-08T06:55:00.000Z</published>
-    <updated>2017-09-08T08:24:02.113Z</updated>
+    <updated>2018-02-05T12:35:44.257Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://i.loli.net/2017/09/08/59b23fcc55cb3.png" alt="TIM截图20170908145839.png"><br><a id="more"></a></p>
 <h1 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h1><p>官网: <a href="http://lsuplus.top/" target="_blank" rel="external">http://lsuplus.top/</a></p>
@@ -389,7 +407,7 @@
     <link href="http://blog.bbchen.top/2017/08/07/From-Windows-to-Linux/"/>
     <id>http://blog.bbchen.top/2017/08/07/From-Windows-to-Linux/</id>
     <published>2017-08-07T13:31:00.000Z</published>
-    <updated>2017-09-03T02:43:31.989Z</updated>
+    <updated>2018-02-05T12:35:44.229Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170807213709196.png" alt="桌面环境"><br><a id="more"></a><br>近来想起一个月前有装一个 Linux 系统，于是就进去玩了一下。以前也有想过在 Linux 开发程序，也装过 Ubuntu，装过 Debian，但是我不太喜欢那个界面，而且有些应用没有，大大降低了我的开发效率。所以很长一段时间我用的都是 Windows。这次进到 Deepin 系统里面，再次眼前一亮，等我装上 Phpstorm,Atom,我感觉到，我已经不用回去了。当我看到雷神终端模式，我发现已经爱上了这个系统。</p>
 <p><img src="http://osabfc0f3.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E5%BD%95%E5%B1%8F_%E9%80%89%E6%8B%A9%E5%8C%BA%E5%9F%9F_20170807214832.gif" alt=""></p>
@@ -433,7 +451,7 @@
     <link href="http://blog.bbchen.top/2017/07/26/six-chapters-of-a-floating-life/"/>
     <id>http://blog.bbchen.top/2017/07/26/six-chapters-of-a-floating-life/</id>
     <published>2017-07-26T14:19:00.000Z</published>
-    <updated>2017-07-26T15:16:34.555Z</updated>
+    <updated>2018-02-05T12:35:44.193Z</updated>
     
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>夏月荷花初开时，晚含而晓放，芸用小纱囊撮茶叶少许，置花心，明早取出，烹天泉水泡之，香韵尤绝。</p>
 </blockquote>
@@ -498,7 +516,7 @@
     <link href="http://blog.bbchen.top/2017/07/26/Ionic-CNode/"/>
     <id>http://blog.bbchen.top/2017/07/26/Ionic-CNode/</id>
     <published>2017-07-26T13:05:00.000Z</published>
-    <updated>2017-07-26T14:07:00.396Z</updated>
+    <updated>2018-02-05T12:35:44.217Z</updated>
     
     <content type="html"><![CDATA[<p>终于把一系列的资料看完了，然后今天开始第一次尝试制作一个社区 App (😂因为 CNode 提供了比较丰富的接口 API) 。<br>这次因为使用了 ionic ，所以我可以同时制作出 ios 版和 Android 版。</p>
 <p>那我简单介绍一下制作过程。</p>
@@ -555,7 +573,7 @@
     <link href="http://blog.bbchen.top/2017/07/23/Typescript-learning/"/>
     <id>http://blog.bbchen.top/2017/07/23/Typescript-learning/</id>
     <published>2017-07-23T12:57:00.000Z</published>
-    <updated>2017-07-23T13:52:59.984Z</updated>
+    <updated>2018-02-05T12:35:44.177Z</updated>
     
     <content type="html"><![CDATA[<p>因为想学做 app 所以找到了 ionic，然后发现 ionic 用的是 Angular ，然后又去学了 Angular，学着学着发现还得先学下 Typescript，因为 Angular 使用的是 Typescript 😂。然后我就去学了 Typescript。</p>
 <h2 id="什么是-Typescript"><a href="#什么是-Typescript" class="headerlink" title="什么是 Typescript"></a>什么是 Typescript</h2><blockquote>
@@ -604,7 +622,7 @@
     <link href="http://blog.bbchen.top/2017/07/16/Golden-Age-Xiaobo/"/>
     <id>http://blog.bbchen.top/2017/07/16/Golden-Age-Xiaobo/</id>
     <published>2017-07-16T07:22:00.000Z</published>
-    <updated>2017-07-26T14:19:09.993Z</updated>
+    <updated>2018-02-05T12:35:44.157Z</updated>
     
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><p> 每个人活着，都该有自己的故事。</p>
 <p><strong>王小波</strong> </p>
@@ -687,7 +705,7 @@
     <link href="http://blog.bbchen.top/2017/07/15/Codeigniter-forum-two/"/>
     <id>http://blog.bbchen.top/2017/07/15/Codeigniter-forum-two/</id>
     <published>2017-07-15T10:09:00.000Z</published>
-    <updated>2017-07-17T02:40:40.648Z</updated>
+    <updated>2018-02-05T12:35:44.137Z</updated>
     
     <content type="html"><![CDATA[<p>今天完成了简易论坛的用户注册登录和权限验证功能，还是收获蛮多的，至少好好用了 session。下面我就简单的写一下怎么构建论坛的注册登录和简单的权限验证(大致用法会了之后，多角色权限也可以试着做一下)。</p>
 <p>项目地址：<br><a href="https://github.com/Robinson28years/CodeIgniter-learning" target="_blank" rel="external">https://github.com/Robinson28years/CodeIgniter-learning</a></p>
@@ -745,7 +763,7 @@
     <link href="http://blog.bbchen.top/2017/07/14/Codeigniter-forum-one/"/>
     <id>http://blog.bbchen.top/2017/07/14/Codeigniter-forum-one/</id>
     <published>2017-07-14T14:57:00.000Z</published>
-    <updated>2017-07-17T02:40:53.519Z</updated>
+    <updated>2018-02-05T12:35:44.113Z</updated>
     
     <content type="html"><![CDATA[<p>今天继续深入学习 Codeigniter 这个框架，尝试着用它搭一个简易的论坛系统，熟悉一下操作。<br>大致讲一下每个页面的 MVC 构成。</p>
 <p>项目地址：<br><a href="https://github.com/Robinson28years/CodeIgniter-learning" target="_blank" rel="external">https://github.com/Robinson28years/CodeIgniter-learning</a></p>
@@ -796,7 +814,7 @@
     <link href="http://blog.bbchen.top/2017/07/13/Codeigniter-Regular-subject/"/>
     <id>http://blog.bbchen.top/2017/07/13/Codeigniter-Regular-subject/</id>
     <published>2017-07-13T13:29:00.000Z</published>
-    <updated>2017-07-17T02:46:00.513Z</updated>
+    <updated>2018-02-05T12:35:44.093Z</updated>
     
     <content type="html"><![CDATA[<p>今天把 Codeigniter 手册里常规主题这一章看了。<br><a id="more"></a><br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170713213250131.png" alt=""></p>
 <p>其中一些实践了一下，像那个路由，它是分三段的，第一段表示控制器名称，第二段表示控制器里的方法，第三段表示参数。</p>
@@ -833,7 +851,7 @@
     <link href="http://blog.bbchen.top/2017/07/12/Codeigniter-MVC/"/>
     <id>http://blog.bbchen.top/2017/07/12/Codeigniter-MVC/</id>
     <published>2017-07-12T12:52:00.000Z</published>
-    <updated>2017-07-17T02:46:35.395Z</updated>
+    <updated>2018-02-05T12:35:43.873Z</updated>
     
     <content type="html"><![CDATA[<p>今天开始尝试写 Codeigniter 的代码了，学着写了一个基础的 MVC 的代码，说实话，写过 Laravel 之后看到其他的框架都觉得不够优雅，看到一些冗余的操作我就会觉得这个应该不是最佳实践吧，可这分明就是官方的教程。可能我领悟的还不够深吧，暂时还没发现优点。( 我偷偷下了一个 Codeigniter 4 尝了下鲜，首页就比 3 美观很多，而且配了贴心的 debug 工具，可人家是 开发板呀，线上还不稳，如果以后真的学下去了可以等一下这个稳定版，应该还不错)。</p>
 <p>Codeigniter 4 👇<br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-2017071221014532.png" alt=""><br><a id="more"></a><br>4 自带 debug 工具 👇</p>
@@ -874,7 +892,7 @@
     <link href="http://blog.bbchen.top/2017/07/11/Leaning-Codeigniter/"/>
     <id>http://blog.bbchen.top/2017/07/11/Leaning-Codeigniter/</id>
     <published>2017-07-11T11:16:00.000Z</published>
-    <updated>2017-07-17T02:42:12.478Z</updated>
+    <updated>2018-02-05T12:35:44.077Z</updated>
     
     <content type="html"><![CDATA[<h2 id="为什么不学-Phalcon-了"><a href="#为什么不学-Phalcon-了" class="headerlink" title="为什么不学 Phalcon 了"></a>为什么不学 Phalcon 了</h2><p>😂因为国内社区支持太少了，连稳定维护的中文版都不是最新的(可能是最近刚出新的文档来不及更新)，而且连一个中文社区都没有，这样学起来可能会有些吃力。可能以后其他框架学完会来继续学这个(那个时候资源应该丰富一点了)。</p>
 <h2 id="开始学-Codeigniter"><a href="#开始学-Codeigniter" class="headerlink" title="开始学 Codeigniter"></a>开始学 Codeigniter</h2><p>这个框架据说是很轻量级的，而且文档也很全，各种教程也有，社区也蛮活跃的，我去看拉勾网和 BOSS 直聘 也都是有说最好会 Ci 的。所以就先开始学 Ci 了。<br>可以看出 Laravel, ThinkPHP, Ci 这三个框架还是蛮多公司需要的👇<br><a id="more"></a><br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170711192406333.png" alt=""></p>
@@ -931,7 +949,7 @@
     <link href="http://blog.bbchen.top/2017/07/10/Modern-PHP-END/"/>
     <id>http://blog.bbchen.top/2017/07/10/Modern-PHP-END/</id>
     <published>2017-07-10T11:17:00.000Z</published>
-    <updated>2017-07-17T02:42:34.532Z</updated>
+    <updated>2018-02-05T12:35:44.073Z</updated>
     
     <content type="html"><![CDATA[<h2 id="完结"><a href="#完结" class="headerlink" title="完结"></a>完结</h2><p>嗯，第一本全英文的技术类书籍看完了，这个要纪念一下，虽然看的过程中有很多单词不懂，但代码呢，总是用一种神奇的力量，好的代码，本身就是一种语言，所以也没想象中那么吃力，也大概能懂作者要表达什么。这样的话，我看下一本英文技术书的时候不会很害怕。关于为什么看英文版的，一是中文版有点糊，二是有些新出的连中文版都没。</p>
 <p>所以啊，英语还是很重要的(悔不当初啊)。<br>讲一下这本书吧，我看过这本书的作者写过的另一篇教程，PHP之道( <em>PHP-The-Right-way</em> )，写的还蛮好的，但我看的时候总感觉不是很详细。直到看到了这本书。我觉得这本书是 PHP之道的加强版。讲了更多的内容，而且更加详细了，PHP 之道里更多的是将一些拓展链接给了出来。</p>
@@ -969,7 +987,7 @@
     <link href="http://blog.bbchen.top/2017/07/10/HHVM-Hack/"/>
     <id>http://blog.bbchen.top/2017/07/10/HHVM-Hack/</id>
     <published>2017-07-10T10:52:00.000Z</published>
-    <updated>2017-07-17T02:46:58.902Z</updated>
+    <updated>2018-02-05T12:35:44.057Z</updated>
     
     <content type="html"><![CDATA[<p>今天看了四章内容(Testing, Profiling, HHVM-Hack, Community),其他都不提了，今天就提一下 HHVM 和 Hack。</p>
 <h2 id="HHVM"><a href="#HHVM" class="headerlink" title="HHVM"></a>HHVM</h2><p>php 是一种解释型语言这我们都知道，在将 php 语言转换成机器码时需要解释引擎，在以前，只有一个引擎，Zend Engine，后来呢，Facebook的扎克伯格在大学的时候开发了个网站，因为 php 开发快，所以他一开始就选了这个语言，后来大家也知道，这网站越来越大，公司在已有大量服务器的基础上，决定不再继续采购服务器了，而是改进这门语言的解释器，所以有了我们看见的 HHVM ( <em>Hip Hop Virtual Machine</em> ),据说是快了好几倍。</p>
@@ -1025,7 +1043,7 @@
     <link href="http://blog.bbchen.top/2017/07/09/deployment-provisioning/"/>
     <id>http://blog.bbchen.top/2017/07/09/deployment-provisioning/</id>
     <published>2017-07-09T11:10:00.000Z</published>
-    <updated>2017-07-17T02:42:48.609Z</updated>
+    <updated>2018-02-05T12:35:44.041Z</updated>
     
     <content type="html"><![CDATA[<p>虽说今天有看四章内容(Hosting,Provisioning,Tuning,Deployment),😂但好像都是以前看到过的，要说有帮助的，大概就是那个自动部署了，但现在还没尝试过，等我尝试了自动部署，就再写一篇。</p>
 <h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><p>服务器，我一般买 Vultr 和 阿里云 的。阿里云有学生套餐，Vultr 的话可以绑定域名(阿里绑域名要备案比较麻烦),买好服务器，拿到的就是一个纯净的系统。</p>
@@ -1066,7 +1084,7 @@
     <link href="http://blog.bbchen.top/2017/07/08/database-stream-exception/"/>
     <id>http://blog.bbchen.top/2017/07/08/database-stream-exception/</id>
     <published>2017-07-08T11:22:00.000Z</published>
-    <updated>2017-07-17T02:42:59.033Z</updated>
+    <updated>2018-02-05T12:35:44.021Z</updated>
     
     <content type="html"><![CDATA[<p>说实话，今天的数据库这章不是很满意，感觉讲的还不是很具体，有时间我还要单独看下数据库。还有两块字符流和异常的处理写的还行，不过异常处理以前有看过一点。</p>
 <h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
@@ -1116,76 +1134,6 @@
       <category term="数据库" scheme="http://blog.bbchen.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
       <category term="异常处理" scheme="http://blog.bbchen.top/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP 字符过滤和日期类</title>
-    <link href="http://blog.bbchen.top/2017/07/07/string-date/"/>
-    <id>http://blog.bbchen.top/2017/07/07/string-date/</id>
-    <published>2017-07-07T12:27:00.000Z</published>
-    <updated>2017-07-17T02:43:14.051Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天看了三块内容，字符的过滤，密码的 hash，还有就是 PHP 内的日期类。本来今天还打算把数据库这块看掉，但这块实在太重要了，以后面试的时候也肯定会问到，所以明天重点看一下数据库。(😂主要今天下午还去了图书馆，就没有完整的一块时间了)。</p>
-<h2 id="字符的过滤"><a href="#字符的过滤" class="headerlink" title="字符的过滤"></a>字符的过滤</h2><p>字符过滤有三个基本要求：</p>
-<ol>
-<li>过滤 (Sanitize)</li>
-<li>验证 (Validate)</li>
-<li>跳脱 (Escape) (是这样翻译吗？？)</li>
-</ol>
-<h3 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h3><p>首先是过滤，这个还蛮重要的，要不然一不小心别人就把sql执行语句或者 html 插入进来了。<br>php 自带有一个 html 过滤函数和 sql 语句过滤函数。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$input = <span class="string">'&lt;p&gt;123234&lt;/p&gt;'</span>;</div><div class="line"><span class="comment">// echo $input;</span></div><div class="line"><span class="keyword">echo</span> htmlentities($input, ENT_QUOTES, <span class="string">'UTF-8'</span>);</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
-<p>使用 htmlentities 这个 php 内置函数之后输出就没有了<code>&lt;p&gt;</code>这些 html 代码了。<br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170707211100848.png" alt=""></p>
-<p>过滤 sql 语句的话，使用 PDO 的前置检查就行(PDO 的话还是很安全的，<code>mysql_query()</code>这种不要用了，php7都废弃了，而且很不安全)<br><a id="more"></a></p>
-<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>主要是验证拿到的数据是否符合自己的要求，这个前端限制一个，后端也限制一下比较好。<br>比方说限制邮箱格式<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$email = <span class="string">'john@example.com'</span>;</div><div class="line">$emailSafe = filter_var($email, FILTER_SANITIZE_EMAIL);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
-<p><code>filter_var</code> 函数，在配上 php 内置的<code>FILTER_SANITIZE_EMAIL</code>常量可以做到邮箱的验证。搭配其他的常量，比方说搭配<code>FILTER_SANITIZE_STRING</code>就可以实现其他类型的验证。</p>
-<p>还有一些就是要自己去数据库里查找对应数据来进行验证。</p>
-<h3 id="跳脱"><a href="#跳脱" class="headerlink" title="跳脱"></a>跳脱</h3><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170707212558229.png" alt=""><br>这篇看的不是很懂，大意应该是，最终展现在前端的时候还要再过滤一下语句。</p>
-<h2 id="密码"><a href="#密码" class="headerlink" title="密码"></a>密码</h2><p>储存密码的几个原则：</p>
-<ol>
-<li>从不要知道用户的密码</li>
-<li>从不要限制用户的密码</li>
-<li>从不要明文发送密码给用户</li>
-<li>使用hash而不是加密</li>
-</ol>
-<p>因为 php 有内置密码函数，所以非常方便，哈希用 <code>password_hash()</code>, 验证用<code>password_verify()</code>，就可以了，已经非常安全了，php 会自己加盐的。以前我也知道php 会自动加盐，但我一直好奇他加的盐储存在哪里，后来我知道了，在h<code>ash</code>过后的那串字符中就有储存盐值，所以直接用 <code>password_verify()</code> 他就会自己去校验，都封装好了。</p>
-<h2 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h2><p>日期这个比较麻烦(主要是格式转来转去，还有计算一些差值)，但有时候一定要用它，所以还是有必要看下的。<br><code>date_default_timezone_set(&#39;Asia/Shanghai&#39;);</code><br>这句可以设置时区，国内一般设置为上海，东八区。</p>
-<h3 id="DateTime"><a href="#DateTime" class="headerlink" title="DateTime"></a>DateTime</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">date_default_timezone_set(<span class="string">'Asia/Shanghai'</span>);</div><div class="line">$datetime = <span class="keyword">new</span> DateTime();</div><div class="line"></div><div class="line">$datetime2 = <span class="keyword">new</span> DateTime(<span class="string">'2014-04-27 5:03 AM'</span>);</div><div class="line">var_dump($datetime2);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>然后就是一些普通的用法，不过下面我还是要展示一下 <code>DateInterval</code> 这个类，以前还真没用过，这个主要是设定时间区间的。</p>
-<h3 id="DateInterval"><a href="#DateInterval" class="headerlink" title="DateInterval"></a>DateInterval</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$interval = <span class="keyword">new</span> DateInterval(<span class="string">'P2W'</span>);</div><div class="line"></div><div class="line">$datetime-&gt;add($interval);</div><div class="line"><span class="keyword">echo</span> $datetime-&gt;format(<span class="string">'Y-m-d H:i:s'</span>);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>比方说我设置了区间两周(P2W就是两周的意思)，然后将它加到 <code>datetime</code> 上，这样<code>datetime</code>的日期就会增加两周。</p>
-<h3 id="DatePeriod"><a href="#DatePeriod" class="headerlink" title="DatePeriod"></a>DatePeriod</h3><p>这个 <code>DatePeriod</code> 类我也是第一次见，这个搭配上上面两个，可以指定初始时间，然后间隔，再加上一个次数，可以很好的实现一些循环任务。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$period = <span class="keyword">new</span> DatePeriod($datetime, $interval, <span class="number">3</span>);</div><div class="line"></div><div class="line"><span class="keyword">foreach</span> ($period  <span class="keyword">as</span> $nextDateTime) &#123;</div><div class="line">    <span class="keyword">echo</span> $nextDateTime-&gt;format(<span class="string">'Y-m-d'</span>), PHP_EOL;</div><div class="line">&#125;</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>明天要好好看下数据库了。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天看了三块内容，字符的过滤，密码的 hash，还有就是 PHP 内的日期类。本来今天还打算把数据库这块看掉，但这块实在太重要了，以后面试的时候也肯定会问到，所以明天重点看一下数据库。(😂主要今天下午还去了图书馆，就没有完整的一块时间了)。&lt;/p&gt;
-&lt;h2 id=&quot;字符的过滤&quot;&gt;&lt;a href=&quot;#字符的过滤&quot; class=&quot;headerlink&quot; title=&quot;字符的过滤&quot;&gt;&lt;/a&gt;字符的过滤&lt;/h2&gt;&lt;p&gt;字符过滤有三个基本要求：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;过滤 (Sanitize)&lt;/li&gt;
-&lt;li&gt;验证 (Validate)&lt;/li&gt;
-&lt;li&gt;跳脱 (Escape) (是这样翻译吗？？)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;过滤&quot;&gt;&lt;a href=&quot;#过滤&quot; class=&quot;headerlink&quot; title=&quot;过滤&quot;&gt;&lt;/a&gt;过滤&lt;/h3&gt;&lt;p&gt;首先是过滤，这个还蛮重要的，要不然一不小心别人就把sql执行语句或者 html 插入进来了。&lt;br&gt;php 自带有一个 html 过滤函数和 sql 语句过滤函数。&lt;br&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$input = &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;p&amp;gt;123234&amp;lt;/p&amp;gt;&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// echo $input;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; htmlentities($input, ENT_QUOTES, &lt;span class=&quot;string&quot;&gt;&#39;UTF-8&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;使用 htmlentities 这个 php 内置函数之后输出就没有了&lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;这些 html 代码了。&lt;br&gt;&lt;img src=&quot;http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170707211100848.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;过滤 sql 语句的话，使用 PDO 的前置检查就行(PDO 的话还是很安全的，&lt;code&gt;mysql_query()&lt;/code&gt;这种不要用了，php7都废弃了，而且很不安全)&lt;br&gt;
-    
-    </summary>
-    
-      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
-    
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
-      <category term="过滤" scheme="http://blog.bbchen.top/tags/%E8%BF%87%E6%BB%A4/"/>
-    
-      <category term="日期" scheme="http://blog.bbchen.top/tags/%E6%97%A5%E6%9C%9F/"/>
     
   </entry>
   
