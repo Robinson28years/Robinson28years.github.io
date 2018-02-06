@@ -105,7 +105,9 @@
 <meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/2018-02-05-21-41-08-201825.png">
 <meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/2018-02-05-21-43-23-201825.png">
 <meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/2018-02-05-21-47-15-201825.png">
-<meta property="og:updated_time" content="2018-02-05T14:00:36.076Z">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/2018-02-06-17-09-01-201826.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/2018-02-06-17-11-34-201826.png">
+<meta property="og:updated_time" content="2018-02-06T09:16:33.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用Laravel开发API时遇到的一个坑">
 <meta name="twitter:description" content="开发 API 开始都好好的，Laravel5.5 提供的 make:resource 用的也挺方便的，转换层不用下载其他包了。但是当我开发完几个 get、post 路由，再开发 patch 和 put 路由时发现在 postman 里面怎么测试都报错。  后来查了好多资料才发现">
@@ -389,6 +391,11 @@
 <p>所以 ajax 传数据的时候不能直接传 form-data 数据，要传键值对序列化过去。</p>
 <h2 id="解决方法二"><a href="#解决方法二" class="headerlink" title="解决方法二"></a>解决方法二</h2><p>不过还有一种解决办法，Laravel 提供了用 post 模拟 put 和   patch 的方法，就是你依然可以使用 post 请求 和用 form-data 传数据，但是你要在 form-data 里再加一行数据，其中 key 是 _method , value 是 PUT 或者 PATCH 。这样 Laravel 的 put 和 patch 路由依然会正确解析你的 post 请求。</p>
 <p><img src="http://osabfc0f3.bkt.clouddn.com/2018-02-05-21-47-15-201825.png" alt="2018-02-05-21-47-15-201825"></p>
+<h2 id="解决方法二-1"><a href="#解决方法二-1" class="headerlink" title="解决方法二"></a>解决方法二</h2><p>感谢 Laravel China 论坛回复里提出的直接用 <code>Content-Type: application/json</code> 这个 <code>Headers</code> 传数据， 我在 postman 里试了一下确实可以。而且查了一下资料，加这个 <code>Headers</code> 确实是一个比较通用且较好的方法，详情可以见 <a href="https://imququ.com/post/four-ways-to-post-data-in-http.html" target="_blank" rel="external">四种常见的 POST 提交数据方式</a></p>
+<p>在 postman 里面测试接口的话就选择用 <code>raw</code> 传 <code>application/json</code> 格式就可以了<br><img src="http://osabfc0f3.bkt.clouddn.com/2018-02-06-17-09-01-201826.png" alt="2018-02-06-17-09-01-201826"></p>
+<p>然后 postman 会自动把 Headers 改为 <code>Content-Type:application/json</code></p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-02-06-17-11-34-201826.png" alt="2018-02-06-17-11-34-201826"></p>
+<p>这样前端开发使用 patch 或者 put 路由的时候，只要把数据 JSON 序列化之后传过来就可以了。一般是使用 <code>JSON.stringify</code> 这个方法来进行序列化。</p>
 
       
     </div>
@@ -627,7 +634,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方法一："><span class="nav-number">1.</span> <span class="nav-text">解决方法一：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方法二"><span class="nav-number">2.</span> <span class="nav-text">解决方法二</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方法一："><span class="nav-number">1.</span> <span class="nav-text">解决方法一：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方法二"><span class="nav-number">2.</span> <span class="nav-text">解决方法二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方法二-1"><span class="nav-number">3.</span> <span class="nav-text">解决方法二</span></a></li></ol></div>
             
 
           </div>
