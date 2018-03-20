@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2018-02-06T09:23:23.042Z</updated>
+  <updated>2018-03-20T07:12:59.106Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -14,6 +14,97 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安卓EventBus框架的介绍和使用</title>
+    <link href="http://blog.bbchen.top/2018/03/20/Introduction-and-use-of-the-Android-EventBus-framework/"/>
+    <id>http://blog.bbchen.top/2018/03/20/Introduction-and-use-of-the-Android-EventBus-framework/</id>
+    <published>2018-03-20T06:08:51.000Z</published>
+    <updated>2018-03-20T07:12:59.106Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="框架介绍"><a href="#框架介绍" class="headerlink" title="框架介绍"></a>框架介绍</h1><p><code>EventBus</code> 是由 greenrobot 组织贡献的一个 Android 事件发布/订阅轻量级框架。<code>EventBus</code> 也是一款针对 Android 优化的发布/订阅（<code>publish</code>/<code>subscribe</code>）事件总线。主要功能是替代 <code>Intent</code>,<code>Handler</code>,<code>BroadCast</code> 在 <code>Fragment</code>，<code>Activity</code>，<code>Service</code>，线程之间传递消息。简化了应用程序内各组件间、组件与后台线程间的通信。优点是开销小，代码更优雅。以及将发送者和接收者解耦。比如请求网络，等网络返回时通过 <code>Handler</code> 或 <code>Broadcast</code> 通知 UI，两个 <code>Fragment</code> 之间需要通过 <code>Listener</code> 通信，这些需求都可以通过 <code>EventBus</code> 实现。</p>
+<p><img src="https://github.com/greenrobot/EventBus/raw/master/EventBus-Publish-Subscribe.png" alt="官网图"></p>
+<h1 id="框架特性"><a href="#框架特性" class="headerlink" title="框架特性"></a>框架特性</h1><ul>
+<li><p>简单但强大：EventBus是一个微小的库，具有超级容易学习的API。然而，您的软件架构可能因组件解耦而受益：订阅者在使用事件时不用关心这个事件是谁发送的。</p>
+</li>
+<li><p>大量验证：EventBus是最常用的Android库之一：成千上万的应用程序使用EventBus，其中不乏非常受欢迎的应用程序。我们认为差不多有十亿应用程序使用EventBus。</p>
+</li>
+<li><p>高性能：Android系统上，性能尤为重要。 EventBus被针对性的做了大量的分析和优化;EventBus可能是这类开源库中速度最快的 解决方案。</p>
+</li>
+<li><p>基于API的便捷注解（不牺牲性能）：只需将@Subscribe注解添加订阅方法即可。由于构建的时候花费了时间来建立注解的索引，所以EventBus不需要在应用程序的运行时间执行注释反射，注解反射的方式在Android上相当慢。</p>
+</li>
+<li><p>Android主线程发送：当与UI交互时，EventBus可以在主线程中传递事件，而不用去关心事件是从如何发布的。</p>
+</li>
+<li><p>后台线程发送：如果您的订阅者长时间运行任务，EventBus也可以使用后台线程来避免UI阻塞。</p>
+</li>
+<li><p>事件和订阅者继承：在EventBus中，面向对象的范例适用于事件和订阅者类。让我们假设事件类A是B的父类。类型B的发布事件也将被发布到对A感兴趣的订阅者。类似地，考虑订阅类的继承。</p>
+</li>
+<li><p>零配置：您可以从代码中的任何地方立即使用默认的EventBus实例。</p>
+</li>
+<li><p>可配置：要根据需要调整EventBus，可以使用构建器模式调整其行为。</p>
+</li>
+</ul>
+<h1 id="官方下载地址"><a href="#官方下载地址" class="headerlink" title="官方下载地址"></a>官方下载地址</h1><p>官网 <a href="http://greenrobot.org/eventbus/" target="_blank" rel="external">http://greenrobot.org/eventbus/</a></p>
+<p>官方仓库  <a href="https://github.com/greenrobot/EventBus" target="_blank" rel="external">https://github.com/greenrobot/EventBus</a></p>
+<h3 id="三种安装方式"><a href="#三种安装方式" class="headerlink" title="三种安装方式"></a>三种安装方式</h3><ol>
+<li><p>使用 <code>Gradle</code></p>
+<p> <code>compile &#39;org.greenrobot:eventbus:3.1.1&#39;</code></p>
+</li>
+<li><p>使用 <code>Maven</code></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">&lt;groupId&gt;org.greenrobot&lt;/groupId&gt;</div><div class="line">&lt;artifactId&gt;eventbus&lt;/artifactId&gt;</div><div class="line">&lt;version&gt;3.1.1&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>下载 jar 包</p>
+<p> 下载地址 <a href="https://search.maven.org/remote_content?g=org.greenrobot&amp;a=eventbus&amp;v=LATEST" target="_blank" rel="external">https://search.maven.org/remote_content?g=org.greenrobot&amp;a=eventbus&amp;v=LATEST</a></p>
+</li>
+</ol>
+<h1 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h1><ol>
+<li><p>定义事件<br> Java 对象，用来当消息载体</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Event</span> </span>&#123;</div><div class="line"></div><div class="line"><span class="keyword">private</span> String msg;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">Event</span><span class="params">(String msg)</span> </span>&#123;</div><div class="line">    <span class="keyword">this</span>.msg = msg;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getMsg</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> msg;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>订阅者</p>
+<p> 订阅者需要实现在事件发布时将被调用的事件处理方法</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Subscribe</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onEventMainThread</span><span class="params">(Event event)</span> </span>&#123;</div><div class="line">    String msg = <span class="string">"订阅者接收到了消息："</span> + event.getMsg();</div><div class="line">    System.out.println(msg);</div><div class="line">    textView.setText(msg);</div><div class="line">    Toast.makeText(<span class="keyword">this</span>,msg,Toast.LENGTH_LONG).show();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>发送事件</p>
+<p> 在代码的任意地方发布事件，所有与当前事件匹配且注册过的订阅者都将会收到事件</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">EventBus.getDefault().post(<span class="keyword">new</span> Event(<span class="string">"记得吃早饭哦"</span>));</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="入门例子"><a href="#入门例子" class="headerlink" title="入门例子"></a>入门例子</h1><h3 id="1-Gradle-Scripts-gt-build-gradle"><a href="#1-Gradle-Scripts-gt-build-gradle" class="headerlink" title="1. Gradle Scripts &gt; build.gradle"></a>1. Gradle Scripts &gt; build.gradle</h3><p>通过 gradle 安装 EventBus 框架</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-03-20-14-48-50-2018320.png" alt="2018-03-20-14-48-50-2018320"></p>
+<h3 id="2-res-gt-layout-gt-activity-main-xml"><a href="#2-res-gt-layout-gt-activity-main-xml" class="headerlink" title="2. res &gt; layout &gt; activity_main.xml"></a>2. res &gt; layout &gt; activity_main.xml</h3><p>设置第一个页面的布局</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-03-20-14-51-23-2018320.png" alt="2018-03-20-14-51-23-2018320"></p>
+<h3 id="3-res-gt-layout-gt-activity-second-xml"><a href="#3-res-gt-layout-gt-activity-second-xml" class="headerlink" title="3. res &gt; layout &gt; activity_second.xml"></a>3. res &gt; layout &gt; activity_second.xml</h3><p>设置第二个页面的布局</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-03-20-14-53-46-2018320.png" alt="2018-03-20-14-53-46-2018320"></p>
+<h3 id="4-Event-java"><a href="#4-Event-java" class="headerlink" title="4. Event.java"></a>4. Event.java</h3><p>Java 对象，用来当消息载体</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-03-20-14-57-09-2018320.png" alt="2018-03-20-14-57-09-2018320"></p>
+<h3 id="5-MainActivity"><a href="#5-MainActivity" class="headerlink" title="5. MainActivity"></a>5. MainActivity</h3><p>绑定点击事件和写订阅者接收事件方法</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-03-20-14-56-03-2018320.png" alt="2018-03-20-14-56-03-2018320"></p>
+<h3 id="6-SecondActivity"><a href="#6-SecondActivity" class="headerlink" title="6. SecondActivity"></a>6. SecondActivity</h3><p>绑定点击事件和发送事件方法</p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-03-20-14-58-35-2018320.png" alt="2018-03-20-14-58-35-2018320"></p>
+<h1 id="效果演示"><a href="#效果演示" class="headerlink" title="效果演示"></a>效果演示</h1><p><img src="http://osabfc0f3.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E5%BD%95%E5%B1%8F_player_20180320145955.gif" alt=""></p>
+<h1 id="框架文档"><a href="#框架文档" class="headerlink" title="框架文档"></a>框架文档</h1><p>官方文档 <a href="http://greenrobot.org/eventbus/documentation/" target="_blank" rel="external">http://greenrobot.org/eventbus/documentation/</a></p>
+<p>部分翻译文档 <a href="http://blog.csdn.net/poorkick/article/details/55099311" target="_blank" rel="external">http://blog.csdn.net/poorkick/article/details/55099311</a></p>
+<h1 id="对框架的评价"><a href="#对框架的评价" class="headerlink" title="对框架的评价"></a>对框架的评价</h1><p>确实是个不错的框架，在 Activity 之间传递消息变得容易了很多，不用像以前用 Intent 放数据然后另一边接收数据这样了。而且使用起来也相对简单，真的是零配置。</p>
+<hr>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p><a href="http://blog.csdn.net/harvic880925/article/details/40660137" target="_blank" rel="external">《EventBus使用详解(一)——初步使用EventBus》</a></p>
+<p><a href="http://blog.csdn.net/harvic880925/article/details/40787203" target="_blank" rel="external">《EventBus使用详解(二)——EventBus使用进阶》</a></p>
+<p><a href="http://blog.csdn.net/bskfnvjtlyzmv867/article/details/71480647" target="_blank" rel="external">《Android框架之路——EventBus的使用》</a></p>
+<p><a href="http://blog.csdn.net/poorkick/article/details/55099311" target="_blank" rel="external">《Android开源库EventBus 用法详解》</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;框架介绍&quot;&gt;&lt;a href=&quot;#框架介绍&quot; class=&quot;headerlink&quot; title=&quot;框架介绍&quot;&gt;&lt;/a&gt;框架介绍&lt;/h1&gt;&lt;p&gt;&lt;code&gt;EventBus&lt;/code&gt; 是由 greenrobot 组织贡献的一个 Android 事件发布/订阅轻量级
+    
+    </summary>
+    
+      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="安卓开发" scheme="http://blog.bbchen.top/tags/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>用Laravel开发API时遇到的一个坑</title>
@@ -1098,64 +1189,6 @@
       <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
     
       <category term="部署" scheme="http://blog.bbchen.top/tags/%E9%83%A8%E7%BD%B2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据库，字符流和异常处理</title>
-    <link href="http://blog.bbchen.top/2017/07/08/database-stream-exception/"/>
-    <id>http://blog.bbchen.top/2017/07/08/database-stream-exception/</id>
-    <published>2017-07-08T11:22:00.000Z</published>
-    <updated>2018-02-05T12:35:44.021Z</updated>
-    
-    <content type="html"><![CDATA[<p>说实话，今天的数据库这章不是很满意，感觉讲的还不是很具体，有时间我还要单独看下数据库。还有两块字符流和异常的处理写的还行，不过异常处理以前有看过一点。</p>
-<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
-<li>这里建议直接使用 PDO 了，而且不要过多的写某些其他数据库特有的特性，这样如果以后从这个数据库变更到其他数据库时可能要改很多代码。</li>
-<li>还有就是数据库的配置文件单独放一块，不要和核心代码放在一起，要不然上传仓库或者被别人攻击的时候很容易将密码泄漏出去。</li>
-<li>千万！千万！不要忘了将字符集设置为 UTF-8 ，要不然会出现乱码和很多不兼容问题。</li>
-<li>要进行 SQL 语句的预处理，防止 SQL 注入。这里用预处理防 SQL 注入的原理是 PDO 会先将预处理语句解析成 SQL 模板，然后再接受你的值，这时候如果你的值里有 SQL 语句了也没用了，因为语句已经解析出来了，你已经改不了了，只能填值。</li>
-</ul>
-<h3 id="简单配置"><a href="#简单配置" class="headerlink" title="简单配置"></a>简单配置</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">require</span>(dirname(<span class="keyword">__FILE__</span>).<span class="string">'/../settings.php'</span>);</div><div class="line"><span class="comment">// var_dump('../settings.php');</span></div><div class="line">$pdo = <span class="keyword">new</span> PDO(</div><div class="line">    sprintf(</div><div class="line">        <span class="string">'mysql:host=%s;dbname=%s;port=%s;charset=%s'</span>,</div><div class="line">        $settings[<span class="string">'host'</span>],</div><div class="line">        $settings[<span class="string">'name'</span>],</div><div class="line">        $settings[<span class="string">'port'</span>],</div><div class="line">        $settings[<span class="string">'charset'</span>]</div><div class="line">    ),</div><div class="line">    $settings[<span class="string">'username'</span>],</div><div class="line">    $settings[<span class="string">'password'</span>]</div><div class="line">);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="下面是预处理语句"><a href="#下面是预处理语句" class="headerlink" title="下面是预处理语句"></a>下面是预处理语句</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$sql = <span class="string">'SELECT email FROM users WHERE id = :id'</span>;</div><div class="line">$statement = $pdo-&gt;prepare($sql);<span class="comment">//预处理，解析成 sql 模板</span></div><div class="line"></div><div class="line"><span class="comment">// $userId = filter_input('1', 'id');</span></div><div class="line">$userId = <span class="number">1</span>;</div><div class="line">$statement-&gt;bindValue(<span class="string">':id'</span>, $userId ,PDO::PARAM_INT);<span class="comment">//绑定模板里的值</span></div><div class="line">$statement-&gt;execute();<span class="comment">//执行语句</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="循环输出值"><a href="#循环输出值" class="headerlink" title="循环输出值"></a>循环输出值</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">while</span> (($result = $statement-&gt;fetch(PDO::FETCH_ASSOC)) !== <span class="keyword">false</span>) &#123;</div><div class="line">    <span class="keyword">echo</span> $result[<span class="string">'email'</span>];</div><div class="line">&#125;</div><div class="line">    var_dump($pdo);</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="字符流处理"><a href="#字符流处理" class="headerlink" title="字符流处理"></a>字符流处理</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$handle = fopen(dirname(<span class="keyword">__FILE__</span>).<span class="string">'\text.txt'</span>, <span class="string">'rb'</span>);</div><div class="line"><span class="comment">// var_dump($handle);</span></div><div class="line"><span class="keyword">while</span> (feof($handle) !== <span class="keyword">true</span>) &#123;</div><div class="line">    <span class="keyword">echo</span> fgets($handle);</div><div class="line">&#125;</div><div class="line">fclose($handle);</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>简单的写了个例子，大致是 <code>file_get_contents()</code>,<code>fopen()</code>,<code>fgets()</code>,<code>fwrite()</code>这些函数的使用。</p>
-<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>可以自己 new 一些异常，<code>debug</code> 的时候可以定位的更精确一点，也容易解决一些问题<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$exception = <span class="keyword">new</span> <span class="keyword">Exception</span>(<span class="string">'Danger, Robinson!'</span>, <span class="number">100</span>);</div><div class="line"><span class="keyword">echo</span> $exception-&gt;getCode();</div><div class="line"><span class="keyword">echo</span> $exception-&gt;getMessage();</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170708194241730.png" alt=""></p>
-<p>多使用 <code>try-catch</code> 语句块捕获异常，以及出现异常后的处理方法<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">    $pdo = <span class="keyword">new</span> PDO(<span class="string">'mysql://host=wronghost;dbname=wrong_name'</span>);</div><div class="line">&#125; <span class="keyword">catch</span> (<span class="keyword">Exception</span> $e) &#123;</div><div class="line">    <span class="keyword">echo</span> $e-&gt;getCode();</div><div class="line">    <span class="keyword">echo</span> PHP_EOL;</div><div class="line">    <span class="keyword">echo</span> $e-&gt;getMessage();</div><div class="line">&#125;<span class="keyword">finally</span> &#123;</div><div class="line">    <span class="keyword">echo</span> PHP_EOL.<span class="string">"alwayys"</span>;</div><div class="line">&#125;</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170708194522553.png" alt=""></p>
-<p>那个 <code>filp/whoops</code> 组件真不错，<code>laravel5.5</code> 好像也要用这个了。</p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>明天开始看最后一大块内容，大概需要四天左右，是关于部署，开发和测试的内容。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;说实话，今天的数据库这章不是很满意，感觉讲的还不是很具体，有时间我还要单独看下数据库。还有两块字符流和异常的处理写的还行，不过异常处理以前有看过一点。&lt;/p&gt;
-&lt;h2 id=&quot;数据库&quot;&gt;&lt;a href=&quot;#数据库&quot; class=&quot;headerlink&quot; title=&quot;数据库&quot;&gt;&lt;/a&gt;数据库&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;这里建议直接使用 PDO 了，而且不要过多的写某些其他数据库特有的特性，这样如果以后从这个数据库变更到其他数据库时可能要改很多代码。&lt;/li&gt;
-&lt;li&gt;还有就是数据库的配置文件单独放一块，不要和核心代码放在一起，要不然上传仓库或者被别人攻击的时候很容易将密码泄漏出去。&lt;/li&gt;
-&lt;li&gt;千万！千万！不要忘了将字符集设置为 UTF-8 ，要不然会出现乱码和很多不兼容问题。&lt;/li&gt;
-&lt;li&gt;要进行 SQL 语句的预处理，防止 SQL 注入。这里用预处理防 SQL 注入的原理是 PDO 会先将预处理语句解析成 SQL 模板，然后再接受你的值，这时候如果你的值里有 SQL 语句了也没用了，因为语句已经解析出来了，你已经改不了了，只能填值。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;简单配置&quot;&gt;&lt;a href=&quot;#简单配置&quot; class=&quot;headerlink&quot; title=&quot;简单配置&quot;&gt;&lt;/a&gt;简单配置&lt;/h3&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;require&lt;/span&gt;(dirname(&lt;span class=&quot;keyword&quot;&gt;__FILE__&lt;/span&gt;).&lt;span class=&quot;string&quot;&gt;&#39;/../settings.php&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// var_dump(&#39;../settings.php&#39;);&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$pdo = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; PDO(&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    sprintf(&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;mysql:host=%s;dbname=%s;port=%s;charset=%s&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        $settings[&lt;span class=&quot;string&quot;&gt;&#39;host&#39;&lt;/span&gt;],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        $settings[&lt;span class=&quot;string&quot;&gt;&#39;name&#39;&lt;/span&gt;],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        $settings[&lt;span class=&quot;string&quot;&gt;&#39;port&#39;&lt;/span&gt;],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        $settings[&lt;span class=&quot;string&quot;&gt;&#39;charset&#39;&lt;/span&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $settings[&lt;span class=&quot;string&quot;&gt;&#39;username&#39;&lt;/span&gt;],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $settings[&lt;span class=&quot;string&quot;&gt;&#39;password&#39;&lt;/span&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
-    
-      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
-    
-      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
-    
-      <category term="数据库" scheme="http://blog.bbchen.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-      <category term="异常处理" scheme="http://blog.bbchen.top/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
     
   </entry>
   

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.bbchen.top/2018/03/20/Introduction-and-use-of-the-Android-EventBus-framework/</loc>
+    
+    <lastmod>2018-03-20T07:12:59.106Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.bbchen.top/2018/02/05/A-pit-in-developing-API-with-Laravel/</loc>
     
     <lastmod>2018-02-06T09:23:23.042Z</lastmod>
