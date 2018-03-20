@@ -110,7 +110,7 @@
 <meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/2018-03-20-14-56-03-2018320.png">
 <meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/2018-03-20-14-58-35-2018320.png">
 <meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E5%BD%95%E5%B1%8F_player_20180320145955.gif">
-<meta property="og:updated_time" content="2018-03-20T07:12:59.106Z">
+<meta property="og:updated_time" content="2018-03-20T07:22:38.084Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安卓EventBus框架的介绍和使用">
 <meta name="twitter:description" content="框架介绍EventBus 是由 greenrobot 组织贡献的一个 Android 事件发布/订阅轻量级框架。EventBus 也是一款针对 Android 优化的发布/订阅（publish/subscribe）事件总线。主要功能是替代 Intent,Handler,BroadCast 在 Fragment，Activity，Service，线程之间传递消息。简化了应用程序内各组件间、组件与后台">
@@ -385,6 +385,7 @@
       
         <h1 id="框架介绍"><a href="#框架介绍" class="headerlink" title="框架介绍"></a>框架介绍</h1><p><code>EventBus</code> 是由 greenrobot 组织贡献的一个 Android 事件发布/订阅轻量级框架。<code>EventBus</code> 也是一款针对 Android 优化的发布/订阅（<code>publish</code>/<code>subscribe</code>）事件总线。主要功能是替代 <code>Intent</code>,<code>Handler</code>,<code>BroadCast</code> 在 <code>Fragment</code>，<code>Activity</code>，<code>Service</code>，线程之间传递消息。简化了应用程序内各组件间、组件与后台线程间的通信。优点是开销小，代码更优雅。以及将发送者和接收者解耦。比如请求网络，等网络返回时通过 <code>Handler</code> 或 <code>Broadcast</code> 通知 UI，两个 <code>Fragment</code> 之间需要通过 <code>Listener</code> 通信，这些需求都可以通过 <code>EventBus</code> 实现。</p>
 <p><img src="https://github.com/greenrobot/EventBus/raw/master/EventBus-Publish-Subscribe.png" alt="官网图"></p>
+<a id="more"></a>
 <h1 id="框架特性"><a href="#框架特性" class="headerlink" title="框架特性"></a>框架特性</h1><ul>
 <li><p>简单但强大：EventBus是一个微小的库，具有超级容易学习的API。然而，您的软件架构可能因组件解耦而受益：订阅者在使用事件时不用关心这个事件是谁发送的。</p>
 </li>
@@ -419,7 +420,8 @@
 </li>
 </ol>
 <h1 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h1><ol>
-<li><p>定义事件<br> Java 对象，用来当消息载体</p>
+<li><p>定义事件</p>
+<p> Java 对象，用来当消息载体</p>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Event</span> </span>&#123;</div><div class="line"></div><div class="line"><span class="keyword">private</span> String msg;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">Event</span><span class="params">(String msg)</span> </span>&#123;</div><div class="line">    <span class="keyword">this</span>.msg = msg;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getMsg</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> msg;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>订阅者</p>
