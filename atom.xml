@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2018-05-27T10:24:41.888Z</updated>
+  <updated>2018-05-27T10:26:44.932Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://blog.bbchen.top/2018/05/27/Access-control-system-based-on%20rainbow%20face%20recognition%20interface/"/>
     <id>http://blog.bbchen.top/2018/05/27/Access-control-system-based-on rainbow face recognition interface/</id>
     <published>2018-05-27T07:36:00.000Z</published>
-    <updated>2018-05-27T10:24:41.888Z</updated>
+    <updated>2018-05-27T10:26:44.932Z</updated>
     
-    <content type="html"><![CDATA[<p>这是18年浙江省服务外包大赛的赛题，从寒假前选定这个题目开始，我们团队就开始了需求分析等一系列流程。我在这个项目中的职责是作为项目经理，实际的工作是分析好整个流程，然后给团队成员分配好任务。在开发工作中我负责整个项目的服务端开发，还有门禁系统的物业web端界面和业主web端界面。<br>然后寒假便开始了整个架构的设计。一开始是调试虹软的接口从Node.js版到最后的Python版，最后终于是能成功提出出了特征值。(Node.js版能进行人脸的比对，而且更方便，但当时我还想提取出特征值，经过好多天的尝试后，还是换成了Python版，然后学了一下Flask框架，把他变成了接口开放出来。短短几句话，，真的有好多泪)。</p>
+    <content type="html"><![CDATA[<p>这是18年浙江省服务外包大赛的赛题，从寒假前选定这个题目开始，我们团队就开始了需求分析等一系列流程。我在这个项目中的职责是作为项目经理，实际的工作是分析好整个流程，然后给团队成员分配好任务。在开发工作中我负责整个项目的服务端开发，还有门禁系统的物业web端界面和业主web端界面。<br>然后寒假便开始了整个架构的设计。一开始是调试虹软的接口从Node.js版到最后的Python版，最后终于是能成功提出出了特征值。(Node.js版能进行人脸的比对，而且更方便，但当时我还想提取出特征值，经过好多天的尝试后，还是换成了Python版，然后学了一下Flask框架，把他变成了接口开放出来。短短几句话，，真的有好多泪)。<br><a id="more"></a></p>
 <h1 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h1><p>我先和团队成员对比赛需求文档进行了研究，然后讨论了几次，用xmind画了需求图。</p>
 <p><img src="https://images-cdn.shimo.im/bn5iRpJDgJcQG7sR/%E4%B8%9A%E4%B8%BB3.png!original" alt="业主需求"></p>
 <p><img src="https://images-cdn.shimo.im/9x1qa96tA5sTpJv2/%E7%89%A9%E4%B8%9A2.png!original" alt="物业需求"></p>
@@ -52,7 +52,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;这是18年浙江省服务外包大赛的赛题，从寒假前选定这个题目开始，我们团队就开始了需求分析等一系列流程。我在这个项目中的职责是作为项目经理，实际的工作是分析好整个流程，然后给团队成员分配好任务。在开发工作中我负责整个项目的服务端开发，还有门禁系统的物业web端界面和业主web端
+      &lt;p&gt;这是18年浙江省服务外包大赛的赛题，从寒假前选定这个题目开始，我们团队就开始了需求分析等一系列流程。我在这个项目中的职责是作为项目经理，实际的工作是分析好整个流程，然后给团队成员分配好任务。在开发工作中我负责整个项目的服务端开发，还有门禁系统的物业web端界面和业主web端界面。&lt;br&gt;然后寒假便开始了整个架构的设计。一开始是调试虹软的接口从Node.js版到最后的Python版，最后终于是能成功提出出了特征值。(Node.js版能进行人脸的比对，而且更方便，但当时我还想提取出特征值，经过好多天的尝试后，还是换成了Python版，然后学了一下Flask框架，把他变成了接口开放出来。短短几句话，，真的有好多泪)。&lt;br&gt;
     
     </summary>
     
