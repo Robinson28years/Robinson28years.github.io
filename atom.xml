@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2018-06-11T13:57:21.072Z</updated>
+  <updated>2018-05-31T07:11:54.694Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -14,74 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>记一次电话面试经历</title>
-    <link href="http://blog.bbchen.top/2018/06/11/A-telephone-interview-experience/"/>
-    <id>http://blog.bbchen.top/2018/06/11/A-telephone-interview-experience/</id>
-    <published>2018-06-11T11:25:49.000Z</published>
-    <updated>2018-06-11T13:57:21.072Z</updated>
-    
-    <content type="html"><![CDATA[<p>第一次电话面试，面的是杭州下沙一家公司，有点紧张，而且感觉自己学的还太浅了，对自己的过往项目经历也没有好好梳理，面试官很专业，感觉懂得很多。那么就谨以此文来记录一下这次电面经历。<br><a id="more"></a></p>
-<h2 id="电话面试（一）18min"><a href="#电话面试（一）18min" class="headerlink" title="电话面试（一）18min"></a>电话面试（一）18min</h2><blockquote>
-<h3 id="1-你能大概介绍下你对-Laravel-有什么见解吗，或者说比其他框架的优势"><a href="#1-你能大概介绍下你对-Laravel-有什么见解吗，或者说比其他框架的优势" class="headerlink" title="1. 你能大概介绍下你对 Laravel 有什么见解吗，或者说比其他框架的优势"></a>1. 你能大概介绍下你对 Laravel 有什么见解吗，或者说比其他框架的优势</h3></blockquote>
-<p>数据库迁移，多对多关系（模型），API转换层，开发比较方便。</p>
-<p><em>反思</em>：还有路由和artisan命令行方便，ORM数据操作方便，社区活跃，框架所用思想比较现代化。</p>
-<blockquote>
-<h3 id="2-你平常除了搞-PHP-和-Java-还学过其他什么语言"><a href="#2-你平常除了搞-PHP-和-Java-还学过其他什么语言" class="headerlink" title="2. 你平常除了搞 PHP 和 Java 还学过其他什么语言"></a>2. 你平常除了搞 PHP 和 Java 还学过其他什么语言</h3></blockquote>
-<p>Python做过一些爬虫，TensorFlow做过简单人工智能，Go学过基础语法，Swoole做过一些websocket，看了一下workman，主要项目前端都是Vue，用Ionic做了简单小论坛。</p>
-<blockquote>
-<h3 id="3-你做的最大的项目中遇到的困难和难点，你又是怎么解决的"><a href="#3-你做的最大的项目中遇到的困难和难点，你又是怎么解决的" class="headerlink" title="3. 你做的最大的项目中遇到的困难和难点，你又是怎么解决的"></a>3. 你做的最大的项目中遇到的困难和难点，你又是怎么解决的</h3></blockquote>
-<p>讲了大二时候做二手书店处理复杂的表间关系，门禁系统websocket多进程共享变量的问题解决。以前git的冲突的处理。</p>
-<p><em>反思</em>：缺少对自己现有项目的总结和梳理，回答的不够好。</p>
-<blockquote>
-<h3 id="4-用过什么消息中间件之类的。（不过问我的应该是会什么技术栈）和编程有关的一些。"><a href="#4-用过什么消息中间件之类的。（不过问我的应该是会什么技术栈）和编程有关的一些。" class="headerlink" title="4. 用过什么消息中间件之类的。（不过问我的应该是会什么技术栈）和编程有关的一些。"></a>4. 用过什么消息中间件之类的。（不过问我的应该是会什么技术栈）和编程有关的一些。</h3></blockquote>
-<p>数据库：MySql，Oracle，Redis。跟七牛云、FTP之类的对接。JWT。easywechat。</p>
-<p><em>反思</em>：简历中没写好自己的技术栈。</p>
-<blockquote>
-<h3 id="5-在使用-Redis-的时候常用的操作"><a href="#5-在使用-Redis-的时候常用的操作" class="headerlink" title="5. 在使用 Redis 的时候常用的操作"></a>5. 在使用 Redis 的时候常用的操作</h3></blockquote>
-<p>get 取数据，del 删数据，设置数据有效时间</p>
-<p><em>反思</em>：Redis用的还是太少。过段时间要好好看下手册。</p>
-<blockquote>
-<h3 id="6-大概说下-Redis-支持哪些数据类型"><a href="#6-大概说下-Redis-支持哪些数据类型" class="headerlink" title="6. 大概说下 Redis 支持哪些数据类型"></a>6. 大概说下 Redis 支持哪些数据类型</h3></blockquote>
-<p>因为当时做项目只用了string所以没回答全</p>
-<p><em>反思</em>：string，hash，list，set，sort</p>
-<blockquote>
-<h3 id="7-手机上打开一个浏览器，访问www-baidu-com，会经历什么"><a href="#7-手机上打开一个浏览器，访问www-baidu-com，会经历什么" class="headerlink" title="7. 手机上打开一个浏览器，访问www.baidu.com，会经历什么"></a>7. 手机上打开一个浏览器，访问www.baidu.com，会经历什么</h3></blockquote>
-<p>先查hosts表，有就指向DNS服务器，访问CDN服务器，返回html信息，浏览器接收到显示出来。</p>
-<p><em>反思</em>：以前看过这个，但印象不是很深了， <a href="https://segmentfault.com/a/1190000006879700" target="_blank" rel="external">从输入URL到页面加载发生了什么</a></p>
-<blockquote>
-<h3 id="8-session-和-cookie-有什么区别"><a href="#8-session-和-cookie-有什么区别" class="headerlink" title="8. session 和 cookie 有什么区别"></a>8. session 和 cookie 有什么区别</h3></blockquote>
-<p>session在服务端存，cookie再客户端存，session对服务端压力比较大一点。</p>
-<blockquote>
-<h3 id="9-session-和-cookie-有什么联系吗"><a href="#9-session-和-cookie-有什么联系吗" class="headerlink" title="9. session 和 cookie 有什么联系吗"></a>9. session 和 cookie 有什么联系吗</h3></blockquote>
-<p>回答了存cookie会再服务端对应有session的id</p>
-<p><em>反思</em>：都是会话的一种方式。目前大多数的应用都是用 Cookie 实现Session跟踪的。第一次创建Session时，服务端会通过在HTTP协议中反馈到客户端，需要在 Cookie 中记录一个Session ID，以便今后每次请求时都可分辨你是谁。</p>
-<blockquote>
-<h3 id="10-https相关的东西"><a href="#10-https相关的东西" class="headerlink" title="10. https相关的东西"></a>10. https相关的东西</h3></blockquote>
-<p>443 端口，公私玥验证，非对称数据加密</p>
-<blockquote>
-<h3 id="11-了解过哪些数据加密算法"><a href="#11-了解过哪些数据加密算法" class="headerlink" title="11. 了解过哪些数据加密算法"></a>11. 了解过哪些数据加密算法</h3></blockquote>
-<p>RSA，(MD5，SHA256 这些不是），Argon2</p>
-<p><em>反思</em>：Bcrypt 和 Argon2</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;第一次电话面试，面的是杭州下沙一家公司，有点紧张，而且感觉自己学的还太浅了，对自己的过往项目经历也没有好好梳理，面试官很专业，感觉懂得很多。那么就谨以此文来记录一下这次电面经历。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="面试" scheme="http://blog.bbchen.top/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-      <category term="面试" scheme="http://blog.bbchen.top/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-      <category term="Laravel" scheme="http://blog.bbchen.top/tags/Laravel/"/>
-    
-      <category term="Http" scheme="http://blog.bbchen.top/tags/Http/"/>
-    
-  </entry>
   
   <entry>
     <title>基于虹软人脸识别接口开发的门禁系统</title>
@@ -128,100 +60,6 @@
     
     
       <category term="Laravel" scheme="http://blog.bbchen.top/tags/Laravel/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>安卓EventBus框架的介绍和使用</title>
-    <link href="http://blog.bbchen.top/2018/03/20/Introduction-and-use-of-the-Android-EventBus-framework/"/>
-    <id>http://blog.bbchen.top/2018/03/20/Introduction-and-use-of-the-Android-EventBus-framework/</id>
-    <published>2018-03-20T06:08:51.000Z</published>
-    <updated>2018-03-20T07:22:38.084Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="框架介绍"><a href="#框架介绍" class="headerlink" title="框架介绍"></a>框架介绍</h1><p><code>EventBus</code> 是由 greenrobot 组织贡献的一个 Android 事件发布/订阅轻量级框架。<code>EventBus</code> 也是一款针对 Android 优化的发布/订阅（<code>publish</code>/<code>subscribe</code>）事件总线。主要功能是替代 <code>Intent</code>,<code>Handler</code>,<code>BroadCast</code> 在 <code>Fragment</code>，<code>Activity</code>，<code>Service</code>，线程之间传递消息。简化了应用程序内各组件间、组件与后台线程间的通信。优点是开销小，代码更优雅。以及将发送者和接收者解耦。比如请求网络，等网络返回时通过 <code>Handler</code> 或 <code>Broadcast</code> 通知 UI，两个 <code>Fragment</code> 之间需要通过 <code>Listener</code> 通信，这些需求都可以通过 <code>EventBus</code> 实现。</p>
-<p><img src="https://github.com/greenrobot/EventBus/raw/master/EventBus-Publish-Subscribe.png" alt="官网图"></p>
-<a id="more"></a>
-<h1 id="框架特性"><a href="#框架特性" class="headerlink" title="框架特性"></a>框架特性</h1><ul>
-<li><p>简单但强大：EventBus是一个微小的库，具有超级容易学习的API。然而，您的软件架构可能因组件解耦而受益：订阅者在使用事件时不用关心这个事件是谁发送的。</p>
-</li>
-<li><p>大量验证：EventBus是最常用的Android库之一：成千上万的应用程序使用EventBus，其中不乏非常受欢迎的应用程序。我们认为差不多有十亿应用程序使用EventBus。</p>
-</li>
-<li><p>高性能：Android系统上，性能尤为重要。 EventBus被针对性的做了大量的分析和优化;EventBus可能是这类开源库中速度最快的 解决方案。</p>
-</li>
-<li><p>基于API的便捷注解（不牺牲性能）：只需将@Subscribe注解添加订阅方法即可。由于构建的时候花费了时间来建立注解的索引，所以EventBus不需要在应用程序的运行时间执行注释反射，注解反射的方式在Android上相当慢。</p>
-</li>
-<li><p>Android主线程发送：当与UI交互时，EventBus可以在主线程中传递事件，而不用去关心事件是从如何发布的。</p>
-</li>
-<li><p>后台线程发送：如果您的订阅者长时间运行任务，EventBus也可以使用后台线程来避免UI阻塞。</p>
-</li>
-<li><p>事件和订阅者继承：在EventBus中，面向对象的范例适用于事件和订阅者类。让我们假设事件类A是B的父类。类型B的发布事件也将被发布到对A感兴趣的订阅者。类似地，考虑订阅类的继承。</p>
-</li>
-<li><p>零配置：您可以从代码中的任何地方立即使用默认的EventBus实例。</p>
-</li>
-<li><p>可配置：要根据需要调整EventBus，可以使用构建器模式调整其行为。</p>
-</li>
-</ul>
-<h1 id="官方下载地址"><a href="#官方下载地址" class="headerlink" title="官方下载地址"></a>官方下载地址</h1><p>官网 <a href="http://greenrobot.org/eventbus/" target="_blank" rel="external">http://greenrobot.org/eventbus/</a></p>
-<p>官方仓库  <a href="https://github.com/greenrobot/EventBus" target="_blank" rel="external">https://github.com/greenrobot/EventBus</a></p>
-<h3 id="三种安装方式"><a href="#三种安装方式" class="headerlink" title="三种安装方式"></a>三种安装方式</h3><ol>
-<li><p>使用 <code>Gradle</code></p>
-<p> <code>compile &#39;org.greenrobot:eventbus:3.1.1&#39;</code></p>
-</li>
-<li><p>使用 <code>Maven</code></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">&lt;groupId&gt;org.greenrobot&lt;/groupId&gt;</div><div class="line">&lt;artifactId&gt;eventbus&lt;/artifactId&gt;</div><div class="line">&lt;version&gt;3.1.1&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>下载 jar 包</p>
-<p> 下载地址 <a href="https://search.maven.org/remote_content?g=org.greenrobot&amp;a=eventbus&amp;v=LATEST" target="_blank" rel="external">https://search.maven.org/remote_content?g=org.greenrobot&amp;a=eventbus&amp;v=LATEST</a></p>
-</li>
-</ol>
-<h1 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h1><ol>
-<li><p>定义事件</p>
-<p> Java 对象，用来当消息载体</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Event</span> </span>&#123;</div><div class="line"></div><div class="line"><span class="keyword">private</span> String msg;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">Event</span><span class="params">(String msg)</span> </span>&#123;</div><div class="line">    <span class="keyword">this</span>.msg = msg;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getMsg</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> msg;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>订阅者</p>
-<p> 订阅者需要实现在事件发布时将被调用的事件处理方法</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Subscribe</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onEventMainThread</span><span class="params">(Event event)</span> </span>&#123;</div><div class="line">    String msg = <span class="string">"订阅者接收到了消息："</span> + event.getMsg();</div><div class="line">    System.out.println(msg);</div><div class="line">    textView.setText(msg);</div><div class="line">    Toast.makeText(<span class="keyword">this</span>,msg,Toast.LENGTH_LONG).show();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>发送事件</p>
-<p> 在代码的任意地方发布事件，所有与当前事件匹配且注册过的订阅者都将会收到事件</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">EventBus.getDefault().post(<span class="keyword">new</span> Event(<span class="string">"记得吃早饭哦"</span>));</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h1 id="入门例子"><a href="#入门例子" class="headerlink" title="入门例子"></a>入门例子</h1><h3 id="1-Gradle-Scripts-gt-build-gradle"><a href="#1-Gradle-Scripts-gt-build-gradle" class="headerlink" title="1. Gradle Scripts &gt; build.gradle"></a>1. Gradle Scripts &gt; build.gradle</h3><p>通过 gradle 安装 EventBus 框架</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-03-20-14-48-50-2018320.png" alt="2018-03-20-14-48-50-2018320"></p>
-<h3 id="2-res-gt-layout-gt-activity-main-xml"><a href="#2-res-gt-layout-gt-activity-main-xml" class="headerlink" title="2. res &gt; layout &gt; activity_main.xml"></a>2. res &gt; layout &gt; activity_main.xml</h3><p>设置第一个页面的布局</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-03-20-14-51-23-2018320.png" alt="2018-03-20-14-51-23-2018320"></p>
-<h3 id="3-res-gt-layout-gt-activity-second-xml"><a href="#3-res-gt-layout-gt-activity-second-xml" class="headerlink" title="3. res &gt; layout &gt; activity_second.xml"></a>3. res &gt; layout &gt; activity_second.xml</h3><p>设置第二个页面的布局</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-03-20-14-53-46-2018320.png" alt="2018-03-20-14-53-46-2018320"></p>
-<h3 id="4-Event-java"><a href="#4-Event-java" class="headerlink" title="4. Event.java"></a>4. Event.java</h3><p>Java 对象，用来当消息载体</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-03-20-14-57-09-2018320.png" alt="2018-03-20-14-57-09-2018320"></p>
-<h3 id="5-MainActivity"><a href="#5-MainActivity" class="headerlink" title="5. MainActivity"></a>5. MainActivity</h3><p>绑定点击事件和写订阅者接收事件方法</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-03-20-14-56-03-2018320.png" alt="2018-03-20-14-56-03-2018320"></p>
-<h3 id="6-SecondActivity"><a href="#6-SecondActivity" class="headerlink" title="6. SecondActivity"></a>6. SecondActivity</h3><p>绑定点击事件和发送事件方法</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-03-20-14-58-35-2018320.png" alt="2018-03-20-14-58-35-2018320"></p>
-<h1 id="效果演示"><a href="#效果演示" class="headerlink" title="效果演示"></a>效果演示</h1><p><img src="http://osabfc0f3.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E5%BD%95%E5%B1%8F_player_20180320145955.gif" alt=""></p>
-<h1 id="框架文档"><a href="#框架文档" class="headerlink" title="框架文档"></a>框架文档</h1><p>官方文档 <a href="http://greenrobot.org/eventbus/documentation/" target="_blank" rel="external">http://greenrobot.org/eventbus/documentation/</a></p>
-<p>部分翻译文档 <a href="http://blog.csdn.net/poorkick/article/details/55099311" target="_blank" rel="external">http://blog.csdn.net/poorkick/article/details/55099311</a></p>
-<h1 id="对框架的评价"><a href="#对框架的评价" class="headerlink" title="对框架的评价"></a>对框架的评价</h1><p>确实是个不错的框架，在 Activity 之间传递消息变得容易了很多，不用像以前用 Intent 放数据然后另一边接收数据这样了。而且使用起来也相对简单，真的是零配置。</p>
-<hr>
-<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p><a href="http://blog.csdn.net/harvic880925/article/details/40660137" target="_blank" rel="external">《EventBus使用详解(一)——初步使用EventBus》</a></p>
-<p><a href="http://blog.csdn.net/harvic880925/article/details/40787203" target="_blank" rel="external">《EventBus使用详解(二)——EventBus使用进阶》</a></p>
-<p><a href="http://blog.csdn.net/bskfnvjtlyzmv867/article/details/71480647" target="_blank" rel="external">《Android框架之路——EventBus的使用》</a></p>
-<p><a href="http://blog.csdn.net/poorkick/article/details/55099311" target="_blank" rel="external">《Android开源库EventBus 用法详解》</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;框架介绍&quot;&gt;&lt;a href=&quot;#框架介绍&quot; class=&quot;headerlink&quot; title=&quot;框架介绍&quot;&gt;&lt;/a&gt;框架介绍&lt;/h1&gt;&lt;p&gt;&lt;code&gt;EventBus&lt;/code&gt; 是由 greenrobot 组织贡献的一个 Android 事件发布/订阅轻量级框架。&lt;code&gt;EventBus&lt;/code&gt; 也是一款针对 Android 优化的发布/订阅（&lt;code&gt;publish&lt;/code&gt;/&lt;code&gt;subscribe&lt;/code&gt;）事件总线。主要功能是替代 &lt;code&gt;Intent&lt;/code&gt;,&lt;code&gt;Handler&lt;/code&gt;,&lt;code&gt;BroadCast&lt;/code&gt; 在 &lt;code&gt;Fragment&lt;/code&gt;，&lt;code&gt;Activity&lt;/code&gt;，&lt;code&gt;Service&lt;/code&gt;，线程之间传递消息。简化了应用程序内各组件间、组件与后台线程间的通信。优点是开销小，代码更优雅。以及将发送者和接收者解耦。比如请求网络，等网络返回时通过 &lt;code&gt;Handler&lt;/code&gt; 或 &lt;code&gt;Broadcast&lt;/code&gt; 通知 UI，两个 &lt;code&gt;Fragment&lt;/code&gt; 之间需要通过 &lt;code&gt;Listener&lt;/code&gt; 通信，这些需求都可以通过 &lt;code&gt;EventBus&lt;/code&gt; 实现。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/greenrobot/EventBus/raw/master/EventBus-Publish-Subscribe.png&quot; alt=&quot;官网图&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="安卓开发" scheme="http://blog.bbchen.top/tags/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
@@ -333,48 +171,6 @@
       <category term="Docker" scheme="http://blog.bbchen.top/tags/Docker/"/>
     
       <category term="Oracle12c" scheme="http://blog.bbchen.top/tags/Oracle12c/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Robinson 大战 Spring boot 之 Mybatis</title>
-    <link href="http://blog.bbchen.top/2017/10/22/Robinson-with-Spring-boot-Mybatis/"/>
-    <id>http://blog.bbchen.top/2017/10/22/Robinson-with-Spring-boot-Mybatis/</id>
-    <published>2017-10-22T04:21:00.000Z</published>
-    <updated>2018-02-05T12:35:44.289Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近在上 Oracle 数据库的课，老师从一个项目该做什么开始讲起，已经见识了很多工具(虽然还没去用过)。突然，上节课，老师说要开始学数据库了，大家先用 Spring boot 连数据库，然后花了一节课时间把 Spring boot 讲了一遍(这么快的吗)。虽然我国庆看了遍 Spring boot，但我那时候没去连数据库。那这次，趁这机会，来了解一下其他优秀的框架是如何开发的。还有，，，这次老师让我们用 Oracle 数据库来连，这篇我先用 Mysql 连，因为 Oracle 坑太多，所以到时候再开一篇，讲讲怎么连 Oracle。<br><a id="more"></a></p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
-<li><a href="https://www.jetbrains.com/idea/?fromMenu" target="_blank" rel="external">IDEA</a> 用这个开发比较舒服。</li>
-<li>配置 JDK 和 Maven,并更换阿里云镜像。</li>
-</ol>
-<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022123655549.png" alt="项目结构"></p>
-<h2 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h2><p>首先选择 Spring Intializr, 使用这个可以选择哪些组件应用到自己的项目中去。<br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022123905787.png" alt="初始化"><br>这里就把自己的域名写上去，防止和其他包冲突<br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022123948507.png" alt="构建"><br>选web，mybatis，mysql 就可以了<br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022124145593.png" alt="web"><br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022124232587.png" alt="sql"><br>接下来项目名自己取一下。</p>
-<h2 id="开始写程序"><a href="#开始写程序" class="headerlink" title="开始写程序"></a>开始写程序</h2><p>上面步骤都结束之后就可以开始真正的写程序了。</p>
-<h3 id="maven配置"><a href="#maven配置" class="headerlink" title="maven配置"></a>maven配置</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- /pom.xml --&gt;</span></div><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></div><div class="line">	<span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</div><div class="line">	<span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>top.bbchen<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">packaging</span>&gt;</span>jar<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>demo2<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">description</span>&gt;</span>Demo project for Spring Boot<span class="tag">&lt;/<span class="name">description</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">parent</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.8.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">parent</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">properties</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.reporting.outputEncoding</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">properties</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-thymeleaf<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">build</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">plugins</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">plugin</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">			<span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">build</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="实体类"><a href="#实体类" class="headerlink" title="实体类"></a>实体类</h3><p>先把 user 类写了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// java/top/bbchen/demo2/entity/User.java</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</div><div class="line">    <span class="keyword">private</span> String name;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</div><div class="line">    <span class="keyword">private</span> String password;</div><div class="line"><span class="comment">// get 和 set 方法自己补全</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="数据库结构"><a href="#数据库结构" class="headerlink" title="数据库结构"></a>数据库结构</h3><p>自己在数据库里配置一下就行。表名 users 字段 id[int],name[varchar(255)],age[int],password[varchar(255)]<br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022130844287.png" alt="数据库结构"></p>
-<h3 id="mapper"><a href="#mapper" class="headerlink" title="mapper"></a>mapper</h3><p>放在resources/mapper/UserMapper.xml下就行。<br>写sql语句，待会 DAO 层会来调用。<br>写了增删改查，记得 namespace 换成自己的 dao 层目录。<br>还有那些实体类的位置也记得换成自己的，因为我的跟你们不一样。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- resources/mapper/UserMapper.xml --&gt;</span></div><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="meta">&lt;!DOCTYPE mapper</span></div><div class="line">        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"</div><div class="line">        "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;</div><div class="line">        <span class="comment">&lt;!--               记得换成自己的↓↓↓↓--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"top.bbchen.demo2.dao.UserMapper"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"findUser"</span> <span class="attr">parameterType</span>=<span class="string">"int"</span>  <span class="attr">resultType</span>=<span class="string">"top.bbchen.demo2.entity.User"</span>&gt;</span></div><div class="line">        select  ID , name as name, age as age, password from users where ID = #&#123;id&#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"add"</span> <span class="attr">parameterType</span>=<span class="string">"top.bbchen.demo2.entity.User"</span>&gt;</span></div><div class="line">        insert into users(name,age,password) values (#&#123;name&#125;, #&#123;age&#125; , #&#123;password&#125;)</div><div class="line">    <span class="tag">&lt;/<span class="name">insert</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">update</span> <span class="attr">id</span>=<span class="string">"updateUser"</span> <span class="attr">parameterType</span>=<span class="string">"top.bbchen.demo2.entity.User"</span>&gt;</span></div><div class="line">        update users set name = #&#123;name&#125; where id = #&#123;id&#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">update</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">delete</span> <span class="attr">id</span>=<span class="string">"deleteUser"</span> <span class="attr">parameterType</span>=<span class="string">"int"</span>&gt;</span></div><div class="line">        delete from users where id = #&#123;id&#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">delete</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h3 id="数据库配置"><a href="#数据库配置" class="headerlink" title="数据库配置"></a>数据库配置</h3><p>在application.properties中配置自己的数据库连接<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// resources/application.properties</span></div><div class="line"></div><div class="line">spring.datasource.url=jdbc:mysql:<span class="comment">//localhost:3306/demo</span></div><div class="line">spring.datasource.username=root</div><div class="line">spring.datasource.password=</div><div class="line">spring.datasource.driver-<span class="class"><span class="keyword">class</span>-<span class="title">name</span></span>=com.mysql.jdbc.Driver</div></pre></td></tr></table></figure></p>
-<h3 id="DAO层"><a href="#DAO层" class="headerlink" title="DAO层"></a>DAO层</h3><p>这里写抽象的数据层接口，不具体实现<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Mapper</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserMapper</span> </span>&#123;</div><div class="line"><span class="comment">// java/top/bbchen/demo2/dao/UserMapper.java</span></div><div class="line"></div><div class="line"><span class="comment">// 下面注释掉的 @Insert和@Select 是因为一开始使用注解写sql 后来换成xml写sql，所以注释掉了。解开注释，就是使用注解写sql。</span></div><div class="line"><span class="comment">//    @Insert("insert into users(name,age,password) values (#&#123;name&#125;, #&#123;age&#125; , #&#123;password&#125;)")</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(User user)</span></span>;</div><div class="line"></div><div class="line"><span class="comment">//    @Select("select id, name as name, age as age, password from users where id = #&#123;id&#125;")</span></div><div class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">findUser</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">updateUser</span><span class="params">(User user)</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">deleteUser</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="service层"><a href="#service层" class="headerlink" title="service层"></a>service层</h3><p>这层用来实现上面的DAO层的。<br>用了自动注入，所以不用直接写实现某某接口。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// java/top/bbchen/demo2/service/UserService.java</span></div><div class="line"></div><div class="line"><span class="meta">@Service</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserService</span> </span>&#123;</div><div class="line">    <span class="comment">//自动注入</span></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    <span class="keyword">private</span> UserMapper userMapper;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(User user)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> userMapper.add(user);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">findUser</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> userMapper.findUser(id);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">updateUser</span><span class="params">(User user)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> userMapper.updateUser(user);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">deleteUser</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> userMapper.deleteUser(id);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="控制层"><a href="#控制层" class="headerlink" title="控制层"></a>控制层</h3><p>最后再写控制层就可以了<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// java/top/bbchen/demo2/web/UserController.java</span></div><div class="line"><span class="meta">@RestController</span></div><div class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/user"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    UserService userService;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/&#123;id&#125;"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">getUserById</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> <span class="keyword">int</span> id) </span>&#123;</div><div class="line">        System.out.println(id);</div><div class="line">        <span class="keyword">return</span> userService.findUser(id);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">""</span>,method = RequestMethod.POST)</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">addUser</span><span class="params">(User user)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> t = userService.add(user);</div><div class="line">        <span class="keyword">if</span> (t==<span class="number">1</span>)<span class="keyword">return</span> <span class="string">"success"</span>;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="string">"fail"</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/update"</span>,method = RequestMethod.POST)</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">updateUser</span><span class="params">(User user)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> t = userService.updateUser(user);</div><div class="line">        <span class="keyword">if</span> (t==<span class="number">1</span>)<span class="keyword">return</span> <span class="string">"success"</span>;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="string">"fail"</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/delete/&#123;id&#125;"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">deleteUser</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> <span class="keyword">int</span> id) </span>&#123;</div><div class="line">        <span class="keyword">int</span> t = userService.deleteUser(id);</div><div class="line">        <span class="keyword">if</span> (t==<span class="number">1</span>)<span class="keyword">return</span> <span class="string">"success"</span>;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="string">"fail"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022131654680.png" alt="运行"></p>
-<h2 id="下一篇"><a href="#下一篇" class="headerlink" title="下一篇"></a>下一篇</h2><p>下一篇将讲一下怎么使用 Oracle 数据库。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近在上 Oracle 数据库的课，老师从一个项目该做什么开始讲起，已经见识了很多工具(虽然还没去用过)。突然，上节课，老师说要开始学数据库了，大家先用 Spring boot 连数据库，然后花了一节课时间把 Spring boot 讲了一遍(这么快的吗)。虽然我国庆看了遍 Spring boot，但我那时候没去连数据库。那这次，趁这机会，来了解一下其他优秀的框架是如何开发的。还有，，，这次老师让我们用 Oracle 数据库来连，这篇我先用 Mysql 连，因为 Oracle 坑太多，所以到时候再开一篇，讲讲怎么连 Oracle。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="开发" scheme="http://blog.bbchen.top/tags/%E5%BC%80%E5%8F%91/"/>
-    
-      <category term="Java" scheme="http://blog.bbchen.top/tags/Java/"/>
     
   </entry>
   
@@ -523,9 +319,9 @@
       <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="网站" scheme="http://blog.bbchen.top/tags/%E7%BD%91%E7%AB%99/"/>
-    
       <category term="开发" scheme="http://blog.bbchen.top/tags/%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="网站" scheme="http://blog.bbchen.top/tags/%E7%BD%91%E7%AB%99/"/>
     
   </entry>
   
@@ -565,9 +361,9 @@
       <category term="日常" scheme="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
-    
       <category term="开发" scheme="http://blog.bbchen.top/tags/%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
     
       <category term="系统" scheme="http://blog.bbchen.top/tags/%E7%B3%BB%E7%BB%9F/"/>
     
@@ -1162,6 +958,175 @@
       <category term="HHVM" scheme="http://blog.bbchen.top/tags/HHVM/"/>
     
       <category term="Hack" scheme="http://blog.bbchen.top/tags/Hack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>服务器部署和配置</title>
+    <link href="http://blog.bbchen.top/2017/07/09/deployment-provisioning/"/>
+    <id>http://blog.bbchen.top/2017/07/09/deployment-provisioning/</id>
+    <published>2017-07-09T11:10:00.000Z</published>
+    <updated>2018-02-05T12:35:44.041Z</updated>
+    
+    <content type="html"><![CDATA[<p>虽说今天有看四章内容(Hosting,Provisioning,Tuning,Deployment),😂但好像都是以前看到过的，要说有帮助的，大概就是那个自动部署了，但现在还没尝试过，等我尝试了自动部署，就再写一篇。</p>
+<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><p>服务器，我一般买 Vultr 和 阿里云 的。阿里云有学生套餐，Vultr 的话可以绑定域名(阿里绑域名要备案比较麻烦),买好服务器，拿到的就是一个纯净的系统。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>把服务器配置成生产环境。<br>(一般买的都是 ubuntu 14.04 64位)<br>我就把我的祖传脚本贡献出来了<br><a id="more"></a><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install -y language-pack-en-base</div><div class="line">locale-gen en_US.UTF-8</div><div class="line"></div><div class="line">sudo apt-get install software-properties-common</div><div class="line">sudo LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php</div><div class="line">sudo apt-get update</div><div class="line"><span class="meta"></span></div><div class="line">$ sudo apt-get --purge remove apache2</div><div class="line"><span class="meta">$</span> sudo apt-get --purge remove apache2.2-common</div><div class="line"><span class="meta">$</span> sudo apt-get autoremove</div><div class="line"></div><div class="line">sudo apt-get -y install php7.1</div><div class="line">sudo apt-get -y install php7.1-mysql</div><div class="line">sudo apt-get -y install php7.1-fpm</div><div class="line"></div><div class="line">apt-get install -y php7.1-curl php7.1-xml php7.1-mcrypt php7.1-json php7.1-gd php7.1-mbstring</div><div class="line"></div><div class="line">apt-get install -y vim htop git zip</div><div class="line"></div><div class="line">sudo apt-get -y install nginx</div><div class="line">sudo apt-get -y install mysql-server-5.6</div></pre></td></tr></table></figure></p>
+<p>到这为止，该安装的都安装好了，然后就要将一些配置改一下了。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/php/7.1/fpm/php.ini  // 将cgi.fix_pathinfo=1这一行去掉注释，将1改为0</div><div class="line">sudo vim /etc/php/7.1/fpm/pool.d/www.conf // 配置这个 listen = /var/run/php7.1-fpm.sock</div><div class="line">sudo service php7.1-fpm restart</div><div class="line"></div><div class="line">sudo vim /etc/nginx/sites-available/default</div><div class="line">/** nignx配置</div><div class="line">listen 80 default_server;</div><div class="line">listen [::]:80 default_server ipv6only=on;</div><div class="line"></div><div class="line">root /var/www/laravel-ubuntu/public;</div><div class="line">index index.php index.html index.htm;</div><div class="line"><span class="meta"></span></div><div class="line"># Make site accessible from http://localhost/</div><div class="line">server_name localhost;</div><div class="line"></div><div class="line">location / &#123;</div><div class="line"><span class="meta">		#</span> First attempt to serve request as file, then</div><div class="line"><span class="meta">		#</span> as directory, then fall back to displaying a 404.</div><div class="line">		try_files $uri $uri/ /index.php?$query_string;</div><div class="line"><span class="meta">		#</span> Uncomment to enable naxsi on this location</div><div class="line"><span class="meta">		#</span> include /etc/nginx/naxsi.rules</div><div class="line">&#125;</div><div class="line">location ~ \.php$ &#123;</div><div class="line">		try_files $uri /index.php =404;</div><div class="line">		fastcgi_split_path_info ^(.+\.php)(/.+)$;</div><div class="line">		fastcgi_pass unix:/var/run/php7.1-fpm.sock;</div><div class="line">		fastcgi_index index.php;</div><div class="line">		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;</div><div class="line">		include fastcgi_params;</div><div class="line">&#125;</div><div class="line">**/</div></pre></td></tr></table></figure></p>
+<p>这里呢主要是改 fpm 的配置和 nginx 的配置</p>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//  mkdir /var/www</div><div class="line">sudo chown -R www-data:www-data /var/www</div><div class="line">vim .env</div><div class="line"></div><div class="line">curl -sS https://getcomposer.org/installer | php</div><div class="line">sudo mv composer.phar /usr/local/bin/composer</div><div class="line">composer -V</div><div class="line">composer install</div><div class="line"></div><div class="line">sudo chmod -R 775 storage/</div><div class="line">sudo service nginx reload</div><div class="line">sudo service php7.1-fpm restart</div><div class="line">sudo chown -R www-data:www-data /var/www/hood/</div></pre></td></tr></table></figure>
+<p>创建文件夹，分配文件夹权限，然后在 nginx 里配置到此目录，然后将项目放进来就能运行了。</p>
+<p>感觉是不是还蛮简单的，如果只是要运行的化确实是这么简单，但如果要知道其中的原理，就还要花点心思，像 fpm 与 php 之间的线程交流，nginx 为什么要这样配置，等等还需要我去挖掘。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>希望以后我部署项目的时候有机会给大家出一篇图文并茂版的部署指南，今天因为没去实际操作(😂因为以前操作好几遍了)，所以下次在给大家放图文版的。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;虽说今天有看四章内容(Hosting,Provisioning,Tuning,Deployment),😂但好像都是以前看到过的，要说有帮助的，大概就是那个自动部署了，但现在还没尝试过，等我尝试了自动部署，就再写一篇。&lt;/p&gt;
+&lt;h2 id=&quot;服务器&quot;&gt;&lt;a href=&quot;#服务器&quot; class=&quot;headerlink&quot; title=&quot;服务器&quot;&gt;&lt;/a&gt;服务器&lt;/h2&gt;&lt;p&gt;服务器，我一般买 Vultr 和 阿里云 的。阿里云有学生套餐，Vultr 的话可以绑定域名(阿里绑域名要备案比较麻烦),买好服务器，拿到的就是一个纯净的系统。&lt;/p&gt;
+&lt;h2 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h2&gt;&lt;p&gt;把服务器配置成生产环境。&lt;br&gt;(一般买的都是 ubuntu 14.04 64位)&lt;br&gt;我就把我的祖传脚本贡献出来了&lt;br&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
+    
+      <category term="部署" scheme="http://blog.bbchen.top/tags/%E9%83%A8%E7%BD%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库，字符流和异常处理</title>
+    <link href="http://blog.bbchen.top/2017/07/08/database-stream-exception/"/>
+    <id>http://blog.bbchen.top/2017/07/08/database-stream-exception/</id>
+    <published>2017-07-08T11:22:00.000Z</published>
+    <updated>2018-02-05T12:35:44.021Z</updated>
+    
+    <content type="html"><![CDATA[<p>说实话，今天的数据库这章不是很满意，感觉讲的还不是很具体，有时间我还要单独看下数据库。还有两块字符流和异常的处理写的还行，不过异常处理以前有看过一点。</p>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
+<li>这里建议直接使用 PDO 了，而且不要过多的写某些其他数据库特有的特性，这样如果以后从这个数据库变更到其他数据库时可能要改很多代码。</li>
+<li>还有就是数据库的配置文件单独放一块，不要和核心代码放在一起，要不然上传仓库或者被别人攻击的时候很容易将密码泄漏出去。</li>
+<li>千万！千万！不要忘了将字符集设置为 UTF-8 ，要不然会出现乱码和很多不兼容问题。</li>
+<li>要进行 SQL 语句的预处理，防止 SQL 注入。这里用预处理防 SQL 注入的原理是 PDO 会先将预处理语句解析成 SQL 模板，然后再接受你的值，这时候如果你的值里有 SQL 语句了也没用了，因为语句已经解析出来了，你已经改不了了，只能填值。</li>
+</ul>
+<h3 id="简单配置"><a href="#简单配置" class="headerlink" title="简单配置"></a>简单配置</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">require</span>(dirname(<span class="keyword">__FILE__</span>).<span class="string">'/../settings.php'</span>);</div><div class="line"><span class="comment">// var_dump('../settings.php');</span></div><div class="line">$pdo = <span class="keyword">new</span> PDO(</div><div class="line">    sprintf(</div><div class="line">        <span class="string">'mysql:host=%s;dbname=%s;port=%s;charset=%s'</span>,</div><div class="line">        $settings[<span class="string">'host'</span>],</div><div class="line">        $settings[<span class="string">'name'</span>],</div><div class="line">        $settings[<span class="string">'port'</span>],</div><div class="line">        $settings[<span class="string">'charset'</span>]</div><div class="line">    ),</div><div class="line">    $settings[<span class="string">'username'</span>],</div><div class="line">    $settings[<span class="string">'password'</span>]</div><div class="line">);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="下面是预处理语句"><a href="#下面是预处理语句" class="headerlink" title="下面是预处理语句"></a>下面是预处理语句</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$sql = <span class="string">'SELECT email FROM users WHERE id = :id'</span>;</div><div class="line">$statement = $pdo-&gt;prepare($sql);<span class="comment">//预处理，解析成 sql 模板</span></div><div class="line"></div><div class="line"><span class="comment">// $userId = filter_input('1', 'id');</span></div><div class="line">$userId = <span class="number">1</span>;</div><div class="line">$statement-&gt;bindValue(<span class="string">':id'</span>, $userId ,PDO::PARAM_INT);<span class="comment">//绑定模板里的值</span></div><div class="line">$statement-&gt;execute();<span class="comment">//执行语句</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="循环输出值"><a href="#循环输出值" class="headerlink" title="循环输出值"></a>循环输出值</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">while</span> (($result = $statement-&gt;fetch(PDO::FETCH_ASSOC)) !== <span class="keyword">false</span>) &#123;</div><div class="line">    <span class="keyword">echo</span> $result[<span class="string">'email'</span>];</div><div class="line">&#125;</div><div class="line">    var_dump($pdo);</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="字符流处理"><a href="#字符流处理" class="headerlink" title="字符流处理"></a>字符流处理</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$handle = fopen(dirname(<span class="keyword">__FILE__</span>).<span class="string">'\text.txt'</span>, <span class="string">'rb'</span>);</div><div class="line"><span class="comment">// var_dump($handle);</span></div><div class="line"><span class="keyword">while</span> (feof($handle) !== <span class="keyword">true</span>) &#123;</div><div class="line">    <span class="keyword">echo</span> fgets($handle);</div><div class="line">&#125;</div><div class="line">fclose($handle);</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>简单的写了个例子，大致是 <code>file_get_contents()</code>,<code>fopen()</code>,<code>fgets()</code>,<code>fwrite()</code>这些函数的使用。</p>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>可以自己 new 一些异常，<code>debug</code> 的时候可以定位的更精确一点，也容易解决一些问题<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$exception = <span class="keyword">new</span> <span class="keyword">Exception</span>(<span class="string">'Danger, Robinson!'</span>, <span class="number">100</span>);</div><div class="line"><span class="keyword">echo</span> $exception-&gt;getCode();</div><div class="line"><span class="keyword">echo</span> $exception-&gt;getMessage();</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170708194241730.png" alt=""></p>
+<p>多使用 <code>try-catch</code> 语句块捕获异常，以及出现异常后的处理方法<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">    $pdo = <span class="keyword">new</span> PDO(<span class="string">'mysql://host=wronghost;dbname=wrong_name'</span>);</div><div class="line">&#125; <span class="keyword">catch</span> (<span class="keyword">Exception</span> $e) &#123;</div><div class="line">    <span class="keyword">echo</span> $e-&gt;getCode();</div><div class="line">    <span class="keyword">echo</span> PHP_EOL;</div><div class="line">    <span class="keyword">echo</span> $e-&gt;getMessage();</div><div class="line">&#125;<span class="keyword">finally</span> &#123;</div><div class="line">    <span class="keyword">echo</span> PHP_EOL.<span class="string">"alwayys"</span>;</div><div class="line">&#125;</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170708194522553.png" alt=""></p>
+<p>那个 <code>filp/whoops</code> 组件真不错，<code>laravel5.5</code> 好像也要用这个了。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>明天开始看最后一大块内容，大概需要四天左右，是关于部署，开发和测试的内容。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;说实话，今天的数据库这章不是很满意，感觉讲的还不是很具体，有时间我还要单独看下数据库。还有两块字符流和异常的处理写的还行，不过异常处理以前有看过一点。&lt;/p&gt;
+&lt;h2 id=&quot;数据库&quot;&gt;&lt;a href=&quot;#数据库&quot; class=&quot;headerlink&quot; title=&quot;数据库&quot;&gt;&lt;/a&gt;数据库&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;这里建议直接使用 PDO 了，而且不要过多的写某些其他数据库特有的特性，这样如果以后从这个数据库变更到其他数据库时可能要改很多代码。&lt;/li&gt;
+&lt;li&gt;还有就是数据库的配置文件单独放一块，不要和核心代码放在一起，要不然上传仓库或者被别人攻击的时候很容易将密码泄漏出去。&lt;/li&gt;
+&lt;li&gt;千万！千万！不要忘了将字符集设置为 UTF-8 ，要不然会出现乱码和很多不兼容问题。&lt;/li&gt;
+&lt;li&gt;要进行 SQL 语句的预处理，防止 SQL 注入。这里用预处理防 SQL 注入的原理是 PDO 会先将预处理语句解析成 SQL 模板，然后再接受你的值，这时候如果你的值里有 SQL 语句了也没用了，因为语句已经解析出来了，你已经改不了了，只能填值。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;简单配置&quot;&gt;&lt;a href=&quot;#简单配置&quot; class=&quot;headerlink&quot; title=&quot;简单配置&quot;&gt;&lt;/a&gt;简单配置&lt;/h3&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;require&lt;/span&gt;(dirname(&lt;span class=&quot;keyword&quot;&gt;__FILE__&lt;/span&gt;).&lt;span class=&quot;string&quot;&gt;&#39;/../settings.php&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// var_dump(&#39;../settings.php&#39;);&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$pdo = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; PDO(&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    sprintf(&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;mysql:host=%s;dbname=%s;port=%s;charset=%s&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        $settings[&lt;span class=&quot;string&quot;&gt;&#39;host&#39;&lt;/span&gt;],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        $settings[&lt;span class=&quot;string&quot;&gt;&#39;name&#39;&lt;/span&gt;],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        $settings[&lt;span class=&quot;string&quot;&gt;&#39;port&#39;&lt;/span&gt;],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        $settings[&lt;span class=&quot;string&quot;&gt;&#39;charset&#39;&lt;/span&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $settings[&lt;span class=&quot;string&quot;&gt;&#39;username&#39;&lt;/span&gt;],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $settings[&lt;span class=&quot;string&quot;&gt;&#39;password&#39;&lt;/span&gt;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
+    
+      <category term="数据库" scheme="http://blog.bbchen.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="异常处理" scheme="http://blog.bbchen.top/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP 字符过滤和日期类</title>
+    <link href="http://blog.bbchen.top/2017/07/07/string-date/"/>
+    <id>http://blog.bbchen.top/2017/07/07/string-date/</id>
+    <published>2017-07-07T12:27:00.000Z</published>
+    <updated>2018-02-05T12:35:44.001Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天看了三块内容，字符的过滤，密码的 hash，还有就是 PHP 内的日期类。本来今天还打算把数据库这块看掉，但这块实在太重要了，以后面试的时候也肯定会问到，所以明天重点看一下数据库。(😂主要今天下午还去了图书馆，就没有完整的一块时间了)。</p>
+<h2 id="字符的过滤"><a href="#字符的过滤" class="headerlink" title="字符的过滤"></a>字符的过滤</h2><p>字符过滤有三个基本要求：</p>
+<ol>
+<li>过滤 (Sanitize)</li>
+<li>验证 (Validate)</li>
+<li>跳脱 (Escape) (是这样翻译吗？？)</li>
+</ol>
+<h3 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h3><p>首先是过滤，这个还蛮重要的，要不然一不小心别人就把sql执行语句或者 html 插入进来了。<br>php 自带有一个 html 过滤函数和 sql 语句过滤函数。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$input = <span class="string">'&lt;p&gt;123234&lt;/p&gt;'</span>;</div><div class="line"><span class="comment">// echo $input;</span></div><div class="line"><span class="keyword">echo</span> htmlentities($input, ENT_QUOTES, <span class="string">'UTF-8'</span>);</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p>使用 htmlentities 这个 php 内置函数之后输出就没有了<code>&lt;p&gt;</code>这些 html 代码了。<br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170707211100848.png" alt=""></p>
+<p>过滤 sql 语句的话，使用 PDO 的前置检查就行(PDO 的话还是很安全的，<code>mysql_query()</code>这种不要用了，php7都废弃了，而且很不安全)<br><a id="more"></a></p>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>主要是验证拿到的数据是否符合自己的要求，这个前端限制一个，后端也限制一下比较好。<br>比方说限制邮箱格式<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$email = <span class="string">'john@example.com'</span>;</div><div class="line">$emailSafe = filter_var($email, FILTER_SANITIZE_EMAIL);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p><code>filter_var</code> 函数，在配上 php 内置的<code>FILTER_SANITIZE_EMAIL</code>常量可以做到邮箱的验证。搭配其他的常量，比方说搭配<code>FILTER_SANITIZE_STRING</code>就可以实现其他类型的验证。</p>
+<p>还有一些就是要自己去数据库里查找对应数据来进行验证。</p>
+<h3 id="跳脱"><a href="#跳脱" class="headerlink" title="跳脱"></a>跳脱</h3><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170707212558229.png" alt=""><br>这篇看的不是很懂，大意应该是，最终展现在前端的时候还要再过滤一下语句。</p>
+<h2 id="密码"><a href="#密码" class="headerlink" title="密码"></a>密码</h2><p>储存密码的几个原则：</p>
+<ol>
+<li>从不要知道用户的密码</li>
+<li>从不要限制用户的密码</li>
+<li>从不要明文发送密码给用户</li>
+<li>使用hash而不是加密</li>
+</ol>
+<p>因为 php 有内置密码函数，所以非常方便，哈希用 <code>password_hash()</code>, 验证用<code>password_verify()</code>，就可以了，已经非常安全了，php 会自己加盐的。以前我也知道php 会自动加盐，但我一直好奇他加的盐储存在哪里，后来我知道了，在h<code>ash</code>过后的那串字符中就有储存盐值，所以直接用 <code>password_verify()</code> 他就会自己去校验，都封装好了。</p>
+<h2 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h2><p>日期这个比较麻烦(主要是格式转来转去，还有计算一些差值)，但有时候一定要用它，所以还是有必要看下的。<br><code>date_default_timezone_set(&#39;Asia/Shanghai&#39;);</code><br>这句可以设置时区，国内一般设置为上海，东八区。</p>
+<h3 id="DateTime"><a href="#DateTime" class="headerlink" title="DateTime"></a>DateTime</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">date_default_timezone_set(<span class="string">'Asia/Shanghai'</span>);</div><div class="line">$datetime = <span class="keyword">new</span> DateTime();</div><div class="line"></div><div class="line">$datetime2 = <span class="keyword">new</span> DateTime(<span class="string">'2014-04-27 5:03 AM'</span>);</div><div class="line">var_dump($datetime2);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>然后就是一些普通的用法，不过下面我还是要展示一下 <code>DateInterval</code> 这个类，以前还真没用过，这个主要是设定时间区间的。</p>
+<h3 id="DateInterval"><a href="#DateInterval" class="headerlink" title="DateInterval"></a>DateInterval</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$interval = <span class="keyword">new</span> DateInterval(<span class="string">'P2W'</span>);</div><div class="line"></div><div class="line">$datetime-&gt;add($interval);</div><div class="line"><span class="keyword">echo</span> $datetime-&gt;format(<span class="string">'Y-m-d H:i:s'</span>);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>比方说我设置了区间两周(P2W就是两周的意思)，然后将它加到 <code>datetime</code> 上，这样<code>datetime</code>的日期就会增加两周。</p>
+<h3 id="DatePeriod"><a href="#DatePeriod" class="headerlink" title="DatePeriod"></a>DatePeriod</h3><p>这个 <code>DatePeriod</code> 类我也是第一次见，这个搭配上上面两个，可以指定初始时间，然后间隔，再加上一个次数，可以很好的实现一些循环任务。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$period = <span class="keyword">new</span> DatePeriod($datetime, $interval, <span class="number">3</span>);</div><div class="line"></div><div class="line"><span class="keyword">foreach</span> ($period  <span class="keyword">as</span> $nextDateTime) &#123;</div><div class="line">    <span class="keyword">echo</span> $nextDateTime-&gt;format(<span class="string">'Y-m-d'</span>), PHP_EOL;</div><div class="line">&#125;</div><div class="line"> <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>明天要好好看下数据库了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天看了三块内容，字符的过滤，密码的 hash，还有就是 PHP 内的日期类。本来今天还打算把数据库这块看掉，但这块实在太重要了，以后面试的时候也肯定会问到，所以明天重点看一下数据库。(😂主要今天下午还去了图书馆，就没有完整的一块时间了)。&lt;/p&gt;
+&lt;h2 id=&quot;字符的过滤&quot;&gt;&lt;a href=&quot;#字符的过滤&quot; class=&quot;headerlink&quot; title=&quot;字符的过滤&quot;&gt;&lt;/a&gt;字符的过滤&lt;/h2&gt;&lt;p&gt;字符过滤有三个基本要求：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;过滤 (Sanitize)&lt;/li&gt;
+&lt;li&gt;验证 (Validate)&lt;/li&gt;
+&lt;li&gt;跳脱 (Escape) (是这样翻译吗？？)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;过滤&quot;&gt;&lt;a href=&quot;#过滤&quot; class=&quot;headerlink&quot; title=&quot;过滤&quot;&gt;&lt;/a&gt;过滤&lt;/h3&gt;&lt;p&gt;首先是过滤，这个还蛮重要的，要不然一不小心别人就把sql执行语句或者 html 插入进来了。&lt;br&gt;php 自带有一个 html 过滤函数和 sql 语句过滤函数。&lt;br&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$input = &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;p&amp;gt;123234&amp;lt;/p&amp;gt;&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// echo $input;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; htmlentities($input, ENT_QUOTES, &lt;span class=&quot;string&quot;&gt;&#39;UTF-8&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;使用 htmlentities 这个 php 内置函数之后输出就没有了&lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;这些 html 代码了。&lt;br&gt;&lt;img src=&quot;http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170707211100848.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;过滤 sql 语句的话，使用 PDO 的前置检查就行(PDO 的话还是很安全的，&lt;code&gt;mysql_query()&lt;/code&gt;这种不要用了，php7都废弃了，而且很不安全)&lt;br&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="编程" scheme="http://blog.bbchen.top/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="暑期" scheme="http://blog.bbchen.top/tags/%E6%9A%91%E6%9C%9F/"/>
+    
+      <category term="php" scheme="http://blog.bbchen.top/tags/php/"/>
+    
+      <category term="Modern PHP" scheme="http://blog.bbchen.top/tags/Modern-PHP/"/>
+    
+      <category term="过滤" scheme="http://blog.bbchen.top/tags/%E8%BF%87%E6%BB%A4/"/>
+    
+      <category term="日期" scheme="http://blog.bbchen.top/tags/%E6%97%A5%E6%9C%9F/"/>
     
   </entry>
   

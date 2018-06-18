@@ -4,30 +4,6 @@
 
     
   <url>
-    <loc>http://blog.bbchen.top/2018/06/11/A-telephone-interview-experience/</loc>
-    <lastmod>2018-06-11T13:57:21.072Z</lastmod>
-    <data>
-        <display>
-        <title>记一次电话面试经历</title>
-        <pubTime>2018-06-11T11:25:49.000Z</pubTime>
-        
-        <tag>面试</tag>
-         
-        <tag>Laravel</tag>
-         
-        <tag>Http</tag>
-         
-         
-           
-             
-              <breadCrumb title="面试" url="http://blog.bbchen.top/categories/%E9%9D%A2%E8%AF%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.bbchen.top/2018/05/27/Access-control-system-based-on%20rainbow%20face%20recognition%20interface/</loc>
     <lastmod>2018-05-31T07:11:54.694Z</lastmod>
     <data>
@@ -36,26 +12,6 @@
         <pubTime>2018-05-27T07:36:00.000Z</pubTime>
         
         <tag>Laravel</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.bbchen.top/2018/03/20/Introduction-and-use-of-the-Android-EventBus-framework/</loc>
-    <lastmod>2018-03-20T07:22:38.084Z</lastmod>
-    <data>
-        <display>
-        <title>安卓EventBus框架的介绍和使用</title>
-        <pubTime>2018-03-20T06:08:51.000Z</pubTime>
-        
-        <tag>安卓开发</tag>
          
          
            
@@ -110,28 +66,6 @@
 
     
   <url>
-    <loc>http://blog.bbchen.top/2017/10/22/Robinson-with-Spring-boot-Mybatis/</loc>
-    <lastmod>2018-02-05T12:35:44.289Z</lastmod>
-    <data>
-        <display>
-        <title>Robinson 大战 Spring boot 之 Mybatis</title>
-        <pubTime>2017-10-22T04:21:00.000Z</pubTime>
-        
-        <tag>开发</tag>
-         
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.bbchen.top/2017/09/10/No-Longer-Human/</loc>
     <lastmod>2018-02-05T12:35:44.277Z</lastmod>
     <data>
@@ -163,9 +97,9 @@
         <title>LSU.Plus.Club 网站开发心路历程</title>
         <pubTime>2017-09-08T06:55:00.000Z</pubTime>
         
-        <tag>网站</tag>
-         
         <tag>开发</tag>
+         
+        <tag>网站</tag>
          
          
            
@@ -185,9 +119,9 @@
         <title>从 Windows 到 Linux -- 一次开发环境的迁移</title>
         <pubTime>2017-08-07T13:31:00.000Z</pubTime>
         
-        <tag>暑期</tag>
-         
         <tag>开发</tag>
+         
+        <tag>暑期</tag>
          
         <tag>系统</tag>
          

@@ -2,23 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.bbchen.top/2018/06/11/A-telephone-interview-experience/</loc>
-    
-    <lastmod>2018-06-11T13:57:21.072Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.bbchen.top/2018/05/27/Access-control-system-based-on%20rainbow%20face%20recognition%20interface/</loc>
     
     <lastmod>2018-05-31T07:11:54.694Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2018/03/20/Introduction-and-use-of-the-Android-EventBus-framework/</loc>
-    
-    <lastmod>2018-03-20T07:22:38.084Z</lastmod>
     
   </url>
   
@@ -33,13 +19,6 @@
     <loc>http://blog.bbchen.top/2017/10/22/Docker-Mybatis-Spring-boot-Oracle12c/</loc>
     
     <lastmod>2018-02-05T12:35:44.301Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/10/22/Robinson-with-Spring-boot-Mybatis/</loc>
-    
-    <lastmod>2018-02-05T12:35:44.289Z</lastmod>
     
   </url>
   
