@@ -4,14 +4,42 @@
 
     
   <url>
-    <loc>http://blog.bbchen.top/2018/05/27/Access-control-system-based-on%20rainbow%20face%20recognition%20interface/</loc>
-    <lastmod>2018-05-31T07:11:54.694Z</lastmod>
+    <loc>http://blog.bbchen.top/2017/07/02/two-books/</loc>
+    <lastmod>2018-11-04T06:47:09.249Z</lastmod>
     <data>
         <display>
-        <title>基于虹软人脸识别接口开发的门禁系统</title>
-        <pubTime>2018-05-27T07:36:00.000Z</pubTime>
+        <title>两本书</title>
+        <pubTime>2017-07-02T10:18:00.000Z</pubTime>
         
-        <tag>Laravel</tag>
+        <tag>计划</tag>
+         
+        <tag>编程</tag>
+         
+        <tag>暑期</tag>
+         
+        <tag>书</tag>
+         
+         
+           
+             
+              <breadCrumb title="日常" url="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2017/09/08/LSU-Plus-Club-Development-experience/</loc>
+    <lastmod>2018-11-04T06:44:33.716Z</lastmod>
+    <data>
+        <display>
+        <title>LSU.Plus.Club 网站开发心路历程</title>
+        <pubTime>2017-09-08T06:55:00.000Z</pubTime>
+        
+        <tag>开发</tag>
+         
+        <tag>网站</tag>
          
          
            
@@ -24,14 +52,58 @@
 
     
   <url>
+    <loc>http://blog.bbchen.top/2017/08/07/From-Windows-to-Linux/</loc>
+    <lastmod>2018-11-04T06:43:33.164Z</lastmod>
+    <data>
+        <display>
+        <title>从 Windows 到 Linux -- 一次开发环境的迁移</title>
+        <pubTime>2017-08-07T13:31:00.000Z</pubTime>
+        
+        <tag>开发</tag>
+         
+        <tag>暑期</tag>
+         
+        <tag>系统</tag>
+         
+         
+           
+             
+              <breadCrumb title="日常" url="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.bbchen.top/2018/02/05/A-pit-in-developing-API-with-Laravel/</loc>
-    <lastmod>2018-02-06T09:23:23.042Z</lastmod>
+    <lastmod>2018-11-04T06:36:19.194Z</lastmod>
     <data>
         <display>
         <title>用Laravel开发API时遇到的一个坑</title>
         <pubTime>2018-02-05T12:48:06.000Z</pubTime>
         
         <tag>API开发</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.bbchen.top/2018/05/27/Access-control-system-based-on%20rainbow%20face%20recognition%20interface/</loc>
+    <lastmod>2018-11-04T06:33:25.957Z</lastmod>
+    <data>
+        <display>
+        <title>基于虹软人脸识别接口开发的门禁系统</title>
+        <pubTime>2018-05-27T07:36:00.000Z</pubTime>
+        
+        <tag>Laravel</tag>
          
          
            
@@ -83,52 +155,6 @@
            
              
               <breadCrumb title="阅读" url="http://blog.bbchen.top/categories/%E9%98%85%E8%AF%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.bbchen.top/2017/09/08/LSU-Plus-Club-Development-experience/</loc>
-    <lastmod>2018-02-05T12:35:44.257Z</lastmod>
-    <data>
-        <display>
-        <title>LSU.Plus.Club 网站开发心路历程</title>
-        <pubTime>2017-09-08T06:55:00.000Z</pubTime>
-        
-        <tag>开发</tag>
-         
-        <tag>网站</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.bbchen.top/2017/08/07/From-Windows-to-Linux/</loc>
-    <lastmod>2018-02-05T12:35:44.229Z</lastmod>
-    <data>
-        <display>
-        <title>从 Windows 到 Linux -- 一次开发环境的迁移</title>
-        <pubTime>2017-08-07T13:31:00.000Z</pubTime>
-        
-        <tag>开发</tag>
-         
-        <tag>暑期</tag>
-         
-        <tag>系统</tag>
-         
-         
-           
-             
-              <breadCrumb title="日常" url="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
           
         </display>
     </data>
@@ -615,32 +641,6 @@
            
              
               <breadCrumb title="编程" url="http://blog.bbchen.top/categories/%E7%BC%96%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/02/two-books/</loc>
-    <lastmod>2018-02-05T12:35:43.897Z</lastmod>
-    <data>
-        <display>
-        <title>两本书</title>
-        <pubTime>2017-07-02T10:18:00.000Z</pubTime>
-        
-        <tag>计划</tag>
-         
-        <tag>编程</tag>
-         
-        <tag>暑期</tag>
-         
-        <tag>书</tag>
-         
-         
-           
-             
-              <breadCrumb title="日常" url="http://blog.bbchen.top/categories/%E6%97%A5%E5%B8%B8/"/>
           
         </display>
     </data>

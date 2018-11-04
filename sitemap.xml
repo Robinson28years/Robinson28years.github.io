@@ -2,16 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.bbchen.top/2018/05/27/Access-control-system-based-on%20rainbow%20face%20recognition%20interface/</loc>
+    <loc>http://blog.bbchen.top/2017/07/02/two-books/</loc>
     
-    <lastmod>2018-05-31T07:11:54.694Z</lastmod>
+    <lastmod>2018-11-04T06:47:09.249Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/09/08/LSU-Plus-Club-Development-experience/</loc>
+    
+    <lastmod>2018-11-04T06:44:33.716Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2017/08/07/From-Windows-to-Linux/</loc>
+    
+    <lastmod>2018-11-04T06:43:33.164Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.bbchen.top/2018/02/05/A-pit-in-developing-API-with-Laravel/</loc>
     
-    <lastmod>2018-02-06T09:23:23.042Z</lastmod>
+    <lastmod>2018-11-04T06:36:19.194Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.bbchen.top/2018/05/27/Access-control-system-based-on%20rainbow%20face%20recognition%20interface/</loc>
+    
+    <lastmod>2018-11-04T06:33:25.957Z</lastmod>
     
   </url>
   
@@ -26,20 +47,6 @@
     <loc>http://blog.bbchen.top/2017/09/10/No-Longer-Human/</loc>
     
     <lastmod>2018-02-05T12:35:44.277Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/09/08/LSU-Plus-Club-Development-experience/</loc>
-    
-    <lastmod>2018-02-05T12:35:44.257Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/08/07/From-Windows-to-Linux/</loc>
-    
-    <lastmod>2018-02-05T12:35:44.229Z</lastmod>
     
   </url>
   
@@ -166,13 +173,6 @@
     <loc>http://blog.bbchen.top/2017/07/03/Namespaces-Traits/</loc>
     
     <lastmod>2018-02-05T12:35:43.921Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.bbchen.top/2017/07/02/two-books/</loc>
-    
-    <lastmod>2018-02-05T12:35:43.897Z</lastmod>
     
   </url>
   

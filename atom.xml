@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bbchen.top/"/>
-  <updated>2018-05-31T07:11:54.694Z</updated>
+  <updated>2018-11-04T06:33:25.957Z</updated>
   <id>http://blog.bbchen.top/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="http://blog.bbchen.top/2018/05/27/Access-control-system-based-on%20rainbow%20face%20recognition%20interface/"/>
     <id>http://blog.bbchen.top/2018/05/27/Access-control-system-based-on rainbow face recognition interface/</id>
     <published>2018-05-27T07:36:00.000Z</published>
-    <updated>2018-05-31T07:11:54.694Z</updated>
+    <updated>2018-11-04T06:33:25.957Z</updated>
     
     <content type="html"><![CDATA[<p>这是18年浙江省服务外包大赛的赛题，从寒假前选定这个题目开始，我们团队就开始了需求分析等一系列流程。我在这个项目中的职责是作为项目经理，实际的工作是分析好整个流程，然后给团队成员分配好任务。在开发工作中我负责整个项目的服务端开发，还有门禁系统的物业web端界面和业主web端界面。<br>然后寒假便开始了整个架构的设计。一开始是调试虹软的接口从Node.js版到最后的Python版，最后终于是能成功提出出了特征值。(Node.js版能进行人脸的比对，而且更方便，但当时我还想提取出特征值，经过好多天的尝试后，还是换成了Python版，然后学了一下Flask框架，把他变成了接口开放出来。短短几句话，，真的有好多泪)。<br><a id="more"></a></p>
 <h1 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h1><p>我先和团队成员对比赛需求文档进行了研究，然后讨论了几次，用xmind画了需求图。</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-05-31-15-10-38-2018531.png" alt="业主需求"></p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-05-31-15-10-59-2018531.png" alt="物业需求"></p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-05-31-15-11-18-2018531.png" alt="功能总览"></p>
+<p><img src="https://i.loli.net/2018/11/04/5bde91f739833.png" alt="业主需求"></p>
+<p><img src="![](https://i.loli.net/2018/11/04/5bde9227057f4.png" alt="物业需求">)</p>
+<p><img src="![](https://i.loli.net/2018/11/04/5bde923e00fb9.png" alt="功能总览">)</p>
 <h1 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h1><p>为了提升用户体验，项目规定了性能要求和业务需求。</p>
 <ol>
 <li>满足1000人的注册需求</li>
@@ -37,17 +37,17 @@
 <p><img src="http://osabfc0f3.bkt.clouddn.com/2018-05-31-15-11-40-2018531.png" alt="系统架构"></p>
 <h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>这一块我是负责服务端还有后台管理端的。其中服务端用了Python的Flask框架，WebSocket用了Swoole，主服务器是用Laravel的。后台管理端这边就都是用vue。<br>还有服务端开的API都是RESTful风格的。</p>
 <p>服务端技术栈</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-05-27-18-03-26-2018527.png" alt="2018-05-27-18-03-26-2018527"></p>
+<p><img src="https://i.loli.net/2018/11/04/5bde926bc936b.png" alt="2018-05-27-18-03-26-2018527"></p>
 <p>门禁客户端技术栈</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-05-27-18-09-41-2018527.png" alt="2018-05-27-18-09-41-2018527"></p>
+<p><img src="https://i.loli.net/2018/11/04/5bde9277f27a0.png" alt="2018-05-27-18-09-41-2018527"></p>
 <p>后台管理端技术栈</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-05-27-18-10-06-2018527.png" alt="2018-05-27-18-10-06-2018527"></p>
+<p><img src="https://i.loli.net/2018/11/04/5bde92845e600.png" alt="2018-05-27-18-10-06-2018527"></p>
 <p>移动端技术栈</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-05-27-18-11-47-2018527.png" alt="2018-05-27-18-11-47-2018527"></p>
+<p><img src="https://i.loli.net/2018/11/04/5bde928ed3c61.png" alt="2018-05-27-18-11-47-2018527"></p>
 <p>数据库</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-05-27-18-13-18-2018527.png" alt="2018-05-27-18-13-18-2018527"></p>
+<p><img src="https://i.loli.net/2018/11/04/5bde92997796c.png" alt="2018-05-27-18-13-18-2018527"></p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>两月初开始写，然后是五月初去比赛，最后拿了省赛一等奖，结果还行。就是项目最后冲刺的时候还是有点累的，那个星期还通宵了几次，跟大家合作开发也蛮愉快的，要我一个人肯定吃不消。然后也更好的熟悉了一下各种框架吧，最后放一下我的github小绿点吧。</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-05-27-18-24-37-2018527.png" alt="2018-05-27-18-24-37-2018527"></p>
+<p><img src="https://i.loli.net/2018/11/04/5bde92a48f6fc.png" alt="2018-05-27-18-24-37-2018527"></p>
 ]]></content>
     
     <summary type="html">
@@ -68,30 +68,30 @@
     <link href="http://blog.bbchen.top/2018/02/05/A-pit-in-developing-API-with-Laravel/"/>
     <id>http://blog.bbchen.top/2018/02/05/A-pit-in-developing-API-with-Laravel/</id>
     <published>2018-02-05T12:48:06.000Z</published>
-    <updated>2018-02-06T09:23:23.042Z</updated>
+    <updated>2018-11-04T06:36:19.194Z</updated>
     
     <content type="html"><![CDATA[<p>开发 API 开始都好好的，Laravel5.5 提供的 <code>make:resource</code> 用的也挺方便的，转换层不用下载其他包了。但是当我开发完几个 get、post 路由，再开发 patch 和 put 路由时发现在 postman 里面怎么测试都报错。</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-02-05-21-41-08-201825.png" alt="2018-02-05-21-41-08-201825"></p>
+<p><img src="https://i.loli.net/2018/11/04/5bde931594387.png" alt="2018-02-05-21-41-08-201825"></p>
 <p>后来查了好多资料才发现<br><a id="more"></a><br>form-data 不支持 put 和 patch ！！</p>
 <p>然后我的postman一直是使用form-data来测试接口的</p>
 <p>原来如此。。。</p>
 <p>接下来就是找解决办法</p>
 <h2 id="解决方法一："><a href="#解决方法一：" class="headerlink" title="解决方法一："></a>解决方法一：</h2><p>使用 postman 的 form-data 传过去是不行的，用 x-www-form-urlencoded 就可以了。</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-02-05-21-43-23-201825.png" alt="2018-02-05-21-43-23-201825"></p>
+<p><img src="https://i.loli.net/2018/11/04/5bde931dd4de0.png" alt="2018-02-05-21-43-23-201825"></p>
 <p>所以 ajax 传数据的时候不能直接传 form-data 数据，要传键值对序列化过去。</p>
 <h2 id="解决方法二："><a href="#解决方法二：" class="headerlink" title="解决方法二："></a>解决方法二：</h2><p>不过还有一种解决办法，Laravel 提供了用 post 模拟 put 和   patch 的方法，就是你依然可以使用 post 请求 和用 form-data 传数据，但是你要在 form-data 里再加一行数据，其中 key 是 _method , value 是 PUT 或者 PATCH 。这样 Laravel 的 put 和 patch 路由依然会正确解析你的 post 请求。</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-02-05-21-47-15-201825.png" alt="2018-02-05-21-47-15-201825"></p>
+<p><img src="https://i.loli.net/2018/11/04/5bde93290a735.png" alt="2018-02-05-21-47-15-201825"></p>
 <h2 id="解决方法三："><a href="#解决方法三：" class="headerlink" title="解决方法三："></a>解决方法三：</h2><p>感谢 Laravel China 论坛回复里提出的直接用 <code>Content-Type: application/json</code> 这个 <code>Headers</code> 传数据， 我在 postman 里试了一下确实可以。而且查了一下资料，加这个 <code>Headers</code> 确实是一个比较通用且较好的方法，详情可以见 <a href="https://imququ.com/post/four-ways-to-post-data-in-http.html" target="_blank" rel="external">四种常见的 POST 提交数据方式</a></p>
-<p>在 postman 里面测试接口的话就选择用 <code>raw</code> 传 <code>application/json</code> 格式就可以了<br><img src="http://osabfc0f3.bkt.clouddn.com/2018-02-06-17-09-01-201826.png" alt="2018-02-06-17-09-01-201826"></p>
+<p>在 postman 里面测试接口的话就选择用 <code>raw</code> 传 <code>application/json</code> 格式就可以了<br><img src="https://i.loli.net/2018/11/04/5bde933c459bc.png" alt="2018-02-06-17-09-01-201826"></p>
 <p>然后 postman 会自动把 Headers 改为 <code>Content-Type:application/json</code></p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/2018-02-06-17-11-34-201826.png" alt="2018-02-06-17-11-34-201826"></p>
+<p><img src="https://i.loli.net/2018/11/04/5bde934ea4297.png" alt="2018-02-06-17-11-34-201826"></p>
 <p>这样前端开发使用 patch 或者 put 路由的时候，只要把数据 JSON 序列化之后传过来就可以了。一般是使用 <code>JSON.stringify</code> 这个方法来进行序列化。</p>
 ]]></content>
     
     <summary type="html">
     
       &lt;p&gt;开发 API 开始都好好的，Laravel5.5 提供的 &lt;code&gt;make:resource&lt;/code&gt; 用的也挺方便的，转换层不用下载其他包了。但是当我开发完几个 get、post 路由，再开发 patch 和 put 路由时发现在 postman 里面怎么测试都报错。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://osabfc0f3.bkt.clouddn.com/2018-02-05-21-41-08-201825.png&quot; alt=&quot;2018-02-05-21-41-08-201825&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/11/04/5bde931594387.png&quot; alt=&quot;2018-02-05-21-41-08-201825&quot;&gt;&lt;/p&gt;
 &lt;p&gt;后来查了好多资料才发现&lt;br&gt;
     
     </summary>
@@ -282,7 +282,7 @@
     <link href="http://blog.bbchen.top/2017/09/08/LSU-Plus-Club-Development-experience/"/>
     <id>http://blog.bbchen.top/2017/09/08/LSU-Plus-Club-Development-experience/</id>
     <published>2017-09-08T06:55:00.000Z</published>
-    <updated>2018-02-05T12:35:44.257Z</updated>
+    <updated>2018-11-04T06:44:33.716Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://i.loli.net/2017/09/08/59b23fcc55cb3.png" alt="TIM截图20170908145839.png"><br><a id="more"></a></p>
 <h1 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h1><p>官网: <a href="http://lsuplus.top/" target="_blank" rel="external">http://lsuplus.top/</a></p>
@@ -298,13 +298,13 @@
 <p>引入了一个包，中间件的写法就是上面那样子。</p>
 <h2 id="其他坑点"><a href="#其他坑点" class="headerlink" title="其他坑点"></a>其他坑点</h2><p>大多是前端方面的，后端这里还是蛮好写的，😂后端开接口的时间和前端做页面的时间是 1 : 3。</p>
 <hr>
-<h1 id="页面展示"><a href="#页面展示" class="headerlink" title="页面展示"></a>页面展示</h1><h2 id="首页-除了题图"><a href="#首页-除了题图" class="headerlink" title="首页(除了题图)"></a>首页(除了题图)</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908160847790.png" alt=""><br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908160917502.png" alt=""></p>
-<h2 id="登录注册"><a href="#登录注册" class="headerlink" title="登录注册"></a>登录注册</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161138433.png" alt=""></p>
-<h2 id="论坛"><a href="#论坛" class="headerlink" title="论坛"></a>论坛</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161036407.png" alt=""><br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-2017090816105539.png" alt=""></p>
-<h2 id="图书馆"><a href="#图书馆" class="headerlink" title="图书馆"></a>图书馆</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161210931.png" alt=""><br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161223395.png" alt=""></p>
-<h2 id="活动"><a href="#活动" class="headerlink" title="活动"></a>活动</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161252344.png" alt=""></p>
-<h2 id="后台"><a href="#后台" class="headerlink" title="后台"></a>后台</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161417552.png" alt=""></p>
-<h1 id="项目历时"><a href="#项目历时" class="headerlink" title="项目历时"></a>项目历时</h1><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161626114.png" alt=""></p>
+<h1 id="页面展示"><a href="#页面展示" class="headerlink" title="页面展示"></a>页面展示</h1><h2 id="首页-除了题图"><a href="#首页-除了题图" class="headerlink" title="首页(除了题图)"></a>首页(除了题图)</h2><p><img src="https://i.loli.net/2018/11/04/5bde945130254.png" alt=""><br><img src="https://i.loli.net/2018/11/04/5bde94588f1f0.png" alt=""></p>
+<h2 id="登录注册"><a href="#登录注册" class="headerlink" title="登录注册"></a>登录注册</h2><p><img src="https://i.loli.net/2018/11/04/5bde9465433b9.png" alt=""></p>
+<h2 id="论坛"><a href="#论坛" class="headerlink" title="论坛"></a>论坛</h2><p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170908161036407.png" alt=""><br><img src="https://i.loli.net/2018/11/04/5bde94713a13b.png" alt=""></p>
+<h2 id="图书馆"><a href="#图书馆" class="headerlink" title="图书馆"></a>图书馆</h2><p><img src="https://i.loli.net/2018/11/04/5bde9541bfedd.png" alt=""><br><img src="https://i.loli.net/2018/11/04/5bde955115db2.png" alt=""></p>
+<h2 id="活动"><a href="#活动" class="headerlink" title="活动"></a>活动</h2><p><img src="https://i.loli.net/2018/11/04/5bde953b7cf1c.png" alt=""></p>
+<h2 id="后台"><a href="#后台" class="headerlink" title="后台"></a>后台</h2><p><img src="https://i.loli.net/2018/11/04/5bde948a52290.png" alt=""></p>
+<h1 id="项目历时"><a href="#项目历时" class="headerlink" title="项目历时"></a>项目历时</h1><p><img src="https://i.loli.net/2018/11/04/5bde94a80b33a.png" alt=""></p>
 <p>从2017年8月16日到2017年9月1日，17天时间，算是完整的重构了一遍，除了兴趣小组模块和一些错误返回码没补全，其他接口基本就成型了。</p>
 <p>天天敲代码的日子，怎么说呢，充实，但也蛮累的，9月1号结束的时候我的背还很酸。</p>
 <h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>暂时就写这么多了，到时候记起什么了再补点好了。</p>
@@ -330,10 +330,10 @@
     <link href="http://blog.bbchen.top/2017/08/07/From-Windows-to-Linux/"/>
     <id>http://blog.bbchen.top/2017/08/07/From-Windows-to-Linux/</id>
     <published>2017-08-07T13:31:00.000Z</published>
-    <updated>2018-02-05T12:35:44.229Z</updated>
+    <updated>2018-11-04T06:43:33.164Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170807213709196.png" alt="桌面环境"><br><a id="more"></a><br>近来想起一个月前有装一个 Linux 系统，于是就进去玩了一下。以前也有想过在 Linux 开发程序，也装过 Ubuntu，装过 Debian，但是我不太喜欢那个界面，而且有些应用没有，大大降低了我的开发效率。所以很长一段时间我用的都是 Windows。这次进到 Deepin 系统里面，再次眼前一亮，等我装上 Phpstorm,Atom,我感觉到，我已经不用回去了。当我看到雷神终端模式，我发现已经爱上了这个系统。</p>
-<p><img src="http://osabfc0f3.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E5%BD%95%E5%B1%8F_%E9%80%89%E6%8B%A9%E5%8C%BA%E5%9F%9F_20170807214832.gif" alt=""></p>
+    <content type="html"><![CDATA[<p><img src="https://i.loli.net/2018/11/04/5bde9504037e9.png" alt=""><br><a id="more"></a><br>近来想起一个月前有装一个 Linux 系统，于是就进去玩了一下。以前也有想过在 Linux 开发程序，也装过 Ubuntu，装过 Debian，但是我不太喜欢那个界面，而且有些应用没有，大大降低了我的开发效率。所以很长一段时间我用的都是 Windows。这次进到 Deepin 系统里面，再次眼前一亮，等我装上 Phpstorm,Atom,我感觉到，我已经不用回去了。当我看到雷神终端模式，我发现已经爱上了这个系统。</p>
+<p><img src="https://i.loli.net/2018/11/04/5bde94eed0fab.png" alt=""></p>
 <p>这个终端是不是很炫酷！</p>
 <p>肥肠的喜欢！</p>
 <p>当然了，用 Linux 不只是因为有一个好用的终端，主要有这几个方面。</p>
@@ -344,17 +344,17 @@
 <li>稳定性，Linux 系统不容易崩，而且后台不会有乱七八糟的资源占用，一般电脑能开着好几天不卡。</li>
 <li>太美了，这个 Deepin 系统实在太美了，我看到了很多精致的特效，而且国人开发的这款 Linux 版本的商店里也有很多实用的已打包软件，很多功能真的能解决我很多痛点，比方说 terminal 可以自定义命令，我按个 alt+x 就可以启动所有 php 服务。</li>
 </ol>
-<p>那我将我的开发环境迁移到 Linux 麻烦吗？<br>一点都不！麻！烦！<br>为什么？<br>因为我把我所有的 atom 配置都备份了，而 atom 又是跨平台应用，所有我同步一下就把所有插件都安装过来了。然后再将我的 c/c++ 环境配置了一下，这样又能愉悦的刷 acm 题了。<br><img src="http://osabfc0f3.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E5%BD%95%E5%B1%8F_%E9%80%89%E6%8B%A9%E5%8C%BA%E5%9F%9F_20170807221837.gif" alt="acm 刷题"></p>
+<p>那我将我的开发环境迁移到 Linux 麻烦吗？<br>一点都不！麻！烦！<br>为什么？<br>因为我把我所有的 atom 配置都备份了，而 atom 又是跨平台应用，所有我同步一下就把所有插件都安装过来了。然后再将我的 c/c++ 环境配置了一下，这样又能愉悦的刷 acm 题了。<br><img src="https://i.loli.net/2018/11/04/5bde950e8d5f4.png" alt=""></p>
 <p>然后是我的 Phpstorm ,因为是 IDE 嘛，所以其实很多东西我都不用去改，我只是把字体大小和行间距改了一下就拿来用了。</p>
 <p>还有一下像 php ,node ,composer 这些，装装都很快的。</p>
 <p>然后还要感谢一下 Chrome ,因为登了账号，所有的书签，保存的密码都同步了过来。我已经感觉不出还有哪些日常需要使用的东西无法满足了。</p>
 <p>接下来就能愉快的开发了。</p>
-<p>再说一句，这个 Deepin 上的字体还是蛮好看的。<br><img src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170807222502187.png" alt="字体"></p>
+<p>再说一句，这个 Deepin 上的字体还是蛮好看的。<br><img src="https://i.loli.net/2018/11/04/5bde95149691b.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170807213709196.png&quot; alt=&quot;桌面环境&quot;&gt;&lt;br&gt;
+      &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/11/04/5bde9504037e9.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;
     
     </summary>
     
