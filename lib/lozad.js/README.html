@@ -1,0 +1,206 @@
+<h1 id="Lozad-js"><a href="#Lozad-js" class="headerlink" title="Lozad.js    "></a>Lozad.js <a href="https://badge.fury.io/js/lozad"><img src="https://badge.fury.io/js/lozad.svg" alt="npm version"></a> <a href="https://travis-ci.org/ApoorvSaxena/lozad.js"><img src="https://travis-ci.org/ApoorvSaxena/lozad.js.svg?branch=master" alt="Build Status"></a> <a href="https://www.npmjs.com/package/lozad"><img src="https://img.shields.io/npm/dm/lozad" alt="npm"></a> <a href="https://www.jsdelivr.com/package/npm/lozad"><img src="https://data.jsdelivr.com/v1/package/npm/lozad/badge"></a></h1><blockquote>
+<p>Highly performant, light and configurable lazy loader in pure JS with no dependencies for images, iframes and more, using IntersectionObserver API</p>
+</blockquote>
+<p><img src="/./banner/lozad-banner.jpg" alt="lozad.js lazy loading javascript library" title="lozad.js lazy loading javascript library"></p>
+<p><strong>Lozad.js</strong>:</p>
+<ul>
+<li>lazy loads elements performantly using pure JavaScript,</li>
+<li>is a light-weight library, just <a href="https://cdn.jsdelivr.net/npm/lozad"><img src="http://img.badgesize.io/https://cdn.jsdelivr.net/npm/lozad?compression=gzip"></a> minified &amp; gzipped,</li>
+<li>has NO DEPENDENCIES :)</li>
+<li>allows lazy loading of dynamically added elements as well,</li>
+<li>supports &lt;img&gt;, &lt;picture&gt;, iframes, videos, audios, responsive images, background images and multiple background images etc.</li>
+<li>even supports LQIP (Low Quality Image Placeholder)</li>
+<li>is completely free and open source.</li>
+<li>it will reload when the valid attributes change.</li>
+</ul>
+<p>It is written with an aim to lazy load images, iframes, ads, videos or any other element using the recently added <a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API">Intersection Observer API</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver">MutationObserver</a> with tremendous performance benefits.</p>
+<h2 id="Featured-in"><a href="#Featured-in" class="headerlink" title="Featured in:"></a>Featured in:</h2><ul>
+<li><a href="https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/">Web | Google Developers</a></li>
+<li><a href="https://www.producthunt.com/posts/lozad-js">Product Hunt</a></li>
+<li><a href="https://www.reddit.com/r/webdev/comments/6zg1x0/highly_performant_light_05kb_and_configurable/">Reddit</a></li>
+<li><a href="https://css-tricks.com/lozad-js-performant-lazy-loading-images">CSS Tricks</a></li>
+<li><a href="https://twitter.com/davidwalshblog/status/915319510646829061">David Walsh</a></li>
+<li><a href="https://twitter.com/Apoorv_Saxena/status/906586828265758720">Codrops</a></li>
+<li><a href="https://www.sitepoint.com/five-techniques-lazy-load-images-website-performance/">SitePoint</a></li>
+</ul>
+<h2 id="Brands-using-Lozad-js"><a href="#Brands-using-Lozad-js" class="headerlink" title="Brands using Lozad.js:"></a>Brands using Lozad.js:</h2><p><img src="/./brands/tesla.png" alt="Tesla">&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; <img src="/./brands/binance.png" alt="Binance">&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; <img src="/./brands/dominos.png" alt="Domino&#39;s">&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;<br><img src="/./brands/bnp-paribas.png" alt="BNP Paribas">&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; <img src="/./brands/xiaomi.png" alt="Mi">&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;<br><img src="/./brands/amway.png" alt="Amway">&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; <img src="/./brands/tata.png" alt="TATA">&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; <img src="/./brands/verizon.svg" alt="Verizon"><br><img src="/./brands/atlassian.svg" alt="Atlassian"> <img src="/./brands/livemint.svg" alt="BNP Paribas"><br><img src="/./brands/jlm-couture.png" alt="JLM Couture">&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; <img src="/./brands/new-balance.png" alt="New Balance">&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; <img src="/./brands/bbc.png" alt="BBC"></p>
+<p>and many more…</p>
+<h2 id="Table-of-Contents"><a href="#Table-of-Contents" class="headerlink" title="Table of Contents"></a>Table of Contents</h2><ul>
+<li><a href="https://apoorv.pro/lozad.js/demo/">Demo</a></li>
+<li><a href="#yet-another-lazy-loading-javascript-library-why">Background</a></li>
+<li><a href="#install">Install</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#example-with-picture-tag">Example with picture tag</a></li>
+<li><a href="#browser-support">Browser Support</a></li>
+<li><a href="#faqs">FAQs</a></li>
+<li><a href="#contribute">Contribute</a></li>
+<li><a href="#changelog">Changelog</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h2 id="Yet-another-Lazy-Loading-JavaScript-library-why"><a href="#Yet-another-Lazy-Loading-JavaScript-library-why" class="headerlink" title="Yet another Lazy Loading JavaScript library, why?"></a>Yet another Lazy Loading JavaScript library, why?</h2><p>Existing lazy loading libraries hook up to the scroll event or use a periodic timer and call <code>getBoundingClientRect()</code> on elements that need to be lazy loaded. This approach, however, is painfully slow as each call to <code>getBoundingClientRect()</code> forces the browser to re-layout the entire page and will introduce considerable jank to your website.</p>
+<p>Making this more efficient and performant is what <a href="https://developers.google.com/web/updates/2016/04/intersectionobserver">IntersectionObserver</a> is designed for, and it’s landed in Chrome 51. IntersectionObservers let you know when an observed element enters or exits the browser’s viewport.</p>
+<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><pre><code class="sh"># You can install lozad with npm
+$ npm install --save lozad
+
+# Alternatively you can use Yarn
+$ yarn add lozad
+
+# Another option is to use Bower
+$ bower install lozad
+</code></pre>
+<p>Then with a module bundler like rollup or webpack, use as you would anything else:</p>
+<pre><code class="javascript">// using ES6 modules
+import lozad from &#39;lozad&#39;
+
+// using CommonJS modules
+var lozad = require(&#39;lozad&#39;)
+</code></pre>
+<p>Or load via <strong>CDN</strong> and include in the <code>head</code> tag of your page.</p>
+<pre><code class="html">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>When loading from CDN, you can find the library on <code>window.lozad</code>.</p>
+<hr>
+<a href="https://www.patreon.com/apoorvsaxena">
+    <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
+</a>
+
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>In HTML, add an identifier to the element (default selector identified is <code>lozad</code> class):</p>
+<pre><code class="html">&lt;img class=&quot;lozad&quot; data-src=&quot;image.png&quot;&gt;
+</code></pre>
+<p>All you need to do now is just instantiate Lozad as follows:</p>
+<pre><code class="js">const observer = lozad(); // lazy loads elements with default selector as &#39;.lozad&#39;
+observer.observe();
+</code></pre>
+<p>or with a DOM <code>Element</code> reference:</p>
+<pre><code class="js">const el = document.querySelector(&#39;img&#39;);
+const observer = lozad(el); // passing a `NodeList` (e.g. `document.querySelectorAll()`) is also valid
+observer.observe();
+</code></pre>
+<p>or with custom options:</p>
+<pre><code class="js">const observer = lozad(&#39;.lozad&#39;, {
+    rootMargin: &#39;10px 0px&#39;, // syntax similar to that of CSS Margin
+    threshold: 0.1, // ratio of element convergence
+    enableAutoReload: true // it will reload the new image when validating attributes changes
+});
+observer.observe();
+</code></pre>
+<p>Reference:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin">IntersectionObserver options: rootMargin</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/thresholds">IntersectionObserver options: thresholds</a></li>
+</ul>
+<p>or if you want to give custom function definition to load element:</p>
+<pre><code class="js">lozad(&#39;.lozad&#39;, {
+    load: function(el) {
+        console.log(&#39;loading element&#39;);
+
+        // Custom implementation to load an element
+        // e.g. el.src = el.getAttribute(&#39;data-src&#39;);
+    }
+});
+</code></pre>
+<p>If you would like to extend the <code>loaded</code> state of elements, you can add the loaded option:</p>
+<blockquote>
+<p><strong>Note</strong>: The <code>&quot;data-loaded&quot;=&quot;true&quot;</code> attribute is used by lozad to determine if an element has been previously loaded.</p>
+</blockquote>
+<pre><code class="js">lozad(&#39;.lozad&#39;, {
+    loaded: function(el) {
+        // Custom implementation on a loaded element
+        el.classList.add(&#39;loaded&#39;);
+    }
+});
+</code></pre>
+<p>If you want to lazy load dynamically added elements:</p>
+<pre><code class="js">const observer = lozad();
+observer.observe();
+
+// ... code to dynamically add elements
+observer.observe(); // observes newly added elements as well
+</code></pre>
+<p>for use with responsive images</p>
+<pre><code class="html">&lt;!-- responsive image example --&gt;
+&lt;img class=&quot;lozad&quot; data-src=&quot;image.png&quot; data-srcset=&quot;image.png 1000w, image-2x.png 2000w&quot;&gt;
+</code></pre>
+<p>for use with background images</p>
+<pre><code class="html">&lt;!-- background image example --&gt;
+&lt;div class=&quot;lozad&quot; data-background-image=&quot;image.png&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<p>for use with multiple background images</p>
+<pre><code class="html">&lt;!-- multiple background image example --&gt;
+&lt;div class=&quot;lozad&quot; data-background-image=&quot;path/to/first/image,path/to/second/image,path/to/third/image&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<p>for use with responsive background images (image-set)</p>
+<pre><code class="html">&lt;!-- responsive background image-set example --&gt;
+&lt;div class=&quot;lozad&quot; data-background-image-set=&quot;url(&#39;photo.jpg&#39;) 1x, url(&#39;photo@2x.jpg&#39;) 2x&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<p>To change the delimiter that splits background images:</p>
+<pre><code class="html">&lt;!-- custom delimiter for background images example --&gt;
+&lt;div
+  class=&quot;lozad&quot;
+  data-background-image=&quot;/first/custom,image,path/image.png-/second/custom,image,path/image.png&quot;
+  data-background-delimiter=&quot;-&quot;
+&gt;
+&lt;/div&gt;
+</code></pre>
+<p>If you want to load the images before they appear:</p>
+<pre><code class="js">const observer = lozad();
+observer.observe();
+
+const coolImage = document.querySelector(&#39;.image-to-load-first&#39;);
+// ... trigger the load of a image before it appears on the viewport
+observer.triggerLoad(coolImage);
+</code></pre>
+<h3 id="Large-image-improvment"><a href="#Large-image-improvment" class="headerlink" title="Large image improvment"></a>Large image improvment</h3><p>Sometimes image loading takes a long time. For this case, you can add a placeholder background:</p>
+<pre><code class="html">&lt;img class=&quot;lozad&quot; data-placeholder-background=&quot;red&quot; data-src=&quot;image.png&quot;&gt;
+</code></pre>
+<p>Lozad sets a placeholder background color of img element and users will see the fallback till the image loads.</p>
+<h2 id="Example-with-picture-tag"><a href="#Example-with-picture-tag" class="headerlink" title="Example with picture tag"></a>Example with picture tag</h2><p>Create <em>a broken</em> picture element structure.</p>
+<blockquote>
+<p>IE browser don’t support picture tag!<br>You need to set <code>data-iesrc</code> attribute (only for your picture tags) with source for IE browser</p>
+</blockquote>
+<blockquote>
+<p><code>data-alt</code> attribute can be added to picture tag for use in <code>alt</code> attribute of lazy-loaded images</p>
+</blockquote>
+<pre><code class="html">&lt;!-- For an element to be caught, add a block type that is different from the inline and some min-height for correct caught into view --&gt;
+&lt;picture class=&quot;lozad&quot; style=&quot;display: block; min-height: 1rem&quot; data-iesrc=&quot;images/thumbs/04.jpg&quot; data-alt=&quot;&quot;&gt;
+    &lt;source srcset=&quot;images/thumbs/04.jpg&quot; media=&quot;(min-width: 1280px)&quot;&gt;
+    &lt;source srcset=&quot;images/thumbs/05.jpg&quot; media=&quot;(min-width: 980px)&quot;&gt;
+    &lt;source srcset=&quot;images/thumbs/06.jpg&quot; media=&quot;(min-width: 320px)&quot;&gt;
+    &lt;!-- NO img element --&gt;
+    &lt;!-- instead of img element, there will be the last source with the minimum dimensions --&gt;
+    &lt;!-- for disabled JS you can set &lt;noscript&gt;&lt;img src=&quot;images/thumbs/04.jpg&quot; alt=&quot;&quot;&gt;&lt;/noscript&gt; --&gt;
+&lt;/picture&gt;
+</code></pre>
+<p>When <em>lozad</em> loads this picture element, it will fix it.</p>
+<p>If you want to use image placeholder (like low quality image placeholder), you can set a temporary <code>img</code> tag inside your <code>picture</code> tag. It will be removed when <em>lozad</em> loads the picture element.</p>
+<pre><code class="html">&lt;picture class=&quot;lozad&quot; style=&quot;display: block; min-height: 1rem&quot; data-iesrc=&quot;images/thumbs/04.jpg&quot; data-alt=&quot;&quot;&gt;
+    &lt;source srcset=&quot;images/thumbs/04.jpg&quot; media=&quot;(min-width: 1280px)&quot;&gt;
+    &lt;source srcset=&quot;images/thumbs/05.jpg&quot; media=&quot;(min-width: 980px)&quot;&gt;
+    &lt;source srcset=&quot;images/thumbs/06.jpg&quot; media=&quot;(min-width: 320px)&quot;&gt;
+    &lt;!-- you can define a low quality image placeholder that will be removed when the picture is loaded --&gt;
+    &lt;img src=&quot;data:image/jpeg;base64,/some_lqip_in_base_64==&quot;&gt;
+&lt;/picture&gt;
+</code></pre>
+<h2 id="Example-with-video"><a href="#Example-with-video" class="headerlink" title="Example with video"></a>Example with video</h2><pre><code class="html">&lt;video class=&quot;lozad&quot; data-poster=&quot;images/backgrounds/video-poster.jpeg&quot;&gt;
+    &lt;source data-src=&quot;video/mov_bbb.mp4&quot; type=&quot;video/mp4&quot;&gt;
+    &lt;source data-src=&quot;video/mov_bbb.ogg&quot; type=&quot;video/ogg&quot;&gt;
+&lt;/video&gt;
+</code></pre>
+<h2 id="Example-with-iframe"><a href="#Example-with-iframe" class="headerlink" title="Example with iframe"></a>Example with iframe</h2><pre><code class="html">&lt;iframe data-src=&quot;embed.html&quot; class=&quot;lozad&quot;&gt;&lt;/iframe&gt;
+</code></pre>
+<p>That’s all, just add the <code>lozad</code> class.</p>
+<h2 id="Example-toggling-class"><a href="#Example-toggling-class" class="headerlink" title="Example toggling class"></a>Example toggling class</h2><pre><code class="html">&lt;div data-toggle-class=&quot;active&quot; class=&quot;lozad&quot;&gt;
+    &lt;!-- content --&gt;
+&lt;/div&gt;
+</code></pre>
+<p>The <code>active</code> class will be toggled on the element when it enters the browser’s viewport.</p>
+<h2 id="Browser-Support"><a href="#Browser-Support" class="headerlink" title="Browser Support"></a>Browser Support</h2><p>Available in <a href="http://caniuse.com/#feat=intersectionobserver">latest browsers</a>. If browser support is not available, then make use of <a href="https://www.npmjs.com/package/intersection-observer">polyfill</a>.</p>
+<p>For IE11 support, please make use of these <a href="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=Object.assign,IntersectionObserver">polyfills</a>.</p>
+<h2 id="FAQs"><a href="#FAQs" class="headerlink" title="FAQs"></a>FAQs</h2><p>Checkout the <a href="https://github.com/ApoorvSaxena/lozad.js/wiki/Frequently-Asked-Questions">FAQ Wiki</a> for some common gotchas to be aware of while using <strong>lozad.js</strong></p>
+<h2 id="Contribute"><a href="#Contribute" class="headerlink" title="Contribute"></a>Contribute</h2><p>Interested in contributing features and fixes?</p>
+<p><a href="./CONTRIBUTING.md">Read more on contributing</a>.</p>
+<h2 id="Changelog"><a href="#Changelog" class="headerlink" title="Changelog"></a>Changelog</h2><p>See the <a href="https://github.com/ApoorvSaxena/lozad.js/wiki/Changelog">Changelog</a></p>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p><a href="LICENSE">MIT</a> © <a href="https://apoorv.pro/">Apoorv Saxena</a></p>

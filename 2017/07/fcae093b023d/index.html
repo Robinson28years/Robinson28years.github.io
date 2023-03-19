@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/blog-32-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/blog-16-icon.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.font.im/css?family=Monda:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.bbchen.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":true,"nav":null,"activeClass":"livere"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="说实话，今天的数据库这章不是很满意，感觉讲的还不是很具体，有时间我还要单独看下数据库。还有两块字符流和异常的处理写的还行，不过异常处理以前有看过一点。 数据库 这里建议直接使用 PDO 了，而且不要过多的写某些其他数据库特有的特性，这样如果以后从这个数据库变更到其他数据库时可能要改很多代码。 还有就是数据库的配置文件单独放一块，不要和核心代码放在一起，要不然上传仓库或者被别人攻击的时候很容易将密码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库，字符流和异常处理">
+<meta property="og:url" content="http://blog.bbchen.top/2017/07/fcae093b023d/index.html">
+<meta property="og:site_name" content="漂游记">
+<meta property="og:description" content="说实话，今天的数据库这章不是很满意，感觉讲的还不是很具体，有时间我还要单独看下数据库。还有两块字符流和异常的处理写的还行，不过异常处理以前有看过一点。 数据库 这里建议直接使用 PDO 了，而且不要过多的写某些其他数据库特有的特性，这样如果以后从这个数据库变更到其他数据库时可能要改很多代码。 还有就是数据库的配置文件单独放一块，不要和核心代码放在一起，要不然上传仓库或者被别人攻击的时候很容易将密码">
+<meta property="og:locale">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170708194241730.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170708194522553.png">
+<meta property="article:published_time" content="2017-07-08T11:22:00.000Z">
+<meta property="article:modified_time" content="2023-03-19T08:05:25.021Z">
+<meta property="article:author" content="bb chen">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="暑期">
+<meta property="article:tag" content="php">
+<meta property="article:tag" content="Modern PHP">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="异常处理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170708194241730.png">
+
+<link rel="canonical" href="http://blog.bbchen.top/2017/07/fcae093b023d/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>数据库，字符流和异常处理 | 漂游记</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c1ea602de6eff2a888b306fb902506f5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">漂游记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-首页">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-关于">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-标签">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-类目">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>类目</a>
+
+  </li>
+        <li class="menu-item menu-item-所有文章">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>所有文章</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://blog.bbchen.top/2017/07/fcae093b023d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="bb chen">
+      <meta itemprop="description" content="这是一个人的孤岛">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="漂游记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据库，字符流和异常处理
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-07-08 19:22:00" itemprop="dateCreated datePublished" datetime="2017-07-08T19:22:00+08:00">2017-07-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>说实话，今天的数据库这章不是很满意，感觉讲的还不是很具体，有时间我还要单独看下数据库。还有两块字符流和异常的处理写的还行，不过异常处理以前有看过一点。</p>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
+<li>这里建议直接使用 PDO 了，而且不要过多的写某些其他数据库特有的特性，这样如果以后从这个数据库变更到其他数据库时可能要改很多代码。</li>
+<li>还有就是数据库的配置文件单独放一块，不要和核心代码放在一起，要不然上传仓库或者被别人攻击的时候很容易将密码泄漏出去。</li>
+<li>千万！千万！不要忘了将字符集设置为 UTF-8 ，要不然会出现乱码和很多不兼容问题。</li>
+<li>要进行 SQL 语句的预处理，防止 SQL 注入。这里用预处理防 SQL 注入的原理是 PDO 会先将预处理语句解析成 SQL 模板，然后再接受你的值，这时候如果你的值里有 SQL 语句了也没用了，因为语句已经解析出来了，你已经改不了了，只能填值。</li>
+</ul>
+<h3 id="简单配置"><a href="#简单配置" class="headerlink" title="简单配置"></a>简单配置</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">require</span>(<span class="title function_ invoke__">dirname</span>(<span class="keyword">__FILE__</span>).<span class="string">&#x27;/../settings.php&#x27;</span>);</span><br><span class="line"><span class="comment">// var_dump(&#x27;../settings.php&#x27;);</span></span><br><span class="line"><span class="variable">$pdo</span> = <span class="keyword">new</span> <span class="title function_ invoke__">PDO</span>(</span><br><span class="line">    <span class="title function_ invoke__">sprintf</span>(</span><br><span class="line">        <span class="string">&#x27;mysql:host=%s;dbname=%s;port=%s;charset=%s&#x27;</span>,</span><br><span class="line">        <span class="variable">$settings</span>[<span class="string">&#x27;host&#x27;</span>],</span><br><span class="line">        <span class="variable">$settings</span>[<span class="string">&#x27;name&#x27;</span>],</span><br><span class="line">        <span class="variable">$settings</span>[<span class="string">&#x27;port&#x27;</span>],</span><br><span class="line">        <span class="variable">$settings</span>[<span class="string">&#x27;charset&#x27;</span>]</span><br><span class="line">    ),</span><br><span class="line">    <span class="variable">$settings</span>[<span class="string">&#x27;username&#x27;</span>],</span><br><span class="line">    <span class="variable">$settings</span>[<span class="string">&#x27;password&#x27;</span>]</span><br><span class="line">);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h3 id="下面是预处理语句"><a href="#下面是预处理语句" class="headerlink" title="下面是预处理语句"></a>下面是预处理语句</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$sql</span> = <span class="string">&#x27;SELECT email FROM users WHERE id = :id&#x27;</span>;</span><br><span class="line"><span class="variable">$statement</span> = <span class="variable">$pdo</span>-&gt;<span class="title function_ invoke__">prepare</span>(<span class="variable">$sql</span>);<span class="comment">//预处理，解析成 sql 模板</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// $userId = filter_input(&#x27;1&#x27;, &#x27;id&#x27;);</span></span><br><span class="line"><span class="variable">$userId</span> = <span class="number">1</span>;</span><br><span class="line"><span class="variable">$statement</span>-&gt;<span class="title function_ invoke__">bindValue</span>(<span class="string">&#x27;:id&#x27;</span>, <span class="variable">$userId</span> ,PDO::<span class="variable constant_">PARAM_INT</span>);<span class="comment">//绑定模板里的值</span></span><br><span class="line"><span class="variable">$statement</span>-&gt;<span class="title function_ invoke__">execute</span>();<span class="comment">//执行语句</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="循环输出值"><a href="#循环输出值" class="headerlink" title="循环输出值"></a>循环输出值</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">while</span> ((<span class="variable">$result</span> = <span class="variable">$statement</span>-&gt;<span class="title function_ invoke__">fetch</span>(PDO::<span class="variable constant_">FETCH_ASSOC</span>)) !== <span class="literal">false</span>) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$result</span>[<span class="string">&#x27;email&#x27;</span>];</span><br><span class="line">&#125;</span><br><span class="line">    <span class="title function_ invoke__">var_dump</span>(<span class="variable">$pdo</span>);</span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="字符流处理"><a href="#字符流处理" class="headerlink" title="字符流处理"></a>字符流处理</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$handle</span> = <span class="title function_ invoke__">fopen</span>(<span class="title function_ invoke__">dirname</span>(<span class="keyword">__FILE__</span>).<span class="string">&#x27;\text.txt&#x27;</span>, <span class="string">&#x27;rb&#x27;</span>);</span><br><span class="line"><span class="comment">// var_dump($handle);</span></span><br><span class="line"><span class="keyword">while</span> (<span class="title function_ invoke__">feof</span>(<span class="variable">$handle</span>) !== <span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="title function_ invoke__">fgets</span>(<span class="variable">$handle</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_ invoke__">fclose</span>(<span class="variable">$handle</span>);</span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>简单的写了个例子，大致是 <code>file_get_contents()</code>,<code>fopen()</code>,<code>fgets()</code>,<code>fwrite()</code>这些函数的使用。</p>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>可以自己 new 一些异常，<code>debug</code> 的时候可以定位的更精确一点，也容易解决一些问题</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$exception</span> = <span class="keyword">new</span> <span class="built_in">Exception</span>(<span class="string">&#x27;Danger, Robinson!&#x27;</span>, <span class="number">100</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$exception</span>-&gt;<span class="title function_ invoke__">getCode</span>();</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$exception</span>-&gt;<span class="title function_ invoke__">getMessage</span>();</span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img data-src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170708194241730.png"></p>
+<p>多使用 <code>try-catch</code> 语句块捕获异常，以及出现异常后的处理方法</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="variable">$pdo</span> = <span class="keyword">new</span> <span class="title function_ invoke__">PDO</span>(<span class="string">&#x27;mysql://host=wronghost;dbname=wrong_name&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (<span class="built_in">Exception</span> <span class="variable">$e</span>) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$e</span>-&gt;<span class="title function_ invoke__">getCode</span>();</span><br><span class="line">    <span class="keyword">echo</span> PHP_EOL;</span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$e</span>-&gt;<span class="title function_ invoke__">getMessage</span>();</span><br><span class="line">&#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="keyword">echo</span> PHP_EOL.<span class="string">&quot;alwayys&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img data-src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170708194522553.png"></p>
+<p>那个 <code>filp/whoops</code> 组件真不错，<code>laravel5.5</code> 好像也要用这个了。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>明天开始看最后一大块内容，大概需要四天左右，是关于部署，开发和测试的内容。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
+              <a href="/tags/%E6%9A%91%E6%9C%9F/" rel="tag"># 暑期</a>
+              <a href="/tags/php/" rel="tag"># php</a>
+              <a href="/tags/Modern-PHP/" rel="tag"># Modern PHP</a>
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
+              <a href="/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" rel="tag"># 异常处理</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/07/31b53cc2b03e/" rel="prev" title="PHP 字符过滤和日期类">
+      <i class="fa fa-chevron-left"></i> PHP 字符过滤和日期类
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/07/920b1b69bfff/" rel="next" title="服务器部署和配置">
+      服务器部署和配置 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTI1NC81ODIy"></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.</span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text">简单配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E9%9D%A2%E6%98%AF%E9%A2%84%E5%A4%84%E7%90%86%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.2.</span> <span class="nav-text">下面是预处理语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E8%BE%93%E5%87%BA%E5%80%BC"><span class="nav-number">1.3.</span> <span class="nav-text">循环输出值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E6%B5%81%E5%A4%84%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">字符流处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">异常处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E"><span class="nav-number">4.</span> <span class="nav-text">最后</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="bb chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">bb chen</p>
+  <div class="site-description" itemprop="description">这是一个人的孤岛</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Robinson28years" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Robinson28years" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.chenwe.top/" title="http:&#x2F;&#x2F;blog.chenwe.top&#x2F;" rel="noopener" target="_blank">xiaoshidefeng</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.zhuzhenyuan.cn/" title="http:&#x2F;&#x2F;blog.zhuzhenyuan.cn&#x2F;" rel="noopener" target="_blank">朱大哥</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://misakatang.cn/" title="http:&#x2F;&#x2F;misakatang.cn&#x2F;" rel="noopener" target="_blank">MisakaTang</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.zpliu.top/" title="http:&#x2F;&#x2F;blog.zpliu.top&#x2F;" rel="noopener" target="_blank">LIVE不平凡</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.adsionli.cn/" title="http:&#x2F;&#x2F;blog.adsionli.cn&#x2F;" rel="noopener" target="_blank">Adsionli</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bb chen</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>

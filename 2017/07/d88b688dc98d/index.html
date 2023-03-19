@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/blog-32-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/blog-16-icon.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.font.im/css?family=Monda:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.bbchen.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":true,"nav":null,"activeClass":"livere"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="因为想学做 app 所以找到了 ionic，然后发现 ionic 用的是 Angular ，然后又去学了 Angular，学着学着发现还得先学下 Typescript，因为 Angular 使用的是 Typescript 😂。然后我就去学了 Typescript。 什么是 Typescript TypeScript 是 JavaScript 的一个超集，主要提供了类型系统和对 ES6 的支持，它">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Typescript 学习小记">
+<meta property="og:url" content="http://blog.bbchen.top/2017/07/d88b688dc98d/index.html">
+<meta property="og:site_name" content="漂游记">
+<meta property="og:description" content="因为想学做 app 所以找到了 ionic，然后发现 ionic 用的是 Angular ，然后又去学了 Angular，学着学着发现还得先学下 Typescript，因为 Angular 使用的是 Typescript 😂。然后我就去学了 Typescript。 什么是 Typescript TypeScript 是 JavaScript 的一个超集，主要提供了类型系统和对 ES6 的支持，它">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-07-23T12:57:00.000Z">
+<meta property="article:modified_time" content="2023-03-19T08:05:25.022Z">
+<meta property="article:author" content="bb chen">
+<meta property="article:tag" content="暑期">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="Typescript">
+<meta property="article:tag" content="Angular">
+<meta property="article:tag" content="ionic">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://blog.bbchen.top/2017/07/d88b688dc98d/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>Typescript 学习小记 | 漂游记</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c1ea602de6eff2a888b306fb902506f5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">漂游记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-首页">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-关于">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-标签">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-类目">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>类目</a>
+
+  </li>
+        <li class="menu-item menu-item-所有文章">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>所有文章</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://blog.bbchen.top/2017/07/d88b688dc98d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="bb chen">
+      <meta itemprop="description" content="这是一个人的孤岛">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="漂游记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Typescript 学习小记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-07-23 20:57:00" itemprop="dateCreated datePublished" datetime="2017-07-23T20:57:00+08:00">2017-07-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>因为想学做 app 所以找到了 ionic，然后发现 ionic 用的是 Angular ，然后又去学了 Angular，学着学着发现还得先学下 Typescript，因为 Angular 使用的是 Typescript 😂。然后我就去学了 Typescript。</p>
+<h2 id="什么是-Typescript"><a href="#什么是-Typescript" class="headerlink" title="什么是 Typescript"></a>什么是 Typescript</h2><blockquote>
+<p>TypeScript 是 JavaScript 的一个超集，主要提供了类型系统和对 ES6 的支持，它由 Microsoft 开发，代码开源于 GitHub 上。</p>
+</blockquote>
+<p>我的感觉呢，就是 Typescript 多了一些类型支持，可以定义是整型还是字符串还是某些类。优点就是，这样在编译时就能发现很多错误，不用等到在运行时排错。而且有了类型支持，对 IDE 的支持就会更好，很多补全，接口提示，重构等等都将智能很多。</p>
+<span id="more"></span>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>😂 具体我就不讲了，毕竟我讲的还没书上详细，这里就分享两个网站</p>
+<p><a target="_blank" rel="noopener" href="https://zhongsp.gitbooks.io/typescript-handbook/content/">TypeScript Handbook（中文版）</a></p>
+<p><a target="_blank" rel="noopener" href="https://ts.xcatliu.com/">TypeScript 入门教程</a></p>
+<p>我是看第二个网站入门的，讲的比较浅一点，毕竟我是想快速上手 Angular 然后上手 ionic。</p>
+<p>这门语言有个显著特点就是类型的声明。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">sayHello</span>(<span class="params">person: string</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Hello, &#x27;</span> + person;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> user = <span class="string">&#x27;Robinson&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">sayHello</span>(user));</span><br></pre></td></tr></table></figure>
+<p>比方说上面这个例子，原生 javascript li person 直接就写上去就行，不用定义什么类型，而在 Typescript 中就要这样写 <code>person: string</code> 声明它是 string 类型的。由此我们也能知道，Typescript 的类型声明是 变量: 参数类型 这种形式来声明。其他的话跟其他强类型语言都差不多。</p>
+<p>再举个栗子👇</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">x: number, y: number</span>): number &#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>向这样一个函数，每个变量要定义一下类型， 然后在 <code>sum(x: number, y: number)</code> 后面会要求写上返回值，像这个例子就是 <code>: number</code> ,如果没有返回值就写 <code>: void</code>。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>还有一些类，接口我就不讲了，OOP 语言有的它都有，在强类型方面可以说有点像 Java这种。学起来还是不难的。😂他们都说 Typescript 很好，但 Angular 就是算了吧。我也没办法，想用 Vue 的，可 Vue 的那个 Weex 太难用了。相对来说 Angular 的 ionic 就优美一点。等以后 Weex 强大了或者有其他移动套件了再用吧。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9A%91%E6%9C%9F/" rel="tag"># 暑期</a>
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
+              <a href="/tags/Typescript/" rel="tag"># Typescript</a>
+              <a href="/tags/Angular/" rel="tag"># Angular</a>
+              <a href="/tags/ionic/" rel="tag"># ionic</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/07/b5b9d9ac6db2/" rel="prev" title="《黄金时代》-- 王小波">
+      <i class="fa fa-chevron-left"></i> 《黄金时代》-- 王小波
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/07/5a93cb8483ec/" rel="next" title="一个基于 Ionic 的 CNode 社区客户端">
+      一个基于 Ionic 的 CNode 社区客户端 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTI1NC81ODIy"></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Typescript"><span class="nav-number">1.</span> <span class="nav-text">什么是 Typescript</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="bb chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">bb chen</p>
+  <div class="site-description" itemprop="description">这是一个人的孤岛</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Robinson28years" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Robinson28years" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.chenwe.top/" title="http:&#x2F;&#x2F;blog.chenwe.top&#x2F;" rel="noopener" target="_blank">xiaoshidefeng</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.zhuzhenyuan.cn/" title="http:&#x2F;&#x2F;blog.zhuzhenyuan.cn&#x2F;" rel="noopener" target="_blank">朱大哥</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://misakatang.cn/" title="http:&#x2F;&#x2F;misakatang.cn&#x2F;" rel="noopener" target="_blank">MisakaTang</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.zpliu.top/" title="http:&#x2F;&#x2F;blog.zpliu.top&#x2F;" rel="noopener" target="_blank">LIVE不平凡</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.adsionli.cn/" title="http:&#x2F;&#x2F;blog.adsionli.cn&#x2F;" rel="noopener" target="_blank">Adsionli</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bb chen</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>

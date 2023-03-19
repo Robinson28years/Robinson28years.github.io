@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/blog-32-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/blog-16-icon.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.font.im/css?family=Monda:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.bbchen.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":true,"nav":null,"activeClass":"livere"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="今天看了三块内容，字符的过滤，密码的 hash，还有就是 PHP 内的日期类。本来今天还打算把数据库这块看掉，但这块实在太重要了，以后面试的时候也肯定会问到，所以明天重点看一下数据库。(😂主要今天下午还去了图书馆，就没有完整的一块时间了)。 字符的过滤字符过滤有三个基本要求：  过滤 (Sanitize) 验证 (Validate) 跳脱 (Escape) (是这样翻译吗？？)  过滤首先是过滤">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP 字符过滤和日期类">
+<meta property="og:url" content="http://blog.bbchen.top/2017/07/31b53cc2b03e/index.html">
+<meta property="og:site_name" content="漂游记">
+<meta property="og:description" content="今天看了三块内容，字符的过滤，密码的 hash，还有就是 PHP 内的日期类。本来今天还打算把数据库这块看掉，但这块实在太重要了，以后面试的时候也肯定会问到，所以明天重点看一下数据库。(😂主要今天下午还去了图书馆，就没有完整的一块时间了)。 字符的过滤字符过滤有三个基本要求：  过滤 (Sanitize) 验证 (Validate) 跳脱 (Escape) (是这样翻译吗？？)  过滤首先是过滤">
+<meta property="og:locale">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170707211100848.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170707212558229.png">
+<meta property="article:published_time" content="2017-07-07T12:27:00.000Z">
+<meta property="article:modified_time" content="2023-03-19T08:05:25.021Z">
+<meta property="article:author" content="bb chen">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="暑期">
+<meta property="article:tag" content="php">
+<meta property="article:tag" content="Modern PHP">
+<meta property="article:tag" content="过滤">
+<meta property="article:tag" content="日期">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170707211100848.png">
+
+<link rel="canonical" href="http://blog.bbchen.top/2017/07/31b53cc2b03e/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>PHP 字符过滤和日期类 | 漂游记</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c1ea602de6eff2a888b306fb902506f5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">漂游记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-首页">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-关于">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-标签">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-类目">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>类目</a>
+
+  </li>
+        <li class="menu-item menu-item-所有文章">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>所有文章</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://blog.bbchen.top/2017/07/31b53cc2b03e/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="bb chen">
+      <meta itemprop="description" content="这是一个人的孤岛">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="漂游记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          PHP 字符过滤和日期类
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-07-07 20:27:00" itemprop="dateCreated datePublished" datetime="2017-07-07T20:27:00+08:00">2017-07-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>今天看了三块内容，字符的过滤，密码的 hash，还有就是 PHP 内的日期类。本来今天还打算把数据库这块看掉，但这块实在太重要了，以后面试的时候也肯定会问到，所以明天重点看一下数据库。(😂主要今天下午还去了图书馆，就没有完整的一块时间了)。</p>
+<h2 id="字符的过滤"><a href="#字符的过滤" class="headerlink" title="字符的过滤"></a>字符的过滤</h2><p>字符过滤有三个基本要求：</p>
+<ol>
+<li>过滤 (Sanitize)</li>
+<li>验证 (Validate)</li>
+<li>跳脱 (Escape) (是这样翻译吗？？)</li>
+</ol>
+<h3 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h3><p>首先是过滤，这个还蛮重要的，要不然一不小心别人就把sql执行语句或者 html 插入进来了。<br>php 自带有一个 html 过滤函数和 sql 语句过滤函数。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$input</span> = <span class="string">&#x27;&lt;p&gt;123234&lt;/p&gt;&#x27;</span>;</span><br><span class="line"><span class="comment">// echo $input;</span></span><br><span class="line"><span class="keyword">echo</span> <span class="title function_ invoke__">htmlentities</span>(<span class="variable">$input</span>, ENT_QUOTES, <span class="string">&#x27;UTF-8&#x27;</span>);</span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>使用 htmlentities 这个 php 内置函数之后输出就没有了<code>&lt;p&gt;</code>这些 html 代码了。<br><img data-src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170707211100848.png"></p>
+<p>过滤 sql 语句的话，使用 PDO 的前置检查就行(PDO 的话还是很安全的，<code>mysql_query()</code>这种不要用了，php7都废弃了，而且很不安全)</p>
+<span id="more"></span>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>主要是验证拿到的数据是否符合自己的要求，这个前端限制一个，后端也限制一下比较好。<br>比方说限制邮箱格式</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$email</span> = <span class="string">&#x27;john@example.com&#x27;</span>;</span><br><span class="line"><span class="variable">$emailSafe</span> = <span class="title function_ invoke__">filter_var</span>(<span class="variable">$email</span>, FILTER_SANITIZE_EMAIL);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>filter_var</code> 函数，在配上 php 内置的<code>FILTER_SANITIZE_EMAIL</code>常量可以做到邮箱的验证。搭配其他的常量，比方说搭配<code>FILTER_SANITIZE_STRING</code>就可以实现其他类型的验证。</p>
+<p>还有一些就是要自己去数据库里查找对应数据来进行验证。</p>
+<h3 id="跳脱"><a href="#跳脱" class="headerlink" title="跳脱"></a>跳脱</h3><p><img data-src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20170707212558229.png"><br>这篇看的不是很懂，大意应该是，最终展现在前端的时候还要再过滤一下语句。</p>
+<h2 id="密码"><a href="#密码" class="headerlink" title="密码"></a>密码</h2><p>储存密码的几个原则：</p>
+<ol>
+<li>从不要知道用户的密码</li>
+<li>从不要限制用户的密码</li>
+<li>从不要明文发送密码给用户</li>
+<li>使用hash而不是加密</li>
+</ol>
+<p>因为 php 有内置密码函数，所以非常方便，哈希用 <code>password_hash()</code>, 验证用<code> password_verify()</code>，就可以了，已经非常安全了，php 会自己加盐的。以前我也知道php 会自动加盐，但我一直好奇他加的盐储存在哪里，后来我知道了，在h<code>ash</code>过后的那串字符中就有储存盐值，所以直接用 <code>password_verify()</code> 他就会自己去校验，都封装好了。</p>
+<h2 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h2><p>日期这个比较麻烦(主要是格式转来转去，还有计算一些差值)，但有时候一定要用它，所以还是有必要看下的。<br><code>date_default_timezone_set(&#39;Asia/Shanghai&#39;);</code><br>这句可以设置时区，国内一般设置为上海，东八区。</p>
+<h3 id="DateTime"><a href="#DateTime" class="headerlink" title="DateTime"></a>DateTime</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">date_default_timezone_set</span>(<span class="string">&#x27;Asia/Shanghai&#x27;</span>);</span><br><span class="line"><span class="variable">$datetime</span> = <span class="keyword">new</span> <span class="title class_">DateTime</span>();</span><br><span class="line"></span><br><span class="line"><span class="variable">$datetime2</span> = <span class="keyword">new</span> <span class="title class_">DateTime</span>(<span class="string">&#x27;2014-04-27 5:03 AM&#x27;</span>);</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$datetime2</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后就是一些普通的用法，不过下面我还是要展示一下 <code>DateInterval</code> 这个类，以前还真没用过，这个主要是设定时间区间的。</p>
+<h3 id="DateInterval"><a href="#DateInterval" class="headerlink" title="DateInterval"></a>DateInterval</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$interval</span> = <span class="keyword">new</span> <span class="title class_">DateInterval</span>(<span class="string">&#x27;P2W&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable">$datetime</span>-&gt;<span class="title function_ invoke__">add</span>(<span class="variable">$interval</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$datetime</span>-&gt;<span class="title function_ invoke__">format</span>(<span class="string">&#x27;Y-m-d H:i:s&#x27;</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>比方说我设置了区间两周(P2W就是两周的意思)，然后将它加到 <code>datetime</code> 上，这样<code>datetime</code>的日期就会增加两周。</p>
+<h3 id="DatePeriod"><a href="#DatePeriod" class="headerlink" title="DatePeriod"></a>DatePeriod</h3><p>这个 <code>DatePeriod</code> 类我也是第一次见，这个搭配上上面两个，可以指定初始时间，然后间隔，再加上一个次数，可以很好的实现一些循环任务。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$period</span> = <span class="keyword">new</span> <span class="title class_">DatePeriod</span>(<span class="variable">$datetime</span>, <span class="variable">$interval</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">$period</span>  <span class="keyword">as</span> <span class="variable">$nextDateTime</span>) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$nextDateTime</span>-&gt;<span class="title function_ invoke__">format</span>(<span class="string">&#x27;Y-m-d&#x27;</span>), PHP_EOL;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>明天要好好看下数据库了。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
+              <a href="/tags/%E6%9A%91%E6%9C%9F/" rel="tag"># 暑期</a>
+              <a href="/tags/php/" rel="tag"># php</a>
+              <a href="/tags/Modern-PHP/" rel="tag"># Modern PHP</a>
+              <a href="/tags/%E8%BF%87%E6%BB%A4/" rel="tag"># 过滤</a>
+              <a href="/tags/%E6%97%A5%E6%9C%9F/" rel="tag"># 日期</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/07/aaae96cbc2e5/" rel="prev" title="哈哈哈，我的小岛终于被Google收录了">
+      <i class="fa fa-chevron-left"></i> 哈哈哈，我的小岛终于被Google收录了
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/07/fcae093b023d/" rel="next" title="数据库，字符流和异常处理">
+      数据库，字符流和异常处理 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTI1NC81ODIy"></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E7%9A%84%E8%BF%87%E6%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">字符的过滤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E6%BB%A4"><span class="nav-number">1.1.</span> <span class="nav-text">过滤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81"><span class="nav-number">1.2.</span> <span class="nav-text">验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%B3%E8%84%B1"><span class="nav-number">1.3.</span> <span class="nav-text">跳脱</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%86%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F"><span class="nav-number">3.</span> <span class="nav-text">日期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DateTime"><span class="nav-number">3.1.</span> <span class="nav-text">DateTime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DateInterval"><span class="nav-number">3.2.</span> <span class="nav-text">DateInterval</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DatePeriod"><span class="nav-number">3.3.</span> <span class="nav-text">DatePeriod</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E"><span class="nav-number">4.</span> <span class="nav-text">最后</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="bb chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">bb chen</p>
+  <div class="site-description" itemprop="description">这是一个人的孤岛</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Robinson28years" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Robinson28years" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.chenwe.top/" title="http:&#x2F;&#x2F;blog.chenwe.top&#x2F;" rel="noopener" target="_blank">xiaoshidefeng</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.zhuzhenyuan.cn/" title="http:&#x2F;&#x2F;blog.zhuzhenyuan.cn&#x2F;" rel="noopener" target="_blank">朱大哥</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://misakatang.cn/" title="http:&#x2F;&#x2F;misakatang.cn&#x2F;" rel="noopener" target="_blank">MisakaTang</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.zpliu.top/" title="http:&#x2F;&#x2F;blog.zpliu.top&#x2F;" rel="noopener" target="_blank">LIVE不平凡</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.adsionli.cn/" title="http:&#x2F;&#x2F;blog.adsionli.cn&#x2F;" rel="noopener" target="_blank">Adsionli</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bb chen</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>

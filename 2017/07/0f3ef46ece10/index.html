@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/blog-32-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/blog-16-icon.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.font.im/css?family=Monda:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.bbchen.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":true,"nav":null,"activeClass":"livere"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="计划第一天今天是计划的第一天，主要在看《Moder PHP》，看了三块内容，一个是 Namespace，一个是 Interface，另一个是 Trait。都是 php 的面向对象特性里面比较突出的一些。Namespace 以前在 Laracast 上看过教程所以还算熟悉。Trait 今天是好好了解了一下，以前开发的时候都不常用这东西。今天在实现代码的时候又发现了一个好用的 php 插件在 atom">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Namespaces-Interface-Traits">
+<meta property="og:url" content="http://blog.bbchen.top/2017/07/0f3ef46ece10/index.html">
+<meta property="og:site_name" content="漂游记">
+<meta property="og:description" content="计划第一天今天是计划的第一天，主要在看《Moder PHP》，看了三块内容，一个是 Namespace，一个是 Interface，另一个是 Trait。都是 php 的面向对象特性里面比较突出的一些。Namespace 以前在 Laracast 上看过教程所以还算熟悉。Trait 今天是好好了解了一下，以前开发的时候都不常用这东西。今天在实现代码的时候又发现了一个好用的 php 插件在 atom">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-07-03T10:43:00.000Z">
+<meta property="article:modified_time" content="2023-03-19T08:05:25.021Z">
+<meta property="article:author" content="bb chen">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="暑期">
+<meta property="article:tag" content="php">
+<meta property="article:tag" content="Modern PHP">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://blog.bbchen.top/2017/07/0f3ef46ece10/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>Namespaces-Interface-Traits | 漂游记</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c1ea602de6eff2a888b306fb902506f5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">漂游记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-首页">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-关于">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-标签">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-类目">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>类目</a>
+
+  </li>
+        <li class="menu-item menu-item-所有文章">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>所有文章</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://blog.bbchen.top/2017/07/0f3ef46ece10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="bb chen">
+      <meta itemprop="description" content="这是一个人的孤岛">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="漂游记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Namespaces-Interface-Traits
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-07-03 18:43:00" itemprop="dateCreated datePublished" datetime="2017-07-03T18:43:00+08:00">2017-07-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="计划第一天"><a href="#计划第一天" class="headerlink" title="计划第一天"></a>计划第一天</h2><p>今天是计划的第一天，主要在看《Moder PHP》，看了三块内容，一个是 Namespace，一个是 Interface，另一个是 Trait。都是 php 的面向对象特性里面比较突出的一些。Namespace 以前在 Laracast 上看过教程所以还算熟悉。Trait 今天是好好了解了一下，以前开发的时候都不常用这东西。今天在实现代码的时候又发现了一个好用的 php 插件在 atom 上，能给我自动补全 Namespace 还能跳转定义的地方。</p>
+<h2 id="Namespace"><a href="#Namespace" class="headerlink" title="Namespace"></a>Namespace</h2><h3 id="为什么要用-Namespace"><a href="#为什么要用-Namespace" class="headerlink" title="为什么要用 Namespace"></a>为什么要用 Namespace</h3><p>就跟Java里的那些包名类似，是为了防止各个不同的类之间发生冲突，一个人的时候还好，自己知道写过哪些类，当团队开发的时候或者引入了其他人的一个扩展包的话，如果没有命名空间就极易发生冲突。所以使用 Namespace 还是很必须的，可以说是php面向对象的基础。</p>
+<span id="more"></span>
+<h3 id="使用-composer"><a href="#使用-composer" class="headerlink" title="使用 composer"></a>使用 composer</h3><p>如果像平常那样写一些小的测试就不用 composer 了，但这次是要学习现代化的 php 用法，如果不用 composer 就要 <code>require</code> 这样把一个个包联系起来，用了 composer 自动加载之后，只要定义命名空间然后 <code>use</code> 就行。</p>
+<p>下面我们从头开始用composer 自动加载来实现我们的测试。</p>
+<p><strong>1. 首先我们要安装 composer</strong></p>
+<p>Composer 在 windoes 下安装很简单，直接用安装包安装就行，安装完之后将镜像地址换到国内，这样下载扩展包是能够快点。</p>
+<p><a target="_blank" rel="noopener" href="http://www.phpcomposer.com/">Composer官网</a></p>
+<p><a target="_blank" rel="noopener" href="https://laravel-china.org/composer">Composer国内镜像</a></p>
+<p><strong>2. 然后在自己的工程目录下新建 composer.json</strong></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;autoload&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;psr-4&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;Lsu\\&quot;</span><span class="punctuation">:</span><span class="string">&quot;src/&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>这里第4行的Lsu是我以后要使用的命名空间顶级名称，src是我实际使用的顶级目录。</p>
+<p>新建好 composer.json 之后就在命令行使用 <code>composer install</code> 这个时候文件目录就会生成，让自己再手动新建 src 目录，在里面写要测试的代码就行。</p>
+<p><strong>3. 使用命名空间空间</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">Lsu</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Documentable</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getId</span>(<span class="params"></span>)</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getContent</span>(<span class="params"></span>)</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">Lsu</span>;  <span class="comment">//定义命名空间</span></span><br><span class="line"><span class="keyword">use</span> <span class="title">Lsu</span>\<span class="title">Documentable</span>; <span class="comment">//因为下面我依赖注入的时候使用了这个类，所以我要引入这类</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DocumentStore</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$data</span> = [];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">addDocument</span>(<span class="params">Documentable <span class="variable">$document</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$key</span> = <span class="variable">$document</span>-&gt;<span class="title function_ invoke__">getId</span>();</span><br><span class="line">        <span class="variable">$value</span> = <span class="variable">$document</span>-&gt;<span class="title function_ invoke__">getContent</span>();</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;data[<span class="variable">$key</span>] = <span class="variable">$value</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getDocuments</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">$this</span>-&gt;data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>这样命名空间就定义好了，然后类和类之间引用使用 <code>use</code> 就可以了。</p>
+<h2 id="Interface"><a href="#Interface" class="headerlink" title="Interface"></a>Interface</h2><p>接口这个，是面向抽象语言必不可少的特性，可以用来降低耦合。<br>具体用法和其他语言相同。先定义一个接口，然后在其他需要它的类中 <code>implements</code> 这个接口。<br>上面使用 composer 的那个例子同样也是一个接口实现的例子。</p>
+<h2 id="Trait"><a href="#Trait" class="headerlink" title="Trait"></a>Trait</h2><p>这个特性是一般语言不具有的 像 Ruby 和 PHP 才有，感觉是一种语法糖。书里先给我讲了个场景，大意是现在有个地图， 地图上有商店，有正在行驶的车，让要给这两个东西都实现获取经纬度的方法。如果使用继承，那么他们两个没有太大关系的类如果继承同一个类就显得不合理。如果使用接口的话，两个类明明需要实现的都是同一个方法，用接口就要实现两遍，所以没有很好的复用(用抽象类，就回到了第一个继承同一个类的问题了)。</p>
+<p>所以，这时候 PHP 的 trait 作用就体现出来了，它可以先想 class 那样写好一个 trait 让在需要使用它的地方 <code>use</code> 就可以了。像场景里那个例子，先实现好获取经纬的的 trait。让在商店和车这两个类中 <code>use</code> 。</p>
+<p>我拿举个简单的例子</p>
+<p><strong>先定义了一个 trait</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">Lsu</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">TraitSayHello</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="title function_ invoke__">print_r</span>(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>然后在需要这个 trait 的类里面使用它</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">Lsu</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DocumentTest</span> <span class="keyword">implements</span> <span class="title">Documentable</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">use</span> <span class="title">TraitSayHello</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getId</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;id test ok&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getContent</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;content test ok&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>这样 DocumentTest 类 new 出来的对象就能直接使用 sayHello 方法了</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$documentTest</span> = <span class="keyword">new</span> <span class="title class_">DocumentTest</span>();</span><br><span class="line"><span class="variable">$documentTest</span>-&gt;<span class="title function_ invoke__">sayHello</span>();</span><br></pre></td></tr></table></figure>
+
+<h2 id="明天继续"><a href="#明天继续" class="headerlink" title="明天继续"></a>明天继续</h2><p>今天书上这三块内容还是将得不错的，比我以前看的详细了不少，明天继续往下看下去，希望能更多的了解一些 PHP 的特性。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
+              <a href="/tags/%E6%9A%91%E6%9C%9F/" rel="tag"># 暑期</a>
+              <a href="/tags/php/" rel="tag"># php</a>
+              <a href="/tags/Modern-PHP/" rel="tag"># Modern PHP</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/07/59640315769a/" rel="prev" title="两本书">
+      <i class="fa fa-chevron-left"></i> 两本书
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/07/1b3b330c8d06/" rel="next" title="Generator和Closure">
+      Generator和Closure <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTI1NC81ODIy"></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E5%88%92%E7%AC%AC%E4%B8%80%E5%A4%A9"><span class="nav-number">1.</span> <span class="nav-text">计划第一天</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Namespace"><span class="nav-number">2.</span> <span class="nav-text">Namespace</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8-Namespace"><span class="nav-number">2.1.</span> <span class="nav-text">为什么要用 Namespace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-composer"><span class="nav-number">2.2.</span> <span class="nav-text">使用 composer</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interface"><span class="nav-number">3.</span> <span class="nav-text">Interface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trait"><span class="nav-number">4.</span> <span class="nav-text">Trait</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%8E%E5%A4%A9%E7%BB%A7%E7%BB%AD"><span class="nav-number">5.</span> <span class="nav-text">明天继续</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="bb chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">bb chen</p>
+  <div class="site-description" itemprop="description">这是一个人的孤岛</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Robinson28years" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Robinson28years" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.chenwe.top/" title="http:&#x2F;&#x2F;blog.chenwe.top&#x2F;" rel="noopener" target="_blank">xiaoshidefeng</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.zhuzhenyuan.cn/" title="http:&#x2F;&#x2F;blog.zhuzhenyuan.cn&#x2F;" rel="noopener" target="_blank">朱大哥</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://misakatang.cn/" title="http:&#x2F;&#x2F;misakatang.cn&#x2F;" rel="noopener" target="_blank">MisakaTang</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.zpliu.top/" title="http:&#x2F;&#x2F;blog.zpliu.top&#x2F;" rel="noopener" target="_blank">LIVE不平凡</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.adsionli.cn/" title="http:&#x2F;&#x2F;blog.adsionli.cn&#x2F;" rel="noopener" target="_blank">Adsionli</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bb chen</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>

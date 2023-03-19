@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/blog-32-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/blog-16-icon.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.font.im/css?family=Monda:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.bbchen.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":true,"nav":null,"activeClass":"livere"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="上一篇已经使用 Mysql 数据库成功的连接了数据。但因为老师要求我们这次的项目是要是要 Oracle 做的。所以还需使用 Oracle 配置一遍。但 Oracle 在 win 界面下的配置比较繁琐。使用最后决定采用在 Docker 下使用 Oracle12c。将 Docker 中的 1521 端口映射到本机的 1521 端口中。开发环境是 Linux, 因为装 Docker 比较方便一点。当然你">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring boot 在 linux 下使用 Mybatis 连接 Docker 中的 Oracle12c 数据库">
+<meta property="og:url" content="http://blog.bbchen.top/2017/10/33899470e4f3/index.html">
+<meta property="og:site_name" content="漂游记">
+<meta property="og:description" content="上一篇已经使用 Mysql 数据库成功的连接了数据。但因为老师要求我们这次的项目是要是要 Oracle 做的。所以还需使用 Oracle 配置一遍。但 Oracle 在 win 界面下的配置比较繁琐。使用最后决定采用在 Docker 下使用 Oracle12c。将 Docker 中的 1521 端口映射到本机的 1521 端口中。开发环境是 Linux, 因为装 Docker 比较方便一点。当然你">
+<meta property="og:locale">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022135001330.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022141244695.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022141349354.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022142237865.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022142458457.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022142553938.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022142943868.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022143011572.png">
+<meta property="og:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022143415949.png">
+<meta property="article:published_time" content="2017-10-22T05:22:00.000Z">
+<meta property="article:modified_time" content="2023-03-19T08:05:25.022Z">
+<meta property="article:author" content="bb chen">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="Oracle12c">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022135001330.png">
+
+<link rel="canonical" href="http://blog.bbchen.top/2017/10/33899470e4f3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>Spring boot 在 linux 下使用 Mybatis 连接 Docker 中的 Oracle12c 数据库 | 漂游记</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c1ea602de6eff2a888b306fb902506f5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">漂游记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-首页">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-关于">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-标签">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-类目">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>类目</a>
+
+  </li>
+        <li class="menu-item menu-item-所有文章">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>所有文章</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://blog.bbchen.top/2017/10/33899470e4f3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="bb chen">
+      <meta itemprop="description" content="这是一个人的孤岛">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="漂游记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Spring boot 在 linux 下使用 Mybatis 连接 Docker 中的 Oracle12c 数据库
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-10-22 13:22:00" itemprop="dateCreated datePublished" datetime="2017-10-22T13:22:00+08:00">2017-10-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>上一篇已经使用 Mysql 数据库成功的连接了数据。但因为老师要求我们这次的项目是要是要 Oracle 做的。所以还需使用 Oracle 配置一遍。<br>但 Oracle 在 win 界面下的配置比较繁琐。使用最后决定采用在 Docker 下使用 Oracle12c。将 Docker 中的 1521 端口映射到本机的 1521 端口中。<br>开发环境是 Linux, 因为装 Docker 比较方便一点。当然你也可以使用 win 下面的 Docker-tool 进行相同的操作。</p>
+<h2 id="项目准备"><a href="#项目准备" class="headerlink" title="项目准备"></a>项目准备</h2><ol>
+<li>Docker</li>
+<li>数据库连接工具 (我使用的是 IDEA 自带的数据库管理工具)</li>
+</ol>
+<h2 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h2><p>Docker 的使用方法这里就不做详细解释了，具体可以看 <a target="_blank" rel="noopener" href="https://www.gitbook.com/book/yeasy/docker_practice/details">Docker — 从入门到实践</a></p>
+<ol>
+<li>首先再 <code>dockerhub</code> 中查找镜像</li>
+<li>使用<code>docker pull sath89/oracle-12c</code>拉取这个优质镜像(大小有4-5g)<span id="more"></span></li>
+</ol>
+<h2 id="运行镜像"><a href="#运行镜像" class="headerlink" title="运行镜像"></a>运行镜像</h2><p>使用<code>docker run -d -p 8081:8080 -p 1521:1521 sath89/oracle-12c</code> 运行镜像，这个操作会把本机8081端口映射到容器里的8080端口，本机1521端口连接容器里数据库的1521端口。<br>具体的这个镜像的说明可以看这个镜像作者写的<a target="_blank" rel="noopener" href="https://hub.docker.com/r/sath89/oracle-12c/">镜像说明</a><br>运行上面的操作指令的时候，因为 docker 内安装 Oracle 还需要一段时间，所以要等一会.<br>你也可以使用 docker logs -f [这里填你容器的id] 查看目前安装的进度<br><img data-src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022135001330.png" alt="容器进度"></p>
+<h2 id="进入-Oracle-终端"><a href="#进入-Oracle-终端" class="headerlink" title="进入 Oracle 终端"></a>进入 Oracle 终端</h2><p>先 <code>docker ps</code> 查看 容器id<br><img data-src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022141244695.png" alt="查看容器"></p>
+<p>然后 使用  <code>docker exec -it [你的容器id] /bin/bash</code> 进入容器<br><img data-src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022141349354.png"></p>
+<h2 id="创建新的-Oracle-用户"><a href="#创建新的-Oracle-用户" class="headerlink" title="创建新的 Oracle 用户"></a>创建新的 Oracle 用户</h2><p>因为 Oracle 和 MYSQL 这些不同，他是一个用户对应一个库，所以我们要先创建用户然后把库给他。<br>！！ 这里有个坑就是，你的用户名前面一定要带 c## ，要不然这个用户是其他模式的，非常难用。</p>
+<ol>
+<li>首先再刚才进入的终端中输入<code>sqlplus</code> 进入 Oracle 的命令操作界面</li>
+<li>然后输入用户名 ：sys&#x2F;oracle as sysdba</li>
+<li>输入<code>startup</code>启动 Oracle</li>
+<li><code>create user c##用户名 identified by 密码; </code> 创建用户，用户名和密码换成自己的，下同。</li>
+<li><code>alter user c##用户名 account unlock;</code> 解锁</li>
+<li><code>grant create session to  c##用户名;</code> 给权限</li>
+<li><code>grant dba to c##用户名;</code></li>
+<li><code>GRANT CREATE USER,DROP USER,ALTER USER ,CREATE  ANY  VIEW , DROP ANY VIEW,EXP_FULL_DATABASE,IMP_FULL_DATABASE,DBA,CONNECT,RESOURCE,CREATE SESSION  TO  c##用户名;</code> 给权限</li>
+<li>然后就把这个用户创建好了。</li>
+</ol>
+<h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><p>在 idea 中接可以这样连接。其他数据库连接工具也一样<br><img data-src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022142237865.png" alt="idea连接"><br>这里的用户名和密码就是自己刚才设置的。<br><img data-src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022142458457.png" alt="连接"><br>然后这里创建表就可以用了。<br><img data-src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022142553938.png" alt="创建表"></p>
+<h2 id="配置-Spring-boot"><a href="#配置-Spring-boot" class="headerlink" title="配置 Spring boot"></a>配置 Spring boot</h2><p>数据库算是搞完了。那我们还要用 Spring boot连接数据库。<br>在application.properties中配置自己的数据库连接</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// resources/application.properties</span></span><br><span class="line"></span><br><span class="line">spring.datasource.url=jdbc:oracle:thin:@<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">1521</span>:xe</span><br><span class="line">spring.datasource.username=c##用户名</span><br><span class="line">spring.datasource.password=密码</span><br><span class="line">spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver</span><br></pre></td></tr></table></figure>
+<p>然后Maven仓库加 Oracle 的驱动，因为Oracle 商用，Maven未授权，所以要自己导入。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>oracle<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>ojdbc6<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>xml里加这句后，再导入Oracle 的jar包。</p>
+<p><img data-src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022142943868.png" alt="导入jar包"></p>
+<p><img data-src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022143011572.png" alt="导入jar包"></p>
+<p>然后找到自己下载的Oracle jar包导入进去，就可以使用了，这里要感谢cw同学的指导。</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>先在数据库中插入数据。<br>运行之后，像上一篇那样输入地址获取用户数据，如果获取成功就可以了。</p>
+<h2 id="以后再次启动-docker-中的-oracle"><a href="#以后再次启动-docker-中的-oracle" class="headerlink" title="以后再次启动 docker 中的 oracle"></a>以后再次启动 docker 中的 oracle</h2><p>因为我们不是只使用这一次，以后还要再使用就需要再次启动 docker 然后连接 oracle。</p>
+<ol>
+<li><code>docker ps -a</code> 这个命令可以看已经关闭的容器 <img data-src="http://osabfc0f3.bkt.clouddn.com/markdown-img-paste-20171022143415949.png" alt="意关闭容器"></li>
+<li><code>docker start [你的容器id]</code> 然后把上面查询到的容器id启动起来。<br>这样我们的 Oracle 服务就又启动起来了。是不是比 win 下面直接安装干净不少。</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Docker/" rel="tag"># Docker</a>
+              <a href="/tags/Oracle12c/" rel="tag"># Oracle12c</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/10/4e9338b1f42b/" rel="prev" title="Robinson 大战 Spring boot 之 Mybatis">
+      <i class="fa fa-chevron-left"></i> Robinson 大战 Spring boot 之 Mybatis
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/02/49ca3f61cbe2/" rel="next" title="用Laravel开发API时遇到的一个坑">
+      用Laravel开发API时遇到的一个坑 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTI1NC81ODIy"></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">项目准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E9%95%9C%E5%83%8F"><span class="nav-number">2.</span> <span class="nav-text">下载镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E9%95%9C%E5%83%8F"><span class="nav-number">3.</span> <span class="nav-text">运行镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5-Oracle-%E7%BB%88%E7%AB%AF"><span class="nav-number">4.</span> <span class="nav-text">进入 Oracle 终端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84-Oracle-%E7%94%A8%E6%88%B7"><span class="nav-number">5.</span> <span class="nav-text">创建新的 Oracle 用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">6.</span> <span class="nav-text">连接数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-Spring-boot"><span class="nav-number">7.</span> <span class="nav-text">配置 Spring boot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">8.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5%E5%90%8E%E5%86%8D%E6%AC%A1%E5%90%AF%E5%8A%A8-docker-%E4%B8%AD%E7%9A%84-oracle"><span class="nav-number">9.</span> <span class="nav-text">以后再次启动 docker 中的 oracle</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="bb chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">bb chen</p>
+  <div class="site-description" itemprop="description">这是一个人的孤岛</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Robinson28years" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Robinson28years" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.chenwe.top/" title="http:&#x2F;&#x2F;blog.chenwe.top&#x2F;" rel="noopener" target="_blank">xiaoshidefeng</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.zhuzhenyuan.cn/" title="http:&#x2F;&#x2F;blog.zhuzhenyuan.cn&#x2F;" rel="noopener" target="_blank">朱大哥</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://misakatang.cn/" title="http:&#x2F;&#x2F;misakatang.cn&#x2F;" rel="noopener" target="_blank">MisakaTang</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.zpliu.top/" title="http:&#x2F;&#x2F;blog.zpliu.top&#x2F;" rel="noopener" target="_blank">LIVE不平凡</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.adsionli.cn/" title="http:&#x2F;&#x2F;blog.adsionli.cn&#x2F;" rel="noopener" target="_blank">Adsionli</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bb chen</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>
